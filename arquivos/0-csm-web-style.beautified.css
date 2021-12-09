@@ -2718,7 +2718,7 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-feito-a-mao {
 }
 
 html body .has-shelf--default .csm-shelf__colection .flag-produto-feito-a-mao::after {
-    content: "Produto feito a mÃƒÂ£o";
+    content: "Produto feito a mão";
     width: 0;
     opacity: 0;
     visibility: hidden;
@@ -3025,11 +3025,11 @@ html body .has-shelf--default .csm-shelf__outOfStock strong {
     display: block;
     width: 100%;
     color: #303030;
-    font-size: 14px;
+    font-size: 0.813rem;
     text-align: center;
     text-transform: initial;
     letter-spacing: 1px;
-    line-height: 45px;
+    line-height: 2.813rem;
     background: rgba(255, 255, 255, .49)
 }
 
@@ -3041,7 +3041,7 @@ html body .has-shelf--default .csm-shelf__name {
 
 @media screen and (min-width:100px) and (max-width:768px) {
     html body .has-shelf--default .csm-shelf__outOfStock {
-        bottom: -145px
+        bottom: 0px
     }
 
     html body .has-shelf--default .csm-shelf__outOfStock strong {
@@ -3154,7 +3154,8 @@ html body #main .csm-product .csm-container .csm-row .csm-breadcrumbs {
 
 html body #main .csm-product .csm-container .csm-row .csm-breadcrumbs ul {
     display: flex;
-    justify-content: center
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 html body #main .csm-product .csm-container .csm-row .csm-breadcrumbs ul li {
@@ -3581,8 +3582,8 @@ html body #main .csm-product .csm-container .csm-row .csm-product__info #addList
 
 @media only screen and (min-width:100px) and (max-width:767px) {
     html body #main .csm-product .csm-container .csm-row .csm-product__info .fixerBotoom {
-        margin: 10px !important;
-        width: 95% !important;
+        margin: 14px 10px!important;
+        width: 75% !important;
         position: fixed;
         text-align: center;
         font-weight: 500;

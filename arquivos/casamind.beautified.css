@@ -12,9 +12,14 @@
     .desktop-view {
         display: none
     }
-
     .mobile-view {
         display: initial
+    }
+    .product-content-section.yv-section div#yv-write-review{
+        text-align: center;
+    }
+    #yv-show-reviews .yv-bootstrap.yv-main{
+        padding: 0.7rem;
     }
 }
 
@@ -2128,7 +2133,7 @@ body .ui-tooltip {
 }
 
 html body footer .news-footer .clearfix .main-footer-newsletter .main-footer-newsletter-form div input {
-    width: 255px !important;
+    width: 100% !important;
     box-shadow: 3px 3px 0 silver !important;
     border-radius: 6px 0 0 6px
 }
@@ -7455,7 +7460,7 @@ a:hover .fa-instagram {
     }
 
     .main-footer-newsletter-form {
-        width: 50%
+        width: 100%
     }
 
     .newsletter-popup.active {
@@ -11292,7 +11297,9 @@ footer {
 .main-footer-newsletter-form div {
     display: flex;
     justify-content: center;
-    margin-top: 10px
+    margin: 10px auto 0 auto;
+    width: 23rem;
+    max-width: 100%;
 }
 
 .main-footer-title {
