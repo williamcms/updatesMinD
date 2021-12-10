@@ -1040,8 +1040,10 @@ html body .csm-header .csm-benefits .csm-center-benefits {
     justify-content: space-between
 }
 
-html body .csm-header .csm-benefits .csm-center-benefits .csm-left {
-    width: 293px
+html body .csm-header .csm-benefits .csm-center-benefits .csm-left, 
+html body .csm-header .csm-benefits .csm-center-benefits .csm-right {
+    max-width: 170px;
+    flex: 1 1 0px;
 }
 
 @media only screen and (min-width:768px) and (max-width:1024px) {
@@ -1070,22 +1072,10 @@ html body .csm-header .csm-benefits .csm-center-benefits .csm-left {
     }
 }
 
-html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul {
+html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul, 
+html body .csm-header .csm-benefits .csm-center-benefits .csm-right ul {
     display: flex;
     align-items: center
-}
-
-html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul li {
-    text-transform: uppercase;
-    margin-right: 15px;
-    display: inline-block;
-    vertical-align: middle;
-    zoom: 1;
-    color: #000;
-    background-color: #fff;
-    font-size: 11px;
-    padding: 4px 20px;
-    border: 1px solid #ebe2e5
 }
 
 @media only screen and (min-width:768px) and (max-width:1024px) {
@@ -1098,10 +1088,6 @@ html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul li {
     html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul li {
         display: inline-block
     }
-}
-
-html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul li a {
-    color: #ee3f71
 }
 
 html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul li:last-of-type {
@@ -1156,7 +1142,8 @@ html body .csm-header .csm-benefits .csm-center-benefits .csm-center ul li:last-
     }
 }
 
-html body .csm-header .csm-benefits .csm-center-benefits .csm-right ul li {
+html body .csm-header .csm-benefits .csm-center-benefits .csm-right ul li, 
+html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul li {
     text-transform: uppercase;
     margin-right: 15px;
     display: inline-block;
@@ -1168,12 +1155,16 @@ html body .csm-header .csm-benefits .csm-center-benefits .csm-right ul li {
     border: 1px solid #ebe2e5
 }
 
-html body .csm-header .csm-benefits .csm-center-benefits .csm-right ul li a {
+html body .csm-header .csm-benefits .csm-center-benefits .csm-right ul li a, 
+html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul li a {
     color: #fff
 }
 
-html body .csm-header .csm-benefits .csm-center-benefits .csm-right ul li:last-of-type {
-    margin-right: 0
+html body .csm-header .csm-benefits .csm-center-benefits .csm-right ul li:last-of-type, 
+html body .csm-header .csm-benefits .csm-center-benefits .csm-left ul li:last-of-type {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
 }
 
 html body .csm-header .csm-middle {
