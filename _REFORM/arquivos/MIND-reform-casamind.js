@@ -32,4 +32,9 @@ $(document).ready(function(){
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
+	$('.js--open-menu').on('click', function(){
+		$(".csm-header .csm-mobile .csm-center .csm-menu").addClass("csm-active");
+
+
+	});
 });

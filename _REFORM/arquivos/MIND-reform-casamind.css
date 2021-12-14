@@ -4,13 +4,14 @@
  */
 @charset "utf-8";
 :root{
-    --menu-bg-color: rgba(10, 11, 13, 1);
-    --hm-menu-bar: #FFFFFF;
-    --hm-menu-bar-change: #FFFFFF;
-    --menu-bg-color-desktop: rgba(10, 11, 13, .4);
-    --menu-bg-color-desktop-darker: rgba(10, 11, 13, .8);
+    --menu-bg-color: #FFFFFF;
+    --hm-menu-bar: #EE3F71;
+    --hm-menu-bar-change: #EE3F71;
+    --menu-bg-color-mobile: #FFFFFF;
+    --menu-bg-color-mobile-behind: rgba(10, 11, 13, .2);
     --body-bg-color: #FFFFFF;
     --body-txt-color: #000000;
+    --brand-color: #EE3F71;
     --blue: #4680FF;
     --indigo: #6610f2;
     --purple: #6F42C1;
@@ -62,12 +63,12 @@ main{
 img{
     max-width: 100%;
 }
-a{
+a[href]{
     color: inherit;
     background-color: transparent;
     text-decoration: none;
 }
-a:hover{
+a[href]:hover{
     color: inherit;
     text-decoration: underline;
 }
@@ -80,6 +81,9 @@ i{
     font-size: inherit;
     font-weight: inherit;
     font-style: italic;
+}
+ul li{
+    list-style-type: none;
 }
 small{
     font-size: smaller;
@@ -808,12 +812,32 @@ blockquote::before{
 .nowrap{
     white-space: nowrap;
 }
+/* View selector */
 .desktop-view {
     display: initial
 }
-
 .mobile-view {
     display: none
+}
+/* Menu */
+.csm-header .csm-benefits{
+    background-color: var(--brand-color);
+    color: #FFFFFF;
+}
+.csm-header .csm-benefits .csm-center-benefits{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.csm-header .csm-benefits .csm-center-benefits .csm-left{
+    
+}
+.csm-header .csm-benefits .csm-center-benefits .csm-center{
+    
+}
+.csm-header .csm-benefits .csm-center-benefits .csm-right{
+    
 }
 
 @media screen and (max-width: 831px) and (orientation : portrait){
@@ -832,7 +856,13 @@ blockquote::before{
     textarea{
         height: 10vh !important;
     }
-    /* New */
+    /* View Selector */
+    .desktop-view {
+        display: none
+    }
+    .mobile-view {
+        display: initial
+    }
 }
 @media print{
     *,
