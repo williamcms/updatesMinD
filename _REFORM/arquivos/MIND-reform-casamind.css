@@ -1173,10 +1173,10 @@ blockquote::before{
     }
     /* View Selector */
     .desktop-view {
-        display: none
+        display: none !important;
     }
     .mobile-view {
-        display: initial
+        display: initial !important;
     }
     .csm-header .csm-benefits{
         display: none;
