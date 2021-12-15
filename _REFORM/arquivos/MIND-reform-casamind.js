@@ -33,8 +33,26 @@ $(document).ready(function(){
 		slidesToScroll: 1
 	});
 	$('.js--open-menu').on('click', function(){
-		$(".csm-header .csm-mobile .csm-center .csm-menu").addClass("csm-active");
-
+		$(".csm-header .csm-navigation").fadeToggle();
+		$(this).toggleClass("change");
 
 	});
+	$('.csm-has-sub').on('click', function(){
+		$($(this).find('.csm-dropdown')).toggleClass("change");
+
+	});
+	$(".csm-header .csm-cart >a").hover(function(){
+		var t = $(this),
+		e = $(".csm-minicart"), 
+        i = $(".portal-totalizers-ref .amount-items-em").eq(0).text();
+        $(".js--minicart-close__amount").text(i), 
+        $(".js--minicart-count").text(i), 768 <= $("body").width() ? (t.hover(function(t) {
+            if ($(".csm-minicart__products li").length) return e.addClass("is--active"), !1;
+        }), e.hover(function() {}, function() {
+            e.removeClass("is--active");
+        })) : t.click(function(t) {
+            if ($(".csm-minicart__products li").length) return e.toggleClass("is--active"), 
+            !1;
+        });
+	})
 });
