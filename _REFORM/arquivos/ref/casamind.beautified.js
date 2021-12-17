@@ -1,3 +1,4 @@
+// Script verificado
 var _____WB$wombat$assign$function_____ = function(name) {
     return self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name) || self[name];
 };
