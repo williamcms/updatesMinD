@@ -839,6 +839,10 @@ blockquote::before{
     display: none
 }
 /* Menu */
+.csm-header{
+    position: relative;
+    z-index: 9;
+}
 .csm-header .csm-benefits{
     background-color: var(--brand-color);
     color: #FFFFFF;
@@ -1075,7 +1079,7 @@ blockquote::before{
     max-width: 23.125rem;
     opacity: 0;
     visibility: hidden;
-    z-index: 999;
+    z-index: 99;
     border-top: 2px solid var(--brand-color);
     box-shadow: 0 1px 9px 0 rgba(0, 0, 0, .21);
     background-color: var(--body-bg-color);
@@ -1170,8 +1174,54 @@ blockquote::before{
     -webkit-animation: 1s linear 1s infinite rotate;
     -webkit-transition: 1s;
 }
-
-
+/* Popup adicionado ao carrinho */
+.csm-header #popup-adicionando{
+    position: fixed;
+    top: -100%;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    transition: top 2s ease;
+}
+.csm-header #popup-adicionando.is--active{
+    top: 0;
+}
+.csm-header #popup-adicionando .conteudo-adicionando{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .7rem 1.25rem;
+    max-width: 24.35rem;
+    font-size: 0.913rem;
+    width: auto;
+    margin: 0 auto;
+    left: 0;
+    background-color: var(--brand-color);
+    color: #FFFFFF;
+    line-height: 2rem;
+}
+.csm-header #popup-adicionando .conteudo-adicionando .link-adicionando{
+    padding: 0 .625rem;
+    color: var(--brand-color);
+    background-color: #FFF;
+    border-radius: 6px;
+    text-decoration: none;
+    line-height: 2rem;
+}
+.csm-header #popup-adicionando .conteudo-adicionando #barratempo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    height: 3px;
+    width: 0;
+    -webkit-transition: width 6s ease;
+    transition: width 6s ease;
+}
+.csm-header #popup-adicionando .conteudo-adicionando #barratempo.is--active{
+    width: 100%
+}
 /* Newsletter */
 footer .news-footer {
     background-color: #141414;

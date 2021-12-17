@@ -86,7 +86,19 @@ $(document).ready(function(){
 			$("#formFC").html("<p class='highlight'>E-mail cadastrado com sucesso!</p><small>Você receberá um cupom de desconto em seu e-mail.</small>")
 		}
 	})();
-	
+	var addtoBag = $('.js--shelf-buy').on('click', function(e){
+		var sku = $(this).parents('.csm-shelf__product').data('sku'),
+		t = document.cookie.split('; VTEXSC=').pop().split(';').shift().split('src=')[1]
+		return vtexjs.checkout.addToCart([{
+			id: sku,
+			quantity: 1,
+			seller: '1'
+		}], null, t).done(function(t){
+			$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
+				$('#popup-adicionando, #barratempo').removeClass('is--active')
+			}, 6200);
+		}), false;
+	});
 
 	// Numeração de resultados de busca
 	// (jQuery, window, document), function(t, e, i, o) {

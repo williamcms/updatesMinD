@@ -1227,6 +1227,7 @@ $(document).on("ready", function() {
             }), !1;
         });
     },
+    //verificado até aqui
     scrollMenu: function() {
         var t = 0;
         $(document).ready(function() {
