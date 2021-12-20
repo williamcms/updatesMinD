@@ -885,6 +885,14 @@ blockquote::before{
     width: 100%;
     height: 110px;
 }
+.csm-header .csm-middle .csm-center.scrollMenu{
+    height: 75px;
+}
+.csm-header .csm-middle .csm-center.scrollMenu .csm-logo a, 
+.csm-header .csm-middle .csm-center.scrollMenu .csm-logo svg{
+    height: auto;
+    width: 6.188rem;
+}
 .csm-header .csm-middle .csm-center div{
     flex: 1 1 0px;
     justify-content: center;
@@ -1080,10 +1088,12 @@ blockquote::before{
     font-size: 0.895rem;
     font-weight: 400;
 }
-/* Minicart */
-.csm-header .csm-search-cart{
+/* Remoções */
+.csm-header .csm-search-cart,
+.csm-header .csm-middle .csm-center .csm-search .csm-submit{
     display: none;
 }
+/* Minicart */
 .csm-header .csm-minicart{
     position: absolute;
     top: 8.125rem;

@@ -42,6 +42,15 @@ $(document).ready(function(){
 		$($(this).find('.csm-dropdown')).toggleClass("change");
 
 	});
+	(hideMenuOnScroll = () => {
+        var top = 0;
+        $(window).on("scroll", function() {
+            $(window).scrollTop() > top && 1 < $(window).scrollTop() ? ($(".csm-header .csm-wrapper").slideUp(), 
+            $(".csm-header .csm-wrapper .csm-middle .csm-center").addClass("scrollMenu"), $(".csm-header .csm-benefits").slideUp()) : $(window).scrollTop() === 0 ? ($(".csm-header .csm-benefits").slideDown(), 
+            $(".csm-header .csm-wrapper").slideDown(), $(".csm-header .csm-wrapper .csm-middle .csm-center").removeClass("scrollMenu")) : $(".csm-header .csm-wrapper").slideDown();
+            top = $(window).scrollTop();
+        });
+    })();
 	var showCartWhenHoverIcon = $(".csm-header .csm-cart >a").hover(function(){
 		var t = $(this),
 		e = $(".csm-minicart"), 
