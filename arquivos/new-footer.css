@@ -53,6 +53,26 @@ footer.newfooter  .footer-wrapper .col{
 	max-width: 100%;
 	min-width: 27.625rem;
 }
+footer.newfooter .main-footer-sac-buttons{
+	margin: .8rem 0;
+}
+footer.newfooter .main-footer-sac-buttons a{
+    width:70%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #ff2974!important;
+    color: #FFF;display: block;
+    min-width: 148px;
+    font-size: 13px;
+    line-height: 30px;
+    text-transform: uppercase;
+    opacity: .9;
+}
+footer.newfooter .main-footer-sac-buttons a:hover{
+    text-decoration: none;
+    opacity: 1;
+}
 footer.newfooter  .footer-wrapper .support-wrapper .support-guide .changeView,
 footer.newfooter  .footer-wrapper .aboutUs-wrapper .aboutUs-guide .changeView{
 	display: none;
@@ -123,6 +143,10 @@ footer.newfooter .final-label__address{
 	text-align: center;
 }
 @media screen and (max-width: 831px) and (orientation : portrait){
+	footer.newfooter .main-footer-sac-buttons a{
+		margin: 0 auto;
+        width: 100%;
+    }
 	footer.newfooter .footer-wrapper .support-wrapper .support-guide h2,
 	footer.newfooter .footer-wrapper .support-wrapper .support-guide div,
 	footer.newfooter .footer-wrapper .aboutUs-wrapper .aboutUs-guide h2,

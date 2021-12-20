@@ -83,8 +83,9 @@ a[href]{
     background-color: transparent;
     text-decoration: none;
     font-size: inherit;
+    font-weight: inherit;
 }
-a[href]:hover{
+a:hover{
     color: inherit;
     text-decoration: underline;
 }
@@ -258,22 +259,22 @@ h6{
     color:inherit;
 }
 h1{
-    font-size:2.5rem !important;
+    font-size:2.5rem;
 }
 h2{
-    font-size:2rem !important;
+    font-size:2rem;
 }
 h3{
-    font-size:1.75rem !important;
+    font-size:1.75rem;
 }
 h4{
-    font-size:1.5rem !important;
+    font-size:1.5rem;
 }
 h5{
-    font-size:1.25rem !important;
+    font-size:1.25rem;
 }
 h6{
-    font-size:1rem !important;
+    font-size:1rem;
 }
 span{
     font-size: inherit;
@@ -1265,6 +1266,9 @@ footer .footer-wrapper{
     padding: 3.75rem 6.25rem;
     gap: 2rem;
 }
+footer p{
+    font-size: 0.875rem;
+}
 footer .footer-wrapper *{
     padding: 0;
     margin: 0;
@@ -1272,7 +1276,7 @@ footer .footer-wrapper *{
     line-height: 1.438rem;
     font-family: 'Helvetica';
 }
-footer  .footer-wrapper h2{
+footer .footer-wrapper h2{
     font-family: 'Didot';
     font-size: 1.875rem;
     font-weight: 600;
@@ -1281,16 +1285,16 @@ footer  .footer-wrapper h2{
     color:inherit;
     text-align: left;
 }
-footer  .footer-wrapper .bold,
-footer  .footer-wrapper strong{
+footer .footer-wrapper .bold,
+footer .footer-wrapper strong{
     font-weight: bold;
     font-weight: 600;
 }
-footer  .footer-wrapper.row{
+footer .footer-wrapper.row{
     display: flex;
     flex-wrap: wrap;
 }
-footer  .footer-wrapper .col{
+footer .footer-wrapper .col{
     position: relative;
     width: 100%;
     min-height: 1px;
@@ -1299,14 +1303,34 @@ footer  .footer-wrapper .col{
     max-width: 100%;
     min-width: 27.625rem;
 }
-footer  .footer-wrapper .support-wrapper .support-guide .changeView,
-footer  .footer-wrapper .aboutUs-wrapper .aboutUs-guide .changeView{
+footer .main-footer-sac-buttons{
+    margin: .8rem 0;
+}
+footer .main-footer-sac-buttons a{
+    width:70%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #ff2974!important;
+    color: #FFF;display: block;
+    min-width: 148px;
+    font-size: 13px;
+    line-height: 30px;
+    text-transform: uppercase;
+    opacity: .9;
+}
+footer .main-footer-sac-buttons a:hover{
+    text-decoration: none;
+    opacity: 1;
+}
+footer .footer-wrapper .support-wrapper .support-guide .changeView,
+footer .footer-wrapper .aboutUs-wrapper .aboutUs-guide .changeView{
     display: none;
 }
-footer  .footer-wrapper .social-wrapper,
-footer  .footer-wrapper .support-wrapper,
-footer  .footer-wrapper .aboutUs-wrapper,
-footer  .footer-wrapper .security-wrapper{
+footer .footer-wrapper .social-wrapper,
+footer .footer-wrapper .support-wrapper,
+footer .footer-wrapper .aboutUs-wrapper,
+footer .footer-wrapper .security-wrapper{
     margin-top: 2.3rem !important;
 }
 footer .footer-wrapper .social-wrapper h2{
@@ -1557,6 +1581,10 @@ footer .final-label__address{
 
 
     /* Footer */
+    footer .main-footer-sac-buttons a{
+        margin: 0 auto;
+        width: 100%;
+    }
     footer .footer-wrapper .support-wrapper .support-guide h2,
     footer .footer-wrapper .support-wrapper .support-guide div,
     footer .footer-wrapper .aboutUs-wrapper .aboutUs-guide h2,
