@@ -33,9 +33,10 @@ $(document).ready(function(){
 		slidesToScroll: 1
 	});
 	var openMenu = $('.js--open-menu').on('click', function(){
-		$(".csm-header .csm-navigation").fadeToggle();
-		$(this).toggleClass("change");
-
+		$(".csm-header .csm-wrapper, .csm-header .csm-navigation, .js--open-menu").toggleClass('change');
+		// Atributos para Leitores de tela
+		$x = $(this).hasClass('change');
+		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-expanded', $x);
 	});
 	var showDropDownMenu = $('.csm-has-sub').on('click', function(){
 		$($(this).find('.csm-dropdown')).toggleClass("change");

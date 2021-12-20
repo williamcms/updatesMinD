@@ -843,6 +843,13 @@ blockquote::before{
 .csm-header{
     position: relative;
     z-index: 9;
+    height: 13.063rem;
+    background-color: var(--body-bg-color);
+}
+.csm-wrapper{
+    position: fixed;
+    width: 100%;
+    background-color: var(--body-bg-color);
 }
 .csm-header .csm-benefits{
     background-color: var(--brand-color);
@@ -909,14 +916,17 @@ blockquote::before{
 }
 .csm-header .csm-middle .csm-center .csm-user ul li svg{
     height: 30px;
-    fill: #6d6e71;
-    stroke: #6d6e71;
+    fill: #6D6E71;
+    stroke: #6D6E71;
+}
+.csm-header .csm-middle .csm-center .csm-user ul li svg *{
+    stroke: #6D6E71;
 }
 .csm-header .csm-middle .csm-center .csm-user .csm-account button{
     background-color: transparent;
     border: none;
     justify-items: center;
-    color: #6d6e71;
+    color: #6D6E71;
 }
 .csm-header .csm-middle .csm-center .csm-user .csm-account button .desktop-view{
     display: flex;
@@ -1005,6 +1015,7 @@ blockquote::before{
     background-color: var(--body-bg-color);
 }
 .csm-header .csm-navigation > .csm-center{
+    background-color: var(--menu-bg-color);
     border: 1px solid #E5E5E5;
     padding: 0.3rem 2rem;
     box-shadow: 1px 2px 2px 0px #F6F6F6;
@@ -1031,6 +1042,7 @@ blockquote::before{
 .csm-header .csm-navigation > .csm-center > ul > li > a{
     font-weight: 600;
     color: #6D6E71;
+    font-size: .9rem;
     border-bottom: 2px solid transparent;
 }
 .csm-header .csm-navigation > .csm-center ul > li > a:hover{
@@ -1044,7 +1056,7 @@ blockquote::before{
     background-color: #FCFCFC;
     border-top: 2px solid var(--brand-color);
     padding: .8rem 1.563rem;
-    margin-top: 1rem;
+    margin-top: .9rem;
     left: 0;
     right: 0;
     width: 100%;
@@ -1419,6 +1431,18 @@ footer .final-label__address{
     .mobile-view {
         display: initial !important;
     }
+    .csm-header{
+        height: 3.75rem;
+    }
+    .csm-header .csm-wrapper{
+        position: fixed;
+        width: 100%;
+    }
+    .csm-header .csm-wrapper.change{
+        height: 100%;
+        overflow-y: scroll;
+        overflow-y: overlay;
+    }
     .csm-header .csm-benefits{
         display: none;
     }
@@ -1502,6 +1526,9 @@ footer .final-label__address{
         bottom: 0;
         left: 0;
         z-index: 9;
+    }
+    .csm-header .csm-navigation.change{
+        display: block;
     }
     .csm-header .csm-navigation.csm-active{
         display: flex;
