@@ -316,6 +316,8 @@ $(document).ready(function(){
 //      });
 //  }
 	// Troca a imagem do produto por outra de tamanho maior
+	// É possivel trocar a dimensão no CMS > Configurações > Tipos de Arquivo,
+	// mas afeta todos os sites
 	(changeProductImage = () =>{
 		$("#botaoZoom img").each(function() {
 	    	$(this).attr("src", $(this).attr("src").replace("-350-303", "-400-600"));
