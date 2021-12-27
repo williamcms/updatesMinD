@@ -2691,7 +2691,7 @@ html body .has-shelf--default .csm-shelf__product--bottom {
 }
 
 html body .has-shelf--default .csm-shelf__flags {
-    position: relative
+    position: initial;
 }
 
 html body .has-shelf--default .csm-shelf__colection {
@@ -2823,8 +2823,8 @@ section.csm-shelf__product--bottom{
 }
 
 html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
-    top: -35.5rem;
-    left: 0.5rem;
+    top: 0.5rem;
+    left: 0.37rem;
     width: 40px;
     height: 35px
 }
