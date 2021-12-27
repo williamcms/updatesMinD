@@ -98,11 +98,12 @@ $(document).ready(function(){
 	})();
 	var addtoBag = $('.js--shelf-buy').on('click', function(e){
 		var sku = $(this).parents('.csm-shelf__product').data('sku'),
+		sellerid = getSkuData(sku).DefaultSellerId,
 		t = document.cookie.split('; VTEXSC=').pop().split(';').shift().split('src=')[1]
 		return vtexjs.checkout.addToCart([{
 			id: sku,
 			quantity: 1,
-			seller: '1'
+			seller: sellerid
 		}], null, t).done(function(t){
 			$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
 				$('#popup-adicionando, #barratempo').removeClass('is--active')
