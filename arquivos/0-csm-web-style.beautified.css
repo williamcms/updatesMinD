@@ -2810,6 +2810,40 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-brasileiro::af
     margin: -1px 0 1px 40px
 }
 
+section.csm-shelf__product--bottom{
+    overflow: visible !important;
+}
+.csm-shelf__colection .flag-produto-bazar {
+    background: url(/arquivos/KV_BAZAR_2021_selinho_desk.png) 50%/contain no-repeat;
+    position: absolute;
+    top: -30.5rem;
+    left: 1rem;
+    cursor: pointer;
+    font-size: 0;
+}
+
+html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
+    top: -35.5rem;
+    left: 0.5rem;
+    width: 40px;
+    height: 35px
+}
+
+.csm-shelf__colection .flag-produto-bazar::after {
+    content: "Produto no Bazar";
+    min-width: 8.5rem;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    color: #e7d8d8;
+    padding: 10px;
+    font-size: 14px;
+    float: left;
+    background: #f383a2;
+    margin: -1px 0 1px 40px
+}
+
 @media screen and (min-width:100px) and (max-width:768px) {
     html body .has-shelf--default .csm-shelf__colection .flag-produto-brasileiro {
         width: 30px;
@@ -2818,6 +2852,25 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-brasileiro::af
     }
 
     html body .has-shelf--default .csm-shelf__colection .flag-produto-brasileiro::after {
+        font-size: 13px;
+        padding: 4px 5px;
+        font-variant: all-small-caps;
+        margin: 0 0 0 30px
+    }
+    .csm-shelf__colection .flag-produto-bazar {
+        background: url(/arquivos/KV_BAZAR_2021_selinho_mob.png) 50%/contain no-repeat;
+        position: initial;
+        top: initial;
+        left: initial;
+        width: 30px;
+        height: 25px;
+        margin-right: 4px
+    }
+    html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
+        width: 30px;
+        height: 25px
+    }
+    .csm-shelf__colection .flag-produto-bazar::after {
         font-size: 13px;
         padding: 4px 5px;
         font-variant: all-small-caps;
