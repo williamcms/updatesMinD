@@ -2847,6 +2847,7 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
 
 @media screen and (min-width:100px) and (max-width:768px) {
     html body .has-shelf--default .csm-shelf__colection .flag-produto-brasileiro {
+        min-width: 6.5rem;
         width: 30px;
         height: 25px;
         margin-right: 4px
@@ -2860,11 +2861,6 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
     }
     .csm-shelf__colection .flag-produto-bazar {
         background: url(/arquivos/KV_BAZAR_2021_selinho_mob.png) 50%/contain no-repeat;
-        position: initial;
-        top: initial;
-        left: initial;
-        width: 30px;
-        height: 25px;
         margin-right: 4px
     }
     html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
