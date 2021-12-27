@@ -2652,6 +2652,7 @@ html body .has-shelf--default ul li {
 
 html body .has-shelf--default .csm-shelf__product,
 html body .has-shelf--default .csm-shelf__product--top {
+    position: relative;
     display: block;
     width: 100%
 }
