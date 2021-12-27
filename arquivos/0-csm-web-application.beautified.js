@@ -1215,11 +1215,13 @@ $(document).on("ready", function() {
     addtoBag: function() {
         $("body").on("click", ".js--shelf-buy", function(t) {
             t.preventDefault(), t.stopPropagation();
-            var e = $(this).parents(".csm-shelf__product").data("sku"), t = document.cookie.split("; VTEXSC=").pop().split(";").shift().split("sc=")[1];
+            var e = $(this).parents(".csm-shelf__product").data("sku"), 
+            sellerid = getSkuData(sku).DefaultSellerId,
+            t = document.cookie.split("; VTEXSC=").pop().split(";").shift().split("sc=")[1];
             return vtexjs.checkout.addToCart([ {
                 id: e,
                 quantity: 1,
-                seller: "1"
+                seller: sellerid
             } ], null, t).done(function(t) {
                 console.log(t), $("#popup-adicionando, #barratempo").addClass("active"), setTimeout(function() {
                     $("#popup-adicionando, #barratempo").removeClass("active");
