@@ -1046,6 +1046,7 @@ blockquote::before{
 }
 .csm-header .csm-navigation > .csm-center > ul > li{
     padding: 0.625rem 0;
+    margin-right: 1.56rem;
 }
 .csm-header .csm-navigation > .csm-center > ul > li > a{
     font-weight: 600;
