@@ -1216,7 +1216,7 @@ $(document).on("ready", function() {
         $("body").on("click", ".js--shelf-buy", function(t) {
             t.preventDefault(), t.stopPropagation();
             var e = $(this).parents(".csm-shelf__product").data("sku"), 
-            sellerid = getSkuData(sku).DefaultSellerId,
+            sellerid = getSkuData(e).DefaultSellerId,
             t = document.cookie.split("; VTEXSC=").pop().split(";").shift().split("sc=")[1];
             return vtexjs.checkout.addToCart([ {
                 id: e,
