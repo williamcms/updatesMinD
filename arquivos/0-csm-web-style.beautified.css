@@ -2885,6 +2885,13 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-brasileiro:hov
     transition: .2s linear
 }
 
+html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar:hover::after {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: .2s linear
+}
+
 html body .has-shelf--default .csm-shelf__colection .flag-projeto-social {
     background: url(/arquivos/flag-projeto-social-v2-min.png) 50%/contain no-repeat;
     cursor: pointer;
