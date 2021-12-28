@@ -97,18 +97,23 @@ $(document).ready(function(){
 		}
 	})();
 	var addtoBag = $('.js--shelf-buy').on('click', function(e){
+		e.preventDefault(), e.stopPropagation();
 		var sku = $(this).parents('.csm-shelf__product').data('sku'),
 		sellerid = getSkuData(sku).DefaultSellerId,
-		t = document.cookie.split('; VTEXSC=').pop().split(';').shift().split('src=')[1]
-		return vtexjs.checkout.addToCart([{
-			id: sku,
-			quantity: 1,
-			seller: sellerid
-		}], null, t).done(function(t){
-			$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
-				$('#popup-adicionando, #barratempo').removeClass('is--active')
-			}, 6200);
-		}), false;
+		t = document.cookie.split('; VTEXSC=').pop().split(';').shift().split('src=')[1];
+		//Define uma espera para que a função da vtex retorne os dados 
+        //antes da execução abaixo e a demora não cause erro no produto
+		setTimeout(() => {
+			return vtexjs.checkout.addToCart([{
+				id: sku,
+				quantity: 1,
+				seller: sellerid
+			}], null, t).done(function(t){
+				$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
+					$('#popup-adicionando, #barratempo').removeClass('is--active')
+				}, 6200);
+			}), false
+		}, 500);
 	});
 
 	// Numeração de resultados de busca

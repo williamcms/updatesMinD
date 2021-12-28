@@ -1218,15 +1218,19 @@ $(document).on("ready", function() {
             var e = $(this).parents(".csm-shelf__product").data("sku"), 
             sellerid = getSkuData(e).DefaultSellerId,
             t = document.cookie.split("; VTEXSC=").pop().split(";").shift().split("sc=")[1];
-            return vtexjs.checkout.addToCart([ {
-                id: e,
-                quantity: 1,
-                seller: sellerid
-            } ], null, t).done(function(t) {
-                console.log(t), $("#popup-adicionando, #barratempo").addClass("active"), setTimeout(function() {
-                    $("#popup-adicionando, #barratempo").removeClass("active");
-                }, 2200);
-            }), !1;
+            //Define uma espera para que a função da vtex retorne os dados 
+            //e a demora não cause erro no produto
+            setTimeout(() => {
+                return (vtexjs.checkout.addToCart([ {
+                    id: e,
+                    quantity: 1,
+                    seller: sellerid
+                } ], null, t).done(function(t) {
+                    console.log(t), $("#popup-adicionando, #barratempo").addClass("active"), setTimeout(function() {
+                        $("#popup-adicionando, #barratempo").removeClass("active");
+                    }, 2200);
+                })), !1
+            }, 500);
         });
     },
     scrollMenu: function() {
