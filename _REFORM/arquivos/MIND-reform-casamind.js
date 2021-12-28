@@ -99,15 +99,15 @@ $(document).ready(function(){
 	var addtoBag = $('.js--shelf-buy').on('click', function(e){
 		e.preventDefault(), e.stopPropagation();
 		var sku = $(this).parents('.csm-shelf__product').data('sku'),
-		sellerid = getSkuData(sku).DefaultSellerId,
+		p = getSkuData(sku),
 		t = document.cookie.split('; VTEXSC=').pop().split(';').shift().split('src=')[1];
 		//Define uma espera para que a função da vtex retorne os dados 
         //antes da execução abaixo e a demora não cause erro no produto
 		setTimeout(() => {
 			return vtexjs.checkout.addToCart([{
-				id: sku,
+				id: p.id,
 				quantity: 1,
-				seller: sellerid
+				seller: p.DefaultSellerId
 			}], null, t).done(function(t){
 				$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
 					$('#popup-adicionando, #barratempo').removeClass('is--active')

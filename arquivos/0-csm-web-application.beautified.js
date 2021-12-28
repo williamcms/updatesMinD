@@ -1213,18 +1213,16 @@ $(document).on("ready", function() {
         this.addtoBag();
     },
     addtoBag: function() {
-        $("body").on("click", ".js--shelf-buy", function(t) {
+        $('.js--shelf-buy').on('click', function(t){
             t.preventDefault(), t.stopPropagation();
-            var e = $(this).parents(".csm-shelf__product").data("sku"), 
-            sellerid = getSkuData(e).DefaultSellerId,
+            var e = $(this).parents(".csm-shelf__product").data("sku");
+            var p = getSkuData(e),
             t = document.cookie.split("; VTEXSC=").pop().split(";").shift().split("sc=")[1];
-            //Define uma espera para que a função da vtex retorne os dados 
-            //e a demora não cause erro no produto
             setTimeout(() => {
                 return (vtexjs.checkout.addToCart([ {
-                    id: e,
+                    id: p.id,
                     quantity: 1,
-                    seller: sellerid
+                    seller: p.DefaultSellerId
                 } ], null, t).done(function(t) {
                     console.log(t), $("#popup-adicionando, #barratempo").addClass("active"), setTimeout(function() {
                         $("#popup-adicionando, #barratempo").removeClass("active");
