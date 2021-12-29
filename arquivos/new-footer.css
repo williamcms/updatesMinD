@@ -83,17 +83,22 @@ footer.newfooter  .footer-wrapper .aboutUs-wrapper,
 footer.newfooter  .footer-wrapper .security-wrapper{
 	margin-top: 2.3rem !important;
 }
+footer.newfooter  .footer-wrapper .social-wrapper{
+	display: flex;
+    justify-content: flex-start;
+}
 footer.newfooter .footer-wrapper .social-wrapper h2{
 	display: inline-block;
-	margin-right: 2.75rem !important;
+	margin-right: 2rem !important;
+	white-space: nowrap;
 }
-footer.newfooter .footer-wrapper .social{
-	display: inline-block;
+footer.newfooter .footer-wrapper .social-wrapper .social{
+	display: flex;
 }
-footer.newfooter .footer-wrapper .social svg{
+footer.newfooter .footer-wrapper .social-wrapper .social svg{
 	width: 35px;
 }
-footer.newfooter .footer-wrapper .social a{
+footer.newfooter .footer-wrapper .social-wrapper .social a{
 	text-decoration: none;
 	margin: 0 .3rem;
 }
