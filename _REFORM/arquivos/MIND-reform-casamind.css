@@ -1356,17 +1356,22 @@ footer .footer-wrapper .aboutUs-wrapper,
 footer .footer-wrapper .security-wrapper{
     margin-top: 2.3rem !important;
 }
+footer .social-wrapper{
+    display: flex;
+    justify-content: flex-start;
+}
 footer .footer-wrapper .social-wrapper h2{
     display: inline-block;
     margin-right: 2.75rem !important;
+    white-space: nowrap;
 }
-footer .footer-wrapper .social{
-    display: inline-block;
+footer .footer-wrapper .social-wrapper .social{
+    display: flex;
 }
-footer .footer-wrapper .social svg{
+footer .footer-wrapper .social-wrapper .social svg{
     width: 35px;
 }
-footer .footer-wrapper .social a{
+footer .footer-wrapper .social-wrapper .social a{
     text-decoration: none;
     margin: 0 .3rem;
 }
