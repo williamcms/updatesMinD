@@ -271,7 +271,7 @@
             <a href="/novidades" alt="ACABOU DE CHEGAR">ACABOU DE CHEGAR</a>
           </li>
           <li>
-            <a href="/promocao" class="highlight">AQUI TEM PROMO!</a>
+            <a href="/colecoes/bazar" class="highlight">BAZAR</a>
           </li>
           <li class="csm-has-sub">
             <a href="/decoracao?O=OrderByTopSaleDESC" alt="Decoracao">DECORAÇÃO</a>
@@ -463,9 +463,6 @@
               </ul>
             </div>
           </li>
-          <li>
-            <a href="/presentes" class="highlight">PRESENTES</a>
-          </li>
 
           <li class="csm-has-sub csm-has-mindmais">
             <a href="/marketplace" alt="MinD+">MIND+</a>
@@ -505,24 +502,23 @@
         </li>
       </ul>
     </div>
-  </div>
-  <div class="csm-center">
-    <div class="csm-minicart">
-      <div class="csm-minicart__group">
-        <div class="csm-minicart__products">
-          <ul>
-            <li></li>
-          </ul>
-        </div>
-        <div class="csm-minicart__empty">
-          <p>Você não adicionou <br /> nenhum item à sua sacola. </p>
-        </div>
-        <div class="csm-minicart__footer">
-          <div class="csm-minicart__total">
-            <vtex.cmc:AmountItemsInCart />
+    <div class="csm-center">
+      <div class="csm-minicart">
+        <div class="csm-minicart__group">
+          <div class="csm-minicart__products">
+            <ul class="product-list">
+            </ul>
           </div>
-          <div class="csm-minicart__buy">
-            <a href="/checkout" class="csm-btn-buy">Finalizar Compra</a>
+          <div class="csm-minicart__empty">
+            <p>Você não adicionou nenhum item à sua sacola. </p>
+          </div>
+          <div class="csm-minicart__footer">
+            <div class="csm-minicart__total">
+              <vtex.cmc:AmountItemsInCart />
+            </div>
+            <div class="csm-minicart__buy">
+              <a href="/checkout" class="csm-btn-buy">Finalizar Compra</a>
+            </div>
           </div>
         </div>
       </div>
