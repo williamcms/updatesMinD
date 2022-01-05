@@ -2442,7 +2442,8 @@ html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departame
 
     html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator h4,
     html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator .productClusterSearchableIds,
-    html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator .accordion-content-wrapper:not(.Marca, .Função),
+    html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator .accordion-content-wrapper:not(.Função),
+    html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator h5.HideMarca,
     html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator h5.HideVoltagem,
     html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator h3:first-child {
         display: none !important
