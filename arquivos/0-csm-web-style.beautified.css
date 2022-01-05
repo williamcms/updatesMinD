@@ -2441,8 +2441,11 @@ html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departame
 @media only screen and (min-width:768px) {
 
     html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator h4,
-    html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator ul {
-        display: none
+    html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator .productClusterSearchableIds,
+    html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator .accordion-content-wrapper:not(.Marca, .Função),
+    html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator h5.HideVoltagem,
+    html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator h3:first-child {
+        display: none !important
     }
 }
 
@@ -2455,7 +2458,6 @@ html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departame
 }
 
 html body .main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator .accordion-content-wrapper {
-    padding: 10px 0 25px;
     height: auto;
     overflow: hidden;
     transition: .1s ease-in-out
