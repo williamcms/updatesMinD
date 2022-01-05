@@ -199,7 +199,7 @@ $(document).ready(function(){
 		s = getLoginStatus(),
 		j = $('.js--user-name');
 
-		return (s["logged"] == true ? (i.show() && o.hide() && j.text('Olá, Usuário')) : (o.show() && i.hide() && j.text('Entre ou Cadastre-se')));
+		return (s["logged"] == true ? (i.show() && o.hide() && j.text('Olá, Minder!')) : (o.show() && i.hide() && j.text('Entre ou Cadastre-se')));
 	})();
 	// product Page
 	var availableAlert = (function() {

@@ -1004,7 +1004,7 @@ blockquote::before{
     font-size: 0.875rem;
     height: 1.875rem;
 }
-.csm-header .csm-middle .csm-center .csm-user .csm-account:hover > .csm-dropdown-logged > ul > li:hover:not(:first-child){
+.csm-header .csm-middle .csm-center .csm-user .csm-account:hover > .csm-dropdown-logged > ul > li:hover:not(.js--logged-out li:first-child){
     background-color: #F6F6F6;
 }
 .csm-header .csm-middle .csm-center .csm-user .csm-account .csm-dropdown-logged ul.js--logged-out > li a.js--login{
