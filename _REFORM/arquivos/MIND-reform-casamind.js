@@ -192,6 +192,15 @@ $(document).ready(function(){
 	    });
 	    return s;
 	});
+	// Login Dropdown
+	var changeLoginDropDown = (changeLoginDropDown = () =>{
+		var i = $('.js--logged-in'),
+		o = $('.js--logged-out'),
+		s = getLoginStatus(),
+		j = $('.js--user-name');
+
+		return (s["logged"] == true ? (i.show() && o.hide() && j.text('Olá, Usuário')) : (o.show() && i.hide() && j.text('Entre ou Cadastre-se')));
+	})();
 	// product Page
 	var availableAlert = (function() {
 		try{

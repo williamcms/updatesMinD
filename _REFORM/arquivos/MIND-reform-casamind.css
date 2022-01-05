@@ -997,7 +997,7 @@ blockquote::before{
 .csm-header .csm-middle .csm-center .csm-user .csm-account .csm-dropdown-logged ul.js--logged-out > li:first-child{
     margin-bottom: .5rem;
 }
-.csm-header .csm-middle .csm-center .csm-user .csm-account > .csm-dropdown-logged > ul > li:not(:first-child){
+.csm-header .csm-middle .csm-center .csm-user .csm-account > .csm-dropdown-logged > ul > li:not(.js--logged-out li:first-child){
     line-height: 1.6rem;
     padding: 0 0 0 1rem;
     text-align: left;
@@ -1197,8 +1197,13 @@ blockquote::before{
     font-weight: 600;
     white-space: nowrap;
     text-transform: uppercase;
+    text-decoration: none;
     display: block;
     margin: auto 0;
+}
+.csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
+.product-wrapper > .remove a{
+    cursor: pointer;
 }
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper >  .product__info-container > .product__info > .product__management{
