@@ -1,3 +1,4 @@
+//Script verificado
 /**
  * Avanti ComunicaÃ§Ã£o <contato@penseavanti.com.br>
  * lojamindesigns

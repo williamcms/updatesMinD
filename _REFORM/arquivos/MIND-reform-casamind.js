@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	"use strict";
+
 	$('.slick-carousel-dots').slick({
 		autoplay: true,
 		autoplaySpeed: 3000,
@@ -32,6 +34,7 @@ $(document).ready(function(){
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
+	// Menu
 	var openMenu = $('.js--open-menu').on('click', function(){
 		$(".csm-header .csm-wrapper, .csm-header .csm-navigation, .js--open-menu").toggleClass('change');
 		// Atributos para Leitores de tela
@@ -42,21 +45,21 @@ $(document).ready(function(){
 		$($(this).find('.csm-dropdown')).toggleClass("change");
 
 	});
-	(hideMenuOnScroll = () => {
+	var hideMenuOnScroll = (hideMenuOnScroll = () => {
         var top = 0;
         $(window).on("scroll", function() {
             $(window).scrollTop() > top && 1 < $(window).scrollTop() ? ($(".csm-header .csm-wrapper").slideUp(), 
-            $(".csm-header .csm-wrapper .csm-middle .csm-center").addClass("scrollMenu"), $(".csm-header .csm-benefits").slideUp()) : $(window).scrollTop() === 0 ? ($(".csm-header .csm-benefits").slideDown(), 
-            $(".csm-header .csm-wrapper").slideDown(), $(".csm-header .csm-wrapper .csm-middle .csm-center").removeClass("scrollMenu")) : $(".csm-header .csm-wrapper").slideDown();
+            $(".csm-header .csm-wrapper .csm-middle .csm-center").addClass("scrollMenu"), $(".csm-header .csm-minicart").addClass("scrollMenu"), $(".csm-header .csm-benefits").slideUp()) : $(window).scrollTop() === 0 ? ($(".csm-header .csm-benefits").slideDown(), 
+            $(".csm-header .csm-wrapper").slideDown(), $(".csm-header .csm-wrapper .csm-middle .csm-center").removeClass("scrollMenu"), $(".csm-header .csm-minicart").removeClass("scrollMenu")) : $(".csm-header .csm-wrapper").slideDown();
             top = $(window).scrollTop();
         });
     })();
-	var showCartWhenHoverIcon = $(".csm-header .csm-cart >a").hover(function(){
+    // Minicart & Products List
+	var showCartWhenHoverIcon = $(".csm-header .csm-cart > a").hover(function(){
 		var t = $(this),
 		e = $(".csm-minicart"), 
         i = $(".portal-totalizers-ref .amount-items-em").eq(0).text();
-        $(".js--minicart-close__amount").text(i), 
-        $(".js--minicart-count").text(i), 768 <= $("body").width() ? (t.hover(function(t) {
+        (768 <= $("body").width()) ? (t.hover(function(t) {
             if($(".csm-minicart__products li").length) return e.addClass("is--active"), false;
         }), e.hover(function() {}, function() {
             e.removeClass("is--active");
@@ -64,38 +67,53 @@ $(document).ready(function(){
             if ($(".csm-minicart__products li").length) return e.toggleClass("is--active"), false;
         });
 	});
-	(isEmailValid = (t) =>{
-        return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(t);
-    });
-	var verifyNewsletter = $('#sendFCEmail').on('click', function(e){
-		var i = $("#fcEmail").val();
-		return isEmailValid(i) ? sendNewsletterEmail(e) : $("#fcEmail").css("border", "1px solid #D00D0D"), 
-		$("footer .news-footer .message").html('Preencha o campo abaixo com um e-mail válido'), 
-		$("footer .news-footer .message").effect( "shake" ), false;
+	var vtexUpdateItem = (vtexUpdateItem = (itemIndex, qty) =>{
+		vtexjs.checkout.getOrderForm()
+		.then(function(orderForm) {
+	    	var item = orderForm.items[itemIndex];
+	    	var updateItem = {
+	    		index: itemIndex,
+	    		quantity: qty
+	    	};
+	    return vtexjs.checkout.updateItems([updateItem], null, false);
+	  	})
+	  	.done(function(orderForm) {
+			// console.log(orderForm);
+			updateMiniCart(index);
+	  	});
 	});
-	(sendNewsletterEmail = (e) =>{
-		var i = {};
-        i.email = e, $.ajax({
-            accept: "application/vnd.vtex.ds.v10+json",
-            contentType: "application/json; charset=utf-8",
-            crossDomain: false,
-            data: JSON.stringify(i),
-            type: "POST",
-            url: "/api/dataentities/PU/documents",
-            success: function(e) {
-                $("#formFC").html("<p class='highlight'>E-mail cadastrado com sucesso!</p><small>Você receberá um cupom de desconto em seu e-mail.</small>"), 
-                setTimeout(function() {
-                    // t("#newsletter-pop").removeClass("slide");
-                }, 5e3), sessionStorage.setItem("mindNewsletter", true);
-            },
-            error: function(t) {}
+	var getOrderForm = (getOrderForm = () =>{
+		var e = this;
+        vtexjs.checkout.getOrderForm().done(function(t) {
+            e.orderForm = t;
+        });
+        return e;
+	})();
+	var getMiniCart = (getMiniCart = () =>{
+		var e = getOrderForm();
+	    return e["orderForm"];
+	});
+	var updateMiniCart = (updateMiniCart = (e) =>{
+
+	})
+	var mounMiniCart = (mounMiniCart = () =>{
+		var e = getMiniCart(),
+		d = $('.csm-header .csm-minicart .csm-minicart__products .product-list'),
+		c = 'R$ ';
+		(e.items).forEach(function(item, i){
+			let priceAsCurrency = c + (item.price / 100).toFixed(2).toString().replace(/\./, ",");
+			let html = '<li class="item-list" sku="'+ item.productId +'"><div class="product-wrapper"><div class="product__image" sku="'+ item.productId +'"><img src="'+ (item.imageUrl).replace("-350-303", "-400-600") +'" alt="'+ (item.name) +'"></div><div class="product__info-container"><div class="product__name">'+ (item.name) +'</div><div class="product__info"><div class="product__price">'+ (priceAsCurrency) +'</div><div class="product__management"><a ndx="'+ i +'" class="_remove">-</a> <input type="number" value="'+ (item.quantity) +'" maxlength="2" ndx="'+ i +'" class="_qty" sku="'+ item.productId +'"> <a ndx="'+ i +'" class="_add">+</a></div></div></div><div class="remove"><a class="_removecsm" sku="'+ item.productId +'" ndx="'+ i +'">X</a></div></div></li>';
+			d.append(html)
 		})
 	});
-	(verifyNewsletterOnSession = () =>{
-		if(sessionStorage.getItem("mindNewsletter") === 'true'){
-			$("#formFC").html("<p class='highlight'>E-mail cadastrado com sucesso!</p><small>Você receberá um cupom de desconto em seu e-mail.</small>")
-		}
-	})();
+	var minicartAddQtd = $('.csm-header .csm-minicart a[ndx]_add').on('click', function(e){
+		let index = $(this).attr("ndx"), qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+index+']')[0].value);
+		vtexUpdateItem(index, ++qty);
+	});
+	var minicartRmvQtd = $('.csm-header .csm-minicart a[ndx]_remove').on('click', function(e){
+		let index = $(this).attr("ndx"), qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+index+']')[0].value);
+		vtexUpdateItem(index, --qty);
+	});
 	var addtoBag = $('.js--shelf-buy').on('click', function(e){
 		e.preventDefault(), e.stopPropagation();
 		var sku = $(this).parents('.csm-shelf__product').data('sku'),
@@ -114,6 +132,123 @@ $(document).ready(function(){
 				}, 6200);
 			}), false
 		}, 500);
+	});
+	// Newsletter
+	var isEmailValid = (isEmailValid = (t) =>{
+        return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(t);
+    });
+	var verifyNewsletter = $('#sendFCEmail').on('click', function(e){
+		var i = $("#fcEmail").val();
+		return isEmailValid(i) ? sendNewsletterEmail(e) : $("#fcEmail").css("border", "1px solid #D00D0D"), 
+		$("footer .news-footer .message").html('Preencha o campo abaixo com um e-mail válido'), 
+		$("footer .news-footer .message").effect( "shake" ), false;
+	});
+	var sendNewsletterEmail = (sendNewsletterEmail = (e) =>{
+		var i = {};
+        i.email = e, $.ajax({
+            accept: "application/vnd.vtex.ds.v10+json",
+            contentType: "application/json; charset=utf-8",
+            crossDomain: false,
+            data: JSON.stringify(i),
+            type: "POST",
+            url: "/api/dataentities/PU/documents",
+            success: function(e) {
+                $("#formFC").html("<p class='highlight'>E-mail cadastrado com sucesso!</p><small>Você receberá um cupom de desconto em seu e-mail.</small>"), 
+                setTimeout(function() {
+                    // t("#newsletter-pop").removeClass("slide");
+                }, 5e3), sessionStorage.setItem("mindNewsletter", true);
+            },
+            error: function(t) {}
+		})
+	});
+	var verifyNewsletterOnSession = (verifyNewsletterOnSession = () =>{
+		if(sessionStorage.getItem("mindNewsletter") === 'true'){
+			$("#formFC").html("<p class='highlight'>E-mail cadastrado com sucesso!</p><small>Você receberá um cupom de desconto em seu e-mail.</small>")
+		}
+	})();
+	// Account
+	var getLoginStatus = (getLoginStatus = (e) =>{
+		'use strict';
+	    var s = {};
+	    $.ajax({
+	        "async": true,
+	        "url": "/api/vtexid/pub/authenticated/user",
+	        "method": "GET",
+	        "headers": {
+	            "content-type": "application/json; charset=utf-8"
+	        }
+        }).done(function(e){
+        	if(e != null){
+		        s['logged'] = true;
+		        s['user'] = e.user;
+		        s['userId'] = e.userId;
+		        s['userType'] = e.userType;
+		    }else{
+		    	s.logged = false;
+		    	s['user'] = null;
+		        s['userId'] = null;
+		        s['userType'] = null;
+		    }
+	    });
+	    return s;
+	});
+	// Login Dropdown
+	var changeLoginDropDown = (changeLoginDropDown = () =>{
+		var i = $('.js--logged-in'),
+		o = $('.js--logged-out'),
+		s = getLoginStatus(),
+		j = $('.js--user-name');
+
+		return (s["logged"] == true ? (i.show() && o.hide() && j.text('Olá, Minder!')) : (o.show() && i.hide() && j.text('Entre ou Cadastre-se')));
+	})();
+	// product Page
+	var availableAlert = (function() {
+		try{
+			var t = skuJson.productId;
+	        $.ajax({
+	            url: "/api/catalog_system/pub/products/search/?fq=productId:" + t,
+	            method: "GET",
+	            timeout: 0,
+	            headers: {
+	                "Content-Type": "application/json"
+	            }
+	        }).done(function(t) {
+	            let e = t[0].items[0].sellers[0].commertialOffer.AvailableQuantity, 
+	            b = t[0].brand;
+	            0 < e && e <= 5 && $(".available-alert").html('<p>Corre que só tem <strong>' + e + "</strong> unidades disponíveis!</p>"), 
+	            $(".productedBySeller").html('<p>Produzido e entregue por: <strong>' + b + "</strong></p>");
+	        });
+		}catch(e){
+			console.log(e);
+		}
+    })();
+    var realidadeAl = (function() {
+        var t = navigator.userAgent || navigator.vendor || window.opera, 
+        e = $(".value-field.3D-ios").text(), 
+        i = $(".value-field.3D-android").text(), 
+        o = $(".value-field.3D-ios").text(), 
+        s = $(".value-field.3D-desktop").text();
+
+        "" != o && $("#csm-realidadeAumentada").show(), 
+        "" != s && ($(".productAugmentedRealityBox").show(), 
+        	$(".productAugmentedRealityBox").attr("src", s)), 
+        /android/i.test(t) && ($("#botaoAndroid").attr("href", i), 
+        	$("#botaoAndroid").closest("button").show()), 
+        /iPad|iPhone|iPod/.test(t) && !window.MSStream && ($("#botaoiOS").attr("href", e), 
+        $("#botaoiOS").closest("button").show(), 
+        $(".productAugmentedRealityBox").hide());
+    })();
+    var pdfDowlond = (function() {
+        var t = $(".value-field.pdf-dowload").text();
+        "" != t && ($(".csm-dowload-pdf").show(), $("#csm-pdf-to-download").attr("href", t));
+    })();
+    // Troca a imagem do produto por outra de tamanho maior
+	// É possivel trocar a dimensão no CMS > Configurações > Tipos de Arquivo,
+	// mas afeta todos os sites
+	(changeProductImage = () =>{
+		$("#botaoZoom img").each(function() {
+	    	$(this).attr("src", $(this).attr("src").replace("-350-303", "-400-600"));
+		});
 	});
 
 	// Numeração de resultados de busca
@@ -139,202 +274,7 @@ $(document).ready(function(){
  //            PFTX.modules.gridControl.init(), PFTX.pages.catalog.redesignVitrine(), PFTX.pages.catalog.urlParameter();
  //        };
  //    }
-
-//	minicartMain: function() {
-//		function e(t) {
-//          var c = jQuery.extend({
-//              container: ".csm-minicart__products",
-//              items: ".amount-items",
-//              list: ".product-list",
-//              price_label: "R$ ",
-//              total_price_currency: "",
-//              total_price_container: "",
-//              total_price_label: "",
-//              cart_conclude: null,
-//              remove_btn: !1,
-//              finish_order_btn: ".finish-order-btn",
-//              finish_order_btn_link: "/Site/Carrinho.aspx",
-//              finish_order_btn_text: "Finalizar compra",
-//              empty_cart_message: "Carrinho vazio",
-//              items_text: [ "nenhum item", "", "" ],
-//              hover: ".tpl-cart",
-//              callback: null,
-//              cart_empty_cb: null,
-//              quantity: !0,
-//              total_price_class: ".csm-sub",
-//              total_price_label_class: ".total-priccsm-label",
-//              dropdown: !0,
-//              show_images: !0
-//          }, t), p = {
-//              checkoutURL: "/api/checkout/pub/orderForm/",
-//              temp: null,
-//              total_itens: 0,
-//              total: "0,00",
-//              empty_cart: null,
-//              itens: 0,
-//              data: null,
-//              init: function(t) {
-//                  p.get.cart.update(t);
-//              },
-//              checkoutUpdateURL: function() {
-//                  return p.checkoutURL + p.orderFormId + "/items/update/";
-//              },
-//              get: {
-//                  cart: {
-//                      update: function(t) {
-//                          var e = {
-//                              expectedOrderFormSections: [ "items", "paymentData", "totalizers" ]
-//                          }, t = t ? ($.extend(e, t), p.checkoutUpdateURL()) : p.checkoutURL;
-//                          $.ajax({
-//                              url: t,
-//                              data: JSON.stringify(e),
-//                              dataType: "json",
-//                              contentType: "application/json; charset=utf-8",
-//                              type: "POST",
-//                              success: function(t) {
-//                                  p.total_itens = t.items.length, $(".menu-entrar .item .qty").text(t.items.length), 
-//                                  0 < p.total_itens ? (p.orderFormId = t.orderFormId, p.data = t.items, p.set.cart.items(), 
-//                                  p.total = _.intAsCurrency(t.value), $(".menu-entrar .valor .vl").text(_.intAsCurrency(t.value)), 
-//                                  p.set.cart.total(), c.dropdown && p.mount.cart.dropdown()) : p.set.cart.empty(), 
-//                                  i(p.total_itens);
-//                              }
-//                          });
-//                      },
-//                      text: function() {
-//                          var t = c.items_text.length - 1, e = c.items_text.length - 1 == 2 ? 1 : 0, i = void 0 === c.items_text[t] ? "" : " ", o = void 0 === c.items_text[e] ? "" : " ";
-//                          return 1 < parseInt(p.total_itens) ? p.total_itens + i + c.items_text[t] : 0 == p.total_itens ? c.items_text[0] : p.total_itens + o + c.items_text[e];
-//                      }
-//                  }
-//              },
-//              mount: {
-//                  cart: {
-//                      dropdown: function() {
-//                          var t, e = 0, i = c.list.split(".")[1] || "", o = jQuery("<ul/>").addClass(i);
-//                          for (t in p.data) {
-//                              if ("function" == typeof p.data[t]) break;
-//                              var s = p.data[t].productId, n = jQuery("<li>").addClass("row").addClass("row-" + e).attr("sku", s), r = jQuery("<div>").addClass("col").addClass("col-0"), a = jQuery("<div>").addClass("_qc-img").addClass("_qc-img-" + e).attr("sku", s), l = jQuery("<div>").addClass("_qc-product").addClass("_qc-product-" + e);
-//                              jQuery(l).text(p.data[t].name), jQuery(r).append(a.html('<img src="' + p.data[t].imageUrl.replace("55-55", "300-300") + '" />')), 
-//                              c.show_images && jQuery(r).append(l);
-//                              var d = jQuery("<div>").addClass("col").addClass("col-1"), a = p.data[t].quantity, l = jQuery('<input type="text" value="' + a + '" maxlength="2" />').attr("ndx", e).addClass("_qty").addClass("_qty-" + e).attr("sku", s), a = jQuery("<a>", {
-//                                  ndx: e
-//                              }).addClass("_add").addClass("_add-" + e).text("+"), s = jQuery("<a>", {
-//                                  ndx: e
-//                              }).addClass("_remove").addClass("_removcsm-" + e).text("-");
-//                              jQuery(d).append(s).append(l).append(a);
-//                              s = (p.data[t].sellingPrice / 100).toFixed(2).toString().replace(/\./, ","), l = c.price_label + s, 
-//                              a = jQuery("<div>").addClass("col").addClass("col-2").html(l), s = p.data[t].id, 
-//                              l = jQuery("<a>").addClass("removcsm-link").addClass("removcsm-link-" + e).attr({
-//                                  sku: s,
-//                                  index: e
-//                              }).html("X"), s = jQuery("<div>").addClass("col").addClass("col-3");
-//                              jQuery(s).append(l), jQuery(n).append(r).append(d).append(a).append(s), jQuery(o).append(n), 
-//                              e++;
-//                          }
-//                          jQuery(c.container).html(o), p.set.events(), p.set.cart.conclusion(), p.set.cart.active(), 
-//                          c.show_images;
-//                      }
-//                  }
-//              },
-//              set: {
-//                  cart: {
-//                      items: function() {
-//                          var t = p.get.cart.text();
-//                          jQuery(c.items).html(t);
-//                      },
-//                      total: function() {
-//                          var t = c.total_price_currency + p.total;
-//                          jQuery(c.total_price_container).html(t);
-//                      },
-//                      empty: function() {
-//                          jQuery(c.hover).unbind().removeClass("active").addClass("empty");
-//                          var t = p.get.cart.text();
-//                          p.set.cart.items(t), 0 < jQuery(c.container).length && jQuery(c.container).html(""), 
-//                          "function" == typeof c.cart_empty_cb && c.cart_empty_cb();
-//                      },
-//                      conclusion: function() {
-//                          var t = jQuery("<div/>").addClass("cart_conclude");
-//                          0 < jQuery(c.cart_conclude).length && (t = jQuery(c.cart_conclude));
-//                          var e = c.finish_order_btn.substring(1) || "", e = jQuery("<a/>").addClass(e).attr("href", c.finish_order_btn_link).html(c.finish_order_btn_text);
-//                          jQuery(t).append(e);
-//                          e = c.total_price_currency + p.total;
-//                          $('<div class="csm-finish"><div class="csm-total"><div class="csm-valorTotal">' + e + '</div><div class="csm-actions"><div class="csm-tocart"><a href="/checkout/#/cart">Finalizar compra</a></div></div></div></div>').appendTo("#quickCartDropdown");
-//                      },
-//                      active: function() {
-//                          jQuery(c.hover).removeClass("empty").addClass("available"), "function" == typeof c.callback && c.callback();
-//                      }
-//                  },
-//                  events: function() {
-//                      jQuery(c.hover).hover(function() {
-//                          jQuery(this).addClass("active");
-//                      }, function() {
-//                          jQuery(c.hover).removeClass("active");
-//                      }), jQuery(c.container).find(".removcsm-link").click(function() {
-//                          var t;
-//                          t = $(this).attr("index"), p.init({
-//                              orderItems: [ {
-//                                  index: t,
-//                                  quantity: 0
-//                              } ]
-//                          });
-//                      }), jQuery(c.container).find('._qty:not(".keydown_binding")').addClass("keydown_binding").keydown(function(t) {
-//                          t = t.charCode || t.keyCode || 0;
-//                          return 8 == t || 9 == t || 46 == t || 37 <= t && t <= 40 || 48 <= t && t <= 57 || 96 <= t && t <= 105;
-//                      }), jQuery(c.container).find('._add:not(".active")').addClass("active").click(function() {
-//                          _ndx = jQuery(this).attr("ndx"), _val = parseInt(jQuery("._qty-" + _ndx).val()), 
-//                          _val = 99 <= _val ? 99 : _val + 1, jQuery("._qty-" + _ndx).val(_val).change();
-//                      }), jQuery(c.container).find('._remove:not(".active")').addClass("active").click(function() {
-//                          _ndx = jQuery(this).attr("ndx"), _val = parseInt(jQuery("._qty-" + _ndx).val()), 
-//                          _val = _val <= 1 ? 1 : _val - 1, jQuery("._qty-" + _ndx).val(_val).change();
-//                      }), jQuery(c.container).find('._qty:not(".active")').addClass("active").keyup(function() {
-//                          jQuery(this).val() < 1 ? jQuery(this).val(1) : 99 < jQuery(this).val() && jQuery(this).val(99);
-//                      }).change(function() {
-//                          var t, e;
-//                          t = jQuery(this).attr("ndx"), e = jQuery(this).val(), jQuery(c.container).find("._qty,._add,._remove").removeClass("active").removeClass("keydown_binding"), 
-//                          jQuery(c.container).find("._qty").attr("readonly", !0), p.init({
-//                              orderItems: [ {
-//                                  index: t,
-//                                  quantity: e
-//                              } ]
-//                          });
-//                      });
-//                  }
-//              },
-//              refresh: function() {
-//                  p.init();
-//              }
-//          };
-//          return p.init(), {
-//              refresh: p.refresh
-//          };
-//      }
-//      function i(t) {
-//          0 < t ? ($(".csm-group-cart").addClass("csm-active"), $(".amount-items-em").addClass("amount-items-action")) : $(".csm-group-cart").removeClass("csm-active");
-//      }
-//      jQuery.vtex_quick_cart = function(t) {
-//          return new e(t);
-//      }, jQuery.vtex_quick_cart({
-//          items_text: [ '<em class="amount-items-em">0</em>', "", "" ],
-//          callback: function() {
-//              vtexjs.checkout.getOrderForm().done(function(t) {
-//                  i(t.items[0].quantity);
-//              });
-//          }
-//      });
-//  }
-	// Troca a imagem do produto por outra de tamanho maior
-	// É possivel trocar a dimensão no CMS > Configurações > Tipos de Arquivo,
-	// mas afeta todos os sites
-	(changeProductImage = () =>{
-		$("#botaoZoom img").each(function() {
-	    	$(this).attr("src", $(this).attr("src").replace("-350-303", "-400-600"));
-		});
-	})
-	(getOrderFrom = () =>{
-		var e = this;
-        vtexjs.checkout.getOrderForm().done(function(t) {
-            e.orderForm = t;
-        });
-	})
+ 	// Footer
 	$('footer.newfooter #support-extended').change(function(){
 		if(!$('#support-extended')[0].checked){
 			$($('.support-wrapper .support-guide svg line.cls-2')[0]).css('display', 'block');
