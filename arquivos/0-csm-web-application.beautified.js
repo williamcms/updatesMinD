@@ -1577,7 +1577,7 @@ $(document).on("ready", function() {
             }
         }).done(function(t) {
             var e = t[0].items[0].sellers[0].commertialOffer.AvailableQuantity, t = t[0].brand;
-            0 < e && e <= 5 && $(".price-quanty").after('<div class="available-alert"><p>Corre que sÃ³ tem <strong>' + e + "</strong> unidades disponÃ­veis!</p></div>"), 
+            0 < e && e <= 5 && $(".price-quanty").after('<div class="available-alert"><p>Corre que só tem <strong>' + e + "</strong> unidades disponíveis!</p></div>"), 
             $(".product-aside-top").after('<div class="available-alert"><p>Produzido e entregue por: <strong>' + t + "</strong></p></div>");
         });
     },
