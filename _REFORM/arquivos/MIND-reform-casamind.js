@@ -156,7 +156,29 @@ $(document).ready(function(){
 			}).done(function(e){
 				$.each(e.first().items, function(i){
 					let avaliable = this.sellers.first().commertialOffer.AvailableQuantity,
-					def = prevAvaliable = (i == 0 && avaliable > 0 ? ' active' : (i > 0 && avaliable > 0 && prevAvaliable == null ? ' active' : ''));
+					def = prevAvaliable = (i == 0 && avaliable > 0 ? ' active' : (i > 0 && avaliable > 0 && prevAvaliable == null ? ' active' : '')),
+					variations = {};
+					$.each(e.first().items.sort(), function(x){
+					    let [first, ...rest] = this.name.split(' '),
+					    second = (rest.join(' ') == '' ? null : rest.join(' '));
+					    variations[x] = {'var' : {first, second}}
+					})
+					if(variations[i].var.second != null){
+						if(i > 0 ? variations[i].var.first != variations[i-1].var.first : false || i == 0){
+							console.log('<optgroup label="'+ variations[i].var.first +'">')
+							
+						}
+						console.log(variations[i].var.second)
+						//Verificar logica, há erros
+						if((i > 0 ? variations[i].var.first == variations[i-1].var.first : false) && 
+							(i < Object.keys(variations).length && i > 0 ? variations[i].var.first != variations[i+1].var.first : '') || 
+							i == Object.keys(variations).length - 1){
+							console.log('</optgroup>');
+							
+						}
+					}else{
+						console.log('item inteiro')
+					}
 					f.append('<button class="sku-item'+ def +'" sku-id="'+ this.itemId +'" cart-ref="'+ this.sellers.first().addToCartLink +'" '+ (avaliable <= 0 ? 'disabled' : '') +'>'+this.name+'</button>');
 				});
 				if(bExists.length != 0){
@@ -176,6 +198,46 @@ $(document).ready(function(){
 			bwrapper.html('<a target="_top" class="buy-button buy-button-ref" href="'+ $(this).attr('cart-ref') +'" style="display:block">Comprar</a>')
 		}
 	});
+		var availableAlert = (function() {
+		try{
+			var t = skuJson.productId;
+	        $.ajax({
+	            url: "/api/catalog_system/pub/products/search/?fq=productId:" + t,
+	            method: "GET",
+	            timeout: 0,
+	            headers: {
+	                "Content-Type": "application/json"
+	            }
+	        }).done(function(t) {
+	            let e = t[0].items[0].sellers[0].commertialOffer.AvailableQuantity, 
+	            b = t[0].brand;
+	            0 < e && e <= 5 && $(".available-alert").html('<p>Corre que só tem <strong>' + e + "</strong> unidades disponíveis!</p>"), 
+	            $(".productedBySeller").html('<p>Produzido e entregue por: <strong>' + b + "</strong></p>");
+	        });
+		}catch(e){
+			console.log(e);
+		}
+    })();
+    var realidadeAl = (function() {
+        var t = navigator.userAgent || navigator.vendor || window.opera, 
+        e = $(".value-field.3D-ios").text(), 
+        i = $(".value-field.3D-android").text(), 
+        o = $(".value-field.3D-ios").text(), 
+        s = $(".value-field.3D-desktop").text();
+
+        "" != o && $("#csm-realidadeAumentada").show(), 
+        "" != s && ($(".productAugmentedRealityBox").show(), 
+        	$(".productAugmentedRealityBox").attr("src", s)), 
+        /android/i.test(t) && ($("#botaoAndroid").attr("href", i), 
+        	$("#botaoAndroid").closest("button").show()), 
+        /iPad|iPhone|iPod/.test(t) && !window.MSStream && ($("#botaoiOS").attr("href", e), 
+        $("#botaoiOS").closest("button").show(), 
+        $(".productAugmentedRealityBox").hide());
+    })();
+    var pdfDowlond = (function() {
+        var t = $(".value-field.pdf-dowload").text();
+        "" != t && ($(".csm-dowload-pdf").show(), $("#csm-pdf-to-download").attr("href", t));
+    })();
 	// Newsletter
 	var isEmailValid = (isEmailValid = (t) =>{
         return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(t);
@@ -244,47 +306,6 @@ $(document).ready(function(){
 
 		return (s["logged"] == true ? (i.show() && o.hide() && j.text('Olá, Minder!')) : (o.show() && i.hide() && j.text('Entre ou Cadastre-se')));
 	})();
-	// product Page
-	var availableAlert = (function() {
-		try{
-			var t = skuJson.productId;
-	        $.ajax({
-	            url: "/api/catalog_system/pub/products/search/?fq=productId:" + t,
-	            method: "GET",
-	            timeout: 0,
-	            headers: {
-	                "Content-Type": "application/json"
-	            }
-	        }).done(function(t) {
-	            let e = t[0].items[0].sellers[0].commertialOffer.AvailableQuantity, 
-	            b = t[0].brand;
-	            0 < e && e <= 5 && $(".available-alert").html('<p>Corre que só tem <strong>' + e + "</strong> unidades disponíveis!</p>"), 
-	            $(".productedBySeller").html('<p>Produzido e entregue por: <strong>' + b + "</strong></p>");
-	        });
-		}catch(e){
-			console.log(e);
-		}
-    })();
-    var realidadeAl = (function() {
-        var t = navigator.userAgent || navigator.vendor || window.opera, 
-        e = $(".value-field.3D-ios").text(), 
-        i = $(".value-field.3D-android").text(), 
-        o = $(".value-field.3D-ios").text(), 
-        s = $(".value-field.3D-desktop").text();
-
-        "" != o && $("#csm-realidadeAumentada").show(), 
-        "" != s && ($(".productAugmentedRealityBox").show(), 
-        	$(".productAugmentedRealityBox").attr("src", s)), 
-        /android/i.test(t) && ($("#botaoAndroid").attr("href", i), 
-        	$("#botaoAndroid").closest("button").show()), 
-        /iPad|iPhone|iPod/.test(t) && !window.MSStream && ($("#botaoiOS").attr("href", e), 
-        $("#botaoiOS").closest("button").show(), 
-        $(".productAugmentedRealityBox").hide());
-    })();
-    var pdfDowlond = (function() {
-        var t = $(".value-field.pdf-dowload").text();
-        "" != t && ($(".csm-dowload-pdf").show(), $("#csm-pdf-to-download").attr("href", t));
-    })();
     // Troca a imagem do produto por outra de tamanho maior
 	// É possivel trocar a dimensão no CMS > Configurações > Tipos de Arquivo,
 	// mas afeta todos os sites
