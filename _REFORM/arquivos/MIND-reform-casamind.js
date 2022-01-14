@@ -156,30 +156,34 @@ $(document).ready(function(){
 			}).done(function(e){
 				$.each(e.first().items, function(i){
 					let avaliable = this.sellers.first().commertialOffer.AvailableQuantity,
-					def = prevAvaliable = (i == 0 && avaliable > 0 ? ' active' : (i > 0 && avaliable > 0 && prevAvaliable == null ? ' active' : '')),
+					def = prevAvaliable = (i == 0 && avaliable > 0 ? ' selected' : (i > 0 && avaliable > 0 && prevAvaliable == null ? ' selected' : '')),
 					variations = {};
 					$.each(e.first().items.sort(), function(x){
 					    let [first, ...rest] = this.name.split(' '),
 					    second = (rest.join(' ') == '' ? null : rest.join(' '));
 					    variations[x] = {'var' : {first, second}}
 					})
+
 					if(variations[i].var.second != null){
 						if(i > 0 ? variations[i].var.first != variations[i-1].var.first : false || i == 0){
-							console.log('<optgroup label="'+ variations[i].var.first +'">')
+							f.append('<optgroup label="'+ variations[i].var.first +'">');
 							
 						}
-						console.log(variations[i].var.second)
-						//Verificar logica, há erros
-						if((i > 0 ? variations[i].var.first == variations[i-1].var.first : false) && 
-							(i < Object.keys(variations).length && i > 0 ? variations[i].var.first != variations[i+1].var.first : '') || 
+
+						f.find('optgroup[label='+ variations[i].var.first +']').eq(0).append('<option class="sku-item" sku-id="'+ this.itemId +'" sku-price="'+ this.sellers.first().commertialOffer.price +'" sku-qty="'+ this.sellers.first().commertialOffer.AvailableQuantity +'" sku-images="'+ jQuery.map(this.images, function(n, i){ return n.imageUrl; }) +'" cart-ref="'+ this.sellers.first().addToCartLink +'" '+ (avaliable <= 0 ? 'disabled' : '') + def +'>'+variations[i].var.second+'</option>');
+
+						if((i > 0 ? true : false) && 
+							(i < Object.keys(variations).length - 1 && i > 0 ? variations[i].var.first != variations[i+1].var.first : '') || 
 							i == Object.keys(variations).length - 1){
-							console.log('</optgroup>');
+							f.append('</optgroup>');
 							
 						}
 					}else{
-						console.log('item inteiro')
+						f.append('<option class="sku-item" sku-id="'+ this.itemId +'" sku-price="'+ this.sellers.first().commertialOffer.price +'" sku-qty="'+ this.sellers.first().commertialOffer.AvailableQuantity +'" sku-images="'+ jQuery.map(this.images, function(n, i){ return n.imageUrl; }) +'" cart-ref="'+ this.sellers.first().addToCartLink +'" '+ (avaliable <= 0 ? 'disabled' : '') + def +'>'+variations[i].var.first+'</option>');
 					}
-					f.append('<button class="sku-item'+ def +'" sku-id="'+ this.itemId +'" cart-ref="'+ this.sellers.first().addToCartLink +'" '+ (avaliable <= 0 ? 'disabled' : '') +'>'+this.name+'</button>');
+					if(i == e.first().items.length - 1){
+						f.prepend('<option '+def+'>Nenhum selecionado</option>');
+					}
 				});
 				if(bExists.length != 0){
 					bExists.get(0).href = e.first().items.first().sellers.first().addToCartLink;
