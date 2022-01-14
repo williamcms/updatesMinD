@@ -914,81 +914,6 @@ function _defineProperty(t, e, i) {
             t.preventDefault(), e.closeModal();
         });
     }
-}), APP.component.Popup = ClassAvanti.extend({
-    init: function() {
-        this.setup(), this.start(), this.bind();
-    },
-    setup: function() {
-        this.popupModal = new APP.component.Modal({
-            $modal: $(".popup-promocao"),
-            $quantityInput: $(".quantity-input, .quantitySelector input"),
-            $buyButton: $(".buy-button.buy-button-ref"),
-            width: "280px",
-            height: "auto"
-        });
-        var t = this.popupModal.options.$modal;
-        this.$slickSlider = t.find(".popup-promocao__products"), this.productQuantity = this.getProductQuantity();
-    },
-    getProductQuantity: function() {
-        return this.popupModal.options.$modal.find(".popup-promocao__product").length;
-    },
-    start: function() {
-        this.setupSingleProduct();
-    },
-    setupSingleProduct: function() {
-        if (1 < this.productQuantity) return !1;
-        var t = this.popupModal.options.$modal, e = t.find(".popup-promocao__product"), t = t.find(".popup-promocao__button--accept"), e = e.data("sku");
-        t.html("QUERO!!"), this.buildBuyButton(e);
-    },
-    triggerModal: function() {
-        var t = this;
-        this.popupModal.openModal(function() {
-            1 < t.productQuantity && t.startSlickProducts();
-        });
-    },
-    startSlickProducts: function() {
-        this.$slickSlider.slick({
-            autoplay: !1,
-            dots: !0,
-            arrows: !0,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        });
-    },
-    buildBuyButton: function(t) {
-        var e = this.popupModal.options, i = e.$modal, o = e.$quantityInput, e = e.$buyButton, o = parseInt(o.val()), o = e.attr("href").replace(/qty=\d+/, "qty=" + o);
-        o += "&sku=" + t + "&qty=1&seller=1&redirect=true&sc=3", i.find(".popup-promocao__button--accept").attr("href", o);
-    },
-    bind: function() {
-        this.bindCloseModal(), this.bindSelectProduct(), this.bindBuyButton();
-    },
-    bindCloseModal: function() {
-        var e = this;
-        this.popupModal.options.$modal.find(".modal-header__close").on("click", function(t) {
-            t.preventDefault(), e.popupModal.closeModal(), window.location.href = $(".buy-button.buy-button-ref").attr("href");
-        });
-    },
-    bindSelectProduct: function() {
-        var o = this;
-        if (this.productQuantity < 2) return !1;
-        var s = this.popupModal.options.$modal, n = s.find(".popup-promocao__product");
-        n.find("> .popup-promocao__product-image").on("click", function(t) {
-            t.preventDefault();
-            var e = $(t.currentTarget).parent(".popup-promocao__product"), i = s.find(".popup-promocao__button--accept"), t = e.data("sku");
-            n.removeClass("selected"), e.addClass("selected"), i.html("QUERO!!"), o.buildBuyButton(t);
-        });
-    },
-    bindBuyButton: function() {
-        var i = this.popupModal.options.$modal.find(".popup-promocao__button--accept");
-        i.on("click", function(t) {
-            t.preventDefault();
-            var e = i.attr("href");
-            if ("#" === e) return !1;
-            i.attr("href", "").html('<i class="fa fa-check"></i>'), setTimeout(function() {
-                window.location.href = e;
-            }, 1e3);
-        });
-    }
 }), APP.component.Select = ClassAvanti.extend({
     init: function(t) {
         this.options = t, this.options.className || (this.options.className = "custom-select"), 
@@ -1506,7 +1431,7 @@ $(document).on("ready", function() {
         this.setup(), this.start(), this.bind();
     },
     setup: function() {
-        APP.i.Popup = new APP.component.Popup(), this.orderForm = null;
+        this.orderForm = null;
     },
     start: function() {
         this.DescktopImg(), this.FixerBotoom(), this.getOrderForm(), this.availableAlert(), 
@@ -1558,7 +1483,7 @@ $(document).on("ready", function() {
     bindBuyButton: function() {
         var e = this;
         $("body").on("click", ".buy-button, .btn-buy-prod", function(t) {
-            return e.activePromotion() ? (console.log("ativo"), APP.i.Popup.triggerModal()) : (/qty=0/.test($(".buy-button.buy-button-ref").attr("href")) && $(".buy-button.buy-button-ref").replace(/qty=\d+/, "qty=1"), 
+            return e.activePromotion() ? (console.log("ativo")) : (/qty=0/.test($(".buy-button.buy-button-ref").attr("href")) && $(".buy-button.buy-button-ref").replace(/qty=\d+/, "qty=1"), 
             window.location.href = $(".buy-button.buy-button-ref").attr("href")), !1;
         });
     },
@@ -1577,7 +1502,7 @@ $(document).on("ready", function() {
             }
         }).done(function(t) {
             var e = t[0].items[0].sellers[0].commertialOffer.AvailableQuantity, t = t[0].brand;
-            0 < e && e <= 5 && $(".price-quanty").after('<div class="available-alert"><p>Corre que sÃ³ tem <strong>' + e + "</strong> unidades disponÃ­veis!</p></div>"), 
+            0 < e && e <= 5 && $(".price-quanty").after('<div class="available-alert"><p>Corre que só tem <strong>' + e + "</strong> unidades disponíveis!</p></div>"), 
             $(".product-aside-top").after('<div class="available-alert"><p>Produzido e entregue por: <strong>' + t + "</strong></p></div>");
         });
     },
