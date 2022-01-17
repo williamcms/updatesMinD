@@ -3569,7 +3569,8 @@ html body #main .csm-product .csm-container .csm-row .csm-product__info .price-q
         margin: 0 0 0 10px
     }
 
-    html body #main .csm-product .csm-container .csm-row .csm-product__info .available-alert {
+    html body #main .csm-product .csm-container .csm-row .csm-product__info .available-alert,
+    html body #main .csm-product .csm-container .csm-row .csm-product__info .productBySeller {
         margin: 10px 0
     }
 }
@@ -3620,7 +3621,8 @@ html body #main .csm-product .csm-container .csm-row .csm-product__info .price-q
     color: #e4e3e3
 }
 
-html body #main .csm-product .csm-container .csm-row .csm-product__info .available-alert {
+html body #main .csm-product .csm-container .csm-row .csm-product__info .available-alert,
+html body #main .csm-product .csm-container .csm-row .csm-product__info .productBySeller {
     text-align: center;
     color: #e91e63;
     font-size: 16px;
