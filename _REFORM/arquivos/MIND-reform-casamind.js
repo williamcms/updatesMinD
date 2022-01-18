@@ -156,7 +156,7 @@ $(document).ready(function(){
 			}).done(function(e){
 				//Exibe o select
 				f.slideDown()
-				
+
 				$.each(e.first().items, function(i){
 					let avaliable = this.sellers.first().commertialOffer.AvailableQuantity,
 					variations = {},
@@ -271,7 +271,6 @@ $(document).ready(function(){
 			}
 
 			if(item.data('sku-images').length > 0){
-				console.log($('#'+ item.attr('sku-id')).data('sku-images'));
 				let sku_images = $('#'+ item.attr('sku-id')).data('sku-images'),
 				imagesWrapper = $('.csm-product .csm-product__images .product-images #show ul.thumbs');
 				//Limpas imagens pre-existentes

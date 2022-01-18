@@ -137,7 +137,6 @@ $(document).ready(function() {
 			}
 
 			if(item.data('sku-images').length > 0){
-				console.log($('#'+ item.attr('sku-id')).data('sku-images'));
 				let sku_images = $('#'+ item.attr('sku-id')).data('sku-images'),
 				imagesWrapper = $('.csm-product .csm-product__images .product-images #show ul.thumbs');
 				//Limpas imagens pre-existentes
