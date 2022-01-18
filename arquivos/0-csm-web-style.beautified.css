@@ -3311,6 +3311,11 @@ html body #main .csm-product .csm-container .csm-row .csm-product__images .csm-f
     margin-top: 18px
 }
 
+html body #main .csm-product .csm-container .csm-row .csm-product__images .product-images{
+    min-height: 30rem;
+    height: auto;
+}
+
 html body #main .csm-product .csm-container .csm-row .csm-product__images .product-images .apresentacao #show {
     max-width: 700px;
     padding: 15px 5px;
