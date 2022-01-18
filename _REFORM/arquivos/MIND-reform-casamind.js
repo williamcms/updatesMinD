@@ -154,6 +154,9 @@ $(document).ready(function(){
 				type: 'GET',
 				url: '/api/catalog_system/pub/products/search/?fq=productId:' + pid
 			}).done(function(e){
+				//Exibe o select
+				f.slideDown()
+				
 				$.each(e.first().items, function(i){
 					let avaliable = this.sellers.first().commertialOffer.AvailableQuantity,
 					variations = {},

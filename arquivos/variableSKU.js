@@ -5,7 +5,7 @@ $(document).ready(function() {
 			return this.find(e => true);
 		}
 	});
-		var variableSKU = (variableSKU = () =>{
+	var variableSKU = (variableSKU = () =>{
 		var arr = $('main .csm-product #___rc-p-sku-ids').get(0).value.split(','),
 		pid = $('main .csm-product #___rc-p-id').get(0).value,
 		f = $('main .csm-product .product-sku-selection').eq(0),
@@ -20,6 +20,9 @@ $(document).ready(function() {
 				type: 'GET',
 				url: '/api/catalog_system/pub/products/search/?fq=productId:' + pid
 			}).done(function(e){
+				//Exibe o select
+				f.slideDown()
+				
 				$.each(e.first().items, function(i){
 					let avaliable = this.sellers.first().commertialOffer.AvailableQuantity,
 					variations = {},
