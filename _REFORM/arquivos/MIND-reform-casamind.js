@@ -1,3 +1,7 @@
+/*
+ *	Código por William Di Biasi Bogik
+ *
+ */
 $(document).ready(function(){
 	"use strict";
 	//Addons

@@ -1,0 +1,33 @@
+{
+	"name" : "MinD+",
+	"fatured" : "5",
+	"sellers" : {
+		"Adot" : {
+			"name" : "Adot",
+			"logo" : "",
+			"bannerD" : "",
+			"bannerM" : "",
+			"pageName" : "",
+			"pageTitle" : "",
+			"pageDescription" : ""
+		},
+		"Alma" : {
+			"name" : "Alma",
+			"logo" : "",
+			"bannerD" : "",
+			"bannerM" : "",
+			"pageName" : "",
+			"pageTitle" : "",
+			"pageDescription" : ""
+		},
+		"Alya" : {
+			"name" : "Alya",
+			"logo" : "",
+			"bannerD" : "",
+			"bannerM" : "",
+			"pageName" : "",
+			"pageTitle" : "",
+			"pageDescription" : ""
+		}
+	}
+}
