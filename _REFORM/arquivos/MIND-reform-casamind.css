@@ -1354,6 +1354,7 @@ blockquote::before{
 .csm-header #popup-adicionando .conteudo-adicionando #barratempo.is--active{
     width: 100%
 }
+/* Página de produto */
 /* Oculta alguns campos de informação na página de produto */
 tr .\33 D-desktop,
 tr .\33 D-ios,
@@ -1363,7 +1364,9 @@ tr .productAugmentedRealityBox,
 tr .pdf-dowload{
     display: none;
 }
-
+main .csm-product select.product-sku-selection{
+    display: none;
+}
 /* Newsletter */
 footer .news-footer {
     background-color: #141414;
