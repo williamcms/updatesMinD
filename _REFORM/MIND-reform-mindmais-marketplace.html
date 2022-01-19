@@ -1,0 +1,975 @@
+<!-- Remover head -->
+<head>
+<!-- Default -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="cleartype" content="on" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+<!-- Icons -->
+<link rel='shortcut icon' type='image/x-icon' href='https://imaginarium.vteximg.com.br/arquivos/mind-favicon.ico'/>
+
+<!-- Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,700|Lato:400,700,400italic,900|Quicksand:400,300,700' rel='stylesheet' type='text/css' />
+<link rel="preload" href="https://lojamindesigns.vteximg.com.br/arquivos/Helvetica.ttf.css" as="font" type="font/ttf">
+<link rel="preload" href="https://lojamindesigns.vteximg.com.br/arquivos/Didot-HTF-M64-Medium.ttf.css" as="font" type="font/ttf">
+
+<!-- Styles -->
+<link rel="stylesheet" type="text/css" href="./arquivos/MIND-reform-casamind.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<!-- Scripts -->
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="./arquivos/modernizr.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="./arquivos/MIND-reform-casamind.js"></script>
+<script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<!-- Remover head -->
+
+<header class="csm-header" id="csm-header">
+  <div class="csm-wrapper">
+    <div class="csm-get-login csm-hide">
+      <vtex.cmc:welcomeMessage />
+    </div>
+    <div class="csm-benefits">
+      <div class="csm-center-benefits">
+        
+        <div class="csm-left">
+          <ul>
+            <li>
+              <a href="/giftlist" role="button" tabindex="0">Lista de presentes</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="csm-center">
+          <ul>
+            <li>
+              <span>
+                Frete grátis nas compras de produtos vendidos pela Casa MinD a partir de R$ 300,00 para Sul, Sudeste e Centro-oeste!
+              </span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="csm-right">
+          <ul>
+            <li>
+              <a href="/vale-presente" role="button" tabindex="0">Vale Presente</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <div class="csm-middle">
+      <div class="csm-center">
+        <div class="csm-mobile">
+          <button class="js--open-menu" role="menu" aria-label="Abrir menu" aria-controls="csm-navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="csm-search">
+          <vtex.cmc:fullTextSearchBox />
+          <button class="csm-submit js--search-submit"></button>
+          <div class="csm-search__products" style="display: none;">
+            <div class="csm-vitrine">
+              <div class="csm-products-list"></div>
+            </div>
+            <div class="csm-search__products--bottom">
+              <p>Os resultados para <strong class="js--search-therm"></strong>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="csm-logo">
+          <a href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574.79 297.31">
+              <defs>
+                <style>
+                  .cls-3 {
+                    fill: #1d1d1b
+                  }
+                </style>
+              </defs>
+              <g style="isolation:isolate">
+                <g style="mix-blend-mode:multiply" opacity=".95" id="Layer_1" data-name="Layer 1">
+                  <path class="cls-3" d="M136.7 73.47c-17.8 0-32.28 14.77-32.28 32.92v199.22c0 18.15 14.48 32.91 32.28 32.91h478.6c17.8 0 32.28-14.76 32.28-32.91V106.39c0-18.15-14.48-32.92-32.28-32.92zm478.6 281.18H136.7c-26.52 0-48.1-22-48.1-49V106.39c0-27 21.58-49 48.1-49h478.6c26.52 0 48.1 22 48.1 49v199.22c0 27-21.58 49-48.1 49" transform="translate(-88.6 -57.35)" />
+                  <path class="cls-3" d="M322.76 128.56a14.12 14.12 0 0 1 14 14 14 14 0 0 1-14 13.83 13.8 13.8 0 0 1-13.84-13.83 14 14 0 0 1 13.84-14m12.83 55.26v92a12.54 12.54 0 0 1-12.75 12.73 12.67 12.67 0 0 1-12.73-12.73v-92a12.59 12.59 0 0 1 12.73-13c7.32 0 12.75 5.43 12.75 13m125.19 35.87v56.39a12.37 12.37 0 0 1-12.26 12.5 12.74 12.74 0 0 1-12.52-12.5v-56.39c0-13.22-11.09-23.83-24.55-23.83a23.56 23.56 0 0 0-23.58 23.83v56.39a4.64 4.64 0 0 1-.48 2.37 12.9 12.9 0 0 1-12.5 10.13 12.42 12.42 0 0 1-12.51-12.5v-93a12.43 12.43 0 0 1 12.51-12.51 12.74 12.74 0 0 1 11.56 7.31 47 47 0 0 1 25-7.31 49.38 49.38 0 0 1 49.32 49.08M283.29 136.4v139.21a13.3 13.3 0 0 1-13.21 13 12.94 12.94 0 0 1-13-13v-99.34l-34 47.19a12.86 12.86 0 0 1-10.61 5.43H212a13.3 13.3 0 0 1-10.86-5.43l-33.74-47.19v99.34a13.1 13.1 0 0 1-26.19 0V136.4a13.1 13.1 0 0 1 13-13h.71a12.79 12.79 0 0 1 10.38 5.42l47 65.12 47-65.12a12.91 12.91 0 0 1 10.62-5.42h.24c7.07.23 13.21 5.89 13.21 13m230.42 126h14.63a56.4 56.4 0 0 0 0-112.79h-14.63zm-26.19 13.21V136.4a12.8 12.8 0 0 1 13-13h27.85a82.43 82.43 0 0 1 82.34 82.36c0 45.78-36.8 82.81-82.34 82.81h-27.88a12.93 12.93 0 0 1-13-13" transform="translate(-88.6 -57.35)" />
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div class="csm-user">
+          <ul>
+            <li class="instagram">
+              <a href="https://www.instagram.com/casamindbr/" class="inline-middle" title="Instagram" target="_blank" rel="noopener noreferrer">
+              	<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31.16">
+	                <defs>
+	                    <style>
+	                        .instacls-1 {
+	                            fill: transparent;
+	                        }
+
+	                        .instacls-2 {
+	                            fill: none;
+	                            stroke-linecap: round;
+	                            stroke-linejoin: round;
+	                        }
+	                    </style>
+	                </defs>
+	                <rect class="instacls-1" x="-4220.66" y="-4066.41" width="9237" height="5495" />
+	                <ellipse class="instacls-2" cx="15.5" cy="15.58" rx="15" ry="15.08" />
+	                <path class="instacls-2" d="M21.36,24.38H9.64a2.9,2.9,0,0,1-2.89-2.89V9.67A2.9,2.9,0,0,1,9.64,6.78H21.27a3,3,0,0,1,3,3V21.49A2.9,2.9,0,0,1,21.36,24.38Z" />
+	                <ellipse class="instacls-2" cx="15.5" cy="15.58" rx="4.25" ry="4.27" />
+	                <circle cx="20.75" cy="10.3" r="0.63" />
+	            </svg>
+              </a>
+            </li>
+            <li class="facebook">
+              <a href="https://www.facebook.com/casamind" class="inline-middle" title="Facebook" target="_blank" rel="noopener noreferrer">
+              	<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31.16">
+	                <defs>
+	                    <style>
+	                        .fbcls-1 {
+	                            fill: transparent;
+	                        }
+
+	                        .fbcls-2 {
+	                            fill: none;
+	                            stroke-linecap: round;
+	                            stroke-linejoin: round;
+	                        }
+	                    </style>
+	                </defs>
+	                <rect class="fbcls-1" x="-4264" y="-4066.41" width="9237" height="5495" />
+	                <ellipse class="fbcls-2" cx="15.5" cy="15.58" rx="15" ry="15.08" />
+	                <path class="fbcls-2" d="M14.75,25.38V9.3c0-2,0-2,2-2h3" />
+	                <line class="fbcls-2" x1="11.25" y1="13.82" x2="18.5" y2="13.82" />
+	            </svg>
+              </a>
+            </li>
+            <li class="pinterest">
+              <a href="https://br.pinterest.com/casamind/_shop/" target="_blank">
+                <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31.16">
+                    <defs>
+                        <style>
+                            .pincls-1 {
+                                fill: transparent;
+                            }
+
+                            .pincls-2 {
+                                fill: none;
+                                stroke: #000;
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                            }
+                        </style>
+                    </defs>
+                    <rect class="pincls-1" x="-4307.33" y="-4066.41" width="9237" height="5495" />
+                    <ellipse class="pincls-2" cx="15.5" cy="15.58" rx="15" ry="15.08" />
+                    <path class="pincls-2" d="M12.5,23.12c1.5-7.54,1.45-7.73,2-10.55.3-1.57-1.36-1.51-1.5,0-.08.92.5,7,4.5,6.53,3-.38,6-5.82,3-9.55a6.82,6.82,0,0,0-9-1c-2.83,2-2.5,7-.5,7.54" />
+                </svg>
+              </a>
+            </li>
+            <li class="csm-account">
+              <button id="login">
+                <div class="desktop-view">
+                  <span>
+                    <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M240 0C107.45 0 0 107.45 0 240s107.45 240 240 240c7.23 0 14.43-.32 21.6-.97a239.7 239.7 0 0 0 19.83-2.65l2.52-.45c121.86-22.74 206.35-134.55 194.96-258C467.5 94.5 363.97.03 240 0zm-19.28 463.15h-.57c-6.22-.55-12.4-1.38-18.52-2.45l-1.04-.16a223.1 223.1 0 0 1-17.77-3.95l-1.42-.37a223.24 223.24 0 0 1-16.95-5.35l-1.74-.6c-5.46-2.01-10.83-4.26-16.12-6.7l-1.97-.88c-5.18-2.4-10.26-5.1-15.25-7.95l-2.11-1.19c-4.9-2.86-9.7-5.93-14.4-9.18-.72-.5-1.43-.97-2.14-1.47a224.99 224.99 0 0 1-13.51-10.4L96 411.45V344a88.1 88.1 0 0 1 88-88h112a88.1 88.1 0 0 1 88 88v67.46l-1.06.88a217.44 217.44 0 0 1-13.78 10.6c-.62.44-1.26.86-1.88 1.29-4.76 3.3-9.63 6.41-14.62 9.34-.63.36-1.27.7-1.89 1.06-5.06 2.88-10.2 5.6-15.45 8.05-.6.28-1.2.54-1.82.8a220.52 220.52 0 0 1-16.24 6.74c-.55.2-1.1.38-1.6.57-5.6 2.01-11.28 3.83-17.03 5.39l-1.38.34a225.35 225.35 0 0 1-17.8 3.96l-1.02.16a222.58 222.58 0 0 1-18.54 2.46h-.57a224.28 224.28 0 0 1-38.6.05zM400 396.63V344c-.07-57.41-46.59-103.93-104-104H184c-57.41.07-103.93 46.59-104 104v52.62c-86.16-87.94-85.2-228.94 2.15-315.7 87.35-86.76 228.35-86.76 315.7 0s88.31 227.76 2.15 315.7zm0 0" />
+                      <path d="M240 64a80 80 0 1 0 80 80 80.08 80.08 0 0 0-80-80zm0 144a64 64 0 1 1 64-64 64.07 64.07 0 0 1-64 64zm0 0" />
+                    </svg>
+                  </span>
+                  <strong class="js--user-name">Entre ou Cadastre-se</strong>
+                </div>
+                <div class="mobile-view">
+                  <span>
+                    <a href="/account" class="js--login">
+                      <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M240 0C107.45 0 0 107.45 0 240s107.45 240 240 240c7.23 0 14.43-.32 21.6-.97a239.7 239.7 0 0 0 19.83-2.65l2.52-.45c121.86-22.74 206.35-134.55 194.96-258C467.5 94.5 363.97.03 240 0zm-19.28 463.15h-.57c-6.22-.55-12.4-1.38-18.52-2.45l-1.04-.16a223.1 223.1 0 0 1-17.77-3.95l-1.42-.37a223.24 223.24 0 0 1-16.95-5.35l-1.74-.6c-5.46-2.01-10.83-4.26-16.12-6.7l-1.97-.88c-5.18-2.4-10.26-5.1-15.25-7.95l-2.11-1.19c-4.9-2.86-9.7-5.93-14.4-9.18-.72-.5-1.43-.97-2.14-1.47a224.99 224.99 0 0 1-13.51-10.4L96 411.45V344a88.1 88.1 0 0 1 88-88h112a88.1 88.1 0 0 1 88 88v67.46l-1.06.88a217.44 217.44 0 0 1-13.78 10.6c-.62.44-1.26.86-1.88 1.29-4.76 3.3-9.63 6.41-14.62 9.34-.63.36-1.27.7-1.89 1.06-5.06 2.88-10.2 5.6-15.45 8.05-.6.28-1.2.54-1.82.8a220.52 220.52 0 0 1-16.24 6.74c-.55.2-1.1.38-1.6.57-5.6 2.01-11.28 3.83-17.03 5.39l-1.38.34a225.35 225.35 0 0 1-17.8 3.96l-1.02.16a222.58 222.58 0 0 1-18.54 2.46h-.57a224.28 224.28 0 0 1-38.6.05zM400 396.63V344c-.07-57.41-46.59-103.93-104-104H184c-57.41.07-103.93 46.59-104 104v52.62c-86.16-87.94-85.2-228.94 2.15-315.7 87.35-86.76 228.35-86.76 315.7 0s88.31 227.76 2.15 315.7zm0 0" />
+                        <path d="M240 64a80 80 0 1 0 80 80 80.08 80.08 0 0 0-80-80zm0 144a64 64 0 1 1 64-64 64.07 64.07 0 0 1-64 64zm0 0" />
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </button>
+              <div class="csm-dropdown-logged">
+                <ul class="js--logged-out" style="display: block;">
+                  <li>
+                    <a href="/account" class="js--login">Entrar</a>
+                  </li>
+                  <li>
+                    <a href="/account">Minha Conta</a>
+                  </li>
+                  <li>
+                    <a href="/account/orders">Meus pedidos</a>
+                  </li>
+                  <li>
+                    <a href="/giftlist">Lista de presente</a>
+                  </li>
+                </ul>
+                <ul class="js--logged-in">
+                  <li>
+                    <a href="/account">Minha Conta</a>
+                  </li>
+                  <li>
+                    <a href="/account/orders">Meus pedidos</a>
+                  </li>
+                  <li>
+                    <a href="/giftlist">Lista de presente</a>
+                  </li>
+                  <li>
+                    <a href="/logout" class="js--logout">Sair</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="csm-cart">
+              <a href="/checkout">
+                <span class="icon-cart">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511">
+                    <path d="M445.663 469.921L431.301 110.88A15.457 15.457 0 0 0 415.814 96H351v-.5C351 42.841 308.159 0 255.5 0S160 42.841 160 95.5v.5H95.187a15.459 15.459 0 0 0-15.488 14.88L65.337 469.921c-.434 10.842 3.468 21.122 10.985 28.946C83.84 506.691 93.956 511 104.806 511h301.389c10.851 0 20.966-4.309 28.484-12.133 7.516-7.825 11.418-18.104 10.984-28.946zM175 95.5c0-44.388 36.112-80.5 80.5-80.5S336 51.112 336 95.5v.5H175v-.5zm248.862 392.974c-4.663 4.853-10.938 7.526-17.667 7.526H104.806c-6.73 0-13.004-2.672-17.667-7.525-4.663-4.853-7.083-11.229-6.813-17.954L94.687 111.48c.011-.27.23-.48.5-.48H160v48.5a7.5 7.5 0 0 0 15 0V111h161v48.5a7.5 7.5 0 0 0 15 0V111h64.814c.269 0 .488.21.499.48l14.362 359.041c.269 6.724-2.151 13.1-6.813 17.953z" />
+                  </svg>
+                </span>
+                <vtex.cmc:AmountItemsInCart />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="csm-navigation" id="csm-navigation">
+      <div class="csm-center">
+
+        <div class="csm-menu__top">
+          <div class="csm-menu__top-customer">
+            <div class="csm-menu__top-customer-icon">
+              <span></span>
+            </div>
+            <div class="csm-menu__top-customer-text">
+              <h6>Olá! <strong>Seja Bem-vindo!</strong></h6>
+            </div>
+          </div>
+          <div class="csm-menu__top-account">
+            <a href="/account" class="js--login" id="login"> Faça o seu Login </a>
+          </div>
+          <div class="csm-menu__top-register">
+            <a href="/giftlist" class="js--login" id="login"> lista de presente </a>
+          </div>
+        </div>
+
+        <ul>
+          <li>
+            <a href="/novidades" alt="ACABOU DE CHEGAR">ACABOU DE CHEGAR</a>
+          </li>
+          <li>
+            <a href="/colecoes/bazar" class="highlight">BAZAR</a>
+          </li>
+          <li class="csm-has-sub">
+            <a href="/decoracao?O=OrderByTopSaleDESC" alt="Decoracao">DECORAÇÃO</a>
+            <div class="csm-dropdown">
+              <ul>
+                <li>
+                  <a href="/decoracao/ALMOFADAS?O=OrderByTopSaleDESC" alt="ALMOFADAS">ALMOFADAS</a>
+                </li>
+                <li>
+                  <a href="/decoracao/BANDEJA?O=OrderByTopSaleDESC" alt="BANDEJA">BANDEJAS</a>
+                </li>
+                <li>
+                  <a href="/decoracao/ESPELHOS?O=OrderByTopSaleDESC" alt="ESPELHOS">ESPELHOS</a>
+                </li>
+                <li>
+                  <a href="/decoracao/ILUMINACAO?O=OrderByTopSaleDESC" alt=" ILUMINAÇÃO">ILUMINAÇÃO</a>
+                </li>
+                <li>
+                  <a href="/decoracao/INFANTIL?O=OrderByTopSaleDESC" alt="INFANTIL">INFANTIL</a>
+                </li>
+                <li>
+                  <a href="/decoracao/JARDINAGEM?O=OrderByTopSaleDESC" alt="JARDINAGEM">JARDINAGEM</a>
+                </li>
+                <li>
+                  <a href="/cama-e-banho/MANTAS?O=OrderByTopSaleDESC" alt="MANTAS">MANTAS</a>
+                </li>
+                <li>
+                  <a href="/decoracao/PORTA-RETRATOS?O=OrderByTopSaleDESC" alt="PORTA-RETRATOS">PORTA-RETRATOS</a>
+                </li>
+                <li>
+                  <a href="/decoracao/PORTA-LIVROS?O=OrderByTopSaleDESC" alt="PORTA-LIVROS">PORTA-LIVROS</a>
+                </li>
+                <li>
+                  <a href="/decoracao/QUADROS-E-PAINEIS?O=OrderByTopSaleDESC" alt="QUADROS-E-PAINEIS">QUADROS E PAINÉIS</a>
+                </li>
+                <li>
+                  <a href="/decoracao/TAPETES?O=OrderByTopSaleDESC" alt="TAPETES">TAPETES</a>
+                </li>
+                <li>
+                  <a href="/decoracao/VASOS-E-CACHEPOTS?O=OrderByTopSaleDESC" alt="VASOS-E-CACHEPOTS">VASOS E CACHEPOTS</a>
+                </li>
+                <li>
+                  <a href="/decoracao/VELAS-E-DIFUSORES?O=OrderByTopSaleDESC" alt=" VELAS-E-DIFUSORES">VELAS E DIFUSORES</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="csm-has-sub">
+            <a href="/ORGANIZACAO2?O=OrderByTopSaleDESC" alt="organizacao">ORGANIZAÇÃO</a>
+            <div class="csm-dropdown">
+              <ul>
+                <!--<li><a href="/organizacao2/ACESSORIOS-PARA-ESCRITORIO?O=OrderByTopSaleDESC" alt="ACESSÓRIOS-PARA-ESCRITÓRIO">ACESSÓRIOS PARA ESCRITÓRIO</a></li>-->
+                <li>
+                  <a href="/organizacao2/CESTOS?O=OrderByTopSaleDESC" alt="CESTOS">CESTOS</a>
+                </li>
+                <li>
+                  <a href="/organizacao2/GANCHOS-E-CABIDEIROS?O=OrderByTopSaleDESC" alt="GANCHOS-E-CABIDEIROS">GANCHOS E CABIDEIROS</a>
+                </li>
+                <li>
+                  <a href="/organizacao2/ORGANIZADORES-DE-BANHEIRO?O=OrderByTopSaleDESC" alt="ORGANIZADORES-DE-BANHEIRO">ORGANIZADORES DE BANHEIRO</a>
+                </li>
+                <li>
+                  <a href="/organizacao2/PORTA-JOIAS-E-ORGANIZADORES-DE-MAQUIAGEM?O=OrderByTopSaleDESC" alt="PORTA-JOIAS-E-ORGANIZADORES-DE-MAQUIAGEM">PORTA-JOIAS E ORGANIZADORES DE MAQUIAGEM</a>
+                </li>
+                <li>
+                  <a href="/organizacao2/PRATELEIRAS-E-NICHOS?O=OrderByTopSaleDESC" alt="PRATELEIRAS E NICHOS">PRATELEIRAS E NICHOS</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="csm-has-sub">
+            <a href="/moveis2?O=OrderByTopSaleDESC" alt="moveis">MÓVEIS</a>
+            <div class="csm-dropdown">
+              <ul>
+                <li>
+                  <a href="/moveis2/APARADORES-E-ESTANTES?O=OrderByTopSaleDESC" alt="APARADORES-E-ESTANTES">APARADORES E ESTANTES</a>
+                </li>
+                <li>
+                  <a href="/moveis2/ARMARIOS-E-COMODAS?O=OrderByTopSaleDESC" alt="ARMARIOS-E-COMODAS">ARMÁRIOS E CÔMODAS</a>
+                </li>
+                <li>
+                  <a href="/moveis2/BANCOS-E-BANQUETAS?O=OrderByTopSaleDESC" alt="BANCOS-E-BANQUETAS">BANCOS E BANQUETAS</a>
+                </li>
+                <li>
+                  <a href="/moveis2/BIOMBOS-E-ARARAS?O=OrderByTopSaleDESC" alt="BIOMBOS-E-ARARAS">BIOMBOS E ARARAS</a>
+                </li>
+                <li>
+                  <a href="/moveis2/CADEIRAS?O=OrderByTopSaleDESC" alt="CADEIRAS">CADEIRAS</a>
+                </li>
+                <li>
+                  <a href="/moveis2/CARRINHOS-DE-BAR-E-MULTIUSO?O=OrderByTopSaleDESC" alt="CARRINHOS-DE-BAR-E-MULTIUSO">CARRINHOS DE BAR E MULTIUSO</a>
+                </li>
+                <li>
+                  <a href="/moveis2/FLOREIRAS?O=OrderByTopSaleDESC" alt="FLOREIRAS">FLOREIRAS</a>
+                </li>
+                <li>
+                  <a href="/moveis2/MESAS?O=OrderByTopSaleDESC" alt="MESAS">MESAS</a>
+                </li>
+                <li>
+                  <a href="/moveis2/PUFES?O=OrderByTopSaleDESC" alt="PUFES">PUFES</a>
+                </li>
+                <li>
+                  <a href="/moveis2/REDES?O=OrderByTopSaleDESC" alt="REDES">REDES</a>
+                </li>
+                <li>
+                  <a href="/moveis2/SAPATEIRAS?O=OrderByTopSaleDESC" alt="SAPATEIRAS">SAPATEIRAS</a>
+                </li>
+                <li>
+                  <a href="/moveis2/SOFAS-E-POLTRONAS?O=OrderByTopSaleDESC" alt="SOFAS-E-POLTRONAS">SOFÁS E POLTRONAS</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="csm-has-sub">
+            <a href="/COZINHA-E-MESA-POSTA?O=OrderByTopSaleDESC" alt="COZINHA-E-MESA-POSTA">COZINHA E MESA POSTA</a>
+            <div class="csm-dropdown">
+              <ul>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/ACESSORIOS-PARA-SERVIR?O=OrderByTopSaleDESC" alt="ACESSORIOS-PARA-SERVIR">ACESSÓRIOS PARA SERVIR</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/BAR-E-VINHO?O=OrderByTopSaleDESC" alt="BAR-E-VINHO">BAR E VINHO</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/CAFE-E-CHA?O=OrderByTopSaleDESC" alt="CAFE-E-CHA">CAFÉ E CHÁ</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/COPOS-E-TACAS?O=OrderByTopSaleDESC" alt="COPOS-E-TACAS">COPOS E TAÇAS</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/LOUCAS-E-CERAMICAS?O=OrderByTopSaleDESC" alt="LOUÇAS-E-CERAMICAS">LOUÇAS E CERÂMICAS</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/POTES-E-LATAS?O=OrderByTopSaleDESC" alt="POTES-E-LATAS">POTES E LATAS</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/TALHERES?O=OrderByTopSaleDESC" alt="TALHERES">TALHERES</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/TÊXTEIS-DE-COZINHA?O=OrderByTopSaleDESC" alt="TEXTEIS-DE-COZINHA">TÊXTEIS DE COZINHA</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/TEXTEIS-DE-MESA?O=OrderByTopSaleDESC" alt="TEXTEIS-DE-MESA">TÊXTEIS DE MESA</a>
+                </li>
+                <li>
+                  <a href="/COZINHA-E-MESA-POSTA/UTENSILIOS-E-ORGANIZADORES-DE-COZINHA?O=OrderByTopSaleDESC" alt="UTENSILIOS-E-ORGANIZADORES-DE-COZINHA">UTENSÍLIOS E ORGANIZADORES DE COZINHA</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="csm-has-sub">
+            <a href="/cama-e-banho?O=OrderByTopSaleDESC" alt="CAMA E BANHO">CAMA E BANHO</a>
+            <div class="csm-dropdown">
+              <ul>
+                  <li><a href="/cama-e-banho/mantas?O=OrderByTopSaleDESC" alt="Mantas">MANTAS</a></li>
+                  <li><a href="/cama-e-banho/roupas-de-cama?O=OrderByTopSaleDESC" alt="Roupas de cama">ROUPAS DE CAMA</a></li>
+                  <li><a href="/cama-e-banho/toalhas-de-banho?O=OrderByTopSaleDESC" alt="Toalhas de banho">TOALHAS DE BANHO</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="csm-has-sub">
+            <a href="/LIFESTYLE?O=OrderByTopSaleDESC" alt="LIFESTYLE">LIFESTYLE</a>
+            <div class="csm-dropdown">
+              <ul>
+                <li>
+                  <a href="/LIFESTYLE/Acessorios?O=OrderByTopSaleDESC" alt="ACESSORIOS">ACESSÓRIOS</a>
+                </li>
+                <li>
+                  <a href="/LIFESTYLE/Autocuidado?O=OrderByTopSaleDESC" alt="AUTOCUIDADO">AUTOCUIDADO</a>
+                </li>
+                <li>
+                  <a href="/mindmais/imaginarium?O=OrderByTopSaleDESC" alt="BOLSAS E MOCHILAS">BOLSAS E MOCHILAS</a>
+                </li>
+                <li>
+                  <a href="/LIFESTYLE/CASA-INTELIGENTE?O=OrderByTopSaleDESC" alt="CASA-INTELIGENTE">CASA INTELIGENTE</a>
+                </li>
+                <li>
+                  <a href="/LIFESTYLE/DIY?O=OrderByTopSaleDESC" alt="DIY">DIY</a>
+                </li>
+                <li>
+                  <a href="/LIFESTYLE/MODA?O=OrderByTopSaleDESC" alt="MODA">MODA</a>
+                </li>
+                <li>
+                  <a href="/ORGANIZACAO2/PAPELARIA?O=OrderByTopSaleDESC" alt="PAPELARIA">PAPELARIA</a>
+                </li>
+                <li>
+                  <a href="/PESSOAL/PET?O=OrderByTopSaleDESC" alt="PET">PET</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="csm-has-sub csm-has-mindmais">
+            <a href="/marketplace" alt="MinD+">MIND+</a>
+          </li>
+
+        </ul>
+
+        <div class="csm-menu__bottom-info">
+          <ul>
+            <li>
+              <a href="/account" alt="Meus Pedidos">Meus Cadastro</a>
+            </li>
+            <li>
+              <a href="/account/orders" alt="Acompanhe o seu pedido">Acompanhe o seu pedido</a>
+            </li>
+            <li>
+              <a href="/central-de-relacionamento" alt="Atendimento">Atendimento</a>
+            </li>
+            <li>
+              <a href="/central-de-relacionamento" alt="Dúvidas e Ajuda">Dúvidas e Ajuda</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="csm-search-cart">
+      <ul>
+        <li class="csm-search">
+          <button class="js--search-fixed"></button>
+          <vtex.cmc:fullTextSearchBox />
+        </li>
+        <li class="csm-cart">
+          <a href="/checkout">
+            <span></span>
+            <vtex.cmc:AmountItemsInCart />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="csm-center">
+      <div class="csm-minicart">
+        <div class="csm-minicart__group">
+          <div class="csm-minicart__products">
+            <ul class="product-list">
+            </ul>
+          </div>
+          <div class="csm-minicart__empty">
+            <p>Você não adicionou nenhum item à sua sacola. </p>
+          </div>
+          <div class="csm-minicart__footer">
+            <div class="csm-minicart__total">
+              <vtex.cmc:AmountItemsInCart />
+            </div>
+            <div class="csm-minicart__buy">
+              <a href="/checkout" class="csm-btn-buy">Finalizar Compra</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="popup-adicionando">
+    <div class="conteudo-adicionando">
+      <span class="text-adicionando bold">Produto adicionado à Sacola</span>
+      <a class="link-adicionando bold" href="/checkout#/cart">Ver Sacola</a>
+      <div id="barratempo"></div>
+    </div>
+    
+  </div>
+</header>
+
+
+<footer class="newfooter main-footer">
+    <div class="main-footer-section news-footer text-center">
+      <div class="main-footer-newsletter">
+          <div class="main-footer-title text-center">
+              <h5 class="bold">Quer ficar por dentro das novidades e promoções?</h5>
+          </div>
+          <form class="main-footer-newsletter-form inline-middle" id="formFC">
+            <div class="message"></div>
+            <div class="input-group">
+                <input type="text" name="fcEmail" id="fcEmail" placeholder="Digite seu e-mail" class="input-text" />
+                <a href="javascript:void(0);" class="input-group-prepend enviarForm" id="sendFCEmail">Enviar</a>
+            </div>
+          </form>
+      </div>
+    </div>
+    <div class="footer-wrapper row">
+        <div class="col">
+            <div class="callus-wrapper">
+                <h2>ATENDIMENTO AO CLIENTE</h2>
+                <p>Segunda à sexta,</p>
+                <p>das 9h às 12h e das 13h30 às 16h,</p>
+                <p>exceto feriado (horário de Brasília)</p>
+                <p><strong><a href="tel:3003-3516">3003-3516</a></strong></p>
+                <p>Para cidades do interior, utilize o DDD da capital do seu Estado</p>
+                <div class="main-footer-sac-buttons">
+                    <a href="/central-de-relacionamento">
+                        <span>Central de Relacionamento</span>
+                    </a>
+                </div>
+            </div>
+            <div class="social-wrapper">
+                <h2>SIGA-NOS</h2>
+                <div class="social">
+                    <a href="https://www.instagram.com/casamindbr/" target="_blank">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31.16">
+                            <defs>
+                                <style>
+                                    .instacls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .instacls-2 {
+                                        fill: none;
+                                        stroke: #000;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="instacls-1" x="-4220.66" y="-4066.41" width="9237" height="5495" />
+                            <ellipse class="instacls-2" cx="15.5" cy="15.58" rx="15" ry="15.08" />
+                            <path class="instacls-2" d="M21.36,24.38H9.64a2.9,2.9,0,0,1-2.89-2.89V9.67A2.9,2.9,0,0,1,9.64,6.78H21.27a3,3,0,0,1,3,3V21.49A2.9,2.9,0,0,1,21.36,24.38Z" />
+                            <ellipse class="instacls-2" cx="15.5" cy="15.58" rx="4.25" ry="4.27" />
+                            <circle cx="20.75" cy="10.3" r="0.63" />
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/casamind" target="_blank">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31.16">
+                            <defs>
+                                <style>
+                                    .fbcls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .fbcls-2 {
+                                        fill: none;
+                                        stroke: #000;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="fbcls-1" x="-4264" y="-4066.41" width="9237" height="5495" />
+                            <ellipse class="fbcls-2" cx="15.5" cy="15.58" rx="15" ry="15.08" />
+                            <path class="fbcls-2" d="M14.75,25.38V9.3c0-2,0-2,2-2h3" />
+                            <line class="fbcls-2" x1="11.25" y1="13.82" x2="18.5" y2="13.82" />
+                        </svg>
+                    </a>
+                    <a href="https://br.pinterest.com/casamind/_shop/" target="_blank">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31.16">
+                            <defs>
+                                <style>
+                                    .pincls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .pincls-2 {
+                                        fill: none;
+                                        stroke: #000;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="pincls-1" x="-4307.33" y="-4066.41" width="9237" height="5495" />
+                            <ellipse class="pincls-2" cx="15.5" cy="15.58" rx="15" ry="15.08" />
+                            <path class="pincls-2" d="M12.5,23.12c1.5-7.54,1.45-7.73,2-10.55.3-1.57-1.36-1.51-1.5,0-.08.92.5,7,4.5,6.53,3-.38,6-5.82,3-9.55a6.82,6.82,0,0,0-9-1c-2.83,2-2.5,7-.5,7.54" />
+                        </svg>
+                    </a>
+                    <a href="https://open.spotify.com/user/haj0455ld4irud1xncxa0ho3p#_=_" target="_blank">
+                        <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30" xml:space="preserve">
+                            <style>
+                                .spotifyst4{
+                                    fill:transparent;
+                                    stroke:#000;
+                                    stroke-linecap:round;
+                                    stroke-linejoin:round;
+                                    stroke-miterlimit:10
+                                }
+                            </style>
+                            <circle class="spotifyst4" cx="15" cy="15" r="14.5"/>
+                            <path class="spotifyst4" d="M7.29 19.21c4.57-1.01 9.23-.92 13.21 1.46M6.83 14.83c5.43-1.53 11.26-.64 15.32 1.78M6 10.17h0c5.21-1.53 13.1-1.04 18 1.82M6 10.17"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="support-wrapper">
+                <div class="support-guide">
+                    <h2>AJUDA E SUPORTE</h2>
+                    <label for="support-extended">
+                        <svg id="Camada_1" data-name="Camada 1" class="changeView" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.19 18.19">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .cls-2 {
+                                        fill: none;
+                                        stroke: #000;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="cls-1" x="-4350.67" y="-4072.89" width="9237" height="5495" />
+                            <circle class="cls-2" cx="9.09" cy="9.09" r="8.59" />
+                            <line class="cls-2" x1="9.09" y1="4.8" x2="9.09" y2="13.39" />
+                            <line class="cls-2" x1="4.8" y1="9.09" x2="13.39" y2="9.09" />
+                        </svg>
+                    </label>
+                    <input type="checkbox" id="support-extended" hidden="true" />
+
+                    <div class="support-view">
+                        <p><a href="/institucional/como-comprar">Como comprar</a></p>
+                        <p><a href="/institucional/pagamento-e-envio">Pagamento e política de frete</a></p>
+                        <p><a href="/institucional/troca-e-devolucao">Troca e devolução</a></p>
+                        <p><a href="/institucional/seguranca-e-privacidade">Segurança e privacidade</a></p>
+                        <p><a href="/institucional/termos-e-condicoes-de-uso">Termos e condições de uso do site</a></p>
+                        <p><a href="/central-de-relacionamento">Perguntas frequentes</a></p>
+                        <p><a href="/institucional/regulamento-promocoes">Promoções</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="aboutUs-wrapper">
+                <div class="aboutUs-guide">
+                    <h2>INSTITUCIONAL</h2>
+                    <label for="aboutUs-extended">
+                        <svg id="Camada_1" data-name="Camada 1" class="changeView" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.19 18.19">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .cls-2 {
+                                        fill: none;
+                                        stroke: #000;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="cls-1" x="-4350.67" y="-4072.89" width="9237" height="5495" />
+                            <circle class="cls-2" cx="9.09" cy="9.09" r="8.59" />
+                            <line class="cls-2" x1="9.09" y1="4.8" x2="9.09" y2="13.39" />
+                            <line class="cls-2" x1="4.8" y1="9.09" x2="13.39" y2="9.09" />
+                        </svg>
+                    </label>
+                    <input type="checkbox" id="aboutUs-extended" hidden="true" />
+
+                    <div class="aboutUs-view">
+                        <!-- <p><a href="#">Sobre a MinD</a></p> -->
+                        <!-- <p><a href="#">Parcerias</a></p> -->
+                        <p><a href="https://blog.casamind.com.br/" target="_blank">Blog MinD</a></p>
+                        <!-- <p><a href="#">Trabalhe conosco</a></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="payment-wrapper">
+                <h2>FORMAS DE PAGAMENTO</h2>
+                <div class="container">
+                    <div class="item">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.17 45.66">
+                            <defs>
+                                <style>
+                                    .elocls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .elocls-2 {
+                                        fill: #ffc905;
+                                    }
+
+                                    .elocls-3 {
+                                        fill: #00a2de;
+                                    }
+
+                                    .elocls-4 {
+                                        fill: #ed4123;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="elocls-1" x="-4229.48" y="-3392.38" width="9237" height="5495" />
+                            <path class="elocls-2" d="M18.58,10.08a13.61,13.61,0,0,1,4.25-.68A13.43,13.43,0,0,1,36,20.15l9.21-1.88A22.87,22.87,0,0,0,15.59,1.17Z" />
+                            <path class="elocls-3" d="M7.7,39.94l6.24-7a13.42,13.42,0,0,1,0-20.12l-6.24-7a22.86,22.86,0,0,0,0,34.22" />
+                            <path class="elocls-4" d="M36,25.52A13.44,13.44,0,0,1,22.84,36.26a13,13,0,0,1-4.26-.69l-3,8.92A22.87,22.87,0,0,0,45.21,27.41Z" />
+                            <path d="M53.27,33.19a16.88,16.88,0,0,1-1-1.85A13.57,13.57,0,0,1,52,21.08a13.54,13.54,0,0,1,7.29-7.95,14,14,0,0,1,12.88.93A13.76,13.76,0,0,1,77.93,21c.17.41.33.85.48,1.23Zm8.4-14.62a6.93,6.93,0,0,0-4.21,7.36l12.65-5.44A6.72,6.72,0,0,0,61.67,18.57Zm10,11.84a0,0,0,0,0,0,0l-.26-.18A7.44,7.44,0,0,1,68,33.1c-2.83,1.23-5.45.92-7.33-.74l-.18.27h0l-3.21,4.8a13.74,13.74,0,0,0,2.55,1.4,13.91,13.91,0,0,0,16.73-5.14Z" />
+                            <path d="M87.2,6.06V32.75l4.15,1.68L89,39.93,84.41,38a5.19,5.19,0,0,1-2.25-1.9,5.92,5.92,0,0,1-.88-3.3V6.06Z" />
+                            <path d="M97.94,26a7.52,7.52,0,0,1,2.6-5.69l-4.26-4.75a13.92,13.92,0,0,0,0,20.87l4.25-4.74A7.55,7.55,0,0,1,97.94,26Z" />
+                            <path d="M105.51,33.52a7.59,7.59,0,0,1-2.4-.39l-2,6a14,14,0,0,0,18.1-10.41l-6.25-1.27A7.55,7.55,0,0,1,105.51,33.52Z" />
+                            <path d="M105.52,12a14.06,14.06,0,0,0-4.42.71l2,6a7.63,7.63,0,0,1,2.4-.38,7.54,7.54,0,0,1,7.4,6.06l6.25-1.26A13.93,13.93,0,0,0,105.52,12Z" />
+                        </svg>
+                    </div>
+                    <div class="item">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.04 51.37">
+                            <defs>
+                                <style>
+                                    .mastercls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .mastercls-2 {
+                                        fill: #231f20;
+                                    }
+
+                                    .mastercls-3 {
+                                        fill: #ff5f00;
+                                    }
+
+                                    .mastercls-4 {
+                                        fill: #e9001b;
+                                    }
+
+                                    .mastercls-5 {
+                                        fill: #f59c1b;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="mastercls-1" x="-4256.04" y="-3490.1" width="9237" height="5495" />
+                            <g id="Layer_2" data-name="Layer 2">
+                                <g id="Layer_1-2" data-name="Layer 1-2">
+                                    <path class="mastercls-2" d="M12,51.09V47.68a2,2,0,0,0-1.88-2.15H9.89a2.1,2.1,0,0,0-1.91,1,2,2,0,0,0-1.79-1,1.78,1.78,0,0,0-1.59.81v-.67H3.42v5.42H4.61v-3A1.28,1.28,0,0,1,5.7,46.67h.24c.78,0,1.18.51,1.18,1.43v3H8.31v-3a1.29,1.29,0,0,1,1.1-1.43h.23c.8,0,1.19.51,1.19,1.43v3Zm17.61-5.42H27.69V44H26.5v1.65H25.42v1.07h1.1v2.5c0,1.26.49,2,1.89,2a2.82,2.82,0,0,0,1.47-.42l-.34-1a2.24,2.24,0,0,1-1,.3c-.57,0-.79-.36-.79-.9V46.74h1.93Zm10.06-.14a1.59,1.59,0,0,0-1.43.79v-.65H37.09v5.42h1.18v-3c0-.9.39-1.4,1.14-1.4a2,2,0,0,1,.73.14l.36-1.13a2.34,2.34,0,0,0-.83-.15Zm-15.21.57a4,4,0,0,0-2.21-.57c-1.37,0-2.27.66-2.27,1.74,0,.88.66,1.42,1.88,1.59l.56.08c.65.09.95.26.95.57s-.43.66-1.23.66a2.84,2.84,0,0,1-1.8-.57l-.57.92a3.87,3.87,0,0,0,2.35.7c1.56,0,2.47-.73,2.47-1.77s-.72-1.45-1.9-1.62l-.56-.08c-.51-.07-.92-.17-.92-.53s.38-.64,1-.64a3.5,3.5,0,0,1,1.7.47Zm31.59-.57a1.59,1.59,0,0,0-1.43.79v-.65H53.47v5.42h1.18v-3c0-.9.39-1.4,1.13-1.4a2,2,0,0,1,.74.14l.36-1.13a2.4,2.4,0,0,0-.84-.15Zm-15.2,2.84a2.74,2.74,0,0,0,2.64,2.83h.25a2.77,2.77,0,0,0,2-.65l-.56-.95a2.44,2.44,0,0,1-1.42.49,1.74,1.74,0,0,1,0-3.47,2.37,2.37,0,0,1,1.42.49l.56-1a2.8,2.8,0,0,0-2-.64,2.72,2.72,0,0,0-2.88,2.58,2.09,2.09,0,0,0,0,.25Zm11.05,0v-2.7H50.74v.65a2.08,2.08,0,0,0-1.7-.79,2.84,2.84,0,1,0,0,5.67,2.08,2.08,0,0,0,1.7-.79v.65h1.18Zm-4.39,0a1.67,1.67,0,1,1,0,.12ZM33.3,45.53a2.84,2.84,0,1,0,.08,5.67h0a3.29,3.29,0,0,0,2.25-.74l-.57-.87a2.58,2.58,0,0,1-1.57.57,1.52,1.52,0,0,1-1.63-1.33h4v-.45a2.58,2.58,0,0,0-2.57-2.84Zm0,1a1.35,1.35,0,0,1,1.37,1.32H31.84a1.4,1.4,0,0,1,1.44-1.32Zm29.54,1.8V43.49H61.71v2.83a2.08,2.08,0,0,0-1.7-.79,2.84,2.84,0,1,0,0,5.67,2.08,2.08,0,0,0,1.7-.79v.65h1.13Zm2,1.92a.49.49,0,0,1,.21,0,.42.42,0,0,1,.18.11.66.66,0,0,1,.12.17.51.51,0,0,1,0,.42.66.66,0,0,1-.12.17.42.42,0,0,1-.18.11.5.5,0,0,1-.21,0A.56.56,0,0,1,64.3,51a.51.51,0,0,1,0-.42.66.66,0,0,1,.12-.17.45.45,0,0,1,.17-.11.67.67,0,0,1,.24,0Zm0,1a.29.29,0,0,0,.16,0,.3.3,0,0,0,.13-.09.42.42,0,0,0,0-.57L65,50.47a.41.41,0,0,0-.16,0,.51.51,0,0,0-.17,0,.6.6,0,0,0-.13.09.42.42,0,0,0,0,.57.38.38,0,0,0,.13.09.41.41,0,0,0,.19,0Zm0-.68a.25.25,0,0,1,.15.05.13.13,0,0,1,.05.12.14.14,0,0,1,0,.1.17.17,0,0,1-.12,0l.17.19h-.13l-.16-.19h-.05v.19H64.6v-.5Zm-.12.1v.13h.19a0,0,0,0,0,0-.05,0,0,0,0,0,0,0h-.07Zm-6.24-2.3a1.67,1.67,0,1,1,0,.12Zm-39.81,0V45.67H17.49v.65a2.08,2.08,0,0,0-1.7-.79,2.84,2.84,0,1,0,0,5.67,2.08,2.08,0,0,0,1.7-.79v.65h1.18Zm-4.39,0a1.47,1.47,0,1,1,0,.14.61.61,0,0,1,0-.14Z" />
+                                    <g id="_Group_" data-name=" Group ">
+                                        <rect class="mastercls-3" x="24.09" y="4.37" width="17.86" height="32.09" />
+                                        <path id="_Path_" data-name=" Path " class="mastercls-4" d="M25.23,20.42A20.33,20.33,0,0,1,33,4.37a20.41,20.41,0,1,0,0,32.09A20.37,20.37,0,0,1,25.23,20.42Z" />
+                                        <path class="mastercls-5" d="M66,20.42a20.41,20.41,0,0,1-33,16A20.38,20.38,0,0,0,33,4.37a20.4,20.4,0,0,1,33,16Z" />
+                                        <path class="mastercls-5" d="M64.09,33.06V32.4h.27v-.14h-.67v.14H64v.66Zm1.31,0v-.8h-.2l-.24.57-.24-.57h-.18v.8h.15v-.6l.22.52h.15l.23-.52v.6Z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="item">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98.48 30.19">
+                            <defs>
+                                <style>
+                                    .visacls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .visacls-2 {
+                                        fill: #005097;
+                                    }
+
+                                    .visacls-2,
+                                    .visacls-3 {
+                                        fill-rule: evenodd;
+                                    }
+
+                                    .visacls-3 {
+                                        fill: #f5a400;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="visacls-1" x="-4239.82" y="-3593.54" width="9237" height="5495" />
+                            <polygon class="visacls-2" points="34.67 29.75 39.67 0.48 47.67 0.48 42.66 29.75 34.67 29.75" />
+                            <path class="visacls-2" d="M71.6,1.21A21.54,21.54,0,0,0,64.46,0C56.55,0,51,4,51,9.65c0,4.19,4,6.53,7,8s4.16,2.34,4.11,3.63c0,2-2.46,2.87-4.76,2.87a16.73,16.73,0,0,1-7.5-1.54l-1.05-.48-1.09,6.54a24.59,24.59,0,0,0,8.88,1.57c8.39,0,13.8-3.92,13.88-10,0-3.31-2.1-5.85-6.7-7.95C60.94,10.9,59.25,10,59.25,8.64s1.45-2.55,4.56-2.55a14.47,14.47,0,0,1,6,1.13l.73.33Z" />
+                            <path class="visacls-2" d="M92.06.52H85.89c-1.9,0-3.35.53-4.2,2.43L69.86,29.79h8.36s1.37-3.64,1.69-4.4H90.13c.24,1,1,4.4,1,4.4h7.39L92.06.52M82.21,19.37c.65-1.65,3.19-8.15,3.19-8.15s.65-1.69,1-2.78l.53,2.5,1.85,8.43Z" />
+                            <path class="visacls-2" d="M28,.52,20.18,20.46l-.81-4c-1.45-4.69-6-9.73-11.06-12.27l7.15,25.59h8.43L36.45.52Z" />
+                            <path class="visacls-3" d="M13,.48H.08L0,1.13C10,3.55,16.63,9.4,19.37,16.43L16.55,3C16.06,1.13,14.69.57,13,.48Z" />
+                        </svg>
+                    </div>
+                    <div class="item">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.85 45.66">
+                            <defs>
+                                <style>
+                                    .pixcls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .pixcls-2 {
+                                        fill: #929497;
+                                    }
+
+                                    .pixcls-3 {
+                                        fill: #32bbac;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="pixcls-1" x="-4224.64" y="-3675.79" width="9237" height="5495" />
+                            <path class="pixcls-2" d="M53,43.46a.82.82,0,0,1-.82-.82V16.45a9.55,9.55,0,0,1,9.55-9.54h7.73A9.54,9.54,0,0,1,79,16.45V22a9.55,9.55,0,0,1-9.54,9.55H58.51a.82.82,0,1,1,0-1.64H69.44A7.91,7.91,0,0,0,77.34,22V16.45a7.9,7.9,0,0,0-7.87-7.89H61.74a7.91,7.91,0,0,0-7.91,7.9V42.64A.82.82,0,0,1,53,43.46ZM87.26,31.68a.81.81,0,0,1-.82-.82V11.3a2.77,2.77,0,0,0-2.76-2.76H80.32a.82.82,0,0,1,0-1.64h3.36a4.41,4.41,0,0,1,4.4,4.4V30.86A.82.82,0,0,1,87.26,31.68Z" />
+                            <path class="pixcls-3" d="M86.54,4.69,85,3.17A1,1,0,0,1,85,1.8L86.54.28a1,1,0,0,1,1.37,0L89.43,1.8a1,1,0,0,1,0,1.37L87.9,4.69a1,1,0,0,1-1.36,0Z" />
+                            <path class="pixcls-2" d="M97,31.51H93.69a.82.82,0,0,1,0-1.64H97a5.57,5.57,0,0,0,4-1.65l7.78-7.78a3.42,3.42,0,0,1,4.81,0l7.75,7.75a5.57,5.57,0,0,0,4,1.65H128a.82.82,0,0,1,0,1.64h-2.71a7.19,7.19,0,0,1-5.14-2.13l-7.75-7.75a1.77,1.77,0,0,0-2.49,0l-7.78,7.78A7.19,7.19,0,0,1,97,31.51ZM111.18,19a3.35,3.35,0,0,1-2.4-1L101,10.17a5.61,5.61,0,0,0-4-1.65H93.69a.82.82,0,0,1,0-1.64H97A7.23,7.23,0,0,1,102.16,9l7.78,7.78a1.79,1.79,0,0,0,2.49,0L120.18,9a7.23,7.23,0,0,1,5.14-2.13H128a.82.82,0,0,1,0,1.64h-2.71a5.61,5.61,0,0,0-4,1.65L113.59,18A3.36,3.36,0,0,1,111.18,19Z" />
+                            <path class="pixcls-3" d="M33.18,35.66a6.21,6.21,0,0,1-4.42-1.83l-6.38-6.38a1.21,1.21,0,0,0-1.68,0l-6.4,6.41a6.21,6.21,0,0,1-4.42,1.83H8.62l8.08,8.08a6.48,6.48,0,0,0,9.15,0L34,35.66Z" />
+                            <path class="pixcls-3" d="M9.88,13.09a6.21,6.21,0,0,1,4.42,1.83l6.4,6.41a1.19,1.19,0,0,0,1.68,0l6.38-6.38a6.21,6.21,0,0,1,4.42-1.83H34L25.85,5A6.46,6.46,0,0,0,16.7,5L8.62,13.09Z" />
+                            <path class="pixcls-3" d="M40.66,19.82l-4.9-4.9a1,1,0,0,1-.35.07H33.18a4.41,4.41,0,0,0-3.09,1.28l-6.38,6.38a3.05,3.05,0,0,1-4.33,0L13,16.25A4.37,4.37,0,0,0,9.88,15H7.14a.88.88,0,0,1-.33-.07L1.89,19.82a6.47,6.47,0,0,0,0,9.14l4.92,4.92a.88.88,0,0,1,.33-.07H9.88A4.41,4.41,0,0,0,13,32.53l6.41-6.41a3.15,3.15,0,0,1,4.33,0l6.38,6.39a4.41,4.41,0,0,0,3.09,1.28h2.23a.84.84,0,0,1,.35.07l4.9-4.9a6.47,6.47,0,0,0,0-9.14Z" />
+                            <path class="pixcls-2" d="M59.66,40.41a6.13,6.13,0,0,0-1.2.18v1.6a2.94,2.94,0,0,0,.94.16c.8,0,1.18-.27,1.18-1s-.32-1-.92-1Zm-1.47,3V40.22h.22l0,.14a6.07,6.07,0,0,1,1.24-.21,1.26,1.26,0,0,1,.82.24,1.2,1.2,0,0,1,.36,1,1.1,1.1,0,0,1-.51,1,2,2,0,0,1-.93.2,3.6,3.6,0,0,1-1-.14v.92Z" />
+                            <path class="pixcls-2" d="M62.87,40.4c-.8,0-1.15.25-1.15,1s.35,1,1.15,1,1.16-.25,1.16-1-.36-1-1.16-1Zm1,2a2.29,2.29,0,0,1-2.06,0,1.09,1.09,0,0,1-.41-1,1.13,1.13,0,0,1,.41-1,2.25,2.25,0,0,1,2.06,0,1.35,1.35,0,0,1,0,1.94Zm0,0Z" />
+                            <polygon class="pixcls-2" points="67.69 42.53 66.8 40.61 66.78 40.61 65.9 42.53 65.66 42.53 64.71 40.22 65.01 40.22 65.8 42.16 65.81 42.16 66.67 40.22 66.92 40.22 67.81 42.16 67.82 42.16 68.6 40.22 68.88 40.22 67.93 42.53 67.69 42.53 67.69 42.53" />
+                            <path class="pixcls-2" d="M70.61,40.4c-.74,0-1,.33-1,.8h2.08c0-.52-.3-.8-1-.8Zm0,2.19a1.41,1.41,0,0,1-1-.25,1.22,1.22,0,0,1-.36-1,1.18,1.18,0,0,1,.43-1,1.52,1.52,0,0,1,.9-.24,1.62,1.62,0,0,1,.92.23,1.15,1.15,0,0,1,.4,1.06H69.56c0,.48.17.9,1.06.9a7.35,7.35,0,0,0,1.2-.13v.24a7,7,0,0,1-1.22.14Z" />
+                            <path class="pixcls-2" d="M72.71,42.53V40.22h.21l0,.14a3.9,3.9,0,0,1,1.15-.21h0v.26h-.07a3.77,3.77,0,0,0-1.08.18v1.94Z" />
+                            <path class="pixcls-2" d="M75.69,40.4c-.74,0-1,.33-1,.8h2.07c0-.52-.29-.8-1-.8Zm0,2.19a1.38,1.38,0,0,1-1-.25,1.22,1.22,0,0,1-.37-1,1.21,1.21,0,0,1,.43-1,1.56,1.56,0,0,1,.9-.24,1.65,1.65,0,0,1,.93.23,1.18,1.18,0,0,1,.4,1.06H74.65c0,.48.16.9,1.06.9a7.35,7.35,0,0,0,1.19-.13v.24a6.9,6.9,0,0,1-1.21.14Z" />
+                            <path class="pixcls-2" d="M80,40.56A2.64,2.64,0,0,0,79,40.4c-.8,0-1.18.27-1.18,1s.31,1,.91,1a5.92,5.92,0,0,0,1.2-.18v-1.6Zm0,2,0-.14a6,6,0,0,1-1.25.2,1.05,1.05,0,0,1-1.18-1.21,1.1,1.1,0,0,1,.51-1,2,2,0,0,1,.94-.21,3.48,3.48,0,0,1,1,.15V39.24h.27v3.29Z" />
+                            <path class="pixcls-2" d="M84.2,40.41a6.13,6.13,0,0,0-1.2.18v1.59a2.69,2.69,0,0,0,.93.17c.8,0,1.18-.27,1.18-1s-.31-1-.91-1Zm.69,2a2,2,0,0,1-.93.2,3.42,3.42,0,0,1-1-.17l0,.11h-.18V39.24H83v1.11a6,6,0,0,1,1.22-.2,1.26,1.26,0,0,1,.82.24,1.23,1.23,0,0,1,.36,1,1.12,1.12,0,0,1-.51,1Z" />
+                            <path class="pixcls-2" d="M85.76,43.41v-.25l.34,0a.71.71,0,0,0,.73-.48l.08-.18-1.2-2.31H86l1,2h0l1-2h.31l-1.3,2.59a1,1,0,0,1-1,.63,1.93,1.93,0,0,1-.33,0Z" />
+                            <path class="pixcls-2" d="M92.08,41.21h-.9V42h.9c.62,0,.85-.07.85-.41s-.32-.4-.85-.4Zm-.17-1.31h-.73v.82h.74c.6,0,.85-.07.85-.41s-.31-.41-.86-.41Zm1.39,2.41a2.64,2.64,0,0,1-1.45.22H90.48V39.4h1.34a2.48,2.48,0,0,1,1.33.2.64.64,0,0,1,.32.62.67.67,0,0,1-.5.69v0c.41.09.67.3.67.74a.68.68,0,0,1-.34.64Z" />
+                            <path class="pixcls-2" d="M96.37,41.56c-.27,0-.54,0-.83,0-.47,0-.64.1-.64.31s.14.31.5.31a4.61,4.61,0,0,0,1-.13v-.45Zm.14,1,0-.14a5.34,5.34,0,0,1-1.25.2,1.18,1.18,0,0,1-.7-.17.63.63,0,0,1-.26-.56.65.65,0,0,1,.39-.62,2,2,0,0,1,.87-.13c.24,0,.56,0,.83,0v0c0-.37-.24-.48-.89-.48-.25,0-.55,0-.85,0V40.2c.33,0,.69-.05,1-.05a2,2,0,0,1,1.07.22.85.85,0,0,1,.32.79v1.37Z" />
+                            <path class="pixcls-2" d="M100,42.53V41.25c0-.42-.21-.57-.6-.57a4,4,0,0,0-.94.15v1.7h-.64V40.22h.52l0,.14a5.65,5.65,0,0,1,1.24-.21,1.18,1.18,0,0,1,.79.24.92.92,0,0,1,.25.72v1.42Z" />
+                            <path class="pixcls-2" d="M102.49,42.59a1.33,1.33,0,0,1-.86-.24,1.2,1.2,0,0,1-.36-1,1.13,1.13,0,0,1,.47-1,1.9,1.9,0,0,1,1-.23,7.81,7.81,0,0,1,.81.05v.49c-.23,0-.51,0-.74,0-.61,0-.9.19-.9.73s.22.71.72.71a5.83,5.83,0,0,0,1-.12v.48a6.13,6.13,0,0,1-1.13.14Z" />
+                            <path class="pixcls-2" d="M105.52,40.64c-.61,0-.88.19-.88.72s.27.75.88.75.88-.19.88-.72-.26-.75-.88-.75Zm1.11,1.71a2.69,2.69,0,0,1-2.22,0,1.32,1.32,0,0,1,0-2,2.59,2.59,0,0,1,2.22,0,1.32,1.32,0,0,1,0,2Zm0,0Z" />
+                            <path class="pixcls-2" d="M110.78,42.59a1.73,1.73,0,0,1-1.12-.32,1.6,1.6,0,0,1-.49-1.31,1.55,1.55,0,0,1,.63-1.33,2.4,2.4,0,0,1,1.33-.3,10.38,10.38,0,0,1,1.09.06V40c-.33,0-.74-.05-1.06-.05-.89,0-1.27.34-1.27,1.06s.35,1.06,1,1.06a7.07,7.07,0,0,0,1.39-.18v.56a8.2,8.2,0,0,1-1.51.19Z" />
+                            <path class="pixcls-2" d="M114.19,40.57c-.54,0-.74.19-.78.54H115c0-.37-.24-.54-.77-.54Zm-.1,2a1.5,1.5,0,0,1-1-.25,1.22,1.22,0,0,1-.37-1,1.17,1.17,0,0,1,.44-1,1.71,1.71,0,0,1,1-.25,1.75,1.75,0,0,1,1,.24c.37.26.4.66.41,1.14h-2.2c0,.35.2.58.85.58a8.27,8.27,0,0,0,1.23-.12v.45a9.09,9.09,0,0,1-1.39.15Z" />
+                            <path class="pixcls-2" d="M118.47,42.53V41.25c0-.42-.22-.57-.6-.57a4.07,4.07,0,0,0-1,.15v1.7h-.64V40.22h.53l0,.14a5.56,5.56,0,0,1,1.23-.21,1.16,1.16,0,0,1,.79.24.89.89,0,0,1,.26.72v1.42Z" />
+                            <path class="pixcls-2" d="M120.94,42.59a.85.85,0,0,1-.75-.33,1.22,1.22,0,0,1-.17-.7V40.7h-.46v-.48H120l.07-.7h.57v.7h.91v.48h-.91v.74a1.1,1.1,0,0,0,.07.44.41.41,0,0,0,.42.21,3.28,3.28,0,0,0,.46,0v.46a3.72,3.72,0,0,1-.67.08Z" />
+                            <path class="pixcls-2" d="M122.2,42.53V40.22h.53l0,.14a4.37,4.37,0,0,1,1.14-.21H124v.55h-.23a3.72,3.72,0,0,0-.9.12v1.71Z" />
+                            <path class="pixcls-2" d="M126.32,41.56c-.27,0-.54,0-.83,0-.47,0-.64.1-.64.31s.14.31.5.31a4.7,4.7,0,0,0,1-.13v-.45Zm.14,1,0-.14a5.34,5.34,0,0,1-1.25.2,1.16,1.16,0,0,1-.7-.17.71.71,0,0,1,.13-1.18,2,2,0,0,1,.86-.13c.25,0,.57,0,.84,0v0c0-.37-.24-.48-.89-.48-.25,0-.56,0-.85,0V40.2c.33,0,.69-.05,1-.05a2,2,0,0,1,1.08.22.87.87,0,0,1,.32.79v1.37Z" />
+                            <polygon class="pixcls-2" points="127.79 39.24 128.44 39.24 128.44 42.53 127.79 42.53 127.79 39.24 127.79 39.24" />
+                        </svg>
+                    </div>
+                    <div class="item">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.28 42.4">
+                            <defs>
+                                <style>
+                                    .piccls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .piccls-2 {
+                                        fill: #3eac57;
+                                        fill-rule: evenodd;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="piccls-1" x="-4223.42" y="-3773.51" width="9237" height="5495" />
+                            <path class="piccls-2" d="M27,0H39.45V12.34H27Zm2.12,2.13h8.17V10.2H29.16Zm1.95,1.93h4.25V8.28H31.11ZM6.51,6.66h6.72a10,10,0,1,1,0,19.91H6.51v7.65H0V11.53H6.51Zm0,4.9V21.68h5.54a5.06,5.06,0,1,0,0-10.12Zm20.53,5h6.48V34.22H27ZM68.15,6.66h6.72a10,10,0,1,1,0,19.91H68.15v7.65H61.64V11.53h6.51Zm0,4.9V21.68h5.54a5.06,5.06,0,1,0,0-10.12ZM48.64,12.8a11.34,11.34,0,0,1,9,4.4l-3.52,3.52a5.67,5.67,0,0,0-4.94-3.07,5.86,5.86,0,0,0-5.69,6,5.87,5.87,0,0,0,5.69,6,5.67,5.67,0,0,0,4.94-3.07l3.52,3.49a11.27,11.27,0,0,1-9,4.42A11.06,11.06,0,0,1,37.41,23.68,11.07,11.07,0,0,1,48.64,12.8m64.58,29.6h6.38l11.68-29.33H124.9l-5.36,13.45-5.35-13.45h-6.38l8.56,21.47Zm-7-8.62h-5.9V32.14c-7,4.56-12.87,1.56-13.58-2.91C86,24.23,89,20.61,101,21.6c0-4.5-6.75-5.07-11.31-1.92l-2.13-4.22c8.4-4.45,18.72-3.07,18.74,4.32ZM101.14,25h-5c-5,0-3.91,6.48.9,5.46,2.46-.52,4-2.16,4.14-5.46" />
+                        </svg>
+                    </div>
+                    <div class="item">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.47 30.9">
+                            <defs>
+                                <style>
+                                    .amecls-1 {
+                                        fill: transparent;
+                                    }
+
+                                    .amecls-2 {
+                                        fill: #2c2a7a;
+                                    }
+
+                                    .amecls-3 {
+                                        fill: #ed2d60;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="amecls-1" x="-4231.33" y="-3867.97" width="9237" height="5495" />
+                            <path class="amecls-2" d="M58,5.6c-5.42,0-7.49,1.34-8.81,5.22a.25.25,0,0,0,.17.33l3.91,1.08a.25.25,0,0,0,.31-.17,2.36,2.36,0,0,1,2.14-1.9h4.19a1.42,1.42,0,0,1,1.5,1.26c0,.7,0,2.56,0,2.56H54.87a6.53,6.53,0,0,0-6.47,6.7c0,3.77,2.09,6.65,9.21,6.65,6.38,0,8.7-2.47,8.7-5.86V12.12C66.31,10.07,65.29,5.6,58,5.6Zm3.35,16c0,.47-.28,1.3-1.67,1.3H55.05a2.16,2.16,0,0,1-1.9-2.25,2,2,0,0,1,2.09-2.26h6.14Z" />
+                            <path class="amecls-2" d="M105.84,27.23c5.42,0,7.49-1.34,8.81-5.22a.24.24,0,0,0-.17-.32l-3.91-1.09a.25.25,0,0,0-.31.17,2.36,2.36,0,0,1-2.14,1.9h-4.19a1.42,1.42,0,0,1-1.5-1.26c0-.7,0-2.56,0-2.56H109a6.53,6.53,0,0,0,6.47-6.7c0-3.76-2.09-6.65-9.21-6.65-6.38,0-8.7,2.47-8.7,5.86v9.35C97.56,22.76,98.58,27.23,105.84,27.23Zm-3.68-15.81c0-.44.26-1.24,1.6-1.24h4.66c1.27,0,1.82.8,1.82,2s-.23,2.15-2,2.15h-6.08Z" />
+                            <path class="amecls-2" d="M82,17.64c3.42,0,6.28-4.81,6.84-5.81a.35.35,0,0,1,.3-.18h0a.35.35,0,0,1,.35.35V27a.38.38,0,0,0,.39.38H94a.38.38,0,0,0,.38-.38V9.47A3.86,3.86,0,0,0,90.56,5.6h0c-2.09,0-3.21.89-4.46,2.47s-3.37,5.07-4.1,5.07-2.85-3.49-4.1-5.07S75.52,5.6,73.43,5.6h0a3.86,3.86,0,0,0-3.86,3.87V27a.38.38,0,0,0,.38.38h4.17A.38.38,0,0,0,74.5,27V12a.35.35,0,0,1,.35-.35h0a.37.37,0,0,1,.31.18C75.71,12.83,78.58,17.64,82,17.64Z" />
+                            <path class="amecls-3" d="M21,30.9h0a4,4,0,0,0,2.81-1.16L40.86,12.66A3.7,3.7,0,0,0,41.94,10v-.2a3.74,3.74,0,0,0-1.1-2.64L34.28.75A2.63,2.63,0,0,0,32.44,0H9.5A2.59,2.59,0,0,0,7.67.75L1.11,7.2A3.71,3.71,0,0,0,0,9.84V10a3.7,3.7,0,0,0,1.08,2.62L18.16,29.74A4,4,0,0,0,21,30.9Z" />
+                            <path class="amecls-2" d="M9.25,0v0a3,3,0,0,1,2,.78L19,7.8a2.31,2.31,0,0,0,1.53.58h.92A2.34,2.34,0,0,0,23,7.8l7.71-7a3,3,0,0,1,2-.78V0H9.25Z" />
+                        </svg>
+                    </div>
+                    <div class="item">
+                        <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.65 53.78">
+                            <defs>
+                                <style>
+                                    .boletocls-1 {
+                                        fill: transparent;
+                                    }
+                                </style>
+                            </defs>
+                            <rect class="boletocls-1" x="-4228.74" y="-3950.94" width="9237" height="5495" />
+                            <path d="M17.42,39.84h5.86a3.88,3.88,0,0,1,3.4,1.42,3.23,3.23,0,0,1,.6,1.93,3,3,0,0,1-.73,2.1,3.58,3.58,0,0,1-1.09.8A4.48,4.48,0,0,1,27,47a3.24,3.24,0,0,1,.91,2.44,3.73,3.73,0,0,1-.82,2.37,4.67,4.67,0,0,1-3.93,1.59H17.42Zm5.17,5.72a4.17,4.17,0,0,0,1.83-.32,1.86,1.86,0,0,0,1-1.83,1.74,1.74,0,0,0-1.09-1.78,4.77,4.77,0,0,0-1.82-.26H19.22v4.19Zm.62,6.25a2.82,2.82,0,0,0,2.43-1,2.43,2.43,0,0,0,.46-1.5,2,2,0,0,0-1.33-2,5.15,5.15,0,0,0-1.87-.28H19.22v4.76Z" />
+                            <path d="M43.11,41.77a7.53,7.53,0,0,1,1.34,4.6,8,8,0,0,1-1.54,5.05,6.1,6.1,0,0,1-5.15,2.36,6.17,6.17,0,0,1-4.92-2.07,7.8,7.8,0,0,1-1.59-5A8,8,0,0,1,32.61,42a5.9,5.9,0,0,1,5.18-2.51A6.22,6.22,0,0,1,43.11,41.77Zm-1.62,8.64a7.45,7.45,0,0,0,1.08-4,5.7,5.7,0,0,0-1.25-3.84,4.26,4.26,0,0,0-3.41-1.46,4.43,4.43,0,0,0-3.43,1.44,6.09,6.09,0,0,0-1.33,4.26,6.23,6.23,0,0,0,1.14,3.8A4.28,4.28,0,0,0,38,52.14,3.81,3.81,0,0,0,41.49,50.41Z" />
+                            <path d="M48.52,39.84h1.84V51.77h6.79v1.61H48.52Z" />
+                            <path d="M61.09,39.84h9.83V41.5h-8v4.11h7.43v1.57H62.88v4.59h8.17v1.61h-10Z" />
+                            <path d="M85.24,39.84v1.61H80.68V53.38H78.82V41.45H74.26V39.84Z" />
+                            <path d="M99.64,41.77a7.47,7.47,0,0,1,1.35,4.6,8.1,8.1,0,0,1-1.54,5.05,6.84,6.84,0,0,1-10.07.29,7.81,7.81,0,0,1-1.6-5A8,8,0,0,1,89.15,42a5.89,5.89,0,0,1,5.18-2.51A6.22,6.22,0,0,1,99.64,41.77ZM98,50.41a7.46,7.46,0,0,0,1.09-4,5.7,5.7,0,0,0-1.25-3.84,4.28,4.28,0,0,0-3.42-1.46A4.46,4.46,0,0,0,91,42.54a6.14,6.14,0,0,0-1.33,4.26,6.23,6.23,0,0,0,1.14,3.8,4.28,4.28,0,0,0,3.69,1.54A3.81,3.81,0,0,0,98,50.41Z" />
+                            <rect x="60.22" y="0.07" width="3.46" height="34.75" />
+                            <rect x="83.91" y="0.07" width="3.64" height="34.83" />
+                            <rect x="91.49" y="0.07" width="3.46" height="34.75" />
+                            <rect x="65.68" y="0.07" width="3.46" height="34.75" />
+                            <rect x="75.09" y="0.07" width="6.5" height="34.75" />
+                            <rect x="110.92" y="0.09" width="1.69" height="53.69" />
+                            <rect x="96.72" y="0.07" width="3.46" height="34.75" />
+                            <rect x="116.52" width="4.13" height="53.78" />
+                            <rect x="103.56" y="0.09" width="1.69" height="53.69" />
+                            <rect x="71.24" y="0.07" width="1.69" height="34.75" />
+                            <rect x="8" y="0.07" width="6.84" height="53.71" />
+                            <rect x="16.58" y="0.07" width="1.69" height="34.75" />
+                            <rect y="0.07" width="2.2" height="53.71" />
+                            <rect x="22.12" y="0.07" width="1.69" height="34.75" />
+                            <rect x="3.98" y="0.07" width="1.86" height="53.71" />
+                            <rect x="29.35" y="0.07" width="1.69" height="34.75" />
+                            <rect x="45.9" y="0.07" width="3.46" height="34.75" />
+                            <rect x="38.72" y="0.07" width="5.33" height="34.75" />
+                            <rect x="35.37" y="0.07" width="1.69" height="34.75" />
+                            <rect x="55.01" y="0.07" width="1.69" height="34.75" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="security-wrapper">
+                <h2>SEGURANÇA</h2>
+                <div class="container">
+                    <div class="item"><img src="https://lojamindesigns.vteximg.com.br/arquivos/soulmind_layout_seguranca_lets.png" alt="Segurança Let's Encrypt" width="551" height="217" /></div>
+                    <div class="item"><img src="https://lojamindesigns.vteximg.com.br/arquivos/soulmind_layout_seguranca_your.png" alt="Your Views" width="100" height="103" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="final-label__address">
+        <small>UNI.CO Comércio S/A., CNPJ 00.399.603/0008-84, Av. Hélio Ossamu Daikuara, 1445 - Galpão 07A CEP 06807-000, Jardim Vista Alegre, Embu das Artes - SP.</small>
+    </div>
+</footer>

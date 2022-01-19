@@ -1,6 +1,7 @@
 {
 	"name" : "MinD+",
 	"fatured" : "5",
+	"orderedSellers": {},
 	"sellers" : {
 		"Adot" : {
 			"name" : "Adot",
@@ -9,7 +10,8 @@
 			"bannerM" : "",
 			"pageName" : "",
 			"pageTitle" : "",
-			"pageDescription" : ""
+			"pageDescription" : "",
+			"collection": 888
 		},
 		"Alma" : {
 			"name" : "Alma",
@@ -18,7 +20,8 @@
 			"bannerM" : "",
 			"pageName" : "",
 			"pageTitle" : "",
-			"pageDescription" : ""
+			"pageDescription" : "",
+			"collection": 821
 		},
 		"Alya" : {
 			"name" : "Alya",
@@ -27,7 +30,8 @@
 			"bannerM" : "",
 			"pageName" : "",
 			"pageTitle" : "",
-			"pageDescription" : ""
+			"pageDescription" : "",
+			"collection": 902
 		}
 	}
 }
