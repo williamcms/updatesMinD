@@ -2825,6 +2825,14 @@ section.csm-shelf__product--bottom{
     cursor: pointer;
     font-size: 0;
 }
+.csm-shelf__colection .mind-flag-frete-gratis {
+    background: url(/arquivos/frete_gratis_selinho_desk_56px.png) 50%/contain no-repeat;
+    position: absolute;
+    top: -30.5rem;
+    left: 1rem;
+    cursor: pointer;
+    font-size: 0;
+}
 
 html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
     top: 0.5rem;
@@ -2835,6 +2843,20 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
 
 .csm-shelf__colection .flag-produto-bazar::after {
     content: "Produto no Bazar";
+    min-width: 8.5rem;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    color: #e7d8d8;
+    padding: 10px;
+    font-size: 14px;
+    float: left;
+    background: #f383a2;
+    margin: -1px 0 1px 40px
+}
+.csm-shelf__colection .mind-flag-frete-gratis::after {
+    content: "Produto com frete grátis";
     min-width: 8.5rem;
     width: 0;
     opacity: 0;
@@ -2876,6 +2898,21 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar{
         font-variant: all-small-caps;
         margin: 0 0 0 30px
     }
+
+    .csm-shelf__colection .mind-flag-frete-gratis {
+        background: url(/arquivos/frete_gratis_selinho_mob_31px.png) 50%/contain no-repeat;
+        margin-right: 4px
+    }
+    html body .has-shelf--default .csm-shelf__colection .mind-flag-frete-gratis{
+        width: 30px;
+        height: 25px
+    }
+    .csm-shelf__colection .mind-flag-frete-gratis::after {
+        font-size: 13px;
+        padding: 4px 5px;
+        font-variant: all-small-caps;
+        margin: 0 0 0 30px
+    }
 }
 
 html body .has-shelf--default .csm-shelf__colection .flag-produto-brasileiro:hover::after {
@@ -2886,6 +2923,13 @@ html body .has-shelf--default .csm-shelf__colection .flag-produto-brasileiro:hov
 }
 
 html body .has-shelf--default .csm-shelf__colection .flag-produto-bazar:hover::after {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: .2s linear
+}
+
+html body .has-shelf--default .csm-shelf__colection .mind-flag-frete-gratis:hover::after {
     width: auto;
     opacity: 1;
     visibility: visible;
