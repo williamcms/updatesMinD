@@ -372,8 +372,12 @@ $(document).ready(function(){
 	})();
 	// Account
 	var getLoginStatus = (getLoginStatus = (e) =>{
-		'use strict';
-		var s = {};
+		var s = {
+			logged: false,
+			user: null,
+			userId: null,
+			userType: null
+		};
 		$.ajax({
 			"async": true,
 			"url": "/api/vtexid/pub/authenticated/user",
@@ -383,15 +387,10 @@ $(document).ready(function(){
 			}
 		}).done(function(e){
 			if(e != null){
-				s['logged'] = true;
-				s['user'] = e.user;
-				s['userId'] = e.userId;
-				s['userType'] = e.userType;
-			}else{
-				s.logged = false;
-				s['user'] = null;
-				s['userId'] = null;
-				s['userType'] = null;
+				s.logged = true;
+				s.user = e.user;
+				s.userId = e.userId;
+				s.userType = e.userType;
 			}
 		});
 		return s;
