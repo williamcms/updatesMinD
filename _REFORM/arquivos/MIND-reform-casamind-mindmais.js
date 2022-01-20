@@ -18,7 +18,15 @@
             mindmais = JSON.parse(e);
             mindmais.orderedSellers = $.map(mindmais.sellers, function(r){return r});
             mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
-            console.log(mindmais);
+            mountSellers(mindmais);
         });
-    });
+    })();
+    var mountSellers = (mountSellers = (mindmais) =>{
+    	console.log(mindmais);
+    	var sellersSlick = $('main.mindmais .slick-carousel-dots');
+    	$.each(mindmais.orderedSellers, function(i, e){
+    		sellersSlick.slick('slickAdd', $('<img />').attr('src', e.bannerD).attr('title', e.name));
+    	})
+    })
+
 })
