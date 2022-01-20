@@ -372,12 +372,11 @@ $(document).ready(function(){
 	})();
 	// Account
 	var getLoginStatus = (getLoginStatus = (e) =>{
-		var s = {
-			logged: false,
-			user: null,
-			userId: null,
-			userType: null
-		};
+		var s = {},
+		i = $('.js--logged-in'),
+		o = $('.js--logged-out'),
+		j = $('.js--user-name');
+
 		$.ajax({
 			"async": true,
 			"url": "/api/vtexid/pub/authenticated/user",
@@ -387,22 +386,18 @@ $(document).ready(function(){
 			}
 		}).done(function(e){
 			if(e != null){
-				s.logged = true;
-				s.user = e.user;
-				s.userId = e.userId;
-				s.userType = e.userType;
+				s['logged'] = true;
+				s['user'] = e.user;
+				s['userId'] = e.userId;
+				s['userType'] = e.userType;
+			}else{
+				s['logged'] = false;
+				s['user'] = null;
+				s['userId'] = null;
+				s['userType'] = null;
 			}
+			return (s["logged"] == true ? (i.show() && o.hide() && j.text('Olá, Minder!')) : (o.show() && i.hide() && j.text('Entre ou Cadastre-se')));
 		});
-		return s;
-	});
-	// Login Dropdown
-	var changeLoginDropDown = (changeLoginDropDown = () =>{
-		var i = $('.js--logged-in'),
-		o = $('.js--logged-out'),
-		s = getLoginStatus(),
-		j = $('.js--user-name');
-
-		return (s["logged"] == true ? (i.show() && o.hide() && j.text('Olá, Minder!')) : (o.show() && i.hide() && j.text('Entre ou Cadastre-se')));
 	})();
 	// Troca a imagem do produto por outra de tamanho maior
 	// É possivel trocar a dimensão no CMS > Configurações > Tipos de Arquivo,

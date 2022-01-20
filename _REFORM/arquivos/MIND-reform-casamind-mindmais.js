@@ -4,19 +4,21 @@
  */
  $(document).ready(function(){
     "use strict";
-    var getSellersList = (function = () =>{
-        var sellers = {};
+    var getSellers = (getSellers = () =>{
+        var mindmais = {};
 
         $.ajax({
-            accept: "application/vnd.vtex.ds.v10+json",
+            async: true,
+            accept: "application/json; charset=utf-8",
             contentType: "application/json; charset=utf-8",
             crossDomain: false,
             type: "GET",
-            url: "/arquivos/mindmais.json"
-        }).done(function(e){
-            sellers = $.map(e, function(r){return r.sellers});
-            sellers.sort((a,b) => a.name.localeCompare(b.name));
+            url: "https://lojamindesigns.vteximg.com.br/arquivos/mindmais.json.css?v=1"
+        }).then(function(e){
+            mindmais = JSON.parse(e);
+            mindmais.orderedSellers = $.map(mindmais.sellers, function(r){return r});
+            mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
+            console.log(mindmais);
         });
-        return sellers;
     });
-}
+})
