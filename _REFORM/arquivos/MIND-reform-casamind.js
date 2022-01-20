@@ -10,6 +10,18 @@ $(document).ready(function(){
 		return this.find(e => true)     // or this.find(Boolean)
 	  }
 	});
+	//LazyLoad
+	$('.lazy').Lazy({
+		scrollDirection: 'both',
+		effect: 'fadeIn',
+		visibleOnly: true,
+		onError: function(e) {
+			console.log('error loading ' + e.data('src'));
+		},
+		afterLoad: function(e){
+			e.addClass('lazyComplete');
+		}
+	});
 	//Slickers
 	$('.slick-carousel-dots').slick({
 		autoplay: true,
