@@ -5,3 +5,10 @@
 main.mindmais .slick-slider{
     height: 18.5rem;
 }
+main.mindmais .slick-slider .slick-dots li button:before{
+    transition: all 1s ease;
+}
+main.mindmais .slick-slider .slick-dots li.slick-active button:before{
+    padding: 0.79rem 1.2rem;
+    border-radius: 1.2rem;
+}
