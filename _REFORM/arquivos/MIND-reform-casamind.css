@@ -1624,6 +1624,9 @@ footer .final-label__address{
         max-width: 100vw;
         overflow-x: hidden;
     }
+    body.noscroll{
+        overflow: hidden;
+    }
     /* View Selector */
     .desktop-view {
         display: none !important;
@@ -1642,9 +1645,10 @@ footer .final-label__address{
         height: 100%;
         overflow-y: scroll;
         overflow-y: overlay;
+        overflow-x: hidden;
     }
     .csm-header .csm-benefits{
-        display: none;
+        display: none !important;
     }
     .csm-header .csm-middle .csm-center{
         min-height: 3.75rem;

@@ -59,6 +59,7 @@ $(document).ready(function(){
 	// Menu
 	var openMenu = $('.js--open-menu').on('click', function(){
 		$(".csm-header .csm-wrapper, .csm-header .csm-navigation, .js--open-menu").toggleClass('change');
+		$("body").toggleClass('noscroll');
 		// Atributos para Leitores de tela
 		$x = $(this).hasClass('change');
 		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-expanded', $x);
