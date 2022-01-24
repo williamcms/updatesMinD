@@ -2,13 +2,45 @@
  *  Código por William Di Biasi Bogik
  *
  */
-main.mindmais .slick-slider{
-    height: 18.5rem;
+main.mindmais .slick-slider button.slick-next.slick-arrow, 
+main.mindmais .slick-slider button.slick-prev.slick-arrow{
+    border: solid var(--brand-color);
+    border-width: 0 5px 5px 0;
 }
-main.mindmais .slick-slider .slick-dots li button:before{
-    transition: all 1s ease;
+main.mindmais > .banners-top .slicker{
+
 }
-main.mindmais .slick-slider .slick-dots li.slick-active button:before{
+main.mindmais > .banners-top .slicker .slick-dots li:not(.slick-active) button:before{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+main.mindmais > .banners-top .slicker .slick-dots li.slick-active button:before{
     padding: 0.79rem 1.2rem;
     border-radius: 1.2rem;
+}
+main.mindmais > .nav-brands,
+main.mindmais > .nav-categories{
+    padding: 2rem 3rem;
+}
+main.mindmais > .nav-brands h2,
+main.mindmais > .nav-categories h2{
+    margin: .2rem 0 1.5rem 0;
+}
+main.mindmais > .nav-brands .slicker,
+main.mindmais > .nav-categories .slicker{
+    /*display: flex;
+    justify-content: center;
+    padding: 0 4rem;*/
+}
+main.mindmais > .nav-brands .slicker .item:not(:last-child){
+    margin-right: 1rem;
+}
+main.mindmais > .nav-brands .slicker .item > .image{
+    background-color: var(--sand); /*remover*/
+}
+main.mindmais > .nav-brands .slicker .item > .name,
+main.mindmais > .nav-brands .slicker .item > .desc{
+    padding: 0 0.5rem;
+}
+main.mindmais > .nav-categories{
+    background-color: var(--sand);
 }

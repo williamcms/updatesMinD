@@ -12,6 +12,7 @@
     --body-bg-color: #FFFFFF;
     --body-txt-color: #000000;
     --brand-color: #E94273;
+    --sand: #F7F7F5;
     --blue: #80BDFF;
     --indigo: #6610f2;
     --purple: #6F42C1;
@@ -419,6 +420,9 @@ button.custom-select{
 .bold,
 .font-weight-bold{
     font-weight: 600 !important;
+}
+.uppercase{
+    text-transform: uppercase;
 }
 /* Classes para Overlays */
 .overlayform{
@@ -829,11 +833,15 @@ blockquote::before{
     white-space: nowrap;
 }
 /* Slickers */
+.slick-slide{
+    height: auto !important;
+}
 .slick-slider{
-    max-width: 100%;
-    margin: 0 auto;
-    display: block;
     position: relative;
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+    margin: 0 auto;
 }
 .slick-slide img{
     display: block;
@@ -848,6 +856,7 @@ blockquote::before{
 }
 .slick-dots li{
     display: inline-block;
+    transition: all 1s ease;
 }
 .slick-dots li button,
 .slick-slider button.slick-arrow{
@@ -888,11 +897,51 @@ blockquote::before{
     border-radius: 50%;
     padding: .7rem;
     opacity: .7;
+    transition: all 1s ease;
 }
 .slick-dots li.slick-active button:before{
     padding: .79rem;
     background-color: var(--brand-color);
     opacity: 1;
+}
+.slick-slider.navbar{
+    margin-bottom: 2rem;
+}
+.slick-slider.navbar .slick-dots{
+    display: flex;
+    margin: 0 auto;
+    max-width: 60%;
+    bottom: -2.5rem;
+}
+.slick-slider.navbar .slick-dots li{
+    flex: 1 1 0px;
+    background-color: var(--brand-color);
+}
+.slick-slider.navbar .slick-dots li:first-child,
+.slick-slider.navbar .slick-dots li:first-child button{
+    border-radius: 1.2rem 0 0 1.2rem;
+}
+.slick-slider.navbar .slick-dots li:last-child,
+.slick-slider.navbar .slick-dots li:last-child button{
+    border-radius: 0 1.2rem 1.2rem 0;
+}
+.slick-slider.navbar .slick-dots li button{
+    width: 100%;
+    height: 1rem;
+    margin: 0;
+}
+.slick-slider.navbar .slick-dots li.slick-active ~ li{
+    width: 100%;
+    height: 1rem;
+    margin: 0;
+    background-color: var(--gray-lighter);
+}
+.slick-slider.navbar .slick-dots li.slick-active button{
+    background-color: var(--brand-color);
+    animation: fill;
+}
+.slick-slider.navbar .slick-dots li button:before{
+    padding: 0;
 }
 /* View selector */
 .desktop-view {

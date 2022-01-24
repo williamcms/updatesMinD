@@ -3,35 +3,61 @@
 	"featured" : "5",
 	"orderedSellers": {},
 	"sellers" : {
+		"featured" : 10,
 		"Adot" : {
 			"name" : "Adot",
 			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/logo-menu-ADOT-min.png",
 			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/ids/9380882/mind_mais-ADOT-top_desktop-min.jpg",
 			"bannerM" : "https://imaginarium.vteximg.com.br/arquivos/ids/9380882/mind_mais-ADOT-top_mob-min.jpg",
-			"pageName" : "MinD+ Adot",
-			"pageTitle" : "Adot",
+			"pageTitle" : "MinD+ Adot",
+			"pageName" : "Adot",
 			"pageDescription" : "A Adot chega ao MinD + para oferecer produtos que vão completar o espaço do seu pequeno de forma única e cheia de alegria. Conhecida como #amarcamaisfofadopaís, traz uma curadoria de organizadores, almofadas, luminárias e muito mais! Com carinho e atenção aos detalhes, as peças são produzidas no Brasil e vão deixar sua casa ainda mais especial.",
-			"collection": 888
+			"collection": 888,
+			"pageLink" : "https://www.casamind.com.br/mindmais/adot"
 		},
 		"Alma" : {
 			"name" : "Alma",
 			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/logo-menu-ALMA-min.png",
 			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/ids/9157103/mind_mais-ALMA-top_desktop-min.png",
 			"bannerM" : "https://imaginarium.vteximg.com.br/arquivos/ids/9157103/mind_mais-ALMA-top_mob-min.png",
-			"pageName" : "MinD+ Alma",
-			"pageTitle" : "Alma",
+			"pageTitle" : "MinD+ Alma",
+			"pageName" : "Alma",
 			"pageDescription" : "",
-			"collection": 821
+			"collection": 821,
+			"pageLink" : "https://www.casamind.com.br/mindmais/alma"
 		},
 		"Alya" : {
 			"name" : "Alya",
 			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/logo-menu-AYLA.png",
 			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/ids/9395891/mind_mais-ALYA-top_desktop.jpg",
 			"bannerM" : "https://imaginarium.vteximg.com.br/arquivos/ids/9395891/mind_mais-ALYA-top_mob.jpg",
-			"pageName" : "MinD+ Alya",
-			"pageTitle" : "Alya",
+			"pageTitle" : "MinD+ Alya",
+			"pageName" : "Alya",
 			"pageDescription" : "Inspiradas pela arte, design e natureza, as velas artesanais da Alya chegam ao MinD + para conquistar um espaço na sua decoração. Todas as velas são feitas a partir de materiais vegetais e biodegradáveis, com embalagens livres de plástico!",
-			"collection": 902
+			"collection": 902,
+			"pageLink" : "https://www.casamind.com.br/mindmais/alya"
+		},
+		"ohboxparty" : {
+			"name" : "Oh Box Party!",
+			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/oh_box_party_logo_menu.png",
+			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/ids/9551906/oh_box_party_banner_top_desk_1301x201.png",
+			"bannerM" : "https://imaginarium.vteximg.com.br/arquivos/ids/9551905/oh_box_party_banner_top_mobile_451x151.png",
+			"pageTitle" : "MinD+ Oh Box Party!",
+			"pageName" : "Oh Box Party!",
+			"pageDescription" : "",
+			"collection": 0,
+			"pageLink" : "https://www.casamind.com.br/mindmais/ohboxparty"
+		},
+		"maosatelie" : {
+			"name" : "Mãos Ateliê",
+			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/maos_logo_menu.png",
+			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/ids/9559966/maos_banner_top_desk_1301x201.png",
+			"bannerM" : "https://imaginarium.vteximg.com.br/arquivos/ids/9560024/maos_banner_top_mobile_451x151.png",
+			"pageTitle" : "MinD+ Mãos Ateliê",
+			"pageName" : "Mãos Ateliê",
+			"pageDescription" : "",
+			"collection": 0,
+			"pageLink" : "https://www.casamind.com.br/mindmais/maos"
 		}
 	}
 }
