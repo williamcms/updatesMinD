@@ -38,9 +38,9 @@
             $('.slick-track').find('div[data-number='+i+']').append('<div class="image"><img /></div>'),
             $('.slick-track').find('div[data-number='+i+'] div.image img').attr('src', e.logo).attr('title', e.name),
             $('.slick-track').find('div[data-number='+i+']').append('<div class="name uppercase bold"></div>'),
-            $('.slick-track').find('div[data-number='+i+'] div.name').text(e.name),
-            $('.slick-track').find('div[data-number='+i+']').append('<div class="desc"></div>'),
-            $('.slick-track').find('div[data-number='+i+'] div.desc').html(e.pageDescription.length > 150 ? e.pageDescription.substring(0, e.pageDescription.substring(0, 150 + 1).search(/\s+\S*$/)) + ' (...)' : e.pageDescription);
+            $('.slick-track').find('div[data-number='+i+'] div.name').text(e.name)
+            // $('.slick-track').find('div[data-number='+i+']').append('<div class="desc"></div>'),
+            // $('.slick-track').find('div[data-number='+i+'] div.desc').html(e.pageDescription.length > 150 ? e.pageDescription.substring(0, e.pageDescription.substring(0, 150 + 1).search(/\s+\S*$/)) + ' (...)' : e.pageDescription);
         })
         sellersSlick.slick('slickAdd', $('<div><a href="#">Ver Mais</a></div>').addClass('item').attr('data-number', 'last'));
     });
@@ -56,7 +56,19 @@
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1
-        }); 
+        });
+        $('main.mindmais .slick-dots-banner').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: false,
+            arrows: true,
+            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+            lazyLoad: 'ondemand',
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
     }else{
        $('main.mindmais .slick-dots').slick({
             autoplay: true,
@@ -69,7 +81,19 @@
             infinite: false,
             slidesToShow: 4,
             slidesToScroll: 2
-        }); 
+        });
+       $('main.mindmais .slick-dots-banner').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: true,
+            arrows: false,
+            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+            lazyLoad: 'ondemand',
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
     }
     
 

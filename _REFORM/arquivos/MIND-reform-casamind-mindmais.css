@@ -17,16 +17,13 @@ main.mindmais > .banners-top .slicker .slick-dots li.slick-active button:before{
     padding: 0.79rem 1.2rem;
     border-radius: 1.2rem;
 }
-main.mindmais > .nav-brands,
-main.mindmais > .nav-categories{
+main.mindmais > .nav-brands{
     padding: 2rem 3rem;
 }
-main.mindmais > .nav-brands h2,
-main.mindmais > .nav-categories h2{
+main.mindmais > .nav-brands h2{
     margin: .2rem 0 1.5rem 0;
 }
-main.mindmais > .nav-brands .slicker,
-main.mindmais > .nav-categories .slicker{
+main.mindmais > .nav-brands .slicker{
     /*display: flex;
     justify-content: center;
     padding: 0 4rem;*/
@@ -41,6 +38,13 @@ main.mindmais > .nav-brands .slicker .item > .name,
 main.mindmais > .nav-brands .slicker .item > .desc{
     padding: 0 0.5rem;
 }
-main.mindmais > .nav-categories{
-    background-color: var(--sand);
+
+@media screen and (max-width: 831px) and (orientation : portrait){
+    main.mindmais > .nav-brands{
+        padding: 2rem 1.5rem;
+    }
+    main.mindmais h2{
+        font-size: 1.5rem;
+        white-space: nowrap;
+    }
 }
