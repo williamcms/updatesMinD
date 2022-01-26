@@ -27,7 +27,7 @@
     var mountBanners = (mountBanners = (mindmais) =>{
         var bannersSlick = $('main.mindmais > .banners-top .slicker');
         $.each(mindmais.orderedSellers, function(i, e){
-            bannersSlick.slick('slickAdd', $('<img />').attr('src', e.bannerD).attr('title', e.name));
+            bannersSlick.slick('slickAdd', $('<img />').attr('src', (isMobile() ? e.bannerM : e.bannerD)).attr('title', e.name));
             return (i == parseInt(mindmais.featured) - 1 ? false : true);
         })
     });
