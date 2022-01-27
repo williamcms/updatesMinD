@@ -38,6 +38,48 @@ main.mindmais > .nav-brands .slicker .item > .name,
 main.mindmais > .nav-brands .slicker .item > .desc{
     padding: 0 0.5rem;
 }
+main.mindmais > .nav-brands-expanded{
+    display: none;
+    margin: 3rem 0;
+}
+main.mindmais > .nav-brands-expanded > ul.alphabeticalList{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 2rem;
+}
+main.mindmais > .nav-brands-expanded > ul.alphabeticalList li,
+main.mindmais > .nav-brands-expanded > select.alphabeticalList option{
+    color: var(--brand-color);
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+main.mindmais > .nav-brands-expanded > ul.alphabeticalList li[disabled]{
+    cursor: default !important;
+}
+main.mindmais > .nav-brands-expanded > ul.alphabeticalList li.active{
+    color: var(--white);
+    background-color: var(--brand-color);
+    padding: .1rem .2rem;
+}
+main.mindmais > .nav-brands-expanded > ul.alphabeticalList li[disabled],
+main.mindmais > .nav-brands-expanded > select.alphabeticalList option[disabled]{
+    opacity: .5;
+}
+main.mindmais > .nav-brands-expanded > select.alphabeticalList{
+    display: none;
+}
+main.mindmais > .nav-brands-expanded > .sellersContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-column-gap: 2rem;
+    column-gap: 2rem;
+    grid-row-gap: 3rem;
+    row-gap: 3rem;
+    margin: 2rem 0 0 0;
+}
+
 
 @media screen and (max-width: 831px) and (orientation : portrait){
     main.mindmais > .nav-brands{
@@ -46,5 +88,25 @@ main.mindmais > .nav-brands .slicker .item > .desc{
     main.mindmais h2{
         font-size: 1.5rem;
         white-space: nowrap;
+    }
+    main.mindmais > .nav-brands-expanded > ul.alphabeticalList{
+        display: none;
+    }
+    main.mindmais > .nav-brands-expanded > select.alphabeticalList{
+        display: block;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-radius: initial;
+    }
+    main.mindmais > .nav-brands-expanded > .sellersContainer{
+        justify-content: space-evenly;
+        grid-row-gap: 2rem;
+        row-gap: 2rem;
+        grid-column-gap: 1rem;
+        column-gap: 1rem;
+    }
+    main.mindmais > .nav-brands-expanded > .sellersContainer > div{
+        flex-basis: 40%;
     }
 }
