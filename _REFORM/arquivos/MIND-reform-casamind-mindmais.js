@@ -14,13 +14,30 @@
             contentType: "application/json; charset=utf-8",
             crossDomain: false,
             type: "GET",
-            url: "https://lojamindesigns.vteximg.com.br/arquivos/mindmais.json.css?v=1.3.2"
+            url: "./arquivos/mindmais.json.css?v=1.3.2"
         }).then(function(e){
+            let categories = [];
             mindmais = JSON.parse(e);
             mindmais.orderedSellers = $.map(mindmais.sellers, function(r){return r});
             mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
+
+            $.each(mindmais.orderedSellers, function(i, e){
+                $.each((e.categories).split(','), function(j, n){
+                    if(categories.find(el => el == this)){
+                        
+                    }else{
+                        console.log(this);
+                        categories.push(this);
+                    }
+                })
+            })
+            mindmais.orderedCategories = categories.sort((a,b) => a.localeCompare(b));
+
+            console.log(mindmais)
+
             mountBanners(mindmais);
             mountSellers(mindmais);
+            mountCategories(mindmais);
 
             globalSellers = mindmais.orderedSellers;
         });
@@ -28,7 +45,7 @@
     var mountBanners = (mountBanners = (mindmais) =>{
         var bannersSlick = $('main.mindmais > .banners-top .slicker');
         $.each(mindmais.orderedSellers, function(i, e){
-            bannersSlick.slick('slickAdd', $('<img />').attr('src', (isMobile() ? e.bannerM : e.bannerD)).attr('title', e.name));
+            bannersSlick.slick('slickAdd', $('<img  draggable="false" />').attr('src', (isMobile() ? e.bannerM : e.bannerD)).attr('title', e.name));
             return (i == parseInt(mindmais.featured) - 1 ? false : true);
         })
     });
@@ -39,12 +56,21 @@
             $('.slick-track').find('div[data-number='+i+']').append('<div class="image"><img width="250" height="166" draggable="false" /></div>'),
             $('.slick-track').find('div[data-number='+i+'] div.image img').attr('src', e.logo).attr('title', e.name).attr('alt', e.name),
             $('.slick-track').find('div[data-number='+i+']').append('<div class="name uppercase bold text-center"></div>'),
-            $('.slick-track').find('div[data-number='+i+'] div.name').text(e.name)
+            $('.slick-track').find('div[data-number='+i+'] div.name').text(e.name);
             // $('.slick-track').find('div[data-number='+i+']').append('<div class="desc"></div>'),
             // $('.slick-track').find('div[data-number='+i+'] div.desc').html(e.pageDescription.length > 150 ? e.pageDescription.substring(0, e.pageDescription.substring(0, 150 + 1).search(/\s+\S*$/)) + ' (...)' : e.pageDescription);
             return (i == parseInt(mindmais.featuredBrands) - 1 ? false : true);
         })
         sellersSlick.slick('slickAdd', $('<div><a href="javascript:void(0);" id="expandBrands"><img src="https://lojamindesigns.vteximg.com.br/arquivos/mindmais_ver_mais_teste.png" title="Ver mais" alt="Ver mais" /></a></div>').addClass('item').attr('data-number', 'last'));
+    });
+    var mountCategories = (mountCategories = (mindmais) =>{
+        var categoriesSlick = $('main.mindmais > .nav-categories .slicker');
+
+        $.each(mindmais.orderedCategories, function(i){
+            categoriesSlick.slick('slickAdd', $('<div draggable="false"></div>').addClass('item').attr('category-number', i));
+            $('.slick-track').find('div[category-number='+i+']').append('<div class="name uppercase bold text-center"></div>'),
+            $('.slick-track').find('div[category-number='+i+'] div.name').text(this);
+        })
     });
     var sellersExpanded = $('body').on('click', '#expandBrands', function(){
         var brandsExpanded = $('main.mindmais .nav-brands-expanded'),

@@ -17,7 +17,8 @@ main.mindmais > .banners-top .slicker .slick-dots li.slick-active button:before{
     padding: 0.79rem 1.2rem;
     border-radius: 1.2rem;
 }
-main.mindmais > .nav-brands{
+main.mindmais > .nav-brands,
+main.mindmais > .nav-categories{
     padding: 2rem 3rem;
 }
 main.mindmais > .nav-brands h2{
@@ -32,41 +33,43 @@ main.mindmais > .nav-brands .slicker .item:not(:last-child){
     margin-right: 1rem;
 }
 main.mindmais > .nav-brands .slicker .item > .image{
-    background-color: var(--sand); /*remover*/
+
 }
 main.mindmais > .nav-brands .slicker .item > .name,
 main.mindmais > .nav-brands .slicker .item > .desc{
     padding: 0 0.5rem;
 }
-main.mindmais > .nav-brands-expanded{
+main.mindmais > .nav-brands-expanded,
+main.mindmais > .nav-categories-expanded{
     display: none;
     margin: 3rem 0;
 }
-main.mindmais > .nav-brands-expanded > ul.alphabeticalList{
+main.mindmais ul.alphabeticalList{
     display: flex;
     justify-content: space-evenly;
     padding: 0 2rem;
 }
-main.mindmais > .nav-brands-expanded > ul.alphabeticalList li,
-main.mindmais > .nav-brands-expanded > select.alphabeticalList option{
+main.mindmais ul.alphabeticalList li,
+main.mindmais select.alphabeticalList option{
     color: var(--brand-color);
     font-weight: bold;
     cursor: pointer;
     user-select: none;
 }
-main.mindmais > .nav-brands-expanded > ul.alphabeticalList li[disabled]{
+main.mindmais ul.alphabeticalList li[disabled]{
     cursor: default !important;
 }
-main.mindmais > .nav-brands-expanded > ul.alphabeticalList li.active{
+main.mindmais ul.alphabeticalList li.active{
     color: var(--white);
     background-color: var(--brand-color);
     padding: .1rem .2rem;
 }
-main.mindmais > .nav-brands-expanded > ul.alphabeticalList li[disabled],
-main.mindmais > .nav-brands-expanded > select.alphabeticalList option[disabled]{
+main.mindmais ul.alphabeticalList li[disabled],
+main.mindmais select.alphabeticalList option[disabled]{
     opacity: .5;
 }
-main.mindmais > .nav-brands-expanded > select.alphabeticalList{
+main.mindmais > .nav-brands-expanded > select.alphabeticalList,
+main.mindmais > .nav-categories-expanded > select.alphabeticalList{
     display: none;
 }
 main.mindmais > .nav-brands-expanded > .sellersContainer{
