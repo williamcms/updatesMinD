@@ -13,4 +13,15 @@ $(document).ready(function(){
 			$($('.aboutUs-wrapper .aboutUs-guide svg line.cls-2')[0]).css('display', 'none');
 		}
 	});
+	var ocultaFiltroRepetido = (function(){
+		var n = $('.main-container .col-left #boxFiltros .navigation-tabs .menu-departamento .search-single-navigator ul.Função li a'),
+		seen = null;
+		$.each(n, function(i, r){
+		    if($(this).attr('title') === seen){
+		        $(this).hide();
+		    }else{
+		        seen = $(this).attr('title');
+		    }
+		})
+	})();
 });
