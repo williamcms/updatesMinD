@@ -19,10 +19,23 @@ main.mindmais > .banners-top .slicker .slick-dots li.slick-active button:before{
 }
 main.mindmais > .nav-brands,
 main.mindmais > .nav-categories{
-    padding: 2rem 3rem;
+    position: relative;
+    margin: 0 0 3rem 0;
+    padding: 2rem 5rem 3rem 5rem;
 }
-main.mindmais > .nav-brands h2{
-    margin: .2rem 0 1.5rem 0;
+main.mindmais > .nav-brands .seemore,
+main.mindmais > .nav-categories .seemore{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2.9rem 6.2rem 0 0;
+    color: var(--brand-color);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+main.mindmais > .nav-brands h2,
+main.mindmais > .nav-categories h2{
+    margin: .2rem 0 2rem 0;
 }
 main.mindmais > .nav-brands .slicker{
     /*display: flex;
@@ -36,13 +49,16 @@ main.mindmais > .nav-brands .slicker .item > .image{
 
 }
 main.mindmais > .nav-brands .slicker .item > .name,
+main.mindmais > .nav-categories .slicker .item > .name,
 main.mindmais > .nav-brands .slicker .item > .desc{
-    padding: 0 0.5rem;
+    padding: 0.5rem;
+    max-width: 16.875rem;
+    margin: 0 auto;
 }
 main.mindmais > .nav-brands-expanded,
 main.mindmais > .nav-categories-expanded{
     display: none;
-    margin: 3rem 0;
+    margin: .5rem 0;
 }
 main.mindmais ul.alphabeticalList{
     display: flex;
@@ -72,7 +88,8 @@ main.mindmais > .nav-brands-expanded > select.alphabeticalList,
 main.mindmais > .nav-categories-expanded > select.alphabeticalList{
     display: none;
 }
-main.mindmais > .nav-brands-expanded > .sellersContainer{
+main.mindmais > .nav-brands-expanded > .sellersContainer,
+main.mindmais > .nav-categories-expanded > .sellersContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -80,7 +97,10 @@ main.mindmais > .nav-brands-expanded > .sellersContainer{
     column-gap: 2rem;
     grid-row-gap: 3rem;
     row-gap: 3rem;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0;
+}
+main.mindmais > .nav-categories{
+    background-color: var(--sand);
 }
 
 
