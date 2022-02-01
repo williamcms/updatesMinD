@@ -6,7 +6,7 @@
     "use strict";
     var globalSellers = {};
     var getSellers = (getSellers = () =>{
-        var mindmais = {};
+        let mindmais = {};
 
         $.ajax({
             async: true,
@@ -14,17 +14,17 @@
             contentType: "application/json; charset=utf-8",
             crossDomain: false,
             type: "GET",
-            url: "./arquivos/mindmais.json.css?v=1.3.2"
+            url: "https://imaginarium.vteximg.com.br/arquivos/mindmais.json.css?v=1.4.2"
         }).then(function(e){
             let categories = [];
             mindmais = JSON.parse(e);
             mindmais.orderedSellers = $.map(mindmais.sellers, function(r){return r});
             mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
+            //Remove espaços para evitar problemas de digitação
+            $.map(mindmais.orderedSellers, function(r){ r.categories = (r.categories).replaceAll(' ', '')});
 
             mindmais.orderedCategories = $.map(mindmais.categories, function(r){return r});
             mindmais.orderedCategories.sort((a,b) => a.name.localeCompare(b.name));
-
-            console.log(mindmais)
 
             mountBanners(mindmais);
             mountSellers(mindmais);
@@ -34,7 +34,7 @@
         });
     })();
     var mountBanners = (mountBanners = (mindmais) =>{
-        var bannersSlick = $('main.mindmais > .banners-top .slicker');
+        let bannersSlick = $('main.mindmais > .banners-top .slicker');
         bannersSlick.slick('slickAdd', $('<img  draggable="false" />').attr('src', (isMobile() ? 'https://lojamindesigns.vteximg.com.br/arquivos/mind_mais-top_mobile.png' : 'https://lojamindesigns.vteximg.com.br/arquivos/mind_mais-top_desktop.png')).attr('title', 'MinD+ Marcas que são extensões da nossa marca'));
         $.each(mindmais.orderedSellers, function(i, e){
             bannersSlick.slick('slickAdd', $('<img  draggable="false" />').attr('src', (isMobile() ? e.bannerM : e.bannerD)).attr('title', e.name));
@@ -42,7 +42,7 @@
         })
     });
     var mountSellers = (mountSellers = (mindmais) =>{
-        var sellersSlick = $('main.mindmais > .nav-brands .slicker');
+        let sellersSlick = $('main.mindmais > .nav-brands .slicker');
         $.each(mindmais.orderedSellers, function(i, e){
             sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', i));
             $('.slick-track').find('div[data-number='+i+']').append('<div class="image"><img width="270" height="400" draggable="false" /></div>'),
@@ -58,24 +58,25 @@
         }
     });
     var mountCategories = (mountCategories = (mindmais) =>{
-        var categoriesSlick = $('main.mindmais > .nav-categories .slicker');
+        let categoriesSlick = $('main.mindmais > .nav-categories .slicker');
 
         $.each(mindmais.orderedCategories, function(i){
-            categoriesSlick.slick('slickAdd', $('<div draggable="false"></div>').addClass('item').attr('category-number', i));
+            categoriesSlick.slick('slickAdd', $('<div draggable="false"></div>').addClass('item').attr('category-number', i).attr('filter', (this.name).replaceAll(' ', '')));
             $('.slick-track').find('div[category-number='+i+']').append('<div class="image"><img width="250" height="166" draggable="false" /></div>'),
             $('.slick-track').find('div[category-number='+i+'] div.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name),
             $('.slick-track').find('div[category-number='+i+']').append('<div class="name uppercase bold text-center"></div>'),
             $('.slick-track').find('div[category-number='+i+'] div.name').text(this.name);
         })
     });
-    var sellersExpanded = $('body').on('click', '#expandBrands, .nav-brands > span.seemore', function(){
-        var brandsExpanded = $('main.mindmais .nav-brands-expanded'),
+    var sellersExpanded = $('body').on('click', '#expandBrands, .nav-brands > .seemore', function(){
+        let brandsExpanded = $('main.mindmais .nav-brands-expanded'),
         alphabeticalList = $('main.mindmais .nav-brands-expanded ul.alphabeticalList'),
         alphabeticalListSelect = $('main.mindmais .nav-brands-expanded select.alphabeticalList'),
         alphabet = [ ...Array(26)].map((_, i) => String.fromCharCode(65 + i)),
         sellersContainer = brandsExpanded.find('.sellersContainer');
 
         brandsExpanded.slideToggle('slow');
+        scrollTo(0, $('#navBrandsExpanded').position().top - (isMobile() ? 400 : 700));
         if(alphabeticalList.find('li[filter]:not(li[filter=all])').length == 0){
             $.each(alphabet, function(){
                 alphabeticalList.append('<li filter="'+ this +'" disabled>' + this + '</li>');
@@ -84,7 +85,7 @@
 
             $.each(globalSellers, function(){
                 let firstLetter = (this.name[0]).normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                html = '<div filterid="'+ firstLetter +'"><img src="'+ this.logo +'"/><p class="text-center bold">'+ this.name +'</p></div>';
+                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'"><img src="'+ this.logo +'"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
 
                 if(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')){
                     $(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')).attr('disabled', false)
@@ -94,21 +95,25 @@
             })
         }
     });
-    var categoriesExpanded = $('body').on('click', 'div.nav-categories span.seemore, div.nav-categories div.item', function(){
-        console.log(this);
-        var brandsExpanded = $('main.mindmais .nav-categories-expanded'),
+    var categoriesExpanded = $('body').on('click', 'div.nav-categories .seemore, div.nav-categories div.item', function(){
+        let brandsExpanded = $('main.mindmais .nav-categories-expanded'),
         sellersContainer = brandsExpanded.find('.sellersContainer');
         if($(this).hasClass('item')){
             brandsExpanded.slideDown('slow');
         }else{
-            brandsExpanded.slideToggle('slow');
+            if($('main.mindmais > .nav-categories').find('div.item.active').length == 0){
+                brandsExpanded.slideToggle('slow');
+            }else{
+                showByCategories($(this));
+            }
         }
-
-        $.each(globalSellers, function(){
-            let html = '<div categories="'+ this.categories +'"><img src="'+ this.logo +'"/><p class="text-center bold">'+ this.name +'</p></div>';
-
-            sellersContainer.append(html);
-        })
+        if(sellersContainer.find('a[categories]').length == 0){
+            $.each(globalSellers, function(){
+                let html = '<a href="'+ this.pageLink +'" class="'+ ((this.categories).replaceAll(' ', '')).replaceAll(',', ' ') +'" categories="'+ this.categories +'"><img src="'+ this.logo +'"/><span class="text-center bold d-block">'+ this.name +'</span></a>';
+    
+                sellersContainer.append(html);
+            })
+        }
     });
     var sellersFilteredMobile = $('body').on('change', '#navBrandsExpanded > select', function(){
         showSellers($(this));
@@ -117,11 +122,11 @@
         showSellers($(this));
     });
     var categoriesFiltered = $('body').on('click', 'div.nav-categories div.item', function(){
-        console.log($(this));
+        showByCategories($(this));
     });
 
     var showSellers = (showSellers = (option) =>{
-        var alphabeticalList = $('main.mindmais .nav-brands-expanded ul.alphabeticalList'),
+        let alphabeticalList = $('main.mindmais > .nav-brands-expanded ul.alphabeticalList'),
         brandsExpanded = $('main.mindmais .nav-brands-expanded'),
         sellersContainer = brandsExpanded.find('.sellersContainer'),
         filter = option.find('option:selected').attr('filter') || option.attr('filter');
@@ -129,8 +134,26 @@
         alphabeticalList.find('li[class=active]').removeClass('active');
         option.addClass('active');
 
-        $.each(sellersContainer.find('div[filterid]'), function(){
+        $.each(sellersContainer.find('a[filterid]'), function(){
             if($(this).attr('filterid') == filter || filter == 'all'){
+                $(this).fadeIn()
+            }else{
+                $(this).fadeOut();
+            }
+        })
+    })
+
+    var showByCategories = (showByCategories = (category) =>{
+        let categoryList = $('main.mindmais > .nav-categories'),
+        categoriesExpanded = $('main.mindmais > .nav-categories-expanded'),
+        sellersContainer = categoriesExpanded.find('.sellersContainer');
+        let filter = (category.hasClass('seemore') ? 'all' : category.attr('filter'));
+
+        categoryList.find('div.item.active').removeClass('active');
+        (category.hasClass('seemore') ? '' : category.addClass('active'))
+
+        $.each(sellersContainer.find('a[categories]'), function(){
+            if(filter == 'all' || $(this).hasClass(filter)){
                 $(this).fadeIn()
             }else{
                 $(this).fadeOut();

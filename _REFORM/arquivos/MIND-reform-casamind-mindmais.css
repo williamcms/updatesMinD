@@ -23,15 +23,18 @@ main.mindmais > .nav-categories{
     margin: 0 0 3rem 0;
     padding: 2rem 5rem 3rem 5rem;
 }
-main.mindmais > .nav-brands .seemore,
-main.mindmais > .nav-categories .seemore{
+main.mindmais .seemore{
     position: absolute;
     top: 0;
     right: 0;
     padding: 2.9rem 6.2rem 0 0;
     color: var(--brand-color);
     text-transform: uppercase;
+    text-decoration: none;
     cursor: pointer;
+}
+main.mindmais .seemore:hover{
+    font-weight: 600;
 }
 main.mindmais > .nav-brands h2,
 main.mindmais > .nav-categories h2{
@@ -48,10 +51,18 @@ main.mindmais > .nav-brands .slicker .item:not(:last-child){
 main.mindmais > .nav-brands .slicker .item > .image{
 
 }
+main.mindmais > .nav-brands .slicker .item > .name{
+    font-family: Didot, serif;
+    font-size: 1.2rem;
+}
+main.mindmais > .nav-categories .slicker .item > .name,
+main.mindmais > .nav-brands .slicker .item > .desc{
+    font-family: Lustria, serif;
+}
 main.mindmais > .nav-brands .slicker .item > .name,
 main.mindmais > .nav-categories .slicker .item > .name,
 main.mindmais > .nav-brands .slicker .item > .desc{
-    padding: 0.5rem;
+    padding: .5rem .5rem 0 .5rem;
     max-width: 16.875rem;
     margin: 0 auto;
 }
@@ -102,10 +113,17 @@ main.mindmais > .nav-categories-expanded > .sellersContainer{
 main.mindmais > .nav-categories{
     background-color: var(--sand);
 }
+main.mindmais > .nav-categories div.item{
+    cursor: pointer;
+}
+main.mindmais > .nav-categories div.item.active > div.name{
+    border-bottom: .125rem solid var(--brand-color);
+}
 
 
 @media screen and (max-width: 831px) and (orientation : portrait){
-    main.mindmais > .nav-brands{
+    main.mindmais > .nav-brands,
+    main.mindmais > .nav-categories{
         padding: 2rem 1.5rem;
     }
     main.mindmais h2{
