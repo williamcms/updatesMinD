@@ -78,6 +78,7 @@ img,
 svg{
     max-width: 100%;
     width: auto;
+    height: auto;
 }
 a[href]{
     color: inherit;
@@ -95,10 +96,12 @@ a:hover{
 }
 b,
 strong{
+    font-family: inherit;
     font-size: inherit;
     font-weight: 600;
 }
 i{
+    font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     font-style: italic;
@@ -139,15 +142,12 @@ input[type=search]{
     -webkit-appearance: none;
 }
 select{
-    border-radius: 5px;
-    width: 100%;
-    padding: .225rem 0rem;
-    border: 1px solid var(--gray-lighter);
-
     display: block;
+    width: 100%;
     padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-    border: 1px solid var(--gray);
+    border: 1px solid var(--gray-lighter);
     border-radius: 0.25rem;
+    background-color: var(--white);
     color: var(--brand-color);
     font-weight: bold;
     margin-top: 1.2rem;

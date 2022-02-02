@@ -14,12 +14,24 @@
             contentType: "application/json; charset=utf-8",
             crossDomain: false,
             type: "GET",
-            url: "https://imaginarium.vteximg.com.br/arquivos/mindmais.json.css?v=1.4.2"
+            url: "https://imaginarium.vteximg.com.br/arquivos/mindmais.json.css?v=1.5"
         }).then(function(e){
             let categories = [];
             mindmais = JSON.parse(e);
             mindmais.orderedSellers = $.map(mindmais.sellers, function(r){return r});
-            mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
+            
+            //Dados esperados de order: a-z, z-a, first, last
+            if(mindmais.order.toLowerCase() == 'a-z'){
+                mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
+            }else if(mindmais.order.toLowerCase() == 'z-a'){
+                mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
+                mindmais.orderedSellers.reverse();
+            }else if(mindmais.order.toLowerCase() == 'last'){
+                mindmais.orderedSellers.sort((a,b) => Date.parse(b.date + "GMT-0300") - Date.parse(a.date + "GMT-0300"));
+            }else{
+                mindmais.orderedSellers.sort((a,b) => Date.parse(a.date + "GMT-0300") - Date.parse(b.date + "GMT-0300"));
+            }
+
             //Remove espaços para evitar problemas de digitação
             $.map(mindmais.orderedSellers, function(r){ r.categories = (r.categories).replaceAll(' ', '')});
 
@@ -85,7 +97,7 @@
 
             $.each(globalSellers, function(){
                 let firstLetter = (this.name[0]).normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'"><img src="'+ this.logo +'"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
+                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'"><img src="'+ this.navBrands +'"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
 
                 if(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')){
                     $(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')).attr('disabled', false)
@@ -174,6 +186,18 @@
             slidesToShow: 1,
             slidesToScroll: 1
         });
+        $('main.mindmais .slick-categories-dots').slick({
+            autoplay: false,
+            autoplaySpeed: 3000,
+            dots: true,
+            arrows: false,
+            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+            lazyLoad: 'ondemand',
+            infinite: false,
+            slidesToShow: 2,
+            slidesToScroll: 2
+        });
         $('main.mindmais .slick-dots-banner').slick({
             autoplay: true,
             autoplaySpeed: 3000,
@@ -189,6 +213,18 @@
     }else{
        $('main.mindmais .slick-dots').slick({
             autoplay: true,
+            autoplaySpeed: 3000,
+            dots: true,
+            arrows: false,
+            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+            lazyLoad: 'ondemand',
+            infinite: false,
+            slidesToShow: 4,
+            slidesToScroll: 2
+        });
+       $('main.mindmais .slick-categories-dots').slick({
+            autoplay: false,
             autoplaySpeed: 3000,
             dots: true,
             arrows: false,

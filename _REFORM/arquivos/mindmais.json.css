@@ -3,10 +3,12 @@
 	"featured" : 5,
 	"featuredBrands" : 10,
 	"orderedSellers": {},
+	"orderedSellersBy": {},
 	"orderedCategories": {},
+	"order" : "last",
 	"categories" : {
-		"category1" : {
-			"name" : "category1",
+		"acessórios" : {
+			"name" : "acessórios",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png"
 		},
 		"category2" : {
@@ -27,7 +29,22 @@
 		}
 	},
 	"sellers" : {
-		"Adot" : {
+		"toroindigena" : {
+			"name" : "Toró Indígena",
+			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/Toró_logo_menu.png",
+			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/Toró_banner_mindmais_desk_1920x600.png",
+			"bannerM" : "https://imaginarium.vteximg.com.br/arquivos/Toró_banner_mindmais_mob_500x600.png",
+			"bannerPageM" : "https://imaginarium.vteximg.com.br/arquivos/Toró_banner_top_mobile_451x151.png",
+			"bannerPageD" : "https://imaginarium.vteximg.com.br/arquivos/Toró_banner_top_desk_1920x200.png",
+			"navBrands" : "https://lojamindesigns.vteximg.com.br/arquivos/Toró_banner_linha_desk_385x570.png",
+			"pageTitle" : "MinD+ Toró Indígena",
+			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
+			"collection": 0,
+			"pageLink" : "https://www.casamind.com.br/mindmais/toroindigena",
+			"categories" : "acessórios,bandeja,cestos,tapetes,utensílios e organizadores de cozinha",
+			"date" : "02/02/2022"
+		},
+		"adot" : {
 			"name" : "Adot",
 			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/logo-menu-ADOT-min.png",
 			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/ids/9380882/mind_mais-ADOT-top_mob-min.jpg",
@@ -39,9 +56,10 @@
 			"pageDescription" : "A Adot chega ao MinD + para oferecer produtos que vão completar o espaço do seu pequeno de forma única e cheia de alegria. Conhecida como #amarcamaisfofadopaís, traz uma curadoria de organizadores, almofadas, luminárias e muito mais! Com carinho e atenção aos detalhes, as peças são produzidas no Brasil e vão deixar sua casa ainda mais especial.",
 			"collection": 888,
 			"pageLink" : "https://www.casamind.com.br/mindmais/adot",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2021"
 		},
-		"Alma" : {
+		"alma" : {
 			"name" : "Alma",
 			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/logo-menu-ALMA-min.png",
 			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/mind_mais-ALMA-top_desktop-min.png",
@@ -53,9 +71,10 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 821,
 			"pageLink" : "https://www.casamind.com.br/mindmais/alma",
-			"categories" : "category1,category2,category3"
+			"categories" : "category1,category2,category3",
+			"date" : "01/01/2022"
 		},
-		"Alya" : {
+		"alya" : {
 			"name" : "Alya",
 			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/logo-menu-AYLA.png",
 			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/mind_mais-ALYA-top_desktop.jpg",
@@ -67,7 +86,8 @@
 			"pageDescription" : "Inspiradas pela arte, design e natureza, as velas artesanais da Alya chegam ao MinD+ para conquistar um espaço na sua decoração. Todas as velas são feitas a partir de materiais vegetais e biodegradáveis, com embalagens livres de plástico!",
 			"collection": 902,
 			"pageLink" : "https://www.casamind.com.br/mindmais/alya",
-			"categories" : "category1,category2,category3"
+			"categories" : "category1,category2,category3",
+			"date" : "01/01/2022"
 		},
 		"amabile" : {
 			"name" : "Amabile",
@@ -81,7 +101,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 917,
 			"pageLink" : "https://www.casamind.com.br/mindmais/amabile",
-			"categories" : "category1,category2,category3"
+			"categories" : "category1,category2,category3",
+			"date" : "01/01/2022"
 		},
 		"berthahome" : {
 			"name" : "Bertha Home",
@@ -95,7 +116,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 1068,
 			"pageLink" : "https://www.casamind.com.br/mindmais/berthahome",
-			"categories" : "category1,category2,category3"
+			"categories" : "category1,category2,category3",
+			"date" : "01/01/2022"
 		},
 		"blueberry" : {
 			"name" : "Blueberry",
@@ -109,7 +131,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 1069,
 			"pageLink" : "https://www.casamind.com.br/mindmais/blueberry",
-			"categories" : "category1,category2,category3,category diff"
+			"categories" : "category1,category2,category3,category diff",
+			"date" : "01/01/2022"
 		},
 		"branco" : {
 			"name" : "Branco",
@@ -123,7 +146,8 @@
 			"pageDescription" : "<h2>Papelaria: seção Branco - Casa MinD.</h2> <p>Desenvolvidos nacionalmente, os produtos de papelaria que você encontra aqui na categoria Branco refletem aquilo que nós acreditamos: no cuidado, delicadeza e design funcional.</p><p>Esses são itens para otimizar os dias de quem deseja ter mais <a href='https://www.casamind.com.br/organizadores?event=seller-branco-page' target='_blank'>organização</a> e inserir um toque mais leve à rotina, tudo isso <strong>sem deixar o charme e o estilo de lado</strong>, ou seja, são ideais para você!</p><p>Vale ressaltar que a nossa coleção Branco mal chegou e já conquistou o coração de muitas pessoas pelo seu charme e delicadeza! Afinal, nada melhor do que contar com itens exclusivos de decoração e papelaria para nos ajudar no embelezamento dos ambientes em que vivemos.</p><p>Foi pensando exatamente nisso que desenvolvemos a linha Branco, com itens que vão te acompanhar em todos os seus momentos, tanto de estudo e aprendizado, quanto de descanso, relaxamento e até para programar seus cuidados pessoais.</p><h3>Quadros da linha Branco</h3><p>Quando estamos falando de decoração, é claro que os quadros não podem ficar de fora, afinal, eles são as peças que dão aquele toque final cheio de vida para as paredes do ambiente em questão.</p><p>Os quadros da linha Branco são apaixonantes e cativantes! Com visuais delicados e agradáveis ao ambiente, dão um toque minimalista. Os modelos aqui disponíveis são super exclusivos e você pode escolher aqueles que mais combinam com você!</p><h3>Itens de papelaria</h3><p>Os itens de papelaria são a nova sensação do momento, e todos os apaixonados por esses produtos podem concordar que não tem nada melhor do que contar com <strong>materiais novinhos em folha</strong>!</p><p>Aqui selecionamos itens especialmente para você, que ama organizar a sua rotina fora da tela do notebook ou smartphone. Sendo super úteis, os cadernos, to-do lists, entre outros, podem ser incrementados na sua casa ou ambiente de trabalho para te ajudar a se organizar tanto nos estudos, quanto nas organizações do dia a dia.</p><p>Os itens de papelaria da linha Branco são perfeitos para você que quer sair do mero convencional e repaginar de vez o estilo dos seus materiais de papelaria.</p><h3>To-do lists: garantia de tarefas realizadas</h3><p>As to-do lists são ideais para as pessoas que têm dificuldade em administrar o tempo e distribuir suas tarefas diárias, com esses itens você pode colocar no papel – literalmente, todas as suas tarefas que precisam ser cumpridas, e ainda estabelecer prazos.</p><p>Essas listas são essenciais na vida de quem deseja otimizar o cumprimento de compromissos e horários, ou daqueles que se sentem perdidos em meio a tantos afazeres. As nossas to-do lists retrô, por exemplo, <strong>são cheias de personalidade</strong>, perfeitas para você que gosta do clássico.</p><h3>Planners</h3><p>Os planners são basicamente a ferramenta que usamos para planejar nossos objetivos, metas, sonhos e desejos: sejam eles em curto ou longo prazo.</p><p>Muitas pessoas ainda confundem o planner com uma agenda, mas na verdade, ele é bem mais completo e versátil. Com os itens da coleção Branco, você consegue planejar a sua semana de um jeito mais descomplicado e descontraído, sem muito esforço, o que faz com que você tenha prazer em se organizar para cumprir as suas metas.</p><p>Nossa linha conta com opções de diversas cores, sendo eles super delicados e modernos, fáceis de serem compreendidos e cheios de exclusividade para quem preza por utilizar materiais de qualidade.</p><h3>Bloquinhos</h3><p>Os bloquinhos sempre serão os seus melhores amigos, sejam ao lado do seu computador, na sua escrivaninha ou por onde você quiser levá-los. São super úteis para fazer anotações importantes ou até para fazer uma listinha de compras.</p><p>Também estão disponíveis nesta seção os bloquinhos <strong>“Let’s Play!”</strong>, que são usados para marcar pontuações de jogos entre amigos e família. Com esses produtos, a diversão é garantida!</p><p>Além de todos esses materiais incríveis de papelaria, você encontra muito mais no nosso site. Tá esperando o que para garantir os seus? Escolha o que mais combina com você e com a sua personalidade!</p>",
 			"collection": 812,
 			"pageLink" : "https://www.casamind.com.br/mindmais/branco",
-			"categories" : "category1,category2,category3"
+			"categories" : "category1,category2,category3",
+			"date" : "01/01/2022"
 		},
 		"casadobra" : {
 			"name" : "Casa Dobra",
@@ -137,7 +161,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 1074,
 			"pageLink" : "https://www.casamind.com.br/mindmais/casadobra",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"casa-monster" : {
 			"name" : "Casa Monster",
@@ -151,7 +176,8 @@
 			"pageDescription" : "Através de processos manuais e uma pequena cadeia produtiva, a Mönster chega ao MinD   com peças que vão proporcionar uma decoração singular e cheia de personalidade. A marca brasileira acredita que a casa deve refletir as memórias e vivências de cada pessoa, portanto traz criações que expressam história e afeto.",
 			"collection": 896,
 			"pageLink" : "https://www.casamind.com.br/mindmais/casa-monster",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"cha-de-autoestima" : {
 			"name" : "Chá de Autoestima",
@@ -165,7 +191,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 991,
 			"pageLink" : "https://www.casamind.com.br/mindmais/cha-de-autoestima",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"euliricas" : {
 			"name" : "Eulíricas",
@@ -179,7 +206,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 824,
 			"pageLink" : "https://www.casamind.com.br/mindmais/euliricas",
-			"categories" : "category1,category2,category4"
+			"categories" : "category1,category2,category4",
+			"date" : "01/01/2022"
 		},
 		"flordagua" : {
 			"name" : "Flor d'água",
@@ -193,7 +221,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 986,
 			"pageLink" : "https://www.casamind.com.br/mindmais/flordagua",
-			"categories" : "category1,category2,category4"
+			"categories" : "category1,category2,category4",
+			"date" : "01/01/2022"
 		},
 		"folklore" : {
 			"name" : "Folklore",
@@ -207,7 +236,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 923,
 			"pageLink" : "https://www.casamind.com.br/mindmais/folklore",
-			"categories" : "category1,category2,category4"
+			"categories" : "category1,category2,category4",
+			"date" : "01/01/2022"
 		},
 		"gabriella-laruccia" : {
 			"name" : "Gabriella Laruccia",
@@ -221,7 +251,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 990,
 			"pageLink" : "https://www.casamind.com.br/mindmais/gabriella-laruccia",
-			"categories" : "category1,category2,category4"
+			"categories" : "category1,category2,category4",
+			"date" : "01/01/2022"
 		},
 		"goldko" : {
 			"name" : "GoldKo",
@@ -235,7 +266,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 1057,
 			"pageLink" : "https://www.casamind.com.br/mindmais/goldko",
-			"categories" : "category1,category2,category4"
+			"categories" : "category1,category2,category4",
+			"date" : "01/01/2022"
 		},
 		"hug" : {
 			"name" : "Hug",
@@ -249,7 +281,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 985,
 			"pageLink" : "https://www.casamind.com.br/mindmais/hug",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"imaginarium" : {
 			"name" : "Imaginarium",
@@ -263,7 +296,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 996,
 			"pageLink" : "https://www.casamind.com.br/mindmais/imaginarium",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"josh" : {
 			"name" : "JOSH. ATELIER",
@@ -277,7 +311,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 910,
 			"pageLink" : "https://www.casamind.com.br/mindmais/josh",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"jungle" : {
 			"name" : "Jungle",
@@ -291,7 +326,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 1083,
 			"pageLink" : "https://www.casamind.com.br/mindmais/jungle",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"maos" : {
 			"name" : "Mãos Ateliê",
@@ -305,7 +341,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 1061,
 			"pageLink" : "https://www.casamind.com.br/mindmais/maos",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"mutua" : {
 			"name" : "Mutuá",
@@ -319,7 +356,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 891,
 			"pageLink" : "https://www.casamind.com.br/mindmais/mutua",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"nias-macrame" : {
 			"name" : "Nias Macramê",
@@ -333,7 +371,8 @@
 			"pageDescription" : "Nias Macramê chega ao MinD   com peças produzidas artesanalmente. Nascida a partir de um hobby da sua criadora, a marca pensa em cada peça para levar amor e carinho ao décor através de nós muito bem pensados e produzidos.",
 			"collection": 900,
 			"pageLink" : "https://www.casamind.com.br/mindmais/nias-macrame",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"nuvem" : {
 			"name" : "Maria Nuvem",
@@ -347,7 +386,8 @@
 			"pageDescription" : "Com peças desenvolvidas manualmente, a coleção MinD   Maria Nuvem apresenta itens que tem por objetivo promover beleza, conexão e harmonização com a natureza interna de cada um. São um convite para dar sentido aos sentimentos e reflexões!",
 			"collection": 851,
 			"pageLink" : "https://www.casamind.com.br/mindmais/nuvem",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"obrah" : {
 			"name" : "Obrah",
@@ -361,7 +401,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 807,
 			"pageLink" : "https://www.casamind.com.br/mindmais/obrah",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"oficina-da-casa" : {
 			"name" : "Oficina da casa",
@@ -375,7 +416,8 @@
 			"pageDescription" : "A coleção MinD+ Oficina da Casa traz móveis para quem quer compor um ambiente com personalidade e funcionalidade. As peças buscam levar inspiração para o seu dia a dia!",
 			"collection": 865,
 			"pageLink" : "https://www.casamind.com.br/mindmais/oficina-da-casa",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"ohboxparty" : {
 			"name" : "Oh Box Party!",
@@ -389,7 +431,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 1046,
 			"pageLink" : "https://www.casamind.com.br/mindmais/ohboxparty",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"or-design" : {
 			"name" : "OR Design",
@@ -403,7 +446,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 903,
 			"pageLink" : "https://www.casamind.com.br/mindmais/or-design",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"ouve" : {
 			"name" : "OUVE",
@@ -417,7 +461,8 @@
 			"pageDescription" : "MinD+ OUVE apresenta uma curadoria de quadros all type, produzidos artesanalmente utilizando a técnica da serigrafia sobre um papel escocês feito das fibras do bambu. As peças são sustentáveis e minimalistas, trazendo um toque da cultura POP para a decoração.",
 			"collection": 899,
 			"pageLink" : "https://www.casamind.com.br/mindmais/ouve",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"paira" : {
 			"name" : "Paira",
@@ -431,7 +476,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 863,
 			"pageLink" : "https://www.casamind.com.br/mindmais/paira",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"plugdesign" : {
 			"name" : "Plug Design",
@@ -445,7 +491,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 901,
 			"pageLink" : "https://www.casamind.com.br/mindmais/plugdesign",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"projetoroca" : {
 			"name" : "Projeto ROCA",
@@ -459,7 +506,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 1031,
 			"pageLink" : "https://www.casamind.com.br/mindmais/projetoroca",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"recoffee" : {
 			"name" : "Recoffee",
@@ -473,7 +521,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 916,
 			"pageLink" : "https://www.casamind.com.br/mindmais/recoffee",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"saldecor" : {
 			"name" : "SalDeCor",
@@ -487,7 +536,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 922,
 			"pageLink" : "https://www.casamind.com.br/mindmais/saldecor",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		},
 		"t44" : {
 			"name" : "T44",
@@ -501,7 +551,8 @@
 			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
 			"collection": 881,
 			"pageLink" : "https://www.casamind.com.br/mindmais/t44",
-			"categories" : "category1,category2"
+			"categories" : "category1,category2",
+			"date" : "01/01/2022"
 		}
 	}
 }
