@@ -977,9 +977,9 @@ div#ajaxBusy{
 /* Menu */
 .csm-header{
     position: relative;
-    z-index: 9;
     height: 13.063rem;
     background-color: var(--body-bg-color);
+    z-index: 99999999;
 }
 .csm-header > .csm-wrapper{
     position: fixed;
@@ -1870,21 +1870,27 @@ footer .final-label__address{
     }
     .csm-header .csm-navigation > .csm-center div.csm-menu__top{
         display: block;
-        padding: 1rem 4% .985rem 4%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 0 .985rem 4%;
         border-bottom: 1px solid #E5E4E4;
     }
     .csm-header .csm-navigation > .csm-center div.csm-menu__bottom-info{
         display: block;
         background-color: var(--brand-color);
         padding: 0 0.813rem;
+        margin: 0 -1rem;
     }
     .csm-header .csm-navigation > .csm-center div.csm-menu__bottom-info > ul > li{
         color: var(--white);
-        border-bottom: 1px solid var(--white);
         padding: 0.838rem 0;
     }
+    .csm-header .csm-navigation > .csm-center div.csm-menu__bottom-info > ul > li:not(:last-child){
+        border-bottom: 1px solid var(--white);
+    }
     .csm-header .csm-navigation > .csm-center div.csm-menu__top > .csm-menu__top-customer{
-
+        flex-basis: 100%;
     }
     .csm-header .csm-navigation > .csm-center div.csm-menu__top > .csm-menu__top-customer > .csm-menu__top-customer-text h6{
         color: #6d6e72;
@@ -1894,11 +1900,15 @@ footer .final-label__address{
     .csm-header .csm-navigation > .csm-center div.csm-menu__top .csm-menu__top-account, 
     .csm-header .csm-navigation > .csm-center div.csm-menu__top .csm-menu__top-register{
         display: inline-block;
+        font-size: .8rem;
         width: 48%;
         height: 25px;
+        padding: .2rem .4rem;
         text-align: center;
+        text-transform: uppercase;
         color: var(--white);
         background-color: var(--brand-color);
+        flex-basis: 49%;
     }
     .csm-header .csm-navigation > .csm-center > ul{
         flex-direction: column;

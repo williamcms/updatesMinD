@@ -72,7 +72,7 @@ $(document).ready(function(){
 		$(".csm-header .csm-wrapper, .csm-header .csm-navigation, .js--open-menu").toggleClass('change');
 		$("body").toggleClass('noscroll');
 		// Atributos para Leitores de tela
-		$x = $(this).hasClass('change');
+		let $x = $(this).hasClass('change');
 		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-expanded', $x);
 	});
 	var showDropDownMenu = $('.csm-has-sub').on('click', function(){
@@ -375,7 +375,7 @@ $(document).ready(function(){
 		i.email = e, $.ajax({
 			accept: "application/vnd.vtex.ds.v10+json",
 			contentType: "application/json; charset=utf-8",
-			crossDomain: false,
+			crossDomain: true,
 			data: JSON.stringify(i),
 			type: "POST",
 			url: "/api/dataentities/PU/documents",
@@ -398,7 +398,9 @@ $(document).ready(function(){
 		var s = {},
 		i = $('.js--logged-in'),
 		o = $('.js--logged-out'),
-		j = $('.js--user-name');
+		j = $('.js--user-name'),
+		m = $('.csm-header .csm-navigation > .csm-center div.csm-menu__top > .csm-menu__top-customer > .csm-menu__top-customer-text h6'),
+		n = $('.csm-header .csm-navigation > .csm-center div.csm-menu__top .csm-menu__top-account');
 
 		$.ajax({
 			"async": true,
@@ -411,9 +413,9 @@ $(document).ready(function(){
 			let msg = $(r).text().split('.').first();
 			if(msg.length > 12){
 				console
-				msg = msg.trim().replace(' ', ', ') + '!';
+				msg = msg.trim().replace(' ', ', <strong>') + '</strong>!';
 			}else{
-				msg = 'Olá, Minder!';
+				msg = 'Olá, <strong>Minder!</strong>';
 			}
 
 			$.ajax({
@@ -435,9 +437,9 @@ $(document).ready(function(){
 					s['user'] = null;
 					s['userId'] = null;
 					s['userType'] = null;
-					s['message'] = 'Olá, Minder!';
+					s['message'] = 'Entre ou Cadastre-se';
 				}
-				return (s["logged"] == true ? (i.show() && o.hide() && j.text(s["message"])) : (o.show() && i.hide() && j.text('Entre ou Cadastre-se')));
+				return (s["logged"] == true ? (i.show() && o.hide() && j.html(s["message"]) && m.html(s["message"]) && n.text('Minha Conta')) : (o.show() && i.hide() && j.html(s["message"])) && m.html(s["message"]));
 			});
 		});
 	})();
