@@ -47,7 +47,6 @@
     })();
     var mountBanners = (mountBanners = (mindmais) =>{
         let bannersSlick = $('main.mindmais > .banners-top .slicker');
-        bannersSlick.slick('slickAdd', $('<img  draggable="false" />').attr('src', (isMobile() ? 'https://lojamindesigns.vteximg.com.br/arquivos/mind_mais-top_mobile.png' : 'https://lojamindesigns.vteximg.com.br/arquivos/mind_mais-top_desktop.png')).attr('title', 'MinD+ Marcas que são extensões da nossa marca'));
         $.each(mindmais.orderedSellers, function(i, e){
             bannersSlick.slick('slickAdd', $('<img  draggable="false" />').attr('src', (isMobile() ? e.bannerM : e.bannerD)).attr('title', e.name));
             return (i == parseInt(mindmais.featured) - 1 ? false : true);

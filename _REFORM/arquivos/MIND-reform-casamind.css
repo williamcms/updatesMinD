@@ -850,6 +850,12 @@ blockquote::before{
 .nowrap{
     white-space: nowrap;
 }
+.csm-hide{
+    display: none;
+}
+div#ajaxBusy{
+    display: none !important;
+}
 /* Slickers */
 .slick-slide{
     height: auto !important;
@@ -975,10 +981,48 @@ blockquote::before{
     height: 13.063rem;
     background-color: var(--body-bg-color);
 }
-.csm-wrapper{
+.csm-header > .csm-wrapper{
     position: fixed;
     width: 100%;
     background-color: var(--body-bg-color);
+    overflow: visible !important;
+}
+.csm-header > .csm-wrapper > .csm-middle{
+    background-color: var(--body-bg-color);
+}
+.csm-header .csm-search{
+    border: 0;
+}
+.csm-header .csm-search > fieldset.busca{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 3rem;
+    border: none;
+}
+.csm-header .csm-search > fieldset.busca > label,
+.csm-header .csm-search > fieldset.busca > legend,
+.csm-header .csm-search > fieldset.busca > select,
+.csm-header .csm-search > div.csm-search__products{
+    display: none;
+}
+.csm-header .csm-search > fieldset.busca > input.fulltext-search-box{
+    border-width: 0 0 1px 0;
+    border-radius: initial;
+    color: var(--gray) !important;
+}
+.csm-header .csm-search > fieldset.busca > input.btn-buscar{
+    font-size: 0;
+    height: 36px;
+    width: 36px;
+    right: 62px;
+    filter: opacity(.5);
+    border: none;
+    background-color: var(--white);
+    background-image: url(/arquivos/icons-s542db61897.png) !important;
+    background-repeat: no-repeat;
+    background-position: -5.313rem 0;
+    transform: scale(.6);
+    cursor: pointer;
 }
 .csm-header .csm-benefits{
     background-color: var(--brand-color);
@@ -1001,6 +1045,11 @@ blockquote::before{
     width: 100%;
     border: .09rem solid var(--white);
     white-space: nowrap;
+}
+.csm-header .csm-benefits .csm-center-benefits a[role="button"]:hover{
+    background-color: var(--white);
+    color: var(--brand-color);
+    font-weight: 600;
 }
 .csm-header .csm-benefits .csm-center-benefits .csm-center span,
 .csm-header .csm-benefits .csm-center-benefits a[role="button"]{
@@ -1374,15 +1423,22 @@ blockquote::before{
     border-top: 1px solid #E5E5E5;
     background-color: var(--body-bg-color);
 }
-.csm-header .csm-cart .portal-totalizers-ref .amount-items-in-cart .cartInfoWrapper .amount-items, 
-.csm-header .csm-cart .portal-totalizers-ref .amount-items-in-cart .cartInfoWrapper .amount-kits, 
-.csm-header .csm-cart .portal-totalizers-ref .amount-items-in-cart .cartInfoWrapper .amount-products, 
-.csm-header .csm-cart .portal-totalizers-ref .amount-items-in-cart .cartInfoWrapper .title{
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items, 
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-kits, 
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-products, 
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .title,
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .total-cart{
     display: none;
 }
 .csm-header .csm-minicart .csm-minicart__total{
     width: 100%;
     margin-bottom: .6rem;
+}
+.csm-header .csm-minicart .csm-minicart__total .cartInfoWrapper > .title,
+.csm-header .csm-minicart .csm-minicart__total .cartInfoWrapper > .cart-info > .amount-products,
+.csm-header .csm-minicart .csm-minicart__total .cartInfoWrapper > .cart-info > .amount-items,
+.csm-header .csm-minicart .csm-minicart__total .cartInfoWrapper > .cart-info > .amount-kits{
+    display: none;
 }
 .csm-header .csm-minicart .csm-minicart__total .portal-totalizers-ref .amount-items-in-cart .cartInfoWrapper .total-cart{
     display: flex;
@@ -1710,9 +1766,9 @@ footer .final-label__address{
     }
     .csm-header .csm-wrapper.change{
         height: 100%;
-        overflow-y: scroll;
-        overflow-y: overlay;
-        overflow-x: hidden;
+        overflow-y: scroll !important;
+        overflow-y: overlay !important;
+        overflow-x: hidden !important;
     }
     .csm-header .csm-benefits{
         display: none !important;
@@ -1720,6 +1776,9 @@ footer .final-label__address{
     .csm-header .csm-middle .csm-center{
         min-height: 3.75rem;
         height: auto;
+    }
+    .csm-header .csm-middle .csm-center .csm-user ul{
+        margin-right: 1rem;
     }
     .csm-header .csm-middle .csm-center div.csm-mobile{
         display: block;
@@ -1730,8 +1789,7 @@ footer .final-label__address{
         left: 0;
         background-color: transparent;
         border: none;
-        padding: .5rem .4rem;
-        margin: .4rem .1rem;
+        padding: 1.1rem .7em;
         z-index: 10;
     }
     .csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu:focus{
