@@ -56,10 +56,10 @@
         let sellersSlick = $('main.mindmais > .nav-brands .slicker');
         $.each(mindmais.orderedSellers, function(i, e){
             sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', i));
-            $('.slick-track').find('div[data-number='+i+']').append('<div class="image"><img width="270" height="400" draggable="false" /></div>'),
-            $('.slick-track').find('div[data-number='+i+'] div.image img').attr('src', e.navBrands).attr('title', e.name).attr('alt', e.name),
-            $('.slick-track').find('div[data-number='+i+']').append('<div class="name uppercase bold text-center"></div>'),
-            $('.slick-track').find('div[data-number='+i+'] div.name').text(e.name);
+            $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ e.pageLink +'" class="image"><img width="270" height="400" draggable="false" /></a>'),
+            $('.slick-track').find('div[data-number='+i+'] a.image img').attr('src', e.navBrands).attr('title', e.name).attr('alt', e.name),
+            $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ e.pageLink +'" class="name uppercase bold text-center d-block"></a>'),
+            $('.slick-track').find('div[data-number='+i+'] a.name').text(e.name);
             $('.slick-track').find('div[data-number='+i+']').append('<div class="desc"></div>'),
             $('.slick-track').find('div[data-number='+i+'] div.desc').html((e.pageDescription.length > 150 ? e.pageDescription.substring(0, e.pageDescription.substring(0, 150 + 1).search(/\s+\S*$/)) + ' (...)' : e.pageDescription).replace(/<\/?[^>]+(>|$)/g, ""));
             return (i == parseInt(mindmais.featuredBrands) - 1 ? false : true);

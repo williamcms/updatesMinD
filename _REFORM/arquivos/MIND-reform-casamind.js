@@ -148,7 +148,7 @@ $(document).ready(function(){
 		let index = $(this).attr("ndx"), qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+index+']')[0].value);
 		vtexUpdateItem(index, --qty);
 	});
-	var addtoBag = $('.js--shelf-buy').on('click', function(e){
+	var addtoBag = $('body').on('click', '.js--shelf-buy', function(e){
 		e.preventDefault(), e.stopPropagation();
 		var sku = $(this).parents('.csm-shelf__product').data('sku'),
 		p = getSkuData(sku),
@@ -303,7 +303,7 @@ $(document).ready(function(){
 				if(item.data('sku-images').length > 0){
 					let sku_images = $('#'+ item.attr('sku-id')).data('sku-images'),
 					imagesWrapper = $('.csm-product .csm-product__images .product-images #show ul.thumbs');
-					//Limpas imagens pre-existentes
+					//Limpa as imagens pre-existentes
 					imagesWrapper.empty();
 					$.each(sku_images, function(i, n){
 						imagesWrapper.append('<li><a href="javascript:void(0);" rel="" zoom="" clas="ON"><img src="'+ n.imageUrl +'" title="'+ n.imageLabel +'" alt="'+ n.imageText +'" /></a></li>')
@@ -366,16 +366,16 @@ $(document).ready(function(){
 	});
 	var verifyNewsletter = $('#sendFCEmail').on('click', function(e){
 		var i = $("#fcEmail").val();
-		return isEmailValid(i) ? sendNewsletterEmail(e) : $("#fcEmail").css("border", "1px solid #D00D0D"), 
-		$("footer .news-footer .message").html('Preencha o campo abaixo com um e-mail válido'), 
-		$("footer .news-footer .message").effect( "shake" ), false;
+		return isEmailValid(i) ? sendNewsletterEmail(i) : ($("#fcEmail").css("border", "1px solid #D00D0D"), 
+				$("footer .news-footer .message").html('Preencha o campo abaixo com um e-mail válido'), 
+				$("footer .news-footer .message").effect( "shake" ), false);
 	});
 	var sendNewsletterEmail = (sendNewsletterEmail = (e) =>{
 		var i = {};
 		i.email = e, $.ajax({
 			accept: "application/vnd.vtex.ds.v10+json",
 			contentType: "application/json; charset=utf-8",
-			crossDomain: true,
+			crossDomain: false,
 			data: JSON.stringify(i),
 			type: "POST",
 			url: "/api/dataentities/PU/documents",
