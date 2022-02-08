@@ -9,23 +9,28 @@
 	"categories" : {
 		"acessórios" : {
 			"name" : "acessórios",
-			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png"
+			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png",
+			"pageLink" : "#"
 		},
 		"category2" : {
 			"name" : "category2",
-			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png"
+			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png",
+			"pageLink" : "#"
 		},
 		"MÓVEIS" : {
 			"name" : "MÓVEIS",
-			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png"
+			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png",
+			"pageLink" : "#"
 		},
 		"category4" : {
 			"name" : "category4",
-			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png"
+			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png",
+			"pageLink" : "#"
 		},
 		"category diff" : {
 			"name" : "category diff",
-			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png"
+			"image" : "https://imaginarium.vteximg.com.br/arquivos/ids/9596346/REDECORE-SE_LANC_v2_banner_linha_2_mob_190x190_A.png",
+			"pageLink" : "#"
 		}
 	},
 	"sellers" : {

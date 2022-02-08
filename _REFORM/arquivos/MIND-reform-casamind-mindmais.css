@@ -72,8 +72,7 @@ main.mindmais > .nav-brands .slicker .item:hover > .name,
 main.mindmais > .nav-categories .slicker .item:hover > .name{
     color: var(--brand-color);
 }
-main.mindmais > .nav-brands-expanded,
-main.mindmais > .nav-categories-expanded{
+main.mindmais > .nav-brands-expanded{
     display: none;
     margin: .5rem 0;
 }
@@ -101,12 +100,10 @@ main.mindmais ul.alphabeticalList li[disabled],
 main.mindmais select.alphabeticalList option[disabled]{
     opacity: .5;
 }
-main.mindmais > .nav-brands-expanded > select.alphabeticalList,
-main.mindmais > .nav-categories-expanded > select.alphabeticalList{
+main.mindmais > .nav-brands-expanded > select.alphabeticalList{
     display: none;
 }
-main.mindmais > .nav-brands-expanded > .sellersContainer,
-main.mindmais > .nav-categories-expanded > .sellersContainer{
+main.mindmais > .nav-brands-expanded > .sellersContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -117,13 +114,11 @@ main.mindmais > .nav-categories-expanded > .sellersContainer{
     margin: 2rem 0;
     padding: 0 7rem;
 }
-main.mindmais > .nav-brands-expanded > .sellersContainer > a,
-main.mindmais > .nav-categories-expanded > .sellersContainer > a{
+main.mindmais > .nav-brands-expanded > .sellersContainer > a{
     flex-basis: 18%;
     text-decoration: none;
 }
-main.mindmais > .nav-brands-expanded > .sellersContainer > a > img,
-main.mindmais > .nav-categories-expanded > .sellersContainer > a > img{
+main.mindmais > .nav-brands-expanded > .sellersContainer > a > img{
     display: block;
     margin: 0 auto;
 }
@@ -139,8 +134,7 @@ main.mindmais > .nav-brands-expanded > .sellersContainer > a > span:after{
     background-color: var(--brand-color);
     transition: all 1s ease-in-out;
 }
-main.mindmais > .nav-brands-expanded > .sellersContainer > a:hover > span:after,
-main.mindmais > .nav-categories-expanded > .sellersContainer > a:hover > span:after{
+main.mindmais > .nav-brands-expanded > .sellersContainer > a:hover > span:after{
     left: 0;
     width: 100%;
 }
@@ -177,8 +171,7 @@ main.mindmais > .nav-categories div.item.active > div.name{
         border-left: none;
         border-radius: initial;
     }
-    main.mindmais > .nav-brands-expanded > .sellersContainer,
-    main.mindmais > .nav-categories-expanded > .sellersContainer{
+    main.mindmais > .nav-brands-expanded > .sellersContainer{
         justify-content: space-evenly;
         grid-row-gap: 2rem;
         row-gap: 2rem;
@@ -186,8 +179,7 @@ main.mindmais > .nav-categories div.item.active > div.name{
         column-gap: 1rem;
         padding: 0 2rem;
     }
-    main.mindmais > .nav-brands-expanded > .sellersContainer > a,
-    main.mindmais > .nav-categories-expanded > .sellersContainer > a{
+    main.mindmais > .nav-brands-expanded > .sellersContainer > a{
         flex-basis: 40%;
     }
 }
