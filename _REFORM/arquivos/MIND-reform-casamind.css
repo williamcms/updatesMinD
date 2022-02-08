@@ -1322,6 +1322,20 @@ div#ajaxBusy{
     padding: 0 1rem;
     background-color: var(--body-bg-color);
 }
+.csm-header .csm-minicart .csm-minicart__products .product-list::-webkit-scrollbar{
+    width: 10px;
+}
+.csm-header .csm-minicart .csm-minicart__products .product-list::-webkit-scrollbar-track{
+    background: var(--gray-lighter);
+}
+.csm-header .csm-minicart .csm-minicart__products .product-list::-webkit-scrollbar-thumb{
+    background: var(--brand-color);
+    opacity: .9;
+}
+.csm-header .csm-minicart .csm-minicart__products .product-list::-webkit-scrollbar-thumb:hover{
+    background: var(--brand-color);
+    opacity: 1;
+}
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list{
     display: flex;
     flex-wrap: wrap;
@@ -1336,7 +1350,7 @@ div#ajaxBusy{
     display: flex;
     flex-basis: 100%;
     justify-content: center;
-    column-gap: 2rem;
+    column-gap: 1.5rem;
 }
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper > .product__image{
@@ -1370,7 +1384,7 @@ div#ajaxBusy{
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper > .product__info-container > .product__info .product__price,
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
-.product-wrapper > .remove a{
+.product-wrapper > a.remove{
     color: var(--gray);
     font-weight: 600;
     white-space: nowrap;
@@ -1380,8 +1394,14 @@ div#ajaxBusy{
     margin: auto 0;
 }
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
-.product-wrapper > .remove a{
+.product-wrapper > a.remove{
     cursor: pointer;
+    font-size: 0;
+}
+.csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
+.product-wrapper > a.remove:after{
+    font-size: 1.1rem;
+    content: '\00D7';
 }
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper >  .product__info-container > .product__info > .product__management{
@@ -1399,6 +1419,7 @@ div#ajaxBusy{
 .product-wrapper > .product__info-container > .product__info > .product__management input{
    max-width: 2rem; 
    width: auto;
+   margin: 0 .3rem;
 }
 /*Remove as setas do input*/
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 

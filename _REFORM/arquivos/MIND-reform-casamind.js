@@ -3,7 +3,7 @@
  *
  */
  (isMobile = () => {
-	var isMobile = false; //initiate as false
+	let isMobile = false; //initiate as false
 	// device detection
 	if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
 	    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 	});
 	var hideMenuOnScroll = (hideMenuOnScroll = () => {
-		var top = 0;
+		let top = 0;
 		$(window).on("scroll", function() {
 			$(window).scrollTop() > top && 1 < $(window).scrollTop() ? ($(".csm-header .csm-wrapper").slideUp(), 
 			$(".csm-header .csm-wrapper .csm-middle .csm-center").addClass("scrollMenu"), $(".csm-header .csm-minicart").addClass("scrollMenu"), $(".csm-header .csm-benefits").slideUp()) : $(window).scrollTop() === 0 ? ($(".csm-header .csm-benefits").slideDown(), 
@@ -90,7 +90,7 @@ $(document).ready(function(){
 	})();
 	// Minicart & Products List
 	var showCartWhenHoverIcon = $(".csm-header .csm-cart > a").hover(function(){
-		var t = $(this),
+		let t = $(this),
 		e = $(".csm-minicart"), 
 		i = $(".portal-totalizers-ref .amount-items-em").eq(0).text();
 		(768 <= $("body").width()) ? (t.hover(function(t) {
@@ -104,8 +104,8 @@ $(document).ready(function(){
 	var vtexUpdateItem = (vtexUpdateItem = (itemIndex, qty) =>{
 		vtexjs.checkout.getOrderForm()
 		.then(function(orderForm) {
-			var item = orderForm.items[itemIndex];
-			var updateItem = {
+			let item = orderForm.items[itemIndex];
+			let updateItem = {
 				index: itemIndex,
 				quantity: qty
 			};
@@ -117,29 +117,34 @@ $(document).ready(function(){
 		});
 	});
 	var getOrderForm = (getOrderForm = () =>{
-		var e = this;
+		let e = [];
 		vtexjs.checkout.getOrderForm().done(function(t) {
 			e.orderForm = t;
 		});
 		return e;
-	})();
-	var getMiniCart = (getMiniCart = () =>{
-		var e = getOrderForm();
-		return e["orderForm"];
 	});
 	var updateMiniCart = (updateMiniCart = (e) =>{
+		let p = $('.csm-header .csm-minicart .csm-minicart__products .product-list'),
+		item = $('.csm-header .csm-minicart .csm-minicart__products .product-list').find('li');
 
+		vtexjs.checkout.getOrderForm().done(function(t) {
+			$.each(t.items, function(i){
+				if(p.find('li[data-sku='+ this.id +']').length == 0){
+					p.append('<li data-sku="'+ this.id +'"></li>');
+					p.find('li[data-sku='+ this.id +']').addClass('item-list').append('<div class="product-wrapper"></div>');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper').append('<div class="product__image"><img src="'+ (this.imageUrl).replace("-350-303", "-400-600") +'" alt="'+ this.name +'" title="'+ this.name +'" /></div>');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper').append('<div class="product__info-container"></div><a href="javascript:void(0)" class="remove" title="Remover produto">Remover</a>');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container').append('<div class="product__name">'+ this.name +'</div>');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container').append('<div class="product__info"></div>');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info').append('<div class="product__price">'+ this.formattedPrice +'</div>');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info').append('<div class="product__management"></div>');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<a ndx="'+ i +'" class="minus">&#45;</a>');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<input type="number" value="'+ this.quantity +'" />');
+					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<a ndx="'+ i +'" class="plus">&#43;</a>');
+				}
+			})
+		});
 	})
-	var mounMiniCart = (mounMiniCart = () =>{
-		var e = getMiniCart(),
-		d = $('.csm-header .csm-minicart .csm-minicart__products .product-list'),
-		c = 'R$ ';
-		(e.items).forEach(function(item, i){
-			let priceAsCurrency = c + (item.price / 100).toFixed(2).toString().replace(/\./, ",");
-			let html = '<li class="item-list" sku="'+ item.productId +'"><div class="product-wrapper"><div class="product__image" sku="'+ item.productId +'"><img src="'+ (item.imageUrl).replace("-350-303", "-400-600") +'" alt="'+ (item.name) +'"></div><div class="product__info-container"><div class="product__name">'+ (item.name) +'</div><div class="product__info"><div class="product__price">'+ (priceAsCurrency) +'</div><div class="product__management"><a ndx="'+ i +'" class="_remove">-</a> <input type="number" value="'+ (item.quantity) +'" maxlength="2" ndx="'+ i +'" class="_qty" sku="'+ item.productId +'"> <a ndx="'+ i +'" class="_add">+</a></div></div></div><div class="remove"><a class="_removecsm" sku="'+ item.productId +'" ndx="'+ i +'">X</a></div></div></li>';
-			d.append(html)
-		})
-	});
 	var minicartAddQtd = $('.csm-header .csm-minicart a[ndx]_add').on('click', function(e){
 		let index = $(this).attr("ndx"), qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+index+']')[0].value);
 		vtexUpdateItem(index, ++qty);
@@ -150,27 +155,31 @@ $(document).ready(function(){
 	});
 	var addtoBag = $('body').on('click', '.js--shelf-buy', function(e){
 		e.preventDefault(), e.stopPropagation();
-		var sku = $(this).parents('.csm-shelf__product').data('sku'),
-		p = getSkuData(sku),
+		let pid = $(this).parents('.csm-shelf__product').data('id'),
 		t = document.cookie.split('; VTEXSC=').pop().split(';').shift().split('src=')[1];
-		//Define uma espera para que a função da vtex retorne os dados 
-		//antes da execução abaixo e a demora não cause erro no produto
-		setTimeout(() => {
+		$.ajax({
+			accept: "application/vnd.vtex.ds.v10+json",
+			contentType: 'application/json; charset=utf-8',
+			crossDomain: false,
+			type: 'GET',
+			url: '/api/catalog_system/pub/products/search/?fq=productId:' + pid
+		}).done(function(e){
 			return vtexjs.checkout.addToCart([{
-				id: p.id,
+				id: e.first().productId,
 				quantity: 1,
-				seller: p.DefaultSellerId
+				seller: e.first().items.first().sellers.first().sellerId
 			}], null, t).done(function(t){
 				$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
 					$('#popup-adicionando, #barratempo').removeClass('is--active')
 				}, 6200);
-			}), false
-		}, 500);
+			}), false;
+		});
+		updateMiniCart();
 	});
 	//Restrito a páginas de produto apenas
 	if($('main .csm-product').length != 0){
 		var variableSKU = (variableSKU = () =>{
-			var arr = $('main .csm-product #___rc-p-sku-ids').get(0).value.split(','),
+			let arr = $('main .csm-product #___rc-p-sku-ids').get(0).value.split(','),
 			pid = $('main .csm-product #___rc-p-id').get(0).value,
 			f = $('main .csm-product .product-sku-selection').eq(0),
 			prevAvaliable = null,
@@ -248,7 +257,7 @@ $(document).ready(function(){
 			}
 		})();
 		var selectvariableSKU = $('main .csm-product .product-sku-selection').on('change', function(){
-			var bwrapper = $('main .csm-product div.product-buy'),
+			let bwrapper = $('main .csm-product div.product-buy'),
 			pwrapper = $('main .csm-product .csm-product__info .product-price'),
 			item = $(this).find(':selected'),
 			priceQty = $('main .csm-product .price-quanty');
@@ -313,7 +322,7 @@ $(document).ready(function(){
 		});
 		var availableAlert = (function() {
 			try{
-				var t = skuJson.productId;
+				let t = skuJson.productId;
 				$.ajax({
 					url: "/api/catalog_system/pub/products/search/?fq=productId:" + t,
 					method: "GET",
@@ -340,7 +349,7 @@ $(document).ready(function(){
 			});
 		});
 		var realidadeAl = (function() {
-			var t = navigator.userAgent || navigator.vendor || window.opera, 
+			let t = navigator.userAgent || navigator.vendor || window.opera, 
 			e = $(".value-field.3D-ios").text(), 
 			i = $(".value-field.3D-android").text(), 
 			o = $(".value-field.3D-ios").text(), 
@@ -356,7 +365,7 @@ $(document).ready(function(){
 			$(".productAugmentedRealityBox").hide());
 		})();
 		var pdfDowlond = (function() {
-			var t = $(".value-field.pdf-dowload").text();
+			let t = $(".value-field.pdf-dowload").text();
 			"" != t && ($(".csm-dowload-pdf").show(), $("#csm-pdf-to-download").attr("href", t));
 		})();
 	}
@@ -365,13 +374,13 @@ $(document).ready(function(){
 		return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(t);
 	});
 	var verifyNewsletter = $('#sendFCEmail').on('click', function(e){
-		var i = $("#fcEmail").val();
+		let i = $("#fcEmail").val();
 		return isEmailValid(i) ? sendNewsletterEmail(i) : ($("#fcEmail").css("border", "1px solid #D00D0D"), 
 				$("footer .news-footer .message").html('Preencha o campo abaixo com um e-mail válido'), 
 				$("footer .news-footer .message").effect( "shake" ), false);
 	});
 	var sendNewsletterEmail = (sendNewsletterEmail = (e) =>{
-		var i = {};
+		let i = {};
 		i.email = e, $.ajax({
 			accept: "application/vnd.vtex.ds.v10+json",
 			contentType: "application/json; charset=utf-8",
@@ -395,7 +404,7 @@ $(document).ready(function(){
 	})();
 	// Account
 	var getLoginStatus = (getLoginStatus = (e) =>{
-		var s = {},
+		let s = {},
 		i = $('.js--logged-in'),
 		o = $('.js--logged-out'),
 		j = $('.js--user-name'),
