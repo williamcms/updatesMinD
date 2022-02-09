@@ -1071,7 +1071,7 @@ div#ajaxBusy{
     height: auto;
     width: 6.188rem;
 }
-.csm-header .csm-middle .csm-center div{
+.csm-header .csm-middle .csm-center > div{
     flex: 1 1 0px;
     justify-content: center;
     justify-items: center;
@@ -1090,7 +1090,6 @@ div#ajaxBusy{
     flex-direction: row;
     height: 1.875rem;
     justify-content: flex-end;
-    margin-right: 3rem;
 }
 .csm-header .csm-middle .csm-center .csm-user > ul > li{
     position: relative;
@@ -1099,6 +1098,14 @@ div#ajaxBusy{
 }
 .csm-header .csm-middle .csm-center .csm-user > ul > li:not(:last-child){
     margin-right: .675rem;
+}
+.csm-header .csm-middle .csm-center .csm-user > ul > li:last-child{
+    margin-right: 3rem;
+}
+.csm-header .csm-middle .csm-center .csm-user > ul > li.csm-cart > a{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 .csm-header .csm-middle .csm-center .csm-user ul li svg{
     height: 30px;
@@ -1234,7 +1241,7 @@ div#ajaxBusy{
 }
 .csm-header .csm-navigation > .csm-center ul > li > a:hover{
     color: var(--brand-color);
-    border-bottom: 2px solid var(--brand-color);
+    font-weight: 600;
     transition: all .1s ease-in-out;
 }
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown{
@@ -1297,7 +1304,7 @@ div#ajaxBusy{
     border-color: transparent transparent var(--brand-color);
     position: absolute;
     top: -10px;
-    right: 15.5%;
+    right: 18.5%;
 }
 .csm-minicart.is--active{
     opacity: 1;
@@ -1444,12 +1451,53 @@ div#ajaxBusy{
     border-top: 1px solid #E5E5E5;
     background-color: var(--body-bg-color);
 }
-.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items, 
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items strong, 
 .csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-kits, 
 .csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-products, 
 .csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .title,
 .csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .total-cart{
     display: none;
+}
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items em.amount-items-em{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 1.188rem;
+    height: 1.188rem;
+    margin-left: -0.5rem;
+    color: var(--white);
+    font-size: .9rem;
+    font-style: normal;
+    background: var(--brand-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items em.amount-items-em:before{
+    content: '';
+    width: 1.313rem;
+    height: 1.563rem;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 4px 0 2px -2px var(--brand-color), -4px 0 2px -2px var(--brand-color);
+}
+.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items em.amount-items-em:after{
+    content: '';
+    width: 1.688rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 4px 0 2px -2px var(--brand-color), -4px 0 2px -2px var(--brand-color);
+    -webkit-animation: 1s linear 1s infinite rotate;
+    -webkit-transition: 1s;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 .csm-header .csm-minicart .csm-minicart__total{
     width: 100%;
@@ -1576,8 +1624,8 @@ main .csm-product select.product-sku-selection{
 /* Newsletter */
 footer .news-footer {
     background-color: #141414;
-    padding: 1.875rem 0;
-    border-top: 1px solid #CFCFCF;
+    padding: 1.175rem 0.5rem 1.575rem 0.5rem;
+    border-top: 1px solid var(--gray-lighter);
     color: var(--white);
 }
 footer .news-footer .container{
@@ -1590,7 +1638,7 @@ footer .news-footer .input-group{
 }
 footer .news-footer .input-text{
     width: 100%!important;
-    box-shadow: 3px 3px 0 silver!important;
+    box-shadow: 3px 3px 0 var(--gray-lighter)!important;
     border-radius: 6px 0 0 6px;
 }
 footer .news-footer .enviarForm{
@@ -1969,6 +2017,9 @@ footer .final-label__address{
     /* Página de Produto */
     
     /* Footer */
+    footer .news-footer .input-group{
+        width: 100%;
+    }
     footer .main-footer-sac-buttons a{
         margin: 0 auto;
         width: 100%;

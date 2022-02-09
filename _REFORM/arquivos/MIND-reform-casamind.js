@@ -113,7 +113,7 @@ $(document).ready(function(){
 		})
 		.done(function(orderForm) {
 			// console.log(orderForm);
-			updateMiniCart(index);
+			updateMiniCart();
 		});
 	});
 	var getOrderForm = (getOrderForm = () =>{
@@ -123,7 +123,7 @@ $(document).ready(function(){
 		});
 		return e;
 	});
-	var updateMiniCart = (updateMiniCart = (e) =>{
+	var updateMiniCart = (updateMiniCart = () =>{
 		let p = $('.csm-header .csm-minicart .csm-minicart__products .product-list'),
 		item = $('.csm-header .csm-minicart .csm-minicart__products .product-list').find('li');
 

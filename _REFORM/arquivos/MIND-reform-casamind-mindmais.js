@@ -92,6 +92,7 @@
         sellersContainer = brandsExpanded.find('.sellersContainer');
 
         brandsExpanded.slideToggle('slow');
+        $(this).text(($(this).text().toLowerCase() == 'ver mais' ? 'ver menos' : 'ver mais'));
         scrollTo(0, $('#navBrandsExpanded').position().top - (isMobile() ? 400 : 700));
         if(alphabeticalList.find('li[filter]:not(li[filter=all])').length == 0){
             $.each(alphabet, function(){

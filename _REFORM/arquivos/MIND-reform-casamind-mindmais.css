@@ -154,8 +154,16 @@ main.mindmais > .nav-categories div.item.active > div.name{
     main.mindmais > .nav-categories{
         padding: 2rem 1.5rem;
     }
+    main.mindmais .seemore{
+        padding: 0;
+        bottom: -1.5rem;
+        top: initial;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
     main.mindmais h2{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         white-space: nowrap;
     }
     main.mindmais > .nav-categories div.item{
