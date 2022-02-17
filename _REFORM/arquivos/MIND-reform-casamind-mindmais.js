@@ -14,7 +14,7 @@
             contentType: "application/json; charset=utf-8",
             crossDomain: false,
             type: "GET",
-            url: "https://imaginarium.vteximg.com.br/arquivos/mindmais.json.css?v=1.6"
+            url: "https://imaginarium.vteximg.com.br/arquivos/mindmais.json.css?v="+ Math.random()
         }).then(function(e){
             let categories = [];
 

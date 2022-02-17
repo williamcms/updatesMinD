@@ -116,13 +116,12 @@ $(document).ready(function(){
 			updateMiniCart();
 		});
 	});
-	var getOrderForm = (getOrderForm = () =>{
-		let e = [];
+	//Scripts que serão acionados com base no orderForm
+	var checkOrderForm = (checkOrderForm = () =>{
 		vtexjs.checkout.getOrderForm().done(function(t) {
-			e.orderForm = t;
+			(t.items.length > 0 ? updateMiniCart() : '');
 		});
-		return e;
-	});
+	})();
 	var updateMiniCart = (updateMiniCart = () =>{
 		let p = $('.csm-header .csm-minicart .csm-minicart__products .product-list'),
 		item = $('.csm-header .csm-minicart .csm-minicart__products .product-list').find('li');

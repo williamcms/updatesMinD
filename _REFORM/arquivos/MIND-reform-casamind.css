@@ -38,13 +38,13 @@
     font-family: Helvetica;
     font-weight: normal;
     font-display: swap;
-    src:  url('https://lojamindesigns.vteximg.com.br/arquivos/Helvetica.ttf.css') format('truetype');
+    src:  url('https://lojamindesigns.vteximg.com.br/arquivos/Helvetica.ttf.css?v=1') format('truetype');
 }
 @font-face{
     font-family: Didot;
     font-weight: normal;
     font-display: swap;
-    src:  url('https://lojamindesigns.vteximg.com.br/arquivos/Didot-HTF-M64-Medium.ttf.css') format('truetype');
+    src:  url('https://lojamindesigns.vteximg.com.br/arquivos/Didot-HTF-M64-Medium.ttf.css?v=1') format('truetype');
 }
 *{
     font-family: Quicksand, "Helvetica Neue", Verdana, Arial, sans-serif;
@@ -1106,6 +1106,7 @@ div#ajaxBusy{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+    text-decoration: none;
 }
 .csm-header .csm-middle .csm-center .csm-user ul li svg{
     height: 30px;
@@ -1404,6 +1405,7 @@ div#ajaxBusy{
 .product-wrapper > a.remove{
     cursor: pointer;
     font-size: 0;
+    margin: -0.3rem 0 0 0;
 }
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper > a.remove:after{
@@ -1427,6 +1429,8 @@ div#ajaxBusy{
    max-width: 2rem; 
    width: auto;
    margin: 0 .3rem;
+   text-align: center;
+   border: 0;
 }
 /*Remove as setas do input*/
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
