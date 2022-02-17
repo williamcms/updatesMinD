@@ -34,6 +34,21 @@
 		}
 	},
 	"sellers" : {
+		"porcelanah" : {
+			"name" : "Porcelanah",
+			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/PORCELANAH_logo_menu.png",
+			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/PORCELANAH_banner_mindmais_desk_1920x600.png",
+			"bannerM" : "https://imaginarium.vteximg.com.br/arquivos/PORCELANAH_banner_mindmais_mob_500x600.png",
+			"bannerPageM" : "https://imaginarium.vteximg.com.br/arquivos/PORCELANAH_banner_top_mobile_451x300.png",
+			"bannerPageD" : "https://imaginarium.vteximg.com.br/arquivos/PORCELANAH_banner_top_desk_1920x200.png",
+			"navBrands" : "https://lojamindesigns.vteximg.com.br/arquivos/PORCELANAH_banner_linha_desk_385x570.png",
+			"pageTitle" : "MinD+ Porcelanah",
+			"pageDescription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum ipsum vel diam euismod, at tempus ante aliquam. Fusce nisl.",
+			"collection": 0,
+			"pageLink" : "https://www.casamind.com.br/mindmais/porcelanah",
+			"categories" : "",
+			"date" : "09/02/2022"
+		},
 		"toroindigena" : {
 			"name" : "Toró Indígena",
 			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/Toró_logo_menu.png",
