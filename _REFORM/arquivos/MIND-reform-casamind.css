@@ -979,7 +979,7 @@ div#ajaxBusy{
     position: relative;
     height: 13.063rem;
     background-color: var(--body-bg-color);
-    z-index: 99999999;
+    z-index: 999;
 }
 .csm-header > .csm-wrapper{
     position: fixed;

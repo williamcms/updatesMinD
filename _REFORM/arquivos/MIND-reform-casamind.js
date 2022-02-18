@@ -22,16 +22,18 @@ $(document).ready(function(){
 		});
 	}
 	//LazyLoad
-	$('.lazy').Lazy({
-		scrollDirection: 'both',
-		effect: 'fadeIn',
-		visibleOnly: true,
-		onError: function(e) {
-			console.log('error loading ' + e.data('src'));
-		},
-		afterLoad: function(e){
-			e.addClass('lazyComplete');
-		}
+	$(document).bind('DOMNodeInserted', function(e){
+		$('.lazy').Lazy({
+			scrollDirection: 'both',
+			effect: 'fadeIn',
+			visibleOnly: true,
+			onError: function(e) {
+				console.log('error loading ' + e.data('src'));
+			},
+			afterLoad: function(e){
+				e.addClass('lazyComplete');
+			}
+		});
 	});
 	//Slickers
 	$('.slick-carousel-dots').slick({
