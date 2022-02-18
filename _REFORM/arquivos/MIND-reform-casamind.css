@@ -1742,7 +1742,7 @@ footer .social-wrapper{
 }
 footer .footer-wrapper .social-wrapper h2{
 	display: inline-block;
-	margin-right: 2rem !important;
+	margin-right: .5rem !important;
 	white-space: nowrap;
 }
 footer .footer-wrapper .social-wrapper .social{
