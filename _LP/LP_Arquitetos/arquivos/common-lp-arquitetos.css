@@ -1,0 +1,51 @@
+/*
+ *	Código por William Di Biasi Bogik
+ *
+ */
+@charset "utf-8";
+
+main.arquitetos > div.description{
+    padding: 3rem 4rem;
+}
+main.arquitetos > div.description > p:not(:last-child){
+    margin-bottom: 1rem;
+}
+main.arquitetos > div.steps{
+    counter-reset: stepsCounter;
+}
+main.arquitetos > div.steps > div.step-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    counter-increment: stepsCounter;
+    max-width: 70vw;
+    min-height: 6rem;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    background-color: var(--sand);
+    cursor: pointer;
+}
+main.arquitetos > div.steps > div.step-item:hover:before{
+    opacity: 1;
+}
+main.arquitetos > div.steps > div.step-item:hover{
+    transform: translate(.5rem, 0);
+    box-shadow: -0.125rem 0.1875rem 0.375rem rgba(0, 0, 0, 0.2);
+}
+main.arquitetos > div.steps > div.step-item:before{
+    content: counter(stepsCounter);
+    position: absolute;
+    font-size: 2rem;
+    height: 100%;
+    width: 15%;
+    border-radius: .6rem 0 0 .6rem;
+    background-color: var(--brand-color);
+    color: var(--white);
+    padding: 1.5rem 2.1rem;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+    opacity: .9;
+}
+main.arquitetos > div.steps > div.step-item > span{
+    margin: 0 1% 0 15%;
+    flex-basis: 100%;
+}
