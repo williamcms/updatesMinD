@@ -11,6 +11,13 @@
 	}
 	return isMobile;
 });
+var formOn = (formOn = (num) => {
+	$("#form"+num).fadeIn();
+});
+var formOff = (formOff = (num) => {
+	$("#form"+num).fadeOut();
+	// window.location = window.location;
+});
 $(document).ready(function(){
 	"use strict";
 	//Addons
