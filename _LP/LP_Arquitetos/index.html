@@ -20,7 +20,7 @@
 
 <!-- Styles -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://lojamindesigns.vteximg.com.br/arquivos/MIND-reform-casamind.css?v=3" media="all" />
+<link rel="stylesheet" type="text/css" href="https://lojamindesigns.vteximg.com.br/arquivos/MIND-reform-casamind.css?v=3.4.6" media="all" />
 <link rel="stylesheet" type="text/css" href="./arquivos/common-lp-arquitetos.css" media="all" />
 
 
@@ -31,7 +31,7 @@
 <script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
 
-<script type="text/javascript" src="https://lojamindesigns.vteximg.com.br/arquivos/MIND-reform-casamind.js"></script>
+<script type="text/javascript" src="https://lojamindesigns.vteximg.com.br/arquivos/MIND-reform-casamind.js?v=3.3.1"></script>
 <script type="text/javascript" src="./arquivos/common-lp-arquitetos.js"></script>
 	
 	<!-- <title><vtex:contentPlaceHolder id="tituloDaPagina" /></title> -->
@@ -571,14 +571,111 @@
 		</div>
 
 		<div class="apply-to-join">
-			
+			<button onclick="formOn(1)">Join</button>
 		</div>
 
 		<div class="overlayform" id="form1">
 			<div class="modalwrapper">
 				<div class="modalform">
 					<div class="modaldados">
-						
+						<h2>Formulário para o projeto Arquitetos MinD</h2>
+						<form method="POST" id="arquitetosForm">
+							<fieldset class="field1">
+								<legend>Parte 1: Informações de contato</legend>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Nome Completo</label>
+										</div>
+										<input type="text" name="name" id="name" required="true"/>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Data de Nascimento</label>
+										</div>
+										<input type="date" name="birthDate" id="birthDate" required="true"/>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">E-mail</label>
+										</div>
+										<input type="email" name="email" id="email" required="true"/>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Endereço</label>
+										</div>
+										<input type="text" name="address" id="address" required="true"/>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Telefone</label>
+										</div>
+										<input type="tel" name="telephone" id="telephone" required="true"/>
+									</div>
+								</div>
+
+								<a href="javascript:void(0)" class="button2 nextForm" data-current="1"><span>Próximo</span></a>
+							</fieldset>
+
+							<fieldset class="field2">
+								<legend>Parte 2: Informações da profissão</legend>
+
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Formação Academica</label>
+										</div>
+										<input type="text" name="academic" id="academic" required="true"/>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Possui CNPJ?</label>
+										</div>
+										<select name="cnpj" id="cnpj" required="true">
+											<option value="0" selected="true">Não</option>
+											<option value="1">Sim</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Possui redes sociais profissionais?</label>
+										</div>
+										<input type="text" name="social" id="social" required="true"/>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Quantos projetos faz por trimestre?</label>
+										</div>
+										<input type="number" name="projectsN" id="projectsN" required="true"/>
+									</div>
+								</div>
+								<div class="center">
+									<a href="javascript:void(0)" class="button2 prevForm d-inline" data-current="2"><span>Anterior</span></a> | <a href="javascript:void(0)" class="button2 sendForm d-inline" data-current="2"><span>Enviar</span></a>
+								</div>								
+							</fieldset>
+						</form>
 					</div>
 				</div>
 			</div>	

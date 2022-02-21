@@ -28,6 +28,12 @@ $(document).ready(function(){
 			}
 		});
 	}
+	//Fecha o overlay/modal se clicar fora da área
+	$('.overlayform').on('click', function(e){
+		if($(e.target).is('.overlayform')){
+			$(this).fadeToggle('slow');
+		}
+	});
 	//LazyLoad
 	$(document).bind('DOMNodeInserted', function(e){
 		$('.lazy').Lazy({

@@ -142,35 +142,42 @@ input[type=search]{
 	-webkit-appearance: none;
 }
 input.invalid{
-	border: 1px solid var(--warning);
+	border: 1px solid var(--danger);
+}
+input:not(.invalid) ~ .invalid-input{
+	display: none;
 }
 .invalid-input{
 	width: 1.5rem;
-    height: 1.5rem;
-    background-color: var(--warning);
-    color: var(--white);
-    border-radius: 50%;
-    font-weight: 600;
-    text-align: center;
-    margin: auto 0.5rem;
-    position: absolute;
-    right: -2.3rem;
-    top: 0;
-    bottom: 0;
+	height: 1.5rem;
+	border-radius: 50%;
+	margin: auto 0.5rem;
+	position: absolute;
+	right: -2.3rem;
+	top: 0;
+	bottom: 0;
+	background-color: var(--warning);
+	color: var(--white);
+	font-weight: 600;
+	text-align: center;
 }
 .invalid-input:after{
-	content: 'Campo inválido. Preencha corretamente!';
+	content: 'Campo vazio. Preencha-o e tente novamente!';
+	display: none;
 	padding: 0.5rem;
-    background-color: var(--warning);
-    color: var(--white);
-    right: 0;
-    left: -21rem;
-    position: absolute;
-    min-width: 100%;
-    white-space: nowrap;
-    overflow: visible;
-    width: 21rem;
-    z-index: 9;
+	background-color: var(--warning);
+	color: var(--white);
+	top: 0;
+	bottom: 0;
+	left: -21.5rem;
+	position: absolute;
+	min-width: 100%;
+	white-space: nowrap;
+	overflow: visible;
+	width: 21rem;
+	line-height: .6rem;
+
+	z-index: 9;
 }
 .invalid-input:hover:after{
 	display: block;
@@ -1926,6 +1933,37 @@ footer .final-label__address{
 	input[type=time],
 	input[type=url]{
 		height: 06vh !important;
+	}
+	.overlayform .modalform > .modaldados .input-group{
+		flex-wrap: wrap;
+	}
+	.overlayform .modalform > .modaldados .input-group-prepend, .input-group-append{
+		width: 100%;
+	}
+	.overlayform .modalform > .modaldados .input-group > .input-group-prepend > .input-group-text{
+		border-radius: .25rem .25rem 0 0;
+		width: 100%;
+	}
+	.overlayform .modalform > .modaldados .input-group-prepend ~ input:not(:first-child),
+	.overlayform .modalform > .modaldados .input-group-prepend ~ textarea:not(:first-child),
+	.overlayform .modalform > .modaldados .input-group-prepend ~ select:not(:first-child){
+		border-radius: 0 0 .25rem .25rem;
+	}
+	.overlayform .modalform > .modaldados .invalid-input{
+		position: initial;
+		font-size: 0;
+		background-color: initial;
+		margin: 0;
+		text-align: left;
+	}
+	.overlayform .modalform > .modaldados .invalid-input:after{
+		display: block;
+		position: initial;
+		font-size: .7rem;
+		width: 16.5rem;
+		width: fit-content;
+		background-color: initial;
+		color: var(--warning);
 	}
 	textarea{
 		height: 10vh !important;
