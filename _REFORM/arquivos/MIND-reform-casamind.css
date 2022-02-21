@@ -141,6 +141,40 @@ input[type=search]{
 	outline-offset: -0.125rem;
 	-webkit-appearance: none;
 }
+input.invalid{
+	border: 1px solid var(--warning);
+}
+.invalid-input{
+	width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--warning);
+    color: var(--white);
+    border-radius: 50%;
+    font-weight: 600;
+    text-align: center;
+    margin: auto 0.5rem;
+    position: absolute;
+    right: -2.3rem;
+    top: 0;
+    bottom: 0;
+}
+.invalid-input:after{
+	content: 'Campo inválido. Preencha corretamente!';
+	padding: 0.5rem;
+    background-color: var(--warning);
+    color: var(--white);
+    right: 0;
+    left: -21rem;
+    position: absolute;
+    min-width: 100%;
+    white-space: nowrap;
+    overflow: visible;
+    width: 21rem;
+    z-index: 9;
+}
+.invalid-input:hover:after{
+	display: block;
+}
 select{
 	display: block;
 	width: 100%;
