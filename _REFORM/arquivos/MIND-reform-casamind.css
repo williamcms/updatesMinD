@@ -629,6 +629,86 @@ blockquote::before{
 	opacity: .8;
 	right: 0;
 }
+.btn-blue{
+	color: var(--white);
+	background-color: var(--blue);
+}
+.btn-indigo{
+	color: var(--white);
+	background-color: var(--indigo);
+}
+.btn-purple{
+	color: var(--white);
+	background-color: var(--purple);
+}
+.btn-pink{
+	color: var(--white);
+	background-color: var(--pink);
+}
+.btn-red{
+	color: var(--white);
+	background-color: var(--red);
+}
+.btn-orange{
+	color: var(--white);
+	background-color: var(--orange);
+}
+.btn-yellow{
+	color: var(--white);
+	background-color: var(--yellow);
+}
+.btn-green{
+	color: var(--white);
+	background-color: var(--green);
+}
+.btn-teal{
+	color: var(--white);
+	background-color: var(--teal);
+}
+.btn-cyan{
+	color: var(--white);
+	background-color: var(--cyan);
+}
+.btn-white{
+	color: var(---black);
+	background-color: var(--white);
+}
+.btn-black{
+	color: var(--white);
+	background-color: var(--black);
+}
+.btn-gray{
+	color: var(--white);
+	background-color: var(--gray);
+}
+.btn-gray-lighter{
+	color: var(--gray);
+	background-color: var(--gray-lighter);
+}
+.btn-success{
+	color: var(--white);
+	background-color: var(--success);
+}
+.btn-info{
+	color: var(--white);
+	background-color: var(--info);
+}
+.btn-warning{
+	color: var(--white);
+	background-color: var(--warning);
+}
+.btn-danger{
+	color: var(--white);
+	background-color: var(--danger);
+}
+.btn-light{
+	color: var(--gray);
+	background-color: var(--light);
+}
+.btn-dark{
+	color: var(--white);
+	background-color: var(--dark);
+}
 /* Auxiliares de Alinhamentos */
 .center,
 .text-center{
