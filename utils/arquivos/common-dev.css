@@ -21,3 +21,9 @@ main.dev .btn-add > i{
     color: var(--green);
     font-size: 1.5rem;
 }
+main.dev .getDetails.change{
+    color: var(--danger);
+}
+main.dev .getDetails.complete{
+    color: var(--green);
+}

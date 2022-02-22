@@ -37,7 +37,13 @@ $(document).ready(function(){
 				qty: e.first().items.first().sellers.first().commertialOffer.AvailableQuantity
 			}
 			console.log(product);
+			$('#vitrines').find('a.getDetails[data-input='+ inputN +']').removeClass('change');
+			$('#vitrines').find('a.getDetails[data-input='+ inputN +']').addClass('complete');
 		});
+	});
+	var changeIconVitrines = $(document).on('change keyup paste', '#vitrines input', function(){
+		$('#vitrines').find('a.getDetails[data-input='+ $(this).data('input') +']').removeClass('complete');
+		$('#vitrines').find('a.getDetails[data-input='+ $(this).data('input') +']').addClass('change');
 	});
 	var addField = $('.btn-add').on('click', function(){
 		let referId = $(this).data('refer'),
