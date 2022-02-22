@@ -1,0 +1,23 @@
+/*
+ *  Código por William Di Biasi Bogik
+ *
+ */
+@charset "utf-8";
+header.csm-header{
+    height: auto;
+    min-height: 5rem;
+}
+header.csm-header > nav > ul{
+    display: flex;
+    justify-content: center;
+}
+header.csm-header > nav > ul > li{
+    padding: 1rem;
+}
+main.dev{
+    padding: 0.5rem 3rem;
+}
+main.dev .btn-add > i{
+    color: var(--green);
+    font-size: 1.5rem;
+}
