@@ -170,7 +170,7 @@ $(document).ready(function(){
 	var addtoBag = $('body').on('click', '.js--shelf-buy', function(e){
 		e.preventDefault(), e.stopPropagation();
 		let pid = $(this).parents('.csm-shelf__product').data('id'),
-		t = document.cookie.split('; VTEXSC=').pop().split(';').shift().split('src=')[1];
+		t = document.cookie.split('; VTEXSC=').pop().split(';').shift().split('sc=')[1];
 		$.ajax({
 			accept: "application/vnd.vtex.ds.v10+json",
 			contentType: 'application/json; charset=utf-8',
@@ -491,14 +491,14 @@ $(document).ready(function(){
  //        };
  //    }
 	// Footer
-	$('footer.newfooter #support-extended').change(function(){
+	$('footer #support-extended').change(function(){
 		if(!$('#support-extended')[0].checked){
 			$($('.support-wrapper .support-guide svg line.cls-2')[0]).css('display', 'block');
 		}else{
 			$($('.support-wrapper .support-guide svg line.cls-2')[0]).css('display', 'none');
 		}
 	});
-	$('footer.newfooter #aboutUs-extended').change(function(){
+	$('footer #aboutUs-extended').change(function(){
 		if(!$('#aboutUs-extended')[0].checked){
 			$($('.aboutUs-wrapper .aboutUs-guide svg line.cls-2')[0]).css('display', 'block');
 		}else{
