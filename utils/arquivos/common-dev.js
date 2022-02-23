@@ -9,13 +9,13 @@ $(document).ready(function(){
 		let inputN = $(this).data('input'),
 		ref = $('input[name=vitrine-'+ inputN +']').val(),
 		product = {};
-		
+
 		$.ajax({
 			accept: "application/vnd.vtex.ds.v10+json",
 			contentType: 'application/json; charset=utf-8',
 			crossDomain: false,
 			type: 'GET',
-			url: 'https://www.casamind.com.br/api/catalog_system/pub/products/search/?fq=alternateIds_RefId:' + ref
+			url: '/api/catalog_system/pub/products/search/?fq=alternateIds_RefId:' + ref
 		}).done(function(e){
 			//Pega o melhor parcelamento
 			let prices = {},
@@ -36,6 +36,18 @@ $(document).ready(function(){
 				installments: prices.NumberOfInstallments + 'x ' + currencySymbol + (prices.Value).toFixed(2).replace(/\./, ","),
 				qty: e.first().items.first().sellers.first().commertialOffer.AvailableQuantity
 			}
+			//Remove priceP se os preços forem iguais (não há desconto)
+			if(product.priceP === product.priceN){
+				product.priceP = '';
+			}
+			if($('.row.newFields[data-input='+ inputN +']').length >= 1){
+				$('.row.newFields').find('input[name=vitrine-name-'+ inputN +']').val(product.name);
+				$('.row.newFields').find('input[name=vitrine-priceP-'+ inputN +']').val(product.priceP);
+				$('.row.newFields').find('input[name=vitrine-priceN-'+ inputN +']').val(product.priceN);
+				$('.row.newFields').find('input[name=vitrine-installments-'+ inputN +']').val(product.installments);
+				$('.row.newFields').find('input[name=vitrine-qty-'+ inputN +']').val(product.qty);
+			}
+			
 			console.log(product);
 			$('#vitrines').find('a.getDetails[data-input='+ inputN +']').removeClass('change');
 			$('#vitrines').find('a.getDetails[data-input='+ inputN +']').addClass('complete');
@@ -51,13 +63,15 @@ $(document).ready(function(){
 		eFields = container.find('.form-group'),
 		clone = eFields,
 		html = clone[0].outerHTML;
-		console.log(eFields.length, eFields.length + 1)
 		html = html.replaceAll(1, eFields.length + 1).replaceAll(0, eFields.length);
 
 		container.append($(html));
+	});
+	var rmvField = $('#vitrines, #banners').on('click', '.btn-remove', function(){
+		let referInput = $(this).data('input'),
+		referId = $(this).data('refer');
 
-		console.log(html)
-
+		$('#'+ referId +' > .form-group')[referInput].remove()
 	});
 	var mountHTML = $('#generateHTML').on('click', function(){
 		let type = $('select[name=emailType]').val();
@@ -79,7 +93,7 @@ $(document).ready(function(){
 			bannerTempMid = '',
 			bannerTempBot = '';
 
-			//banners topo
+			//banners
 			$.each($('#banners > .form-group'), function(i){
 				let bannerimage = $(this).find('input[name=banner-image-'+ i +']').val(),
 				bannerlink = $(this).find('input[name=banner-link-'+ i +']').val(),
@@ -108,7 +122,7 @@ $(document).ready(function(){
 				bannerTempTop += banner.replaceAll('BANNERLINK', bannerlink).replaceAll('BANNERALT', bannertitle).replaceAll('BANNERIMAGEM', bannerlocal);
 			});
 
-			//banners baixo
+			//montagem de blocos
 
 		}
 	})

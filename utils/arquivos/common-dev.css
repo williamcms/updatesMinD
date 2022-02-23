@@ -4,26 +4,42 @@
  */
 @charset "utf-8";
 header.csm-header{
-    height: auto;
-    min-height: 5rem;
+	height: auto;
+	min-height: 5rem;
 }
 header.csm-header > nav > ul{
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 header.csm-header > nav > ul > li{
-    padding: 1rem;
+	padding: 1rem;
 }
 main.dev{
-    padding: 0.5rem 3rem;
+	padding: 0.5rem 3rem;
 }
 main.dev .btn-add > i{
-    color: var(--green);
-    font-size: 1.5rem;
+	color: var(--green);
+	font-size: 1.5rem;
 }
 main.dev .getDetails.change{
-    color: var(--danger);
+	color: var(--danger);
 }
 main.dev .getDetails.complete{
-    color: var(--green);
+	color: var(--green);
+}
+main.dev #banners .form-group > div.row > div:last-child > a,
+main.dev #vitrines .form-group > div.row > div:last-child > a{
+	display: none !important;
+	color: var(--danger);
+}
+main.dev #banners .form-group:last-child > div.row > div:last-child{
+	padding-right: 2rem !important;
+}
+main.dev #banners .form-group:first-child > div.row > div:last-child > a,
+main.dev #vitrines .form-group:first-child > div.row > div:last-child > a{
+    display: none !important;
+}
+main.dev #banners .form-group:last-child:not(:nth-child(-n+1)) > div.row > div:last-child > a,
+main.dev #vitrines .form-group:last-child:not(:nth-child(-n+3)) > div.row > div:last-child > a{
+	display: block !important;
 }
