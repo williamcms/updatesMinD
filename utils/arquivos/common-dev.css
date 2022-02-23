@@ -22,7 +22,7 @@ main.dev .btn-add > i{
 	font-size: 1.5rem;
 }
 main.dev .getDetails.change{
-	color: var(--danger);
+	color: var(--warning);
 }
 main.dev .getDetails.complete{
 	color: var(--green);
@@ -42,4 +42,24 @@ main.dev #vitrines .form-group:first-child > div.row > div:last-child > a{
 main.dev #banners .form-group:last-child:not(:nth-child(-n+1)) > div.row > div:last-child > a,
 main.dev #vitrines .form-group:last-child:not(:nth-child(-n+3)) > div.row > div:last-child > a{
 	display: block !important;
+}
+main.dev #viewRenderedHTML{
+	max-width: 730px;
+	margin: 0 auto;
+}
+main.dev #viewRenderedHTML img{
+	width: 228px;
+	height: initial;
+	max-width: fit-content;
+}
+main.dev #viewHTMLCode{
+	display: block;
+	padding: 1rem;
+	width: 50vw;
+	height: 20vw;
+	margin: 0 auto;
+	border-radius: .5rem;
+	background: var(--gray-lighter);
+	color: var(--black);
+	overflow: scroll;
 }
