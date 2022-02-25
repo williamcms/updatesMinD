@@ -20,7 +20,11 @@
 
             (typeof(e) != 'object' ? mindmais = JSON.parse(e) : mindmais = e);
 
-            mindmais.orderedSellersBy = $.map(mindmais.sellers, function(r){return r});
+            mindmais.orderedSellersBy = $.map(mindmais.sellers, function(r){
+                if(r.active){
+                    return r;
+                }
+            });
             
             //Dados esperados de order: a-z, z-a, first, last
             if(mindmais.order.toLowerCase() == 'a-z'){
@@ -39,9 +43,13 @@
             mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
 
             //Remove espaços para evitar problemas de digitação
-            $.map(mindmais.orderedSellers, function(r){ r.categories = (r.categories).replaceAll(' ', '')});
+            // $.map(mindmais.orderedSellers, function(r){ r.categories = (r.categories).replaceAll(' ', '')});
 
-            mindmais.orderedCategories = $.map(mindmais.categories, function(r){return r});
+            mindmais.orderedCategories = $.map(mindmais.categories, function(r){
+                if(r.active){
+                    return r;
+                }
+            });
             mindmais.orderedCategories.sort((a,b) => a.name.localeCompare(b.name));
 
             mountBanners(mindmais);
@@ -56,7 +64,7 @@
     var mountBanners = (mountBanners = (mindmais) =>{
         let bannersSlick = $('main.mindmais > .banners-top .slicker');
         $.each(mindmais.orderedSellersBy, function(i, e){
-            bannersSlick.slick('slickAdd', $('<img  draggable="false" />').attr('src', (isMobile() ? e.bannerM : e.bannerD)).attr('title', e.name));
+            bannersSlick.slick('slickAdd', $('<img  draggable="false" />').attr('src', (isMobile() ? this.bannerM : this.bannerD)).attr('title', this.name));
             return (i == parseInt(mindmais.featured) - 1 ? false : true);
         })
     });
@@ -77,11 +85,12 @@
         let categoriesSlick = $('main.mindmais > .nav-categories .slicker');
 
         $.each(mindmais.orderedCategories, function(i){
-            categoriesSlick.slick('slickAdd', $('<div draggable="false"></div>').addClass('item').attr('category-number', i).attr('filter', (this.name).replaceAll(' ', '')));
+            categoriesSlick.slick('slickAdd', $('<div draggable="false" class="p-2"></div>').addClass('item').attr('category-number', i).attr('filter', (this.name).replaceAll(' ', '')));
             $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" class="image"><img width="250" height="166" draggable="false" /></a>'),
             $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name),
             $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" class="name uppercase bold text-center d-block"></a>'),
             $('.slick-track').find('div[category-number='+i+'] a.name').text(this.name);
+            return (i == parseInt(mindmais.featuredCategories) - 1 ? false : true);
         })
     });
     var sellersExpanded = $('body').on('click', '#expandBrands, .nav-brands > .seemore', function(){
