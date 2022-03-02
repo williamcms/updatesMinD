@@ -13,69 +13,69 @@
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_acessórios_para_escritório_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_acessórios_para_escritório_mob_170x170.png",
 			"pageLink" : "#",
-			"active" : 1
+			"active" : 0
 		},
 		"Cama e banho" : {
 			"name" : "Cama e banho",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_cama_e_banho_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_cama_e_banho_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/cama-e-banho?O=OrderByScoreASC",
 			"active" : 1
 		},
 		"Cozinha e mesa posta" : {
 			"name" : "Cozinha e mesa posta",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_cozinha_e_mesa_posta_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_cozinha_e_mesa_posta_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/COZINHA-E-MESA-POSTA?O=OrderByScoreASC",
 			"active" : 1
 		},
 		"Decoração" : {
 			"name" : "Decoração",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_decoração_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_decoração_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/decoracao?O=OrderByScoreASC",
 			"active" : 1
 		},
 		"Infantil" : {
 			"name" : "Infantil",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_infantil_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_infantil_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/decoracao/INFANTIL?O=OrderByScoreASC",
 			"active" : 1
 		},
 		"Lifestyle" : {
 			"name" : "Lifestyle",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_lifestyle_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_lifestyle_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/LIFESTYLE?O=OrderByScoreASC",
 			"active" : 1
 		},
 		"Móveis" : {
 			"name" : "Móveis",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_móveis_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_móveis_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/moveis2?O=OrderByScoreASC",
 			"active" : 1
 		},
 		"Organização" : {
 			"name" : "Organização",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_organização_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_organização_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/ORGANIZACAO2?O=OrderByScoreASC",
 			"active" : 1
 		},
 		"Quadros e painéis" : {
 			"name" : "Quadros e painéis",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_quadros_e_painéis_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_quadros_e_painéis_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/decoracao/QUADROS-E-PAINEIS?O=OrderByScoreASC",
 			"active" : 1
 		},
 		"Velas e difusores" : {
 			"name" : "Velas e difusores",
 			"image" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_velas_e_difusores_desk_330X385.png",
 			"imageM" : "https://imaginarium.vteximg.com.br/arquivos/BANNER_CATEGORIAS_velas_e_difusores_mob_170x170.png",
-			"pageLink" : "#",
+			"pageLink" : "/decoracao/VELAS-E-DIFUSORES?O=OrderByScoreASC",
 			"active" : 1
 		}
 	},

@@ -53,6 +53,11 @@ main.mindmais > .nav-brands .slicker .item > .image img{
     height: auto;
     width: auto;
 }
+main.mindmais > .nav-categories .slicker .item > a.image{
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
 main.mindmais > .nav-brands .slicker .item > .name{
     font-family: Didot, serif;
     font-size: 1.2rem;
@@ -62,14 +67,24 @@ main.mindmais > .nav-brands .slicker .item > .desc{
     font-family: Lustria, serif;
 }
 main.mindmais > .nav-brands .slicker .item > .name,
-main.mindmais > .nav-categories .slicker .item > .name,
+main.mindmais > .nav-categories .slicker .item > a.image > .name,
 main.mindmais > .nav-brands .slicker .item > .desc{
     padding: .5rem .5rem 0 .5rem;
     margin: 0 auto;
     text-decoration: none;
 }
+main.mindmais > .nav-categories .slicker .item > a.image > .name{
+    position: absolute;
+    font-family: Lustria;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: .5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--white);
+    user-select: none;
+}
 main.mindmais > .nav-brands .slicker .item:hover > .name,
-main.mindmais > .nav-categories .slicker .item:hover > .name{
+main.mindmais > .nav-categories .slicker .item:hover > a.image > .name{
     color: var(--brand-color);
 }
 main.mindmais > .nav-brands-expanded{
@@ -142,6 +157,7 @@ main.mindmais > .nav-categories{
     background-color: var(--sand);
 }
 main.mindmais > .nav-categories div.item{
+    position: relative;
     cursor: pointer;
 }
 main.mindmais > .nav-categories div.item.active > div.name{

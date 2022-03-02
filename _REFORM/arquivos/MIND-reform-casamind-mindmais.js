@@ -86,9 +86,9 @@
 
         $.each(mindmais.orderedCategories, function(i){
             categoriesSlick.slick('slickAdd', $('<div draggable="false" class="p-2"></div>').addClass('item').attr('category-number', i).attr('filter', (this.name).replaceAll(' ', '')));
-            $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" class="image"><img width="250" height="166" draggable="false" /></a>'),
+            $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" draggable="false" class="image"><img width="250" height="166" draggable="false" /></a>'),
             $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name),
-            $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" class="name uppercase bold text-center d-block"></a>'),
+            $('.slick-track').find('div[category-number='+i+'] a.image').append('<a href="'+ this.pageLink +'" draggable="false" class="name uppercase bold text-center d-block"></a>'),
             $('.slick-track').find('div[category-number='+i+'] a.name').text(this.name);
             return (i == parseInt(mindmais.featuredCategories) - 1 ? false : true);
         })
