@@ -39,7 +39,11 @@
             }
 
             //Deixa automáticamente uma ordenação alfabetica salva
-            mindmais.orderedSellers = $.map(mindmais.sellers, function(r){return r});
+            mindmais.orderedSellers = $.map(mindmais.sellers, function(r){
+                if(r.active){
+                    return r;
+                }
+            });
             mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
 
             //Remove espaços para evitar problemas de digitação
@@ -64,7 +68,7 @@
     var mountBanners = (mountBanners = (mindmais) =>{
         let bannersSlick = $('main.mindmais > .banners-top .slicker');
         $.each(mindmais.orderedSellersBy, function(i, e){
-            bannersSlick.slick('slickAdd', $('<img  draggable="false" />').attr('src', (isMobile() ? this.bannerM : this.bannerD)).attr('title', this.name));
+            bannersSlick.slick('slickAdd', $('<img  draggable="false" aria-label="Banner mostrando alguns produtos da marca '+ this.name +'"/>').attr('src', (isMobile() ? this.bannerM : this.bannerD)).attr('title', this.name));
             return (i == parseInt(mindmais.featured) - 1 ? false : true);
         })
     });
@@ -72,14 +76,17 @@
         let sellersSlick = $('main.mindmais > .nav-brands .slicker');
         $.each(mindmais.orderedSellersBy, function(i, e){
             sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', i));
-            $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="image"><img width="270" height="400" draggable="false" /></a>'),
+            $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="image" aria-label="Ir para a página da marca '+ this.name +'"><img width="270" height="400" draggable="false" /></a>'),
             $('.slick-track').find('div[data-number='+i+'] a.image img').attr('src', e.navBrands).attr('title', this.name).attr('alt', this.name),
-            $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="name uppercase bold text-center d-block"></a>'),
+            $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="name uppercase bold text-center d-block" aria-hidden="true"></a>'),
             $('.slick-track').find('div[data-number='+i+'] a.name').text(this.name);
             $('.slick-track').find('div[data-number='+i+']').append('<div class="desc"></div>'),
             $('.slick-track').find('div[data-number='+i+'] div.desc').html((this.pageDescription.length > 150 ? this.pageDescription.substring(0, this.pageDescription.substring(0, 150 + 1).search(/\s+\S*$/)) + ' (...)' : this.pageDescription).replace(/<\/?[^>]+(>|$)/g, ""));
             return (i == parseInt(mindmais.featuredBrands) - 1 ? false : true);
         });
+        sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', 'vermais'));
+        $('.slick-track').find('div[data-number=vermais]').append('<a href="javascript:void(0)" class="image seemore"><img width="270" height="400" draggable="false" /></a>'),
+        $('.slick-track').find('div[data-number=vermais] a.image img').attr('src', 'https://lojamindesigns.vteximg.com.br/arquivos/BANNER_VERMAIS__385X570.png').attr('title', 'ver mais').attr('alt', 'ver mais').attr('aria-label', 'Ver mais marcas do MinD+');            
     });
     var mountCategories = (mountCategories = (mindmais) =>{
         let categoriesSlick = $('main.mindmais > .nav-categories .slicker');
@@ -93,7 +100,7 @@
             return (i == parseInt(mindmais.featuredCategories) - 1 ? false : true);
         })
     });
-    var sellersExpanded = $('body').on('click', '#expandBrands, .nav-brands > .seemore', function(){
+    var sellersExpanded = $('body').on('click enter', '#expandBrands, .nav-brands .seemore', function(){
         let brandsExpanded = $('main.mindmais .nav-brands-expanded'),
         alphabeticalList = $('main.mindmais .nav-brands-expanded ul.alphabeticalList'),
         alphabeticalListSelect = $('main.mindmais .nav-brands-expanded select.alphabeticalList'),
@@ -101,7 +108,7 @@
         sellersContainer = brandsExpanded.find('.sellersContainer');
 
         brandsExpanded.slideToggle('slow');
-        $(this).text(($(this).text().toLowerCase() == 'ver mais' ? 'ver menos' : 'ver mais'));
+        $('.nav-brands > .seemore').text(($('.nav-brands > .seemore').text().toLowerCase() == 'ver mais' ? 'ver menos' : 'ver mais'));
         scrollTo(0, $('#navBrandsExpanded').position().top - (isMobile() ? 400 : 700));
         if(alphabeticalList.find('li[filter]:not(li[filter=all])').length == 0){
             $.each(alphabet, function(){
@@ -111,11 +118,11 @@
 
             $.each(globalSellers, function(){
                 let firstLetter = (this.name[0]).normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'"><img src="'+ this.navBrands +'"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
+                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'" aria-label="Ir para a página da marca '+ this.name +'"><img src="'+ this.navBrands +'"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
 
                 if(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')){
-                    $(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')).attr('disabled', false)
-                    $(alphabeticalListSelect.find('option[filter='+ firstLetter +'][disabled]')).attr('disabled', false)
+                    $(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')).attr('disabled', false);
+                    $(alphabeticalListSelect.find('option[filter='+ firstLetter +'][disabled]')).attr('disabled', false);
                 }
                 sellersContainer.append(html);
             })

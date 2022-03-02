@@ -23,7 +23,7 @@ main.mindmais > .nav-categories{
     margin: 0 0 3rem 0;
     padding: 2rem 5rem 3rem 5rem;
 }
-main.mindmais .seemore{
+main.mindmais .nav-brands > .seemore{
     position: absolute;
     top: 0;
     right: 0;
@@ -33,7 +33,7 @@ main.mindmais .seemore{
     text-decoration: none;
     cursor: pointer;
 }
-main.mindmais .seemore:hover{
+main.mindmais .nav-brands > .seemore:hover{
     font-weight: 600;
 }
 main.mindmais > .nav-brands h2,
@@ -170,7 +170,7 @@ main.mindmais > .nav-categories div.item.active > div.name{
     main.mindmais > .nav-categories{
         padding: 2rem 1.5rem;
     }
-    main.mindmais .seemore{
+    main.mindmais .nav-brands > .seemore{
         padding: 0;
         bottom: -1.5rem;
         top: initial;
