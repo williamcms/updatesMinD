@@ -67,8 +67,8 @@ $(document).ready(function(){
 				$('.row.newFields').find('input[name=vitrine-priceP-'+ inputN +']').val(product.priceP);
 				$('.row.newFields').find('input[name=vitrine-priceN-'+ inputN +']').val(product.priceN);
 				$('.row.newFields').find('input[name=vitrine-installments-'+ inputN +']').val(product.installments);
-				$('.row.newFields').find('input[name=vitrine-link-'+ inputN +']').val(product.link);
-				$('.row.newFields').find('input[name=vitrine-image-'+ inputN +']').val(product.image);
+				$('.row.newFields').find('input[name=vitrine-link-'+ inputN +']').val(product.link + '?reportEmail=produto_' + inputN);
+				$('.row.newFields').find('input[name=vitrine-image-'+ inputN +']').val((product.image).replace(/\d+/g, "$&-290-435"));
 				$('.row.newFields').find('input[name=vitrine-qty-'+ inputN +']').val(product.qty);
 			}
 			
@@ -144,9 +144,9 @@ $(document).ready(function(){
 			//banners
 			$.each($('#banners > .form-group'), function(i){
 				let bannerimage = $(this).find('input[name=banner-image-'+ i +']').val(),
-				bannerlink = $(this).find('input[name=banner-link-'+ i +']').val(),
-				bannertitle = $(this).find('input[name=banner-title-'+ i +']').val(),
-				bannerlocal = $(this).find('select[name=banner-local-'+ i +']').val();
+				bannerlocal = $(this).find('select[name=banner-local-'+ i +']').val(),
+				bannerlink = $(this).find('input[name=banner-link-'+ i +']').val()  + '?reportEmail=banner_'+ bannerlocal +'_' + i,
+				bannertitle = $(this).find('input[name=banner-title-'+ i +']').val();
 
 				if(bannerlocal === 'top'){
 					if(bannerTempTop.length > 0){
