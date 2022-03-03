@@ -1387,7 +1387,8 @@ div#ajaxBusy{
 	width: 100%;
 	z-index: 9;
 }
-.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub:hover > .csm-dropdown{
+.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub:hover > .csm-dropdown,
+.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > a:focus + .csm-dropdown{
 	display: flex;
 }
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown > ul{

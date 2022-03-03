@@ -92,7 +92,6 @@ $(document).ready(function(){
 	});
 	var showDropDownMenu = $('.csm-has-sub').on('click', function(){
 		$($(this).find('.csm-dropdown')).toggleClass("change");
-
 	});
 	var hideMenuOnScroll = (hideMenuOnScroll = () => {
 		let top = 0;
