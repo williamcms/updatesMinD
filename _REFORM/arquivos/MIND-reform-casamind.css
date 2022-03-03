@@ -1109,7 +1109,7 @@ div#ajaxBusy{
 	position: relative;
 	height: 13.063rem;
 	background-color: var(--body-bg-color);
-	z-index: 999;
+	z-index: 9999;
 }
 .csm-header > .csm-wrapper{
 	position: fixed;
@@ -1602,7 +1602,8 @@ div#ajaxBusy{
 	height: 1.188rem;
 	margin-left: -0.5rem;
 	color: var(--white);
-	font-size: .9rem;
+	line-height: 1rem;
+	font-size: .84rem;
 	font-style: normal;
 	background: var(--brand-color);
 	border-radius: 50%;

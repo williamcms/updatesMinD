@@ -117,23 +117,25 @@ $(document).ready(function(){
 	});
 	var vtexUpdateItem = (vtexUpdateItem = (itemIndex, qty) =>{
 		vtexjs.checkout.getOrderForm()
-		.then(function(orderForm) {
+		.then(function(orderForm){
 			let item = orderForm.items[itemIndex];
 			let updateItem = {
 				index: itemIndex,
-				quantity: qty
+				quantity: qty,
+				seller: item.seller
 			};
-		return vtexjs.checkout.updateItems([updateItem], null, false);
+			return vtexjs.checkout.updateItems([updateItem], null, false);
 		})
 		.done(function(orderForm) {
 			// console.log(orderForm);
 			updateMiniCart();
+			(qty == 0 && $('.csm-minicart__products > ul > li')[itemIndex].remove());
 		});
 	});
 	//Scripts que serão acionados com base no orderForm
 	var checkOrderForm = (checkOrderForm = () =>{
 		vtexjs.checkout.getOrderForm().done(function(t) {
-			(t.items.length > 0 ? updateMiniCart() : '');
+			(t.items.length > 0 && updateMiniCart());
 		});
 	})();
 	var updateMiniCart = (updateMiniCart = () =>{
@@ -142,29 +144,46 @@ $(document).ready(function(){
 
 		vtexjs.checkout.getOrderForm().done(function(t) {
 			$.each(t.items, function(i){
-				if(p.find('li[data-sku='+ this.id +']').length == 0){
-					p.append('<li data-sku="'+ this.id +'"></li>');
-					p.find('li[data-sku='+ this.id +']').addClass('item-list').append('<div class="product-wrapper"></div>');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper').append('<div class="product__image"><img src="'+ (this.imageUrl).replace("-350-303", "-400-600") +'" alt="'+ this.name +'" title="'+ this.name +'" /></div>');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper').append('<div class="product__info-container"></div><a href="javascript:void(0)" class="remove" title="Remover produto">Remover</a>');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container').append('<div class="product__name">'+ this.name +'</div>');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container').append('<div class="product__info"></div>');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info').append('<div class="product__price">'+ this.formattedPrice +'</div>');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info').append('<div class="product__management"></div>');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<a ndx="'+ i +'" class="minus">&#45;</a>');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<input type="number" value="'+ this.quantity +'" />');
-					p.find('li[data-sku='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<a ndx="'+ i +'" class="plus">&#43;</a>');
+				if(p.find('li[data-id='+ this.id +']').length == 0){
+					p.append('<li data-id="'+ this.id +'"></li>');
+					p.find('li[data-id='+ this.id +']').addClass('item-list').append('<div class="product-wrapper"></div>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper').append('<div class="product__image"><img src="'+ (this.imageUrl).replace("-350-303", "-400-600") +'" alt="'+ this.name +'" title="'+ this.name +'" /></div>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper').append('<div class="product__info-container"></div><a ndx="'+ i +'" role="button" class="remove" title="Remover produto">Remover</a>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container').append('<div class="product__name">'+ this.name +'</div>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container').append('<div class="product__info"></div>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info').append('<div class="product__price">'+ this.formattedPrice +'</div>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info').append('<div class="product__management"></div>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<a ndx="'+ i +'" role="button" class="minus">&#45;</a>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<input ndx="'+ i +'" type="number" value="'+ this.quantity +'" />');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<a ndx="'+ i +'" role="button" class="plus">&#43;</a>');
+				}else{
+					p.find('li[data-id='+ this.id +']').addClass('item-list').append('<div class="product-wrapper"></div>');
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > product__image img').attr('src', (this.imageUrl).replace("-350-303", "-400-600")).attr('alt', this.name).attr('title', this.name);
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > product__name').text(this.name);
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > product__price').text(this.formattedPrice);
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management > a.minus').attr('ndx', i);
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management > input').val(this.quantity).attr('ndx', i);
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management > a.plus').attr('ndx', i);
+					p.find('li[data-id='+ this.id +'] div.product-wrapper > a.remove').attr('ndx', i);
+
 				}
 			})
 		});
-	})
-	var minicartAddQtd = $('.csm-header .csm-minicart a[ndx]_add').on('click', function(e){
-		let index = $(this).attr("ndx"), qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+index+']')[0].value);
+	});
+	var minicartAddQtd = $('.csm-header .csm-minicart a[ndx].plus').on('click', function(e){
+		let index = $(this).attr('ndx'),
+		qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+ index +']').val());
 		vtexUpdateItem(index, ++qty);
 	});
-	var minicartRmvQtd = $('.csm-header .csm-minicart a[ndx]_remove').on('click', function(e){
-		let index = $(this).attr("ndx"), qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+index+']')[0].value);
+	var minicartRmvQtd = $('.csm-header .csm-minicart a[ndx].minus').on('click', function(e){
+		let index = $(this).attr('ndx'),
+		qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+ index +']').val());
 		vtexUpdateItem(index, --qty);
+	});
+	var minicartRmvAll = $('.csm-header .csm-minicart a.remove').on('click', function(e){
+		let index = $(this).attr('ndx'),
+		qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+ index +']').val());
+		vtexUpdateItem(index, 0);
 	});
 	var addtoBag = $('body').on('click', '.js--shelf-buy', function(e){
 		e.preventDefault(), e.stopPropagation();
@@ -178,16 +197,16 @@ $(document).ready(function(){
 			url: '/api/catalog_system/pub/products/search/?fq=productId:' + pid
 		}).done(function(e){
 			return vtexjs.checkout.addToCart([{
-				id: e.first().productId,
+				id: e.first().items.first().itemId,
 				quantity: 1,
 				seller: e.first().items.first().sellers.first().sellerId
 			}], null, t).done(function(t){
+				updateMiniCart();
 				$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
 					$('#popup-adicionando, #barratempo').removeClass('is--active')
 				}, 6200);
 			}), false;
 		});
-		updateMiniCart();
 	});
 	//Restrito a páginas de produto apenas
 	if($('main .csm-product').length != 0){
@@ -207,7 +226,7 @@ $(document).ready(function(){
 					url: '/api/catalog_system/pub/products/search/?fq=productId:' + pid
 				}).done(function(e){
 					//Exibe o select
-					f.slideDown()
+					f.slideDown();
 
 					$.each(e.first().items, function(i){
 						let avaliable = this.sellers.first().commertialOffer.AvailableQuantity,
