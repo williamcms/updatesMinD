@@ -161,7 +161,6 @@ $(document).ready(function(){
 					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<input ndx="'+ i +'" type="number" value="'+ this.quantity +'" readonly=""/>');
 					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management').append('<a ndx="'+ i +'" role="button" class="plus">&#43;</a>');
 				}else{
-					p.find('li[data-id='+ this.id +']').addClass('item-list').append('<div class="product-wrapper"></div>');
 					p.find('li[data-id='+ this.id +'] div.product-wrapper > product__image img').attr('src', (this.imageUrl).replace("-350-303", "-400-600")).attr('alt', this.name).attr('title', this.name);
 					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > product__name').text(this.name);
 					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > product__price').text(this.formattedPrice);
@@ -171,9 +170,9 @@ $(document).ready(function(){
 					p.find('li[data-id='+ this.id +'] div.product-wrapper > a.remove').attr('ndx', i);
 				}
 				if($('li[data-id='+ this.id +']').attr('availiable-qty') <= 1 || $('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management > input').val() == $('li[data-id='+ this.id +']').attr('availiable-qty')){
-					$('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management a.plus').css('color', 'var(--gray)');
+					$('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management a.plus').attr('disabled');
 				}else{
-					$('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management a.plus').css('color', 'var(--brand-color)');
+					$('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management a.plus').removeAttr('disabled');
 				}
 			})
 		});
