@@ -1480,7 +1480,9 @@ div#ajaxBusy{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 1.38rem 0;
+	padding: .9rem 0;
+	grid-row-gap: .5rem;
+	row-gap: .5rem;
 }
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list:not(:last-child){
 	border-bottom: 0.0625rem solid #E5E5E5;
@@ -1562,6 +1564,7 @@ div#ajaxBusy{
 	width: auto;
 	margin: 0 .3rem;
 	text-align: center;
+	background-color: var(--white) !important;
 	border: 0;
 }
 /*Remove as setas do input*/
@@ -1576,6 +1579,9 @@ div#ajaxBusy{
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper > .product__info-container > .product__info > .product__management input[type=number] {
 	-moz-appearance: textfield;
+}
+.csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > .message{
+	color: var(--warning);
 }
 .csm-header .csm-minicart .csm-minicart__empty{
 	/*remover*/
