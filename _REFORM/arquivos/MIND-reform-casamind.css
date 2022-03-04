@@ -1747,6 +1747,10 @@ div#ajaxBusy{
 }
 /* Página de produto */
 /* Prateleiras/Vitrines */
+.has-shelf--default.prateleira.n4colunas{
+	max-width: 83.25rem;
+	margin: 0 auto;
+}
 .has-shelf--default.prateleira > h2{
 	font-family: Helvetica;
 	text-align: center;
@@ -1770,6 +1774,9 @@ div#ajaxBusy{
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product > .csm-shelf__product--top{
 	position: relative;
 	overflow: hidden;
+}
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product > .csm-shelf__product--top .csm-shelf__image img{
+	width: 100%;
 }
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy{
 	position: absolute;
