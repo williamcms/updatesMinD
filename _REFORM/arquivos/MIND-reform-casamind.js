@@ -103,7 +103,7 @@ $(document).ready(function(){
 		});
 	})();
 	// Minicart & Products List
-	var showCartWhenHoverIcon = $(".csm-header .csm-cart > a").hover(function(){
+	var showCartWhenHoverIcon = $(".csm-header .csm-cart > a").on('click hover', function(){
 		let t = $(this),
 		e = $(".csm-minicart"), 
 		i = $(".portal-totalizers-ref .amount-items-em").eq(0).text();
