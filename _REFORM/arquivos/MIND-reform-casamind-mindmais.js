@@ -85,7 +85,7 @@
             return (i == parseInt(mindmais.featuredBrands) - 1 ? false : true);
         });
         sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', 'vermais'));
-        $('.slick-track').find('div[data-number=vermais]').append('<a href="javascript:void(0)" class="image seemore"><img width="270" height="400" draggable="false" /></a>'),
+        $('.slick-track').find('div[data-number=vermais]').append('<a href="javascript:void(0)" class="image seemore" aria-controls="navBrandsExpanded" id="seemoreimage"><img width="270" height="400" draggable="false" /></a>'),
         $('.slick-track').find('div[data-number=vermais] a.image img').attr('src', 'https://lojamindesigns.vteximg.com.br/arquivos/BANNER_VERMAIS__385X570.png').attr('title', 'ver mais').attr('alt', 'ver mais').attr('aria-label', 'Ver mais marcas do MinD+');            
     });
     var mountCategories = (mountCategories = (mindmais) =>{
@@ -108,8 +108,11 @@
         sellersContainer = brandsExpanded.find('.sellersContainer');
 
         brandsExpanded.slideToggle('slow');
+        brandsExpanded.attr('aria-hidden', !JSON.parse(brandsExpanded.attr('aria-hidden')));
         $('.nav-brands > .seemore').text(($('.nav-brands > .seemore').text().toLowerCase() == 'ver mais' ? 'ver menos' : 'ver mais'));
-        scrollTo(0, $('#navBrandsExpanded').position().top - (isMobile() ? 400 : 700));
+        if(!JSON.parse(brandsExpanded.attr('aria-hidden'))){
+            scrollTo(0, $('#navBrandsExpanded').position().top - (isMobile() ? 200 : 300));
+        }
         if(alphabeticalList.find('li[filter]:not(li[filter=all])').length == 0){
             $.each(alphabet, function(){
                 alphabeticalList.append('<li filter="'+ this +'" disabled>' + this + '</li>');
