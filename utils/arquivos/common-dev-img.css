@@ -3,6 +3,9 @@
  *
  */
 @charset "utf-8";
+:root{
+	--brand-color: #4cbba8 !important;
+}
 header.csm-header{
 	height: auto;
 	min-height: 5rem;
