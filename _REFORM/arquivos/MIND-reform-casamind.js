@@ -103,7 +103,7 @@ $(document).ready(function(){
 		});
 	})();
 	// Minicart & Products List
-	var showCartWhenHoverIcon = $(".csm-header .csm-cart > a").on('click hover', function(){
+	var showCartWhenHoverIcon = $('.csm-header .csm-cart > a').on('hover', function(){
 		let t = $(this),
 		e = $(".csm-minicart"), 
 		i = $(".portal-totalizers-ref .amount-items-em").eq(0).text();
@@ -134,6 +134,7 @@ $(document).ready(function(){
 	});
 	//Scripts que serão acionados com base no orderForm
 	var checkOrderForm = (checkOrderForm = () =>{
+		let minicart = $('.csm-header .csm-middle .csm-center .csm-user > ul > li.csm-cart > a');
 		vtexjs.checkout.getOrderForm().done(function(t) {
 			(t.items.length > 0 && updateMiniCart());
 		});
@@ -145,11 +146,11 @@ $(document).ready(function(){
 		vtexjs.checkout.getOrderForm().done(function(t) {
 			$.each(t.items, function(i){
 				if(p.find('li[data-id='+ this.id +']').length == 0){
-					p.append('<li data-id="'+ this.id +'" availiable-qty="'+ getSkuData(this.id).SkuSellersInformation.first().AvailableQuantity
+					p.append('<li data-id="'+ this.id +'" available-qty="'+ getSkuData(this.id).SkuSellersInformation.first().AvailableQuantity
  +'"></li>');
 					p.find('li[data-id='+ this.id +']').addClass('item-list').append('<div class="product-wrapper"></div><small class="message text-muted italic center_m"></small>');
-					if($('li[data-id='+ this.id +']').attr('availiable-qty') <= 5){
-						p.find('li[data-id='+ this.id +'] small.message').text('Há apenas ' + $('li[data-id='+ this.id +']').attr('availiable-qty') + ($('li[data-id='+ this.id +']').attr('availiable-qty') <= 1 ? ' unidade disponível' : ' unidades disponíveis'));
+					if($('li[data-id='+ this.id +']').attr('available-qty') <= 5){
+						p.find('li[data-id='+ this.id +'] small.message').text('Há apenas ' + $('li[data-id='+ this.id +']').attr('available-qty') + ($('li[data-id='+ this.id +']').attr('available-qty') <= 1 ? ' unidade disponível' : ' unidades disponíveis'));
 					}
 					p.find('li[data-id='+ this.id +'] div.product-wrapper').append('<div class="product__image"><img src="'+ (this.imageUrl).replace("-350-303", "-400-600") +'" alt="'+ this.name +'" title="'+ this.name +'" /></div>');
 					p.find('li[data-id='+ this.id +'] div.product-wrapper').append('<div class="product__info-container"></div><a ndx="'+ i +'" role="button" class="remove" title="Remover produto">Remover</a>');
@@ -169,8 +170,8 @@ $(document).ready(function(){
 					p.find('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management > a.plus').attr('ndx', i);
 					p.find('li[data-id='+ this.id +'] div.product-wrapper > a.remove').attr('ndx', i);
 				}
-				if($('li[data-id='+ this.id +']').attr('availiable-qty') <= 1 || $('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management > input').val() == $('li[data-id='+ this.id +']').attr('availiable-qty')){
-					$('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management a.plus').attr('disabled');
+				if($('li[data-id='+ this.id +']').attr('available-qty') <= 1 || $('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management > input').val() == $('li[data-id='+ this.id +']').attr('available-qty')){
+					$('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management a.plus').attr('disabled', true);
 				}else{
 					$('li[data-id='+ this.id +'] div.product-wrapper > div.product__info-container > div.product__info > div.product__management a.plus').removeAttr('disabled');
 				}
