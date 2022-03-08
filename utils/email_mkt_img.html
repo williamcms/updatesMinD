@@ -58,14 +58,27 @@
 
 	<main class="dev">
 		<form method="POST">
-			<div class="form-group">
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<label class="input-group-text">Preview de mensagem</label>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<label class="input-group-text">Preview de mensagem</label>
+							</div>
+							<input type="text" name="preheader" />
+						</div>
 					</div>
-					<input type="text" name="preheader" />
 				</div>
-				<small class="text-muted italic">Esse texto é oculto, apresenta apenas como previsualização na caixa de entrada de alguns emails</small>
+				<div class="col">
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<label class="input-group-text">Link do Ver Online</label>
+							</div>
+							<input type="url" name="veronline" placeholder="https://" />
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div class="form-group">
@@ -152,7 +165,7 @@
 									<div class="input-group-prepend">
 										<label class="input-group-text">Cor</label>
 									</div>
-									<input type="color" name="vitrine-title-color" value="#E94273" />
+									<input type="color" name="vitrine-title-color" value="#4cbba8" />
 								</div>
 							</div>
 						</div>
@@ -178,16 +191,13 @@
 										<label class="input-group-text">Botão (CTA)</label>
 									</div>
 									<select name="vitrine-botao-cta" class="pr-5">
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_APROVEITE.png">APROVEITE</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_COMPRE_AGR.png">COMPRE AGORA</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_CONFIRA.png">CONFIRA</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_ESCOLHAOSEU.png">ESCOLHA O SEU</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_EUQUERO.png" selected="">EU QUERO</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_GARANTAJA.png">GARANTA JÁ</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_LEVEAGR.png">LEVE AGORA</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_NAOPERCA.png">NÃO PERCA</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_VEMCONHECER.png">VEM CONHECER</option>
-										<option value="https://imaginarium.vteximg.com.br/arquivos/Botoes_VEMVER.png">VEM VER</option>
+										<option value="https://imaginarium.vteximg.com.br/arquivos/IMG_amei.png">AMEI</option>
+										<option value="https://imaginarium.vteximg.com.br/arquivos/IMG_compreagora.png">COMPRE AGORA</option>
+										<option value="https://imaginarium.vteximg.com.br/arquivos/IMG_quero.png" selected="">QUERO</option>
+										<option value="https://imaginarium.vteximg.com.br/arquivos/IMG_garante.png">GARANTE</option>
+										<option value="https://imaginarium.vteximg.com.br/arquivos/IMG_conheca.png">CONHEÇA</option>
+										<option value="https://imaginarium.vteximg.com.br/arquivos/IMG_saibamais.png">SAIBA MAIS</option>
+										<option value="https://imaginarium.vteximg.com.br/arquivos/IMG_vermais.png">VER MAIS</option>
 									</select>
 								</div>
 							</div>
@@ -208,7 +218,7 @@
 									<div class="input-group-prepend">
 										<label class="input-group-text">Cor do preço</label>
 									</div>
-									<input type="color" name="vitrine-price-color" value="#E94273" />
+									<input type="color" name="vitrine-price-color" value="#4cbba8" />
 								</div>
 							</div>
 						</div>
@@ -380,6 +390,14 @@
 											<label class="input-group-text">Título-1</label>
 										</div>
 										<input type="text" name="banners-title-0" data-input="0" />
+									</div>
+								</div>
+								<div class="col">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">Texto-1</label>
+										</div>
+										<input type="text" name="banners-text-0" data-input="0" />
 									</div>
 								</div>
 								<div class="col-auto">
