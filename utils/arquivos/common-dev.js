@@ -194,7 +194,7 @@ $(document).ready(function(){
 					vitrineLinha = vitrineLinha.replaceAll('NOME3', vitrineName).replaceAll('IMAGEM3', vitrineImage).replaceAll('LINK3', vitrineLink).replaceAll('DE3', vitrinePriceP).replaceAll('POR3', vitrinePriceN).replaceAll('PARCELAMENTO3', vitrineInstallments).replaceAll('DISPLAY3', 'block');
 				}
 
-				if((i == Math.floor($('#vitrines > .form-group').length / 2) -1 && !bannerTempMidInserted) || (i == 2 && $('#vitrines > .form-group').length <= 6)){
+				if(((i == Math.floor($('#vitrines > .form-group').length / 2) -1) || (i == 2 && $('#vitrines > .form-group').length <= 6)) && !bannerTempMidInserted){
 					vitrineLinha += bannerTempMid + espaco;
 					bannerTempMidInserted = 1;
 				}
