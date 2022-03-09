@@ -97,8 +97,9 @@ $(document).ready(function(){
 		let top = 0;
 		$(window).on("scroll", function() {
 			$(window).scrollTop() > top && 1 < $(window).scrollTop() ? ($(".csm-header .csm-wrapper").slideUp(), 
-			$(".csm-header .csm-wrapper .csm-middle .csm-center").addClass("scrollMenu"), $(".csm-header .csm-minicart").addClass("scrollMenu"), $(".csm-header .csm-benefits").slideUp()) : $(window).scrollTop() === 0 ? ($(".csm-header .csm-benefits").slideDown(), 
-			$(".csm-header .csm-wrapper").slideDown(), $(".csm-header .csm-wrapper .csm-middle .csm-center").removeClass("scrollMenu"), $(".csm-header .csm-minicart").removeClass("scrollMenu")) : $(".csm-header .csm-wrapper").slideDown();
+			$(".csm-header .csm-wrapper .csm-middle .csm-center").addClass("scrollMenu"), $(".csm-header .csm-minicart").addClass("scrollMenu"), $(".csm-header .csm-benefits").slideUp(), $(".csm-header #popup-adicionando").removeClass("scrollMenu").addClass("hiddenMenu")) : $(window).scrollTop() === 0 ? ($(".csm-header .csm-benefits").slideDown(), 
+			$(".csm-header .csm-wrapper").slideDown(), $(".csm-header .csm-wrapper .csm-middle .csm-center").removeClass("scrollMenu"), $(".csm-header .csm-minicart").removeClass("scrollMenu"), $(".csm-header #popup-adicionando").removeClass("scrollMenu hiddenMenu")) : $(".csm-header .csm-wrapper").slideDown(), 
+			($(window).scrollTop() < top && $(window).scrollTop() != 0 && $(".csm-header #popup-adicionando").removeClass("hiddenMenu").addClass("scrollMenu"));
 			top = $(window).scrollTop();
 		});
 	})();

@@ -1387,7 +1387,7 @@ div#ajaxBusy{
 	left: 0;
 	right: 0;
 	width: 100%;
-	z-index: 9;
+	z-index: 8;
 }
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub:hover > .csm-dropdown,
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > a:focus + .csm-dropdown{
@@ -1717,10 +1717,16 @@ div#ajaxBusy{
 	top: -100%;
 	right: 0;
 	left: 0;
-	z-index: 10;
+	z-index: -1;
 	transition: top 2s ease;
 }
 .csm-header #popup-adicionando.is--active{
+	top: 13.063rem;
+}
+.csm-header #popup-adicionando.is--active.scrollMenu{
+	top: 8.14rem;
+}
+.csm-header #popup-adicionando.is--active.hiddenMenu{
 	top: 0;
 }
 .csm-header #popup-adicionando .conteudo-adicionando{
@@ -1851,6 +1857,12 @@ div#ajaxBusy{
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__name > h3,
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__name > h3 > a{
 	display: block;
+	/* Exibe pontos (...) caso o texto passe da demarcação */
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	text-overflow: -o-ellipsis-lastline;
+	height: 2.3125rem;
 	font-size: 0.9375rem;
 	line-height: 1.2rem;
 	font-weight: 600;
@@ -1882,6 +1894,7 @@ div#ajaxBusy{
 }
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__installments{
 	font-size: 0.895rem;
+	margin-bottom: .5rem;
 	color: var(--gray);
 	font-style: italic;
 }
@@ -1931,49 +1944,55 @@ div#ajaxBusy{
 }
 /* Tipos de flags */
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-brasileiro{
-	background-image: url(https://www.casamind.com.br/arquivos/flag-feito-no-brasil-v2-min.png);
+	background-image: url("https://www.casamind.com.br/arquivos/flag-feito-no-brasil-v2-min.png");
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-brasileiro::after{
 	content: 'Produto feito no Brasil';
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-feito-a-mao{
-	background-image: url(https://www.casamind.com.br/arquivos/flag-feito-a-mao-v2-min.png);
+	background-image: url("https://www.casamind.com.br/arquivos/flag-feito-a-mao-v2-min.png");
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-feito-a-mao::after{
 	content: 'Produto feito a mão';
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-sustentavel{
-	background-image: url(https://www.casamind.com.br/arquivos/flag-produto-sustentavel-v2-min.png);
+	background-image: url("https://www.casamind.com.br/arquivos/flag-produto-sustentavel-v2-min.png");
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-sustentavel::after{
 	content: 'Produto sustentavel';
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-bazar{
-	background-image: url(https://www.casamind.com.br/arquivos/KV_BAZAR_2021_selinho_desk.png);
+	background-image: url("https://www.casamind.com.br/arquivos/KV_BAZAR_2021_selinho_desk.png");
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-bazar::after{
 	content: 'Produto no Bazar';
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-projeto-social{
-	background-image: url(https://www.casamind.com.br/arquivos/flag-projeto-social-v2-min.png);
+	background-image: url("https://www.casamind.com.br/arquivos/flag-projeto-social-v2-min.png");
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-projeto-social::after{
 	content: 'Projeto social';
 }
+/* Flags específicas com sobreposição na imagem de produto */
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.mind-todos-marketplace{
 	position: absolute;
-	top: 0;
+	width: 4rem;
+	top: 1rem;
 	left: 0;
-	background-image: url(https://www.casamind.com.br/arquivos/mind_mais-min.png);
+	background-image: url("https://www.casamind.com.br/arquivos/mind_mais-min.png");
+}
+.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.mind-todos-marketplace::after{
+	display: none;
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.mind-flag-frete-gratis{
 	position: absolute;
-	top: 0;
+	top: .7rem;
 	right: 0;
-	background-image: url(https://www.casamind.com.br/arquivos/frete_gratis_selinho_desk_56px.png);
+	background-image: url("https://www.casamind.com.br/arquivos/frete_gratis_selinho_desk_56px.png");
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.mind-flag-frete-gratis::after{
 	content: 'Produto com frete grátis!';
+	left: -7.2rem;
 }
 /* Oculta alguns campos de informação na página de produto */
 tr .\33 D-desktop,
@@ -2449,6 +2468,7 @@ footer .final-label__address{
 	.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy{
 		position: initial;
 		transform: translateY(0);
+		margin: 0 0 .5rem 0;
 		opacity: 1;
 	}
 	.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__price > a{
@@ -2456,20 +2476,26 @@ footer .final-label__address{
 	}
 	/* Flags */
 	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection{
-		justify-content: space-between;
+		justify-content: flex-start;
 	}
 	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag::after{
+		font-size: 0.775rem;
+		min-width: 9.594rem;
 		margin: 0;
 		left: 0;
 	}
-	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag:nth-child(n+4){
+	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag:nth-child(n+4):not(.mind-todos-marketplace, .mind-flag-frete-gratis){
 		display: none;
 	}
 	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag:nth-child(2):after{
-		margin-left: -3.1rem;
+		margin-left: -2.57rem;
 	}
 	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag:nth-child(3):after{
-		margin-left: -6.6rem;
+		margin-left: -5.2rem;
+	}
+	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.mind-todos-marketplace{
+		width: 3rem;
+		top: .6rem;
 	}
 	/* Footer */
 	footer .news-footer .input-group{
