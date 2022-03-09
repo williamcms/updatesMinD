@@ -68,7 +68,7 @@
     var mountBanners = (mountBanners = (mindmais) =>{
         let bannersSlick = $('main.mindmais > .banners-top .slicker');
         $.each(mindmais.orderedSellersBy, function(i, e){
-            bannersSlick.slick('slickAdd', $('<img  draggable="false" aria-label="Banner mostrando alguns produtos da marca '+ this.name +'"/>').attr('src', (isMobile() ? this.bannerM : this.bannerD)).attr('title', this.name));
+            bannersSlick.slick('slickAdd', $('<img  draggable="false" aria-label="Banner mostrando alguns produtos da marca '+ this.name +'" />').attr('src', (isMobile() ? this.bannerM : this.bannerD)).attr('width', (isMobile() ? '500' : '1920')).attr('height', (isMobile() ? '600' : '600')).attr('title', this.name));
             return (i == parseInt(mindmais.featured) - 1 ? false : true);
         })
     });
@@ -76,8 +76,12 @@
         let sellersSlick = $('main.mindmais > .nav-brands .slicker');
         $.each(mindmais.orderedSellersBy, function(i, e){
             sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', i));
-            $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="image" aria-label="Ir para a página da marca '+ this.name +'"><img width="270" height="400" draggable="false" /></a>'),
-            $('.slick-track').find('div[data-number='+i+'] a.image img').attr('src', e.navBrands).attr('title', this.name).attr('alt', this.name),
+            $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="image" aria-label="Ir para a página da marca '+ this.name +'"><img width="385" height="570" draggable="false" /></a>');
+            if(i == 0){
+                $('.slick-track').find('div[data-number='+i+'] a.image img').attr('src', e.navBrands).attr('title', this.name).attr('alt', this.name);
+            }else{
+                $('.slick-track').find('div[data-number='+i+'] a.image img').attr('data-src', e.navBrands).attr('title', this.name).addClass('lazy');
+            }
             $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="name uppercase bold text-center d-block" aria-hidden="true"></a>'),
             $('.slick-track').find('div[data-number='+i+'] a.name').text(this.name);
             $('.slick-track').find('div[data-number='+i+']').append('<div class="desc"></div>'),
@@ -93,8 +97,12 @@
 
         $.each(mindmais.orderedCategories, function(i){
             categoriesSlick.slick('slickAdd', $('<div draggable="false" class="p-2"></div>').addClass('item').attr('category-number', i).attr('filter', (this.name).replaceAll(' ', '')));
-            $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" draggable="false" class="image"><img width="250" height="166" draggable="false" /></a>'),
-            $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name),
+            $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" draggable="false" class="image"><img width="250" height="166" draggable="false" /></a>');
+            if(i == 0){
+                $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name);
+            }else{
+                $('.slick-track').find('div[category-number='+i+'] a.image img').attr('data-src', this.image).attr('title', this.name).attr('alt', this.name).addClass('lazy');
+            }            
             $('.slick-track').find('div[category-number='+i+'] a.image').append('<a href="'+ this.pageLink +'" draggable="false" class="name uppercase bold text-center d-block"></a>'),
             $('.slick-track').find('div[category-number='+i+'] a.name').text(this.name);
             return (i == parseInt(mindmais.featuredCategories) - 1 ? false : true);
@@ -121,7 +129,7 @@
 
             $.each(globalSellers, function(){
                 let firstLetter = (this.name[0]).normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'" aria-label="Ir para a página da marca '+ this.name +'"><img src="'+ this.navBrands +'"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
+                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'" aria-label="Ir para a página da marca '+ this.name +'"><img data-src="'+ this.navBrands +'" class="lazy" width="124" height="184"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
 
                 if(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')){
                     $(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')).attr('disabled', false);
