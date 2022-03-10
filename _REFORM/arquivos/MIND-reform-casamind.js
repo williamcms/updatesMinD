@@ -35,7 +35,7 @@ $(document).ready(function(){
 		}
 	});
 	//LazyLoad
-	$(document).bind('DOMNodeInserted', function(e){
+	$(document).bind('DOMNodeInserted scroll click swipe', function(e){
 		$('.lazy').Lazy({
 			scrollDirection: 'both',
 			effect: 'fadeIn',
@@ -57,6 +57,7 @@ $(document).ready(function(){
 		prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
+		 swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
@@ -68,6 +69,7 @@ $(document).ready(function(){
 		prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
+		 swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
@@ -79,6 +81,7 @@ $(document).ready(function(){
 		prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
+		 swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});

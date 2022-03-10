@@ -6,69 +6,74 @@
     "use strict";
     var globalSellers = {};
     var getSellers = (getSellers = () =>{
-        let mindmais = {};
+    let mindmais = {};
 
-        $.ajax({
-            async: true,
-            accept: "application/json; charset=utf-8",
-            contentType: "application/json; charset=utf-8",
-            crossDomain: false,
-            type: "GET",
-            url: "https://imaginarium.vteximg.com.br/arquivos/mindmais.json.css?v="+ Math.random()
-        }).then(function(e){
-            let categories = [];
+    $.ajax({
+        async: true,
+        accept: "application/json; charset=utf-8",
+        contentType: "application/json; charset=utf-8",
+        crossDomain: false,
+        type: "GET",
+        url: "https://imaginarium.vteximg.com.br/arquivos/mindmais.json.css?v="+ Math.random()
+    }).then(function(e){
+        let categories = [];
 
-            (typeof(e) != 'object' ? mindmais = JSON.parse(e) : mindmais = e);
+        (typeof(e) != 'object' ? mindmais = JSON.parse(e) : mindmais = e);
 
-            mindmais.orderedSellersBy = $.map(mindmais.sellers, function(r){
-                if(r.active){
-                    return r;
-                }
-            });
-            
-            //Dados esperados de order: a-z, z-a, first, last
-            if(mindmais.order.toLowerCase() == 'a-z'){
-                mindmais.orderedSellersBy.sort((a,b) => a.name.localeCompare(b.name));
-            }else if(mindmais.order.toLowerCase() == 'z-a'){
-                mindmais.orderedSellersBy.sort((a,b) => a.name.localeCompare(b.name));
-                mindmais.orderedSellersBy.reverse();
-            }else if(mindmais.order.toLowerCase() == 'last'){
-                mindmais.orderedSellersBy.sort((a,b) => Date.parse(b.date + "GMT-0300") - Date.parse(a.date + "GMT-0300"));
-            }else{
-                mindmais.orderedSellersBy.sort((a,b) => Date.parse(a.date + "GMT-0300") - Date.parse(b.date + "GMT-0300"));
+        mindmais.orderedSellersBy = $.map(mindmais.sellers, function(r){
+            if(r.active){
+                return r;
             }
-
-            //Deixa automáticamente uma ordenação alfabetica salva
-            mindmais.orderedSellers = $.map(mindmais.sellers, function(r){
-                if(r.active){
-                    return r;
-                }
-            });
-            mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
-
-            //Remove espaços para evitar problemas de digitação
-            // $.map(mindmais.orderedSellers, function(r){ r.categories = (r.categories).replaceAll(' ', '')});
-
-            mindmais.orderedCategories = $.map(mindmais.categories, function(r){
-                if(r.active){
-                    return r;
-                }
-            });
-            mindmais.orderedCategories.sort((a,b) => a.name.localeCompare(b.name));
-
-            mountBanners(mindmais);
-            mountSellers(mindmais);
-            mountCategories(mindmais);
-
-            console.log(mindmais)
-
-            globalSellers = mindmais.orderedSellers;
         });
-    })();
+        
+        //Dados esperados de order: a-z, z-a, first, last
+        if(mindmais.order.toLowerCase() == 'a-z'){
+            mindmais.orderedSellersBy.sort((a,b) => a.name.localeCompare(b.name));
+        }else if(mindmais.order.toLowerCase() == 'z-a'){
+            mindmais.orderedSellersBy.sort((a,b) => a.name.localeCompare(b.name));
+            mindmais.orderedSellersBy.reverse();
+        }else if(mindmais.order.toLowerCase() == 'last'){
+            mindmais.orderedSellersBy.sort((a,b) => Date.parse(b.date + "GMT-0300") - Date.parse(a.date + "GMT-0300"));
+        }else{
+            mindmais.orderedSellersBy.sort((a,b) => Date.parse(a.date + "GMT-0300") - Date.parse(b.date + "GMT-0300"));
+        }
+
+        //Deixa automáticamente uma ordenação alfabetica salva
+        mindmais.orderedSellers = $.map(mindmais.sellers, function(r){
+            if(r.active){
+                return r;
+            }
+        });
+        mindmais.orderedSellers.sort((a,b) => a.name.localeCompare(b.name));
+
+        //Remove espaços para evitar problemas de digitação
+        // $.map(mindmais.orderedSellers, function(r){ r.categories = (r.categories).replaceAll(' ', '')});
+
+        mindmais.orderedCategories = $.map(mindmais.categories, function(r){
+            if(r.active){
+                return r;
+            }
+        });
+        mindmais.orderedCategories.sort((a,b) => a.name.localeCompare(b.name));
+
+        mountBanners(mindmais);
+        mountSellers(mindmais);
+        mountCategories(mindmais);
+
+        console.log(mindmais)
+
+        globalSellers = mindmais.orderedSellers;
+    })})();
     var mountBanners = (mountBanners = (mindmais) =>{
         let bannersSlick = $('main.mindmais > .banners-top .slicker');
         $.each(mindmais.orderedSellersBy, function(i, e){
-            bannersSlick.slick('slickAdd', $('<img  draggable="false" aria-label="Banner mostrando alguns produtos da marca '+ this.name +'" />').attr('src', (isMobile() ? this.bannerM : this.bannerD)).attr('width', (isMobile() ? '500' : '1920')).attr('height', (isMobile() ? '600' : '600')).attr('title', this.name));
+            bannersSlick.slick('slickAdd', $('<div class="img-container"><img data-id="bannerTop'+ i +'" draggable="false" aria-label="Banner mostrando alguns produtos da marca '+ this.name +'" /></div>'));
+            if(i == 0){
+                $('.banners-top .img-container > img[data-id=bannerTop'+ i +']').attr('src', (isMobile() ? this.bannerM : this.bannerD)).attr('width', (isMobile() ? '500' : '1920')).attr('height', (isMobile() ? '600' : '600')).attr('title', this.name);
+            }else{
+                $('.banners-top .img-container > img[data-id=bannerTop'+ i +']').attr('data-src', (isMobile() ? this.bannerM : this.bannerD)).attr('width', (isMobile() ? '500' : '1920')).attr('height', (isMobile() ? '600' : '600')).attr('title', this.name).addClass('lazy');
+            }
+
             return (i == parseInt(mindmais.featured) - 1 ? false : true);
         })
     });
@@ -85,7 +90,7 @@
             $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="name uppercase bold text-center d-block" aria-hidden="true"></a>'),
             $('.slick-track').find('div[data-number='+i+'] a.name').text(this.name);
             $('.slick-track').find('div[data-number='+i+']').append('<div class="desc"></div>'),
-            $('.slick-track').find('div[data-number='+i+'] div.desc').html((this.pageDescription.length > 150 ? this.pageDescription.substring(0, this.pageDescription.substring(0, 150 + 1).search(/\s+\S*$/)) + ' (...)' : this.pageDescription).replace(/<\/?[^>]+(>|$)/g, ""));
+            $('.slick-track').find('div[data-number='+i+'] div.desc').html((this.pageDescription.length > 140 ? this.pageDescription.substring(0, this.pageDescription.substring(0, 140 + 1).search(/\s+\S*$/)) + ' (...)' : this.pageDescription).replace(/<\/?[^>]+(>|$)/g, ""));
             return (i == parseInt(mindmais.featuredBrands) - 1 ? false : true);
         });
         sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', 'vermais'));
@@ -102,7 +107,7 @@
                 $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name);
             }else{
                 $('.slick-track').find('div[category-number='+i+'] a.image img').attr('data-src', this.image).attr('title', this.name).attr('alt', this.name).addClass('lazy');
-            }            
+            }
             $('.slick-track').find('div[category-number='+i+'] a.image').append('<a href="'+ this.pageLink +'" draggable="false" class="name uppercase bold text-center d-block"></a>'),
             $('.slick-track').find('div[category-number='+i+'] a.name').text(this.name);
             return (i == parseInt(mindmais.featuredCategories) - 1 ? false : true);
@@ -174,6 +179,7 @@
             nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
             lazyLoad: 'ondemand',
             infinite: true,
+            swipeToSlide: true,
             slidesToShow: 1,
             slidesToScroll: 1
         });
@@ -186,6 +192,7 @@
             nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
             lazyLoad: 'ondemand',
             infinite: false,
+            swipeToSlide: true,
             slidesToShow: 2,
             slidesToScroll: 2
         });
@@ -198,6 +205,7 @@
             nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
             lazyLoad: 'ondemand',
             infinite: true,
+            swipeToSlide: true,
             slidesToShow: 1,
             slidesToScroll: 1
         });
@@ -211,8 +219,9 @@
             nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
             lazyLoad: 'ondemand',
             infinite: false,
+            swipeToSlide: true,
             slidesToShow: 4,
-            slidesToScroll: 2
+            slidesToScroll: 1
         });
        $('main.mindmais .slick-categories-dots').slick({
             autoplay: false,
@@ -223,22 +232,22 @@
             nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
             lazyLoad: 'ondemand',
             infinite: false,
+            // swipeToSlide: true,
             slidesToShow: 4,
             slidesToScroll: 2
         });
        $('main.mindmais .slick-dots-banner').slick({
             autoplay: true,
-            autoplaySpeed: 3000,
+            autoplaySpeed: 5000,
             dots: true,
             arrows: false,
             prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
             nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
             lazyLoad: 'ondemand',
             infinite: true,
+            swipeToSlide: true,
             slidesToShow: 1,
             slidesToScroll: 1
         });
     }
-    
-
 })

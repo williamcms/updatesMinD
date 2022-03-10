@@ -1798,6 +1798,16 @@ div#ajaxBusy{
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product > .csm-shelf__product--top .csm-shelf__image img{
 	width: 100%;
 }
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product > .csm-shelf__product--bottom{
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 0px;
+	min-height: 8.313rem;
+	justify-content: space-between;
+}
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(3):nth-last-child(2){
+	min-height: 3.3rem;
+}
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy{
 	position: absolute;
 	right: 0;
@@ -1811,15 +1821,18 @@ div#ajaxBusy{
 	opacity: 0;
 	transition: transform .3s ease-in-out .3s, opacity .5s ease-in-out;
 }
-.has-shelf--default.prateleira > ul > li > .csm-shelf__product:hover .csm-shelf__buy{
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product:hover .csm-shelf__buy,
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy:focus-within{
 	opacity: .9;
 	transform: translateY(0);
 	transition: transform .3s ease-in-out .3s, opacity .5s ease-in-out;
 }
-.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy:hover{
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy:hover,
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy:focus{
 	opacity: 1;
 }
-.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy:hover .icon--minicart{
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy:hover .icon--minicart,
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy:focus .icon--minicart{
 	animation: shakeIt 1s cubic-bezier(.36,.07,.19,.97) both;
 	transform: rotate(0);
 }
@@ -1867,6 +1880,7 @@ div#ajaxBusy{
 	line-height: 1.2rem;
 	font-weight: 600;
 	text-decoration: none;
+	overflow: hidden;
 }
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__price > a{
 	display: flex;
@@ -1897,6 +1911,59 @@ div#ajaxBusy{
 	margin-bottom: .5rem;
 	color: var(--gray);
 	font-style: italic;
+}
+div.pager.top{
+	display: none;
+}
+div.pager > ul.pages{
+	display: flex;
+	flex: 1 1 0px;
+	justify-content: center;
+	align-items: center;
+	grid-column-gap: 1rem;
+	column-gap: 1rem;
+	margin: 0 0 1.5rem 0;
+}
+div.pager > ul.pages > li.first,
+div.pager > ul.pages > li.previous{
+	margin-right: 1.5rem;
+	font-size: 0;
+}
+div.pager > ul.pages > li.page-number{
+	font-weight: 600;
+	cursor: pointer;
+	color: var(--black);
+}
+div.pager > ul.pages > li.page-number.pgCurrent{
+	font-weight: 900;
+	color: var(--brand-color);
+}
+div.pager > ul.pages > li.last,
+div.pager > ul.pages > li.next{
+	margin-left: 1.5rem;
+	font-size: 0;
+}
+div.pager > ul.pages > li.first::after,
+div.pager > ul.pages > li.previous::after,
+div.pager > ul.pages > li.last::after,
+div.pager > ul.pages > li.next::after{
+	font-family: 'Font Awesome 6 Free';
+	font-size: 1.3rem;
+	font-weight: 900;
+	color: var(--black);
+	cursor: pointer;
+}
+div.pager > ul.pages > li.first::after{
+	content: '\f100';
+}
+div.pager > ul.pages > li.previous::after{
+	content: '\f104';
+}
+div.pager > ul.pages > li.last::after{
+	content: '\f101';
+}
+div.pager > ul.pages > li.next::after{
+	content: '\f105';
 }
 /* Flags */
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection{
@@ -1978,7 +2045,7 @@ div#ajaxBusy{
 	position: absolute;
 	width: 4rem;
 	top: 1rem;
-	left: 0;
+	left: -0.06rem;
 	background-image: url("https://www.casamind.com.br/arquivos/mind_mais-min.png");
 }
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.mind-todos-marketplace::after{

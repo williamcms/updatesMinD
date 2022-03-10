@@ -7,8 +7,12 @@ main.mindmais .slick-slider button.slick-prev.slick-arrow{
     border: solid var(--brand-color);
     border-width: 0 5px 5px 0;
 }
-main.mindmais > .banners-top .slicker{
-
+main.mindmais > .banners-top{
+    min-height: 25.813rem;
+    max-height: 37.5rem;
+}
+main.mindmais > .banners-top .slicker .img-container > img.lazy:not(.lazyComplete){
+    height: 25.849rem;
 }
 main.mindmais > .banners-top .slicker .slick-dots li:not(.slick-active) button:before{
     background-color: rgba(255, 255, 255, 0.8);
@@ -16,6 +20,9 @@ main.mindmais > .banners-top .slicker .slick-dots li:not(.slick-active) button:b
 main.mindmais > .banners-top .slicker .slick-dots li.slick-active button:before{
     padding: 0.79rem 1.2rem;
     border-radius: 1.2rem;
+}
+main.mindmais > .nav-brands{
+    min-height: 47.313rem;
 }
 main.mindmais > .nav-brands,
 main.mindmais > .nav-categories{
@@ -154,6 +161,7 @@ main.mindmais > .nav-brands-expanded > .sellersContainer > a:hover > span:after{
     width: 100%;
 }
 main.mindmais > .nav-categories{
+    min-height: 32.75rem;
     background-color: var(--sand);
 }
 main.mindmais > .nav-categories div.item{
@@ -164,10 +172,16 @@ main.mindmais > .nav-categories div.item.active > div.name{
     color: var(--brand-color);
 }
 
-
 @media screen and (max-width: 831px) and (orientation : portrait){
+    main.mindmais > .banners-top {
+        min-height: initial;
+        min-height: fit-content;
+        max-height: 37.5rem;
+    }
     main.mindmais > .nav-brands,
     main.mindmais > .nav-categories{
+        min-height: initial;
+        min-height: fit-content;
         padding: 2rem 1.5rem;
     }
     main.mindmais .nav-brands > .seemore{
