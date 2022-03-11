@@ -1107,6 +1107,13 @@ div#ajaxBusy{
 	display: none
 }
 /* Menu */
+body > .ui-autocomplete.ui-widget-content{
+	background-color: var(--sand);
+	width: fit-content;
+	border: 1px solid var(--gray-lighter);
+	border-radius: 0.195rem;
+	padding: 0.5rem;
+}
 .csm-header{
 	position: relative;
 	height: 13.063rem;
