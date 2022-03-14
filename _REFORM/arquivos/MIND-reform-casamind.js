@@ -28,6 +28,26 @@ $(document).ready(function(){
 			}
 		});
 	}
+	//Algumas alterações para acessibilidade baseadas em mobile/desktop
+	var timedChanges = (function(){
+		let mView = $('.mobile-view'),
+		dView = $('.desktop-view'),
+		mMenu = $('#csm-navigation-mobile'),
+		dMenu = $('#csm-navigation');
+		if(isMobile()){
+			$.each(dView, function(){
+				$(this).attr('aria-hidden', true);
+			});
+			mMenu.attr('aria-hidden', false);
+			dMenu.attr('aria-hidden', true);
+		}else{
+			$.each(mView, function(){
+				$(this).attr('aria-hidden', true);
+			});
+			mMenu.attr('aria-hidden', true);
+			dMenu.attr('aria-hidden', false);
+		}
+	})();
 	//Fecha o overlay/modal se clicar fora da área
 	$('.overlayform').on('click', function(e){
 		if($(e.target).is('.overlayform')){
@@ -92,6 +112,7 @@ $(document).ready(function(){
 		// Atributos para Leitores de tela
 		let $x = $(this).hasClass('change');
 		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-expanded', $x);
+		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-hidden', !$x);
 	});
 	var showDropDownMenu = $('.csm-has-sub').on('click', function(){
 		$($(this).find('.csm-dropdown')).toggleClass("change");
@@ -520,6 +541,22 @@ $(document).ready(function(){
  //            PFTX.modules.gridControl.init(), PFTX.pages.catalog.redesignVitrine(), PFTX.pages.catalog.urlParameter();
  //        };
  //    }
+	//NeoAssist 
+ 	var neoAssist = (function () {
+ 		$('body').append('<div id="neoAssist"></div>');
+
+        window.NeoAssistTag = {};
+        NeoAssistTag.querystring = true;
+        NeoAssistTag.pageid = '';
+        NeoAssistTag.clientdomain = 'grupounico.neoassist.com';
+        NeoAssistTag.initialize = {};
+        let na = document.createElement('script');
+        na.type = 'text/javascript';
+        na.async = true;
+        na.src = 'https://cdn.atendimen.to/n.js';
+        let s = document.getElementById('neoAssist');
+        s.parentNode.insertBefore(na, s);
+    })();
 	// Footer
 	$('footer #support-extended').change(function(){
 		if(!$('#support-extended')[0].checked){
