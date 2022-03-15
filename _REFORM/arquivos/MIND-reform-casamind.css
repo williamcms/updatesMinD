@@ -1817,7 +1817,12 @@ body > .ui-autocomplete.ui-widget-content{
 	justify-content: space-between;
 }
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(3):nth-last-child(2){
-	min-height: 3.3rem;
+	min-height: 4.842rem;
+}
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(3):nth-last-child(3){
+	height: 3rem;
+    display: flex;
+    align-items: center;
 }
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy{
 	position: absolute;
@@ -2351,9 +2356,10 @@ footer .final-label__address{
 		position: absolute;
 		top: 0;
 		left: 0;
+		bottom: 0;
 		background-color: transparent;
 		border: none;
-		padding: 1.1rem .7em;
+		padding: 0 1em;
 		z-index: 10;
 	}
 	.csm-header .csm-middle .csm-center button.js--open-menu:focus{
