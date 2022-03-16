@@ -34,20 +34,29 @@
 	--light: #F8F9FA;
 	--dark: #343A40;
 }
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @font-face{
-	font-family: Helvetica;
+	font-family: 'Helvetica';
 	font-weight: normal;
 	font-display: swap;
 	src: url('https://lojamindesigns.vteximg.com.br/arquivos/Helvetica.ttf.css?v=1') format('truetype');
 }
 @font-face{
-	font-family: Didot;
+	font-family: 'Didot';
 	font-weight: normal;
 	font-display: swap;
 	src: url('https://lojamindesigns.vteximg.com.br/arquivos/Didot-HTF-M64-Medium.ttf.css?v=1') format('truetype');
 }
+@font-face{
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
+	font-display: swap;
+	src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+		 url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+		 url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+}
 *{
-	font-family: Quicksand, "Helvetica Neue", Verdana, Arial, sans-serif;
+	font-family: 'Quicksand', 'Helvetica Neue', Verdana, Arial, sans-serif;
 	margin: 0rem;
 	padding: 0rem;
 	font-size: 1rem;
@@ -1236,7 +1245,7 @@ body > .ui-autocomplete.ui-widget-content{
 .csm-header .csm-middle .csm-center .csm-user > ul > li.facebook > a,
 .csm-header .csm-middle .csm-center .csm-user > ul > li.blog > a,
 .csm-header .csm-middle .csm-center .csm-user > ul > li.csm-cart > a,
-.csm-header .csm-middle .csm-center .csm-user > ul > li.csm-account > #login > .mobile-view .js--login{
+.csm-header .csm-middle .csm-center .csm-user > ul > li.csm-account > .userlogin > .mobile-view .js--login{
 	font-size: 0;
 }
 .csm-header .csm-middle .csm-center .csm-user > ul > li:not(:last-child){
@@ -1799,7 +1808,8 @@ body > .ui-autocomplete.ui-widget-content{
 .has-shelf--default.prateleira > ul > li{
 	flex: 1 1 0px;
 }
-.has-shelf--default.prateleira > ul > li > .csm-shelf__product{
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product,
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__image{
 	position: relative;
 }
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product > .csm-shelf__product--top{
@@ -1824,6 +1834,13 @@ body > .ui-autocomplete.ui-widget-content{
     display: flex;
     align-items: center;
 }
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__image--hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy{
 	position: absolute;
 	right: 0;
@@ -1836,6 +1853,9 @@ body > .ui-autocomplete.ui-widget-content{
 	background-color: var(--brand-color);
 	opacity: 0;
 	transition: transform .3s ease-in-out .3s, opacity .5s ease-in-out;
+}
+.has-shelf--default.prateleira > ul > li > .csm-shelf__product:hover .csm-shelf__image--hover{
+	opacity: 1;
 }
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product:hover .csm-shelf__buy,
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy:focus-within{

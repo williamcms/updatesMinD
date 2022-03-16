@@ -83,8 +83,10 @@
             sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', i));
             $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="image" aria-label="Ir para a página da marca '+ this.name +'"><img width="385" height="570" draggable="false" /></a>');
             if(i == 0){
+                $('.slick-track').find('div[data-number='+i+'] a.image').attr('tabindex', '0');
                 $('.slick-track').find('div[data-number='+i+'] a.image img').attr('src', e.navBrands).attr('title', this.name).attr('alt', this.name);
             }else{
+                $('.slick-track').find('div[data-number='+i+'] a.image').attr('tabindex', '-1');
                 $('.slick-track').find('div[data-number='+i+'] a.image img').attr('data-src', e.navBrands).attr('title', this.name).addClass('lazy');
             }
             $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="name uppercase bold text-center d-block" aria-hidden="true"></a>'),
@@ -94,7 +96,7 @@
             return (i == parseInt(mindmais.featuredBrands) - 1 ? false : true);
         });
         sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', 'vermais'));
-        $('.slick-track').find('div[data-number=vermais]').append('<a href="javascript:void(0)" class="image seemore" aria-controls="navBrandsExpanded" id="seemoreimage"><img width="270" height="400" draggable="false" /></a>'),
+        $('.slick-track').find('div[data-number=vermais]').append('<a href="javascript:void(0)" class="image seemore" aria-controls="navBrandsExpanded"><img width="270" height="400" draggable="false" /></a>'),
         $('.slick-track').find('div[data-number=vermais] a.image img').attr('src', 'https://lojamindesigns.vteximg.com.br/arquivos/BANNER_VERMAIS__385X570.png').attr('title', 'ver mais').attr('alt', 'ver mais').attr('aria-label', 'Ver mais marcas do MinD+');            
     });
     var mountCategories = (mountCategories = (mindmais) =>{
@@ -102,14 +104,16 @@
 
         $.each(mindmais.orderedCategories, function(i){
             categoriesSlick.slick('slickAdd', $('<div draggable="false" class="p-2"></div>').addClass('item').attr('category-number', i).attr('filter', (this.name).replaceAll(' ', '')));
-            $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" draggable="false" class="image"><img width="250" height="166" draggable="false" /></a>');
+            $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" draggable="false" class="image"><img width="250" height="166" draggable="false"/></a>');
             if(i == 0){
+                $('.slick-track').find('div[category-number='+i+'] a.image').attr('tabindex', '0');
                 $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name);
             }else{
+                $('.slick-track').find('div[category-number='+i+'] a.image').attr('tabindex', '-1');
                 $('.slick-track').find('div[category-number='+i+'] a.image img').attr('data-src', this.image).attr('title', this.name).attr('alt', this.name).addClass('lazy');
             }
-            $('.slick-track').find('div[category-number='+i+'] a.image').append('<a href="'+ this.pageLink +'" draggable="false" class="name uppercase bold text-center d-block"></a>'),
-            $('.slick-track').find('div[category-number='+i+'] a.name').text(this.name);
+            $('.slick-track').find('div[category-number='+i+'] a.image').append('<span href="'+ this.pageLink +'" draggable="false" class="name uppercase bold text-center d-block"></span>'),
+            $('.slick-track').find('div[category-number='+i+'] span.name').text(this.name);
             return (i == parseInt(mindmais.featuredCategories) - 1 ? false : true);
         })
     });
@@ -184,14 +188,14 @@
             slidesToScroll: 1
         });
         $('main.mindmais .slick-categories-dots').slick({
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 3000,
             dots: true,
             arrows: false,
             prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
             nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
             lazyLoad: 'ondemand',
-            infinite: false,
+            infinite: true,
             swipeToSlide: true,
             slidesToShow: 2,
             slidesToScroll: 2
@@ -224,15 +228,15 @@
             slidesToScroll: 1
         });
        $('main.mindmais .slick-categories-dots').slick({
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 3000,
             dots: true,
             arrows: false,
             prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
             nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
             lazyLoad: 'ondemand',
-            infinite: false,
-            // swipeToSlide: true,
+            infinite: true,
+            swipeToSlide: true,
             slidesToShow: 4,
             slidesToScroll: 2
         });
