@@ -1241,6 +1241,7 @@ body > .ui-autocomplete.ui-widget-content{
 	min-height: 1.875rem;
 	min-width: 1.875rem;
 }
+.csm-header .csm-middle .csm-center .csm-logo a,
 .csm-header .csm-middle .csm-center .csm-user > ul > li.instagram > a,
 .csm-header .csm-middle .csm-center .csm-user > ul > li.facebook > a,
 .csm-header .csm-middle .csm-center .csm-user > ul > li.blog > a,
