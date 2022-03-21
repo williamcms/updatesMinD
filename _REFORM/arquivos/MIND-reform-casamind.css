@@ -1808,6 +1808,7 @@ body > .ui-autocomplete.ui-widget-content{
 }
 .has-shelf--default.prateleira > ul > li{
 	flex: 1 1 0px;
+	max-width: 16.688rem;
 }
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product,
 .has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__image{
@@ -2547,6 +2548,7 @@ footer .final-label__address{
 	}
 	.has-shelf--default.prateleira > ul > li{
 		flex: 1 1 33%;
+		max-width: 9.625rem;
 	}
 	.has-shelf--default.prateleira > ul > li > .csm-shelf__product .csm-shelf__buy{
 		position: initial;
