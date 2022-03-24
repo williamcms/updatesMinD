@@ -71,11 +71,12 @@
             if(i == 0){
                 $('.banners-top .img-container > img[data-id=bannerTop'+ i +']').attr('src', (isMobile() ? this.bannerM : this.bannerD)).attr('width', (isMobile() ? '500' : '1920')).attr('height', (isMobile() ? '600' : '600')).attr('title', this.name);
             }else{
-                $('.banners-top .img-container > img[data-id=bannerTop'+ i +']').attr('data-src', (isMobile() ? this.bannerM : this.bannerD)).attr('width', (isMobile() ? '500' : '1920')).attr('height', (isMobile() ? '600' : '600')).attr('title', this.name).addClass('lazy');
+                $('.banners-top .img-container > img[data-id=bannerTop'+ i +']').attr('data-lazy', (isMobile() ? this.bannerM : this.bannerD)).attr('width', (isMobile() ? '500' : '1920')).attr('height', (isMobile() ? '600' : '600')).attr('title', this.name);
             }
 
             return (i == parseInt(mindmais.featured) - 1 ? false : true);
         })
+        bannersSlick.slick('refresh');
     });
     var mountSellers = (mountSellers = (mindmais) =>{
         let sellersSlick = $('main.mindmais > .nav-brands .slicker');
@@ -87,7 +88,7 @@
                 $('.slick-track').find('div[data-number='+i+'] a.image img').attr('src', e.navBrands).attr('title', this.name).attr('alt', this.name);
             }else{
                 $('.slick-track').find('div[data-number='+i+'] a.image').attr('tabindex', '-1');
-                $('.slick-track').find('div[data-number='+i+'] a.image img').attr('data-src', e.navBrands).attr('title', this.name).addClass('lazy');
+                $('.slick-track').find('div[data-number='+i+'] a.image img').attr('data-lazy', e.navBrands).attr('title', this.name);
             }
             $('.slick-track').find('div[data-number='+i+']').append('<a href="'+ this.pageLink +'" class="name uppercase bold text-center d-block" aria-hidden="true"></a>'),
             $('.slick-track').find('div[data-number='+i+'] a.name').text(this.name);
@@ -97,7 +98,9 @@
         });
         sellersSlick.slick('slickAdd', $('<div></div>').addClass('item').attr('data-number', 'vermais'));
         $('.slick-track').find('div[data-number=vermais]').append('<a href="javascript:void(0)" class="image seemore" aria-controls="navBrandsExpanded"><img width="270" height="400" draggable="false" /></a>'),
-        $('.slick-track').find('div[data-number=vermais] a.image img').attr('src', 'https://lojamindesigns.vteximg.com.br/arquivos/BANNER_VERMAIS__385X570.png').attr('title', 'ver mais').attr('alt', 'ver mais').attr('aria-label', 'Ver mais marcas do MinD+');            
+        $('.slick-track').find('div[data-number=vermais] a.image img').attr('src', 'https://lojamindesigns.vteximg.com.br/arquivos/BANNER_VERMAIS__385X570.png').attr('title', 'ver mais').attr('alt', 'ver mais').attr('aria-label', 'Ver mais marcas do MinD+');
+
+        sellersSlick.slick('refresh');
     });
     var mountCategories = (mountCategories = (mindmais) =>{
         let categoriesSlick = $('main.mindmais > .nav-categories .slicker');
@@ -110,12 +113,13 @@
                 $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name);
             }else{
                 $('.slick-track').find('div[category-number='+i+'] a.image').attr('tabindex', '-1');
-                $('.slick-track').find('div[category-number='+i+'] a.image img').attr('data-src', this.image).attr('title', this.name).attr('alt', this.name).addClass('lazy');
+                $('.slick-track').find('div[category-number='+i+'] a.image img').attr('data-lazy', this.image).attr('title', this.name).attr('alt', this.name);
             }
             $('.slick-track').find('div[category-number='+i+'] a.image').append('<span href="'+ this.pageLink +'" draggable="false" class="name uppercase bold text-center d-block"></span>'),
             $('.slick-track').find('div[category-number='+i+'] span.name').text(this.name);
             return (i == parseInt(mindmais.featuredCategories) - 1 ? false : true);
-        })
+        });
+        categoriesSlick.slick('refresh');
     });
     var sellersExpanded = $('body').on('click enter', '#expandBrands, .nav-brands .seemore', function(){
         let brandsExpanded = $('main.mindmais .nav-brands-expanded'),
@@ -138,7 +142,7 @@
 
             $.each(globalSellers, function(){
                 let firstLetter = (this.name[0]).normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'" aria-label="Ir para a página da marca '+ this.name +'"><img data-src="'+ this.navBrands +'" class="lazy" width="124" height="184"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
+                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'" aria-label="Ir para a página da marca '+ this.name +'"><img data-lazy="'+ this.navBrands +'" width="124" height="184"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
 
                 if(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')){
                     $(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')).attr('disabled', false);
