@@ -1,5 +1,5 @@
 /*
- *	Código por William Di Biasi Bogik
+ *	Code by William Di Biasi Bogik
  *
  */
 @charset "utf-8";
@@ -47,19 +47,19 @@
 	font-display: swap;
 	src: url('https://lojamindesigns.vteximg.com.br/arquivos/Didot-HTF-M64-Medium.ttf.css?v=1') format('truetype');
 }
-@font-face{
+/*@font-face{
 	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
 	font-display: swap;
 	src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
 		 url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
 		 url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
-}
+}*/
 *{
 	font-family: 'Quicksand', 'Helvetica Neue', Verdana, Arial, sans-serif;
 	margin: 0rem;
 	padding: 0rem;
-	font-size: 1rem;
+	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.5;
 	scroll-behavior: smooth;
@@ -449,7 +449,7 @@ button.custom-select{
 	height: calc(1.5em + .75rem + 0.125rem);
 	padding: .375rem 2rem;
 }
-/* Fazer tabelas sem tag table */
+/* Row and column classes */
 .container{
 	width: 100%;
 	padding-right: 0.9375rem;
@@ -500,7 +500,7 @@ button.custom-select{
 .uppercase{
 	text-transform: uppercase;
 }
-/* Classes para Overlays */
+/* Overlays */
 .overlayform{
 	position: fixed;
 	display: none; /* use display: flex; or display: block; (depends on the usage) to show the overlay */
@@ -560,7 +560,7 @@ button.custom-select{
 .text-muted{
 	color:var(--gray) !important;
 }
-/* Fixação em input */
+/* Input's append & Prepend */
 .input-group{
 	position: relative;
 	display: flex;
@@ -618,7 +618,7 @@ button.custom-select{
 .input-group-text input[type="checkbox"]{
 	margin-top: 0;
 }
-/* Legendas na foto */
+/* Photos' captions */
 .img-captioncontent::before,
 blockquote::before{
 	content: "\2014 \00A0";
@@ -631,7 +631,7 @@ blockquote::before{
 	font-size: .85rem;
 	line-height: 1rem;
 }
-/* Botões estilizados */
+/* Custom Buttons */
 .button2{
 	border-radius: 0.25rem;
 	border: none;
@@ -769,7 +769,7 @@ blockquote::before{
 	color: var(--white);
 	background-color: var(--dark);
 }
-/* Auxiliares de Alinhamentos */
+/* Alignment Aids */
 .center,
 .text-center{
 	text-align: center !important;
@@ -1596,7 +1596,7 @@ body > .ui-autocomplete.ui-widget-content{
 	background-color: var(--white) !important;
 	border: 0;
 }
-/*Remove as setas do input*/
+/* Remove input arrows from minicart qty counter */
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper > .product__info-container > .product__info > .product__management input::-webkit-outer-spin-button,
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
@@ -1613,7 +1613,6 @@ body > .ui-autocomplete.ui-widget-content{
 	color: var(--warning);
 }
 .csm-header .csm-minicart .csm-minicart__empty{
-	/*remover*/
 	display: none;
 }
 .csm-header .csm-minicart .csm-minicart__footer{
@@ -1732,7 +1731,7 @@ body > .ui-autocomplete.ui-widget-content{
 	-webkit-animation: 1s linear 1s infinite rotate;
 	-webkit-transition: 1s;
 }
-/* Popup adicionado ao carrinho */
+/* Added to cart message */
 .csm-header #popup-adicionando{
 	position: fixed;
 	top: -100%;
@@ -1786,8 +1785,8 @@ body > .ui-autocomplete.ui-widget-content{
 .csm-header #popup-adicionando .conteudo-adicionando #barratempo.is--active{
 	width: 100%
 }
-/* Página de produto */
-/* Prateleiras/Vitrines */
+/* Product page */
+/* Shelves */
 .has-shelf--default.n4colunas{
 	max-width: 83.25rem;
 	margin: 0 auto;
@@ -1864,7 +1863,7 @@ body > .ui-autocomplete.ui-widget-content{
 }
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__image--static{
 	transition: all .3s linear;
-	/* Evita bordas em branco pelo corte da imagem */
+	/* Avoid blank edges by cropping the image */
 	-webkit-transform: scale(1.026);
 			transform: scale(1.026);
 }
@@ -1934,7 +1933,7 @@ body > .ui-autocomplete.ui-widget-content{
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__name > h3,
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__name > h3 > a{
 	display: block;
-	/* Exibe pontos (...) caso o texto passe da demarcação */
+	/* Show dots (...) when there's too much text */
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
@@ -1964,15 +1963,11 @@ body > .ui-autocomplete.ui-widget-content{
 	max-height: fit-content;
 	height: fit-content;
 }
-.has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__price > a.csm-shelf__link > .csm-shelf__price--old::before{
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	height: 2px;
-	background: var(--brand-color);
+.has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__price > a.csm-shelf__link > .csm-shelf__price--old > span{
+	text-decoration-line: line-through;
+	text-decoration-color: var(--brand-color);
+	text-decoration-style: solid;
+	text-decoration-thickness: 0.125rem;
 }
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__installments{
 	font-size: 0.895rem;
@@ -2057,7 +2052,7 @@ div.pager > ul.pages > li.pgCurrent{
 	visibility: visible;
 	opacity: 1;
 }
-/* Tipos de flags */
+/* Flag types */
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-produto-brasileiro{
 	background-image: url("https://www.casamind.com.br/arquivos/flag-feito-no-brasil-v2-min.png");
 }
@@ -2088,7 +2083,7 @@ div.pager > ul.pages > li.pgCurrent{
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.flag-projeto-social::after{
 	content: 'Projeto social';
 }
-/* Flags específicas com sobreposição na imagem de produto */
+/* Specific flags that work as an overlay on the product image */
 .csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag.mind-todos-marketplace{
 	position: absolute;
 	width: 4rem;
@@ -2109,7 +2104,7 @@ div.pager > ul.pages > li.pgCurrent{
 	content: 'Produto com frete grátis!';
 	left: -7.2rem;
 }
-/* Oculta alguns campos de informação na página de produto */
+/* Hide some info fields */
 tr .\33 D-desktop,
 tr .\33 D-ios,
 tr .\33 D-android,
@@ -2568,10 +2563,8 @@ footer .final-label__address{
 	.csm-header .csm-minicart::before{
 		right: 11.7%;
 	}
-
-	/* Página de Produto */
-	
-	/* Prateleiras/Vitrines */
+	/* Product page */
+	/* Shelves */
 	.has-shelf--default > ul{
 		flex-wrap: wrap;
 		grid-row-gap: 1rem;
