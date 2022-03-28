@@ -142,7 +142,7 @@
 
             $.each(globalSellers, function(){
                 let firstLetter = (this.name[0]).normalize('NFD').replace(/[\u0300-\u036f]/g, ""),
-                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'" aria-label="Ir para a página da marca '+ this.name +'"><img data-lazy="'+ this.navBrands +'" width="124" height="184"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
+                html = '<a href="'+ this.pageLink +'" filterid="'+ firstLetter +'" aria-label="Ir para a página da marca '+ this.name +'"><img data-src="'+ this.navBrands +'" class="lazy" width="124" height="184"/><span class="text-center bold d-block">'+ this.name +'</span></div>';
 
                 if(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')){
                     $(alphabeticalList.find('li[filter='+ firstLetter +'][disabled]')).attr('disabled', false);
