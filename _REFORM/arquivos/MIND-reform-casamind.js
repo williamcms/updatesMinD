@@ -166,7 +166,13 @@ $(document).ready(function(){
 	})();
 	var updateMiniCart = (updateMiniCart = () =>{
 		let p = $('.csm-header .csm-minicart .csm-minicart__products .product-list'),
-		item = $('.csm-header .csm-minicart .csm-minicart__products .product-list').find('li');
+		item = $('.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items em.amount-items-em').first().text(),
+		minicartIcon = $('.csm-header .csm-middle .csm-center .csm-user > ul > li.csm-cart > a'),
+		itemsQtyMessage = $('.csm-header .csm-middle .csm-center .csm-user > ul > li.csm-cart > a > span.items');
+
+		itemsQtyMessage.text('Você possui ' + item + ' ' + (item == 1 ? 'item' : 'itens') + 'no Carrinho');
+		minicartIcon.attr('aria-label', 'Você possui ' + item + ' ' + (item == 1 ? 'item' : 'itens') + ' no Carrinho');
+		minicartIcon.attr('title', 'Você possui ' + item + ' ' + (item == 1 ? 'item' : 'itens') + ' no Carrinho');
 
 		vtexjs.checkout.getOrderForm().done(function(t) {
 			$.each(t.items, function(i){
