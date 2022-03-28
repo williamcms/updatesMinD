@@ -1262,6 +1262,11 @@ body > .ui-autocomplete.ui-widget-content{
 	flex-direction: row;
 	text-decoration: none;
 }
+.csm-header .csm-middle .csm-center .csm-user ul li:hover svg *,
+.csm-header .csm-middle .csm-center .csm-user ul li:focus-within svg *{
+	stroke: var(--brand-color);
+	fill: var(--brand-color);
+}
 .csm-header .csm-middle .csm-center .csm-user ul li svg{
 	height: 1.875rem;
 	fill: var(--gray);
