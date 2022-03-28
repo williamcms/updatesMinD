@@ -1279,8 +1279,13 @@ body > .ui-autocomplete.ui-widget-content{
 .csm-header .csm-middle .csm-center .csm-user .csm-account button .desktop-view{
 	display: flex;
 }
+.csm-header .csm-middle .csm-center .csm-user .csm-account button .desktop-view > span{
+	min-width: 1.875rem;
+}
 .csm-header .csm-middle .csm-center .csm-user .csm-account button .js--user-name{
 	margin: auto 0 auto .4rem;
+	min-width: 10.5rem;
+	text-align: left;
 }
 .csm-header .csm-middle .csm-center .csm-user .csm-account .csm-dropdown-logged{
 	position: absolute;
@@ -1376,7 +1381,7 @@ body > .ui-autocomplete.ui-widget-content{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	text-transform: uppercase;
 }
 .csm-header .csm-navigation > .csm-center > ul a{
