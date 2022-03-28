@@ -1422,7 +1422,8 @@ body > .ui-autocomplete.ui-widget-content{
 	z-index: 8;
 }
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub:hover > .csm-dropdown,
-.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > a:focus + .csm-dropdown{
+.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > a:focus + .csm-dropdown,
+.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown.change{
 	display: flex;
 }
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown > ul{
@@ -1745,6 +1746,7 @@ body > .ui-autocomplete.ui-widget-content{
 /* Added to cart message */
 .csm-header #popup-adicionando{
 	position: fixed;
+	display: none;
 	top: -100%;
 	right: 0;
 	left: 0;
@@ -1752,6 +1754,7 @@ body > .ui-autocomplete.ui-widget-content{
 	transition: top 2s ease;
 }
 .csm-header #popup-adicionando.is--active{
+	display: initial;
 	top: 13.063rem;
 }
 .csm-header #popup-adicionando.is--active.scrollMenu{
@@ -2233,8 +2236,8 @@ footer .main-footer-sac-buttons a:hover{
 	text-decoration: none;
 	opacity: 1;
 }
-footer .footer-wrapper .support-wrapper .support-guide .changeView,
-footer .footer-wrapper .aboutUs-wrapper .aboutUs-guide .changeView{
+footer .footer-wrapper .support-wrapper .support-guide label,
+footer .footer-wrapper .aboutUs-wrapper .aboutUs-guide label{
 	display: none;
 }
 footer .footer-wrapper .social-wrapper,
@@ -2389,6 +2392,7 @@ footer .final-label__address{
 	}
 	.csm-header .csm-middle .csm-center{
 		min-height: 3.75rem;
+		max-width: 100vw;
 		height: auto;
 	}
 	.csm-header .csm-middle .csm-center .csm-user ul{
@@ -2398,10 +2402,9 @@ footer .final-label__address{
 		position: absolute;
 		top: 0;
 		left: 0;
-		bottom: 0;
 		background-color: transparent;
 		border: none;
-		padding: 0 1em;
+		padding: 1em .5rem;
 		z-index: 10;
 	}
 	.csm-header .csm-middle .csm-center button.js--open-menu:focus{
@@ -2575,6 +2578,16 @@ footer .final-label__address{
 	}
 	.csm-header .csm-minicart::before{
 		right: 11.7%;
+	}
+	/* Added to cart message */
+	.csm-header #popup-adicionando.is--active{
+		top: 3.75rem;
+	}
+	.csm-header #popup-adicionando.is--active.scrollMenu{
+		top: 4.688rem;
+	}
+	.csm-header #popup-adicionando.is--active.hiddenMenu{
+		top: 0;
 	}
 	/* Product page */
 	/* Shelves */

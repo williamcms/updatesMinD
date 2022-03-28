@@ -110,10 +110,10 @@
             $('.slick-track').find('div[category-number='+i+']').append('<a href="'+ this.pageLink +'" draggable="false" class="image"><img width="250" height="166" draggable="false"/></a>');
             if(i == 0){
                 $('.slick-track').find('div[category-number='+i+'] a.image').attr('tabindex', '0');
-                $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', this.name).attr('alt', this.name);
+                $('.slick-track').find('div[category-number='+i+'] a.image img').attr('src', this.image).attr('title', 'Imagem da categoria ' + this.name).attr('alt', 'Imagem da categoria ' + this.name).attr('aria-hidden', true);
             }else{
                 $('.slick-track').find('div[category-number='+i+'] a.image').attr('tabindex', '-1');
-                $('.slick-track').find('div[category-number='+i+'] a.image img').attr('data-lazy', this.image).attr('title', this.name).attr('alt', this.name);
+                $('.slick-track').find('div[category-number='+i+'] a.image img').attr('data-lazy', this.image).attr('title', 'Imagem da categoria ' + this.name).attr('alt', 'Imagem da categoria ' + this.name);
             }
             $('.slick-track').find('div[category-number='+i+'] a.image').append('<span href="'+ this.pageLink +'" draggable="false" class="name uppercase bold text-center d-block"></span>'),
             $('.slick-track').find('div[category-number='+i+'] span.name').text(this.name);
