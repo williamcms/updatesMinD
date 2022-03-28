@@ -85,7 +85,8 @@ $(document).ready(function(){
 		prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
-		 swipeToSlide: true,
+		accessibility: true,
+		swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
@@ -97,7 +98,8 @@ $(document).ready(function(){
 		prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
-		 swipeToSlide: true,
+		accessibility: true,
+		swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
@@ -109,7 +111,8 @@ $(document).ready(function(){
 		prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
-		 swipeToSlide: true,
+		accessibility: true,
+		swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
