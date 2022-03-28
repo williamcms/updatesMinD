@@ -1805,15 +1805,17 @@ body > .ui-autocomplete.ui-widget-content{
 }
 .has-shelf--default > ul{
 	display: flex;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: center;
 	align-items: flex-start;
 	grid-column-gap: 2rem;
 	column-gap: 2rem;
+	grid-row-gap: 2rem;
+	row-gap: 2rem;
 	margin: 2rem 5rem;
 }
 .has-shelf--default > ul > li{
-	flex: 1 1 0px;
-	max-width: 16.688rem;
+	flex: 0 1 22%;
 }
 .has-shelf--default > ul > li > .csm-shelf__product,
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__image{
@@ -1851,18 +1853,18 @@ body > .ui-autocomplete.ui-widget-content{
 }
 .has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(3):nth-last-child(3){
 	height: 3rem;
-    display: flex;
+	display: flex;
 }
 .has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(1):nth-last-child(3){
 	min-height: 7.654rem;
 }
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__image--hover{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    transition: opacity .4s ease-in-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: opacity .4s ease-in-out;
 }
 .has-shelf--default > ul > li > .csm-shelf__product:hover .csm-shelf__image--hover{
 	opacity: 1;
