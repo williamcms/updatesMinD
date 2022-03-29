@@ -1649,7 +1649,7 @@ body > .ui-autocomplete.ui-widget-content{
 	height: 1.188rem;
 	margin-left: -0.5rem;
 	color: var(--white);
-	line-height: 1rem;
+	line-height: 1.188rem;
 	font-size: .84rem;
 	font-style: normal !important;
 	background: var(--brand-color);
