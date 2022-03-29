@@ -1872,7 +1872,8 @@ body > .ui-autocomplete.ui-widget-content{
 	left: 0;
 	right: 0;
 	opacity: 0;
-	transition: opacity .4s ease-in-out;
+	transition: opacity .9s ease-in-out;
+	z-index: 1;
 }
 .has-shelf--default > ul > li > .csm-shelf__product:hover .csm-shelf__image--hover{
 	opacity: 1;
@@ -1899,6 +1900,7 @@ body > .ui-autocomplete.ui-widget-content{
 	background-color: var(--brand-color);
 	opacity: 0;
 	transition: transform .3s ease-in-out .3s, opacity .5s ease-in-out;
+	z-index: 2;
 }
 .has-shelf--default > ul > li > .csm-shelf__product:hover .csm-shelf__buy,
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__buy:focus-within{
