@@ -63,7 +63,7 @@ $(document).ready(function(){
 		}
 	});
 	//LazyLoad
-	$(document).bind('DOMNodeInserted scroll click swipe', function(e){
+	var lazyLoad = (lazyLoad = () =>{
 		$('.lazy').Lazy({
 			scrollDirection: 'both',
 			effect: 'fadeIn',
@@ -75,6 +75,14 @@ $(document).ready(function(){
 				e.addClass('lazyComplete');
 			}
 		});
+	});
+	var lazyOnPageLoad = (function(){
+		lazyLoad();
+	})();
+	//Então espera alguns eventos para carregar imagens subsequentes
+	//Maioria surgindo por meio de chamadas do ajax
+	$(document).bind('DOMNodeInserted scroll click swipe', function(){
+		lazyLoad();
 	});
 	//Slickers
 	$('.slick-carousel-dots').slick({
