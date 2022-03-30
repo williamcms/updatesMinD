@@ -1042,19 +1042,43 @@ div#ajaxBusy{
 .slick-slider button.slick-prev.slick-arrow{
 	position: absolute;
 	margin: auto 0;
-	border: solid var(--gray);
+	border: solid #ed7397;
 	border-width: 0 0.3125rem 0.3125rem 0;
 	padding: .5rem;
 	top: 50%;
 	z-index: 1;
 }
+.slick-slider button.slick-next.slick-arrow:hover,
+.slick-slider button.slick-prev.slick-arrow:hover{
+	border-color: var(--brand-color);
+}
 .slick-slider button.slick-next{
 	transform: rotate(-45deg);
 	right: 1rem;
+	animation: move-right 4s ease-in-out infinite;
 }
 .slick-slider button.slick-prev{
 	transform: rotate(135deg);
 	left: 1rem;
+	animation: move-left 4s ease-in-out infinite;
+}
+@keyframes move-right{
+	0%,
+	100%{
+		transform: rotate(-45deg) translate(0px, 0px);
+	}
+	50%{
+		transform: rotate(-45deg) translate(0.313rem, 0.313rem);
+	}
+}
+@keyframes move-left{
+	0%,
+	100%{
+		transform: rotate(135deg) translate(0px, 0px);
+	}
+	50%{
+		transform: rotate(135deg) translate(0.313rem, 0.313rem);
+	}
 }
 .slick-dots li button::before{
 	content: '';
