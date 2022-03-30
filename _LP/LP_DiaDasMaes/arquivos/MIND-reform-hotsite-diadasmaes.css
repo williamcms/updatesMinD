@@ -3,3 +3,35 @@
  *
  */
 @charset "utf-8";
+main.hotsite .moodsDestaq{
+	display: flex;
+}
+main.hotsite .moodsDestaq > img{
+	flex: 1 1 0px;
+}
+main.hotsite .collections > h2{
+	font-family: Didot;
+	color: var(--brand-color);
+	text-transform: uppercase;
+}
+main.hotsite .collections > .container{
+
+}
+main.hotsite .collections > .container div.slick-slide{
+	margin: 0 .5rem;
+	padding: .8rem;
+	transition: all .3s ease;
+}
+main.hotsite .collections > .container div.slick-slide > img{
+
+}
+main.hotsite .collections > .container div.slick-slide:not(.slick-center){
+	opacity: 0.8;
+}
+main.hotsite .collections > .container div.slick-active.slick-center{
+	opacity: 1;
+	transform: scale(1.08);
+}
+main.hotsite .collections > .container img{
+
+}
