@@ -1,13 +1,19 @@
 /*
- *	Code by William Di Biasi Bogik
+ *  Code by William Di Biasi Bogik
  *
  */
 @charset "utf-8";
 main.hotsite .moodsDestaq{
-
+	width: 62.5rem;
 }
-main.hotsite .moodsDestaq .slick-list div.item > img{
+main.hotsite .moodsDestaq .slick-list div.item a{
+	text-decoration: none;
+}
+main.hotsite .moodsDestaq .slick-list div.item figure > img{
 	padding: 1rem;
+}
+main.hotsite .moodsDestaq .slick-list div.item figure > figcaption{
+	font-family: Helvetica;
 }
 main.hotsite .collections > h2{
 	font-family: Didot;
@@ -34,4 +40,10 @@ main.hotsite .collections > .container div.slick-active.slick-center{
 }
 main.hotsite .collections > .container img{
 
+}
+
+@media screen and (max-width: 831px) and (orientation: portrait){
+	main.hotsite .moodsDestaq{
+		width: 100%;
+	}
 }
