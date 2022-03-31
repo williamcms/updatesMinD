@@ -1055,12 +1055,12 @@ div#ajaxBusy{
 .slick-slider button.slick-next{
 	transform: rotate(-45deg);
 	right: 1rem;
-	animation: move-right 4s ease-in-out infinite;
+	animation: move-right 3s ease-in-out infinite;
 }
 .slick-slider button.slick-prev{
 	transform: rotate(135deg);
 	left: 1rem;
-	animation: move-left 4s ease-in-out infinite;
+	animation: move-left 3s ease-in-out infinite;
 }
 @keyframes move-right{
 	0%,

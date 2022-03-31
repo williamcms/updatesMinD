@@ -56,6 +56,10 @@ $(document).ready(function(){
 			aLabel.attr('aria-hidden', true);
 		}
 	})();
+	//Define corretamente o tamanho reservado para o header
+	$(window).bind('load resize', function(){
+		$('header').css('height', $('.csm-wrapper').height());
+	})
 	//Fecha o overlay/modal se clicar fora da área
 	$('.overlayform').on('click', function(e){
 		if($(e.target).is('.overlayform')){
