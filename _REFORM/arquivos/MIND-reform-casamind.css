@@ -1313,7 +1313,8 @@ body > .ui-autocomplete.ui-widget-content{
 }
 .csm-header .csm-middle .csm-center .csm-user .csm-account button .js--user-name{
 	margin: auto 0 auto .4rem;
-	min-width: 10.5rem;
+	min-width: fit-content;
+	white-space: nowrap;
 	text-align: left;
 }
 .csm-header .csm-middle .csm-center .csm-user .csm-account .csm-dropdown-logged{
