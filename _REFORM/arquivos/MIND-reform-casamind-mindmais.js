@@ -260,6 +260,8 @@
         {
             breakpoint: 500,
             settings: {
+                dots: false,
+                arrows: true,
                 slidesToShow: 1,
                 slidesToScroll: 1
             }

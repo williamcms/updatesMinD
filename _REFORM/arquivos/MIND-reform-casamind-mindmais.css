@@ -8,8 +8,8 @@ main.mindmais .slick-slider button.slick-prev.slick-arrow{
     border-width: 0 5px 5px 0;
 }
 main.mindmais > .banners-top{
-    /*min-height: 25.813rem;
-    max-height: 37.5rem;*/
+    min-height: initial;
+    min-height: fit-content;
 }
 main.mindmais > .banners-top .slicker .img-container > img.lazy:not(.lazyComplete){
     height: 25.849rem;
@@ -173,10 +173,9 @@ main.mindmais > .nav-categories div.item.active > div.name{
 }
 
 @media screen and (max-width: 831px) and (orientation : portrait){
-    main.mindmais > .banners-top {
+    main.mindmais > .banners-top{
         min-height: initial;
         min-height: fit-content;
-        max-height: 37.5rem;
     }
     main.mindmais > .nav-brands,
     main.mindmais > .nav-categories{
