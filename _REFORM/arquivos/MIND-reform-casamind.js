@@ -57,7 +57,7 @@ $(document).ready(function(){
 		}
 	})();
 	//Define corretamente o tamanho reservado para o header
-	$(window).bind('load resize', function(){
+	$(window).on('load resize', function(){
 		$('header').css('height', $('.csm-wrapper').height());
 	})
 	//Fecha o overlay/modal se clicar fora da área
@@ -85,7 +85,7 @@ $(document).ready(function(){
 	})();
 	//Então espera alguns eventos para carregar imagens subsequentes
 	//Maioria surgindo por meio de chamadas do ajax
-	$(document).bind('DOMNodeInserted scroll click swipe', function(){
+	$(document).on('DOMNodeInserted scroll click swipe', function(){
 		lazyLoad();
 	});
 	//Slickers
