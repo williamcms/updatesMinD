@@ -63,6 +63,9 @@ $(document).ready(function(){
 		}else{
 			// Desnecessário visto que o tamanho não muda no mobile
 			// $('header').css('height', $('.csm-wrapper').height() + $('.csm-search').height());
+
+			// Remove as medidas quando trocar
+			$('header').css('height', '');
 		}
 	})
 	//Fecha o overlay/modal se clicar fora da área

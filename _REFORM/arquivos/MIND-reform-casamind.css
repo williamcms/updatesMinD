@@ -2424,6 +2424,7 @@ footer .final-label__address{
 	}
 	.csm-header .csm-search > fieldset.busca > input.fulltext-search-box{
 		border: none;
+		text-align: center;
 	}
 	.csm-header .csm-benefits{
 		display: none !important;
@@ -2483,7 +2484,6 @@ footer .final-label__address{
 		width: auto;
 	}
 	.csm-header .csm-middle .csm-center .csm-user > ul > li:not(:nth-child(4),:nth-child(5)),
-	.csm-header .csm-middle .csm-center .csm-search,
 	.csm-header .csm-middle .csm-center .csm-user > ul > li strong.js--user-name{
 		display: none;
 	}
