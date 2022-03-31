@@ -178,91 +178,91 @@
         })
     })
 
-    if(isMobile()){
-        $('main.mindmais .slick-dots').slick({
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: true,
-            arrows: false,
-            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
-            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
-            lazyLoad: 'ondemand',
-            accessibility: true,
-            infinite: true,
-            swipeToSlide: true,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        });
-        $('main.mindmais .slick-categories-dots').slick({
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: true,
-            arrows: false,
-            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
-            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
-            lazyLoad: 'ondemand',
-            accessibility: true,
-            infinite: true,
-            swipeToSlide: true,
-            slidesToShow: 2,
-            slidesToScroll: 2
-        });
-        $('main.mindmais .slick-dots-banner').slick({
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: false,
-            arrows: true,
-            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
-            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
-            lazyLoad: 'ondemand',
-            accessibility: true,
-            infinite: true,
-            swipeToSlide: true,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        });
-    }else{
-       $('main.mindmais .slick-dots').slick({
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: true,
-            arrows: false,
-            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
-            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
-            lazyLoad: 'ondemand',
-            accessibility: true,
-            infinite: false,
-            swipeToSlide: true,
-            slidesToShow: 4,
-            slidesToScroll: 1
-        });
-       $('main.mindmais .slick-categories-dots').slick({
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: true,
-            arrows: false,
-            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
-            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
-            lazyLoad: 'ondemand',
-            accessibility: true,
-            infinite: true,
-            swipeToSlide: true,
-            slidesToShow: 4,
-            slidesToScroll: 2
-        });
-       $('main.mindmais .slick-dots-banner').slick({
-            autoplay: true,
-            autoplaySpeed: 5000,
-            dots: true,
-            arrows: false,
-            prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
-            nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
-            lazyLoad: 'ondemand',
-            accessibility: true,
-            infinite: true,
-            swipeToSlide: true,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        });
-    }
+   $('main.mindmais .slick-dots').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        arrows: false,
+        prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+        nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+        lazyLoad: 'ondemand',
+        accessibility: true,
+        infinite: false,
+        swipeToSlide: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+        {
+            breakpoint: 900,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 500,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
+    });
+   $('main.mindmais .slick-categories-dots').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        arrows: false,
+        prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+        nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+        lazyLoad: 'ondemand',
+        accessibility: true,
+        infinite: true,
+        swipeToSlide: true,
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        responsive: [
+        {
+            breakpoint: 900,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 500,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }]
+    });
+   $('main.mindmais .slick-dots-banner').slick({
+        autoplay: true,
+        autoplaySpeed: 5000,
+        dots: true,
+        arrows: false,
+        prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+        nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+        lazyLoad: 'ondemand',
+        accessibility: true,
+        infinite: true,
+        swipeToSlide: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+        {
+            breakpoint: 900,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 500,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
+    });
 })

@@ -8,8 +8,8 @@ main.mindmais .slick-slider button.slick-prev.slick-arrow{
     border-width: 0 5px 5px 0;
 }
 main.mindmais > .banners-top{
-    min-height: 25.813rem;
-    max-height: 37.5rem;
+    /*min-height: 25.813rem;
+    max-height: 37.5rem;*/
 }
 main.mindmais > .banners-top .slicker .img-container > img.lazy:not(.lazyComplete){
     height: 25.849rem;
