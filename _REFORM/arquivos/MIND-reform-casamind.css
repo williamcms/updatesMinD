@@ -1169,8 +1169,10 @@ body > .ui-autocomplete.ui-widget-content{
 .csm-header .csm-search > fieldset.busca{
 	display: flex;
 	flex-wrap: nowrap;
+	align-items: center;
 	padding: 0 3rem;
 	border: none;
+	background-color: var(--menu-bg-color);
 }
 .csm-header .csm-search > fieldset.busca > label,
 .csm-header .csm-search > fieldset.busca > legend,
@@ -1185,16 +1187,15 @@ body > .ui-autocomplete.ui-widget-content{
 }
 .csm-header .csm-search > fieldset.busca > input.btn-buscar{
 	font-size: 0;
-	height: 2.25rem;
-	width: 2.25rem;
-	right: 3.875rem;
-	filter: opacity(.5);
+	height: 1.5rem;
+	width: 1.5rem;
+	filter: opacity(.7);
 	border: none;
-	background-color: var(--white);
-	background-image: url(/arquivos/icons-s542db61897.png) !important;
+	background-color: var(--menu-bg-color);
+	background-image: url(/arquivos/busca.png) !important;
 	background-repeat: no-repeat;
-	background-position: -5.313rem 0;
-	transform: scale(.6);
+	background-position: center;
+	background-size: contain;
 	cursor: pointer;
 }
 .csm-header .csm-benefits{
@@ -1235,14 +1236,6 @@ body > .ui-autocomplete.ui-widget-content{
 	justify-content: space-evenly;
 	width: 100%;
 	height: 6.875rem;
-}
-.csm-header .csm-middle .csm-center.scrollMenu{
-	height: 4.6875rem;
-}
-.csm-header .csm-middle .csm-center.scrollMenu .csm-logo a, 
-.csm-header .csm-middle .csm-center.scrollMenu .csm-logo svg{
-	height: auto;
-	width: 6.188rem;
 }
 .csm-header .csm-middle .csm-center > div{
 	flex: 1 1 0rem;
@@ -2402,7 +2395,7 @@ footer .final-label__address{
 	}
 	/* Menu */
 	.csm-header{
-		height: 3.75rem;
+		height: 6.337rem;
 	}
 	.csm-header .csm-wrapper{
 		position: fixed;
@@ -2413,6 +2406,24 @@ footer .final-label__address{
 		overflow-y: scroll !important;
 		overflow-y: overlay !important;
 		overflow-x: hidden !important;
+	}
+	.csm-header .csm-middle .csm-center .csm-search{
+		display: block;
+		position: absolute;
+		top: 3.5rem;
+		width: 100%;
+		background: white;
+		border-bottom: 0.025rem solid var(--gray-lighter);
+	}
+	.csm-header .csm-search > fieldset.busca{
+		padding: 0;
+	}
+	.csm-header .csm-search > fieldset.busca > input.btn-buscar{
+		margin-right: 1rem;
+		filter: opacity(.9);
+	}
+	.csm-header .csm-search > fieldset.busca > input.fulltext-search-box{
+		border: none;
 	}
 	.csm-header .csm-benefits{
 		display: none !important;
@@ -2615,6 +2626,11 @@ footer .final-label__address{
 	}
 	.csm-header #popup-adicionando.is--active.hiddenMenu{
 		top: 0;
+	}
+	/*Smarthint*/
+	div#smarthint-search-result{
+		top: 3.75rem !important;
+		height: calc(100% - 3.75rem) !important;
 	}
 	/* Product page */
 	/* Shelves */

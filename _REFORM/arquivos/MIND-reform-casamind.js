@@ -58,7 +58,12 @@ $(document).ready(function(){
 	})();
 	//Define corretamente o tamanho reservado para o header
 	$(window).on('load resize', function(){
-		$('header').css('height', $('.csm-wrapper').height());
+		if(!isMobile()){
+			$('header').css('height', $('.csm-wrapper').height());
+		}else{
+			// Desnecessário visto que o tamanho não muda no mobile
+			// $('header').css('height', $('.csm-wrapper').height() + $('.csm-search').height());
+		}
 	})
 	//Fecha o overlay/modal se clicar fora da área
 	$('.overlayform').on('click', function(e){
