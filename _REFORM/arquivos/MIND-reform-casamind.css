@@ -1818,6 +1818,20 @@ body > .ui-autocomplete.ui-widget-content{
 	width: 100%
 }
 /* Product page */
+/*Collections Page*/
+main.collection > .main-container > .infoWrapper{
+	padding: 0 0 2rem 0;
+}
+main.collection > .main-container .page-title > h1{
+	font-family: Didot;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var(--brand-color);
+}
+main.collection .pager.top,
+main.collection .pager.bottom{
+	display: none;
+}
 /* Shelves */
 .has-shelf--default.n4colunas{
 	max-width: 83.25rem;

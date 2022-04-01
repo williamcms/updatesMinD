@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+	<head>
+		<title>MinD | Coleção</title>
+		<script>$(document).prop('title','MinD | <vtex:contentPlaceHolder id="pageTitle" />');</script>
+		<vtex:template id="MIND-reform-head" />
+		<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+	</head>
+
+	<body>
+		<vtex:template id="MIND-reform-header" />
+
+		<main class="collection">
+			<div class="main-container">
+
+				<div class="infoWrapper">
+					<div id="catBanner" class="desktop-view">
+						<vtex:contentPlaceHolder id="bannerDesktop" />
+					</div>
+
+					<div id="catBanner-mobile" class="mobile-view">
+						<vtex:contentPlaceHolder id="bannerMobile" />
+					</div>
+					
+					<div class="breadcrumbs center">
+						<vtex.cmc:breadCrumb />
+					</div>
+
+					<div class="page-title category-title center">
+						<h1>
+							<vtex:contentPlaceHolder id="pageName" />
+						</h1>
+					</div>
+					<div class="collection-description">
+						<vtex:contentPlaceHolder id="pageDescription" />
+					</div>
+				</div>
+
+				<div class="collectionWrapper">
+					<div class="row">
+						<div class="col-auto">
+							<div class="orderByList">
+								<h3>Ordenar</h3>
+								<ul aria-label="Ordernar por:">
+									<li><div class="orderby-icon"></div><a href="?O=OrderByPriceASC">Menor preço</a></li>
+									<li><div class="orderby-icon"></div><a href="?O=OrderByPriceDESC">Maior preço</a></li>
+									<li><div class="orderby-icon"></div><a href="?O=OrderByTopSaleDESC">Mais Vendidos</a></li>
+									<li><div class="orderby-icon"></div><a href="?O=OrderByReviewRateDESC">Melhores Avaliações</a></li>
+									<li><div class="orderby-icon"></div><a href="?O=OrderByReviewDateDESC">Data de Lançamento</a></li>
+									<li><div class="orderby-icon"></div><a href="?O=OrderByBestDiscountDESC">Melhor Desconto</a></li>
+								</ul>
+							</div>
+							<div id="filtersBox">
+								<vtex.cmc:searchNavigator/>
+							</div>
+						</div>
+
+						<div class="col">
+							<div id="collections-items">
+								<div class="itemsWrapper">
+									<vtex.cmc:searchResult layout="75f81d62-55ad-4aa7-9d39-a6691781f2e0" itemCount="48"
+									columnCount="12" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</main>
+		<vtex:template id="MIND-reform-footer" />
+	</body>
+</html>
