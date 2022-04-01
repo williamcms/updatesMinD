@@ -15,7 +15,8 @@ main.hotsite .moodsDestaq .slick-list div.item figure > img{
 main.hotsite .moodsDestaq .slick-list div.item figure > figcaption{
 	font-family: Helvetica;
 }
-main.hotsite .collections > h2{
+main.hotsite .collections > h2,
+main.hotsite .has-shelf--default > h2{
 	font-family: Didot;
 	color: var(--brand-color);
 	text-transform: uppercase;
