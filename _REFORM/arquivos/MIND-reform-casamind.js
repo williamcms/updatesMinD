@@ -275,6 +275,12 @@ $(document).ready(function(){
 			}), false;
 		});
 	});
+	//Abre a seleção de filtros da página de coleção
+	var openFilterSelection = $('.orderByList > .filterSelector').on('click', function(){
+		let options = $('main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul');
+
+		options.toggleClass('is--active');
+	})
 	//Restrito a páginas de produto apenas
 	if($('main .csm-product').length != 0){
 		var variableSKU = (variableSKU = () =>{
