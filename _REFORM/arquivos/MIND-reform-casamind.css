@@ -1962,6 +1962,9 @@ main.collection > .main-container > .collectionWrapper > .row > .col-auto h3{
 	margin: 1rem 0 .5rem 0;
 	border-bottom: .063rem solid var(--brand-color);
 }
+main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList > .filterSelector{
+	display: none;
+}
 main.collection > .main-container > .collectionWrapper > .row > .col-auto ul > li a{
 	text-decoration: none;
 }
@@ -2810,6 +2813,7 @@ footer .final-label__address{
 		padding: 0;
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList > .filterSelector{
+		display: block;
 		position: fixed;
 		bottom: 1rem;
 		margin-left: 0.5rem;
