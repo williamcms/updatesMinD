@@ -83,6 +83,7 @@ body{
 	margin: 0rem;
 	position: relative;
 	line-height: 1.3;
+	overflow-x: hidden;
 }
 main{
 	min-height: 100vh;
@@ -1827,7 +1828,10 @@ main.collection .breadcrumbs > .bread-crumb{
 	font-size: .9rem;
 	color: var(--gray);
 }
-main.collection .breadcrumbs > .bread-crumb > ul > li:nth-child(1):nth-last-child(1):after{
+main.collection .breadcrumbs > .bread-crumb > ul > li{
+	display: inline-block;
+}
+main.collection .breadcrumbs > .bread-crumb > ul > li::after{
 	content: '\002F';
 	margin-left: .2rem;
 }
@@ -1845,16 +1849,18 @@ main.collection > .main-container > .infoWrapper .collection-description{
 	color: var(--dark);
 }
 main.collection > .main-container > .collectionWrapper{
-	margin: 0 1rem;
+	margin: 0 2rem;
 }
 main.collection > .main-container > .collectionWrapper .row{
 	align-items: flex-start;
+	flex-wrap: nowrap;
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul{
 	display: flex;
 	flex-wrap: wrap;
 	grid-row-gap: .9rem;
 	row-gap: .9rem;
+	margin: 1rem 0;
 	text-align: center;
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li{
@@ -1958,7 +1964,13 @@ main.collection > .main-container > .collectionWrapper > .row > .col-auto .order
 	display: block;
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto h3,
-main.collection > .main-container > .collectionWrapper > .row > .col-auto h3 > a{
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h3 > a,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h4,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h4 > a,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h5,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h5 > a,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h6,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h6 > a{
 	font-family: 'Helvetica';
 	color: var(--dark);
 	font-size: 1rem !important;
@@ -1966,9 +1978,13 @@ main.collection > .main-container > .collectionWrapper > .row > .col-auto h3 > a
 	text-transform: uppercase;
 	text-decoration: none;
 }
-main.collection > .main-container > .collectionWrapper > .row > .col-auto h3{
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h3,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h4,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h5,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto h6{
+	line-height: 1.9rem;
 	margin: 2rem 0 .5rem 0;
-	border-bottom: .063rem solid var(--brand-color);
+	border-bottom: .13rem solid var(--brand-color);
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList > .filterSelector{
 	display: none;
@@ -1984,7 +2000,8 @@ main.collection .pager.top,
 main.collection .pager.bottom,
 main.collection .resultado-busca-filtro > .orderBy,
 main.collection .resultado-busca-filtro > .filterBy,
-main.collection .resultado-busca-filtro > .compare{
+main.collection .resultado-busca-filtro > .compare,
+main.collection .menu-departamento .menu-navegue{
 	display: none;
 }
 main.collection > .main-container > .collectionWrapper .searchResultsTime{
@@ -1992,6 +2009,9 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime{
 	text-align: right;
 	font-style: italic;
 	color: var(--gray);
+}
+main.collection > .main-container > .collectionWrapper .searchResultsTime:last-of-type{
+	display: none;
 }
 /* Shelves */
 .has-shelf--default.n4colunas{
@@ -2013,7 +2033,7 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime{
 	column-gap: 2rem;
 	grid-row-gap: 2rem;
 	row-gap: 2rem;
-	margin: 2rem 5rem;
+	margin: 2rem 2rem;
 }
 .has-shelf--default > ul > li{
 	flex: 0 1 22%;
@@ -2512,7 +2532,7 @@ footer .final-label__address{
 }
 @media screen and (max-width: 1245px){
 	.has-shelf--default > ul{
-		margin: 2rem 2rem;
+		margin: 2rem 0rem;
 	}
 }
 @media screen and (max-width: 831px){
@@ -2818,6 +2838,9 @@ footer .final-label__address{
 	}
 	/* Product page */
 	/*Collections Page*/
+	main.collection > .main-container > .collectionWrapper{
+		margin: 0;
+	}
 	main.collection > .main-container > .collectionWrapper .searchResultsTime{
 		text-align: center;
 	}
