@@ -1823,6 +1823,14 @@ body > .ui-autocomplete.ui-widget-content{
 }
 /* Product page */
 /*Collections Page*/
+main.collection .breadcrumbs > .bread-crumb{
+	font-size: .9rem;
+	color: var(--gray);
+}
+main.collection .breadcrumbs > .bread-crumb > ul > li:nth-child(1):nth-last-child(1):after{
+	content: '\002F';
+	margin-left: .2rem;
+}
 main.collection > .main-container > .infoWrapper{
 	padding: 0 0 2rem 0;
 }
