@@ -1959,7 +1959,7 @@ main.collection > .main-container > .collectionWrapper > .row > .col-auto h3 > a
 	text-decoration: none;
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto h3{
-	margin: 1rem 0 .5rem 0;
+	margin: 2rem 0 .5rem 0;
 	border-bottom: .063rem solid var(--brand-color);
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList > .filterSelector{
@@ -2502,7 +2502,12 @@ footer .final-label__address{
 	padding: 2rem 3rem;
 	text-align: center;
 }
-@media screen and (max-width: 831px) and (orientation : portrait){
+@media screen and (max-width: 1245px){
+	.has-shelf--default > ul{
+		margin: 2rem 2rem;
+	}
+}
+@media screen and (max-width: 831px){
 	input[type=text],
 	input[type=number],
 	input[type=email],
