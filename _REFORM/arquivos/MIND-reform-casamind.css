@@ -2132,6 +2132,9 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime:last-o
 	-webkit-transform: scale(1.026);
 			transform: scale(1.026);
 }
+.has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__image--hover[data-isempty="1"]{
+	display: none;
+}
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__image--hover[data-isempty="1"] + .csm-shelf__image--static:hover{
 	-webkit-transform: scale(1.15);
 			transform: scale(1.15);
