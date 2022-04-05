@@ -1823,13 +1823,14 @@ body > .ui-autocomplete.ui-widget-content{
 	transition: width 6s ease;
 }
 .csm-header #popup-adicionando .conteudo-adicionando #barratempo.is--active{
-	width: 100%
+	width: 100%;
 }
 /* Product page */
 /*Collections Page*/
 main.collection .breadcrumbs > .bread-crumb{
 	font-size: .9rem;
 	color: var(--gray);
+	margin-bottom: 1rem;
 }
 main.collection .breadcrumbs > .bread-crumb > ul > li{
 	display: inline-block;
@@ -2924,6 +2925,9 @@ footer .final-label__address{
 		width: 3.575rem;
 		height: 3.375rem;
 		margin: 0;
+	}
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li div.orderby-icon{
+		background-size: auto !important;
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li div.orderby-icon,
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList > .filterSelector{

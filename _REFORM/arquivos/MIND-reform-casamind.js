@@ -300,7 +300,8 @@ $(document).ready(function(){
 		options.toggleClass('is--active');
 	})
 	var checkPageType = (checkPageType = () =>{
-		let v = $('.resultItemsWrapper');
+		let v = $('.resultItemsWrapper'),
+			t = $('.page-title.category-title > h1');
 
 		// Atribui um indice de paginação
 		(typeof v.data('page') == 'undefined' && v.attr('data-page', 1));
@@ -310,6 +311,9 @@ $(document).ready(function(){
 		// Após isso, atribui um indice para paginação e grava a o id referente a vitrine
 		if(typeof vtxctx == 'object' && vtxctx.categoryId != null){
 			v.attr('data-categoryid', vtxctx.categoryId);
+			// Adiciona um título para páginas de categoria e remove caracteres numéricos
+			// Móveis2 --> Móveis
+			t.text((vtxctx.categoryName).replace(/\d+/g, ''));
 			return 'category';
 		}else if((partialSearchUrl.split('H%3a').length > 1)){
 			let h = partialSearchUrl.split('H%3a');
