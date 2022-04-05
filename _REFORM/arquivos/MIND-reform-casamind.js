@@ -292,10 +292,9 @@ $(document).ready(function(){
 
 			if(orderFilter != undefined){
 				$('.orderByList > ul > li[data-order*='+ orderFilter +']').addClass('is--active');
-
-				if(checkPageType() != 'category'){
-					getShelfProducts();
-				}
+			}
+			if(checkPageType() != 'category'){
+				getShelfProducts();
 			}
 	})();
 	var openFilterSelection = $('.orderByList > .filterSelector').on('click', function(){
