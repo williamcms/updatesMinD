@@ -1179,6 +1179,9 @@ body > .ui-autocomplete.ui-widget-content{
 	border: none;
 	background-color: var(--menu-bg-color);
 }
+.csm-header .csm-search > fieldset.busca > .smarthint-voice-search{
+	position: initial !important;
+}
 .csm-header .csm-search > fieldset.busca > label,
 .csm-header .csm-search > fieldset.busca > legend,
 .csm-header .csm-search > fieldset.busca > select,
@@ -2969,6 +2972,10 @@ footer .final-label__address{
 	.has-shelf--default > ul > li{
 		flex: 1 1 33%;
 		max-width: 9.625rem;
+	}
+	.has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__image--hover{
+		max-height: 13.938rem;
+		max-height: calc(100% - 2.99rem);
 	}
 	.has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__buy{
 		position: initial;
