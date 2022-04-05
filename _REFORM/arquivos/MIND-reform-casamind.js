@@ -369,6 +369,44 @@ $(document).ready(function(){
 
 		getShelfProducts();
 	});
+	//Pequena animação para o filtro mobile
+	if(isMobile()){
+		var filterAnimation = $('.orderByList > .filterSelector').on('click', function(){
+			let wrapper = $('.orderByList > ul'),
+				filters = $('.orderByList > ul > li[data-order]'),
+				filtersR = [].reverse.call($('.orderByList > ul > li[data-order]'));
+
+			if((wrapper).hasClass('is--active')){
+				$.each(filtersR, function(i){
+					let $this = $(this);					
+					$this.css('animation', 'popIn '+ (i + 1) +'s ease-in');
+					$this.css('display', 'block');
+					
+					setTimeout(function(){
+						$this.find('span').first().fadeIn();
+					}, (i * 1000));
+
+					setTimeout(function(){
+						$this.find('span').first().fadeOut();
+					}, 1500 + (i * 1000));
+				});
+			}else{
+				$.each(filters, function(i){
+					let $this = $(this);
+					wrapper.css('display', 'flex');
+					$this.css('animation', 'popOut '+ (i + 1) +'s ease-in');
+
+					setTimeout(function(){
+						$this.fadeOut();
+					}, (i * 500));
+
+					setTimeout(function(){
+						wrapper.css('display', 'none');
+					}, 1500);
+				});
+			}
+		});
+	}
 	//Restrito a páginas de produto apenas
 	if($('main .csm-product').length != 0){
 		var variableSKU = (variableSKU = () =>{
