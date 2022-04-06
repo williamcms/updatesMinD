@@ -312,7 +312,7 @@ $(document).ready(function(){
 				h = h[1].split('&PS', 1);
 			v.attr('data-collectionid', h.toString());
 			return 'collection';
-		}else{
+		}else if($('.orderBy > select[onchange]').length != 0){
 			//Último recurso para identificar informações da coleção
 			let h = $('.orderBy > select[onchange]').attr('onchange').split('?PS', 1).toString();
 				h = h.split('\'/')[1];
