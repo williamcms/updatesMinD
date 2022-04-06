@@ -284,19 +284,8 @@ $(document).ready(function(){
 			}), false;
 		});
 	});
-	// Coleções / Categorias
+	//Coleções / Categorias
 	//Abre a seleção de filtros da página de coleção
-	var getFilterFromParms = (function(){
-		let searchParams = new URLSearchParams(window.location.search),
-			orderFilter = searchParams.get('O');
-
-			if(orderFilter != undefined){
-				$('.orderByList > ul > li[data-order*='+ orderFilter +']').addClass('is--active');
-			}
-			if(checkPageType() != 'category'){
-				getShelfProducts();
-			}
-	})();
 	var openFilterSelection = $('.orderByList > .filterSelector').on('click', function(){
 		let options = $('main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul');
 
@@ -414,6 +403,18 @@ $(document).ready(function(){
 			}
 		});
 	}
+	//Aplica o filtro automaticamente quando carregar a página
+	var getFilterFromParms = (function(){
+		let searchParams = new URLSearchParams(window.location.search),
+			orderFilter = searchParams.get('O');
+
+			if(orderFilter != undefined){
+				$('.orderByList > ul > li[data-order*='+ orderFilter +']').addClass('is--active');
+			}
+			if(checkPageType() != 'category'){
+				getShelfProducts();
+			}
+	})();
 	//Restrito a páginas de produto apenas
 	if($('main .csm-product').length != 0){
 		var variableSKU = (variableSKU = () =>{
