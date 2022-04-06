@@ -409,12 +409,13 @@ $(document).ready(function(){
 	//Aplica o filtro automaticamente quando carregar a página
 	var getFilterFromParms = (function(){
 		let searchParams = new URLSearchParams(window.location.search),
-			orderFilter = searchParams.get('O');
+			orderFilter = searchParams.get('O'),
+			resultsWrap = $('.resultItemsWrapper > [id*=ResultItems_]');
 
 			if(orderFilter != undefined){
 				$('.orderByList > ul > li[data-order*='+ orderFilter +']').addClass('is--active');
 			}
-			if(checkPageType() != 'category'){
+			if(checkPageType() != 'category' && resultsWrap.length != 0){
 				getShelfProducts();
 			}
 	})();
