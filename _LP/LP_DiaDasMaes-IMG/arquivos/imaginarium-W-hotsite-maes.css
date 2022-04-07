@@ -7,12 +7,6 @@
 	--brand-color: #4AD6BE;
 }
 *{
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-	margin: 0rem;
-	padding: 0rem;
-	font-size: 1em;
-	font-weight: 400;
-	line-height: 1.5;
 	scroll-behavior: smooth;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
@@ -21,16 +15,62 @@
 ::before{
 	box-sizing: border-box;
 }
-.bold,
-b,
-strong{
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: 600 !important;
-}
 .uppercase{
 	text-transform: uppercase;
 }
+.center{
+	text-align: center;
+}
+body{
+	min-height: 100vh;
+	width: 100%;
+	padding: 0rem;
+	margin: 0rem;
+	position: relative;
+	overflow-x: hidden;
+}
 main.content.hotsite{
-
+	font-family: 'Montserrat', sans-serif;;
+}
+main.content.hotsite section#banner-topo{
+	min-height: fit-content;
+	background-color: #4D4D4D;
+	color: #FFFFFF;
+}
+main.content.hotsite section#banner-topo > .text-wrapper{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	grid-row-gap: 7rem;
+	row-gap: 7rem;
+}
+main.content.hotsite section#banner-topo > .text-wrapper > *{
+	flex: 1 1 100%;
+}
+main.content.hotsite section#banner-topo > .text-wrapper > h1{
+	font-size: 5.188rem;
+	margin: 0;
+}
+main.content.hotsite section#banner-topo > .text-wrapper > div.text > p{
+	font-size: 1.875rem;
+	font-weight: 600;
+	margin: 0 auto;
+	width: 70%;
+}
+main.content.hotsite section#banner-topo > .text-wrapper > ul.banner-menu{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin: 0;
+	padding: 1rem 0;
+	list-style: none;
+	background-color: var(--brand-color);
+	color: #000000;
+}
+main.content.hotsite section#banner-topo > .text-wrapper > ul.banner-menu > li{
+	font-size: 1.188rem;
+	font-weight: 600;
+	list-style: none;
+	display: inline-block;
 }
