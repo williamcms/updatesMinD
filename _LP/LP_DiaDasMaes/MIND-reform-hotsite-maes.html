@@ -37,7 +37,7 @@
 	<vtex:contentPlaceHolder id="metaTagsAdicionais" /> -->
 
 	<!-- Especifico da página -->
-	<link rel="stylesheet" type="text/css" href="./arquivos/MIND-reform-hotsite-diadasmaes.css" media="all" as="style" />
+	<link rel="stylesheet" type="text/css" href="./arquivos/MIND-reform-hotsite-diadasmaes.min.css" media="all" as="style" />
 	<script defer="true" type="text/javascript" src="./arquivos/MIND-reform-hotsite-diadasmaes.js"></script>
 </head>
 
@@ -45,6 +45,15 @@
 	<vtex:template id="MIND-reform-header" />
 
 	<main class="hotsite">
+		<div class="bannerTop">
+			<div class="desktop-view">
+				<vtex:contentPlaceHolder id="bannerDesktop"/>
+			</div>
+			<div class="mobile-view">
+				<vtex:contentPlaceHolder id="bannerMobile"/>
+			</div>
+		</div>
+
 		<div class="moodsDestaq pt-4 pb-5 slick-destaq">
 
 			<vtex:contentPlaceHolder id="moods-destaq"/>
@@ -53,40 +62,40 @@
 			<div class="item">
 				<a href="#" target="_self">
 					<figure>
-						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_A_min.jpg" alt="Mãe Organizadora" width="250" height="250" />
-						<figcaption class="center bold uppercase">Mãe Organizada</figcaption>
+						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_A_min.jpg" alt="Imagem exibindo um abajur" width="250" height="250" />
+						<figcaption class="center bold uppercase">Cuidar dos detalhes do decór é com ela mesma</figcaption>
 					</figure>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#" target="_self">
 					<figure>
-						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_B_min.jpg" alt="Mãe Anfitriã" width="250" height="250" />
-						<figcaption class="center bold uppercase">Mãe Anfitriã</figcaption>
+						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_B_min.jpg" alt="Imagem exibindo um conjunto de facas" width="250" height="250" />
+						<figcaption class="center bold uppercase">Anfitriã que ama a casa cheia</figcaption>
 					</figure>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#" target="_self">
 					<figure>
-						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_C_min.jpg" alt="Mãe Decoradora" width="250" height="250" />
-						<figcaption class="center bold uppercase">Mãe Decoradora</figcaption>
+						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_C_min.jpg" alt="Imagem exibindo folhas decorativas em uma parede" width="250" height="250" />
+						<figcaption class="center bold uppercase">Ama a originalidade do feito a mão</figcaption>
 					</figure>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#" target="_self">
 					<figure>
-						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_D_min.jpg" alt="Mãe de Planta" width="250" height="250" />
-						<figcaption class="center bold uppercase">Mãe de Planta</figcaption>
+						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_D_min.jpg" alt="Imagem exibindo vasos de plantas" width="250" height="250" />
+						<figcaption class="center bold uppercase">Tem um vaso para cada tipo de plantilha</figcaption>
 					</figure>
 				</a>
 			</div>
 			<div class="item">
 				<a href="#" target="_self">
 					<figure>
-						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_E_min.jpg" alt="Mãe Natural Decór" width="250" height="250" />
-						<figcaption class="center bold uppercase">Mãe Natural Decór</figcaption>
+						<img data-lazy="https://lojamindesigns.vteximg.com.br/arquivos/DiadasMães_home_destques_250x250_E_min.jpg" alt="Imagem exibindo um porta pincéis" width="250" height="250" />
+						<figcaption class="center bold uppercase">A que adora cada coisa em seu lugar</figcaption>
 					</figure>
 				</a>
 			</div>
@@ -99,7 +108,7 @@
 			<vtex:contentPlaceHolder id="slicker-todas-querem"/>
 
 			<!-- Placeholder cotent -->
-			<h2 class="center bold  pt-2 pb-2">Todas querem!</h2>
+			<h2 class="center bold  pt-2 pb-2">O DECÓR QUE NÃO PODE FALTAR</h2>
 			<div class="collectionWrapper slick-collections">
 				<div class="item">
 					<a href="#" target="_self">

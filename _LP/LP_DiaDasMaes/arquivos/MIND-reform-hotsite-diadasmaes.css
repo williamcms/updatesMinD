@@ -10,10 +10,11 @@ main.hotsite .moodsDestaq .slick-list div.item a{
 	text-decoration: none;
 }
 main.hotsite .moodsDestaq .slick-list div.item figure > img{
-	padding: 1rem;
+	padding: 1rem 2rem;
 }
 main.hotsite .moodsDestaq .slick-list div.item figure > figcaption{
 	font-family: Helvetica;
+	padding: 0 1rem;
 }
 main.hotsite .collections > h2,
 main.hotsite .has-shelf--default > h2{
@@ -46,5 +47,16 @@ main.hotsite .collections > .collectionWrapper img{
 @media screen and (max-width: 831px) and (orientation: portrait){
 	main.hotsite .moodsDestaq{
 		width: 100%;
+	}
+	main.hotsite .moodsDestaq .slick-list div.item.slick-center figure > figcaption{
+		opacity: 1;
+		transition: opacity 1s ease
+	}
+	main.hotsite .moodsDestaq .slick-list div.item:not(.slick-center) figure > figcaption{
+		opacity: 0;
+		transition: opacity 1s ease
+	}
+	main.hotsite .collections > h2, main.hotsite .has-shelf--default > h2{
+		padding: 0 1rem;
 	}
 }
