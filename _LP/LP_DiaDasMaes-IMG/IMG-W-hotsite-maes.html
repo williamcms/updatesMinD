@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
 
 <head>
-	<style>
-		img[alt~="Banner"] {
-			height: auto;
-			width: 100%;
-		}
-	</style>
+	<!-- Remover -->
+	<script language="javascript" src="https://io.vtex.com.br/front-libs/jquery/1.8.3/jquery-1.8.3.min.js?v=1.5.47.2456" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" media="all" as="style" />
+	<script defer="true" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<!-- Remover -->
 	<vtex.cmc:faviconImaginarium />
 
 	<script language="javascript" async="true" src="https://imaginarium.mais.social/sdk/vtex/loader.js" type="text/javascript"></script>
@@ -27,12 +26,7 @@
 	<!-- Especifico da página -->
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 	<link href="./arquivos/imaginarium-W-hotsite-maes.css" rel="stylesheet" />
-	<script defer="true" src="./arquivos/imaginarium-W-hotsite-maes.css" type="text/javascript"></script>
-
-	<!-- Remover -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" media="all" as="style" />
-	<script defer="true" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<!-- Remover -->
+	<script defer="true" src="./arquivos/imaginarium-W-hotsite-maes.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -41,33 +35,62 @@
 
 	<main class="content hotsite">
 		<section id="banner-topo" class="center">
-			<div class="text-wrapper">
+			<div class="wrapper">
 				<h1>Banner 1</h1>
 
 				<div class="text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p></div>
 
 				<ul class="banner-menu">
-					<li>DEPBAR1</li>
-					<li>DEPBAR2</li>
-					<li>DEPBAR3</li>
+					<li><a href="#">DEPBAR1</a></li>
+					<li><a href="#">DEPBAR2</a></li>
+					<li><a href="#">DEPBAR3</a></li>
 				</ul>
 			</div>
 		</section>
 
 		<section id="presentes-destaq">
-			<h2 class="uppercase">Presentes em destaque</h2>
-			<div class="slicker">
-				<a href="#"><img src="temp/Circulo Destaque.png" /></a>
-				<a href="#"><img src="temp/Circulo Destaque.png" /></a>
-				<a href="#"><img src="temp/Circulo Destaque.png" /></a>
-				<a href="#"><img src="temp/Circulo Destaque.png" /></a>
-				<a href="#"><img src="temp/Circulo Destaque.png" /></a>
+			<div class="wrapper">
+				<h2 class="uppercase center">Presentes em destaque</h2>
+				<div class="slicker">
+					<a href="#">
+						<figure>
+							<img src="temp/Circulo Destaque.png" />
+							<figcaption>Bandejas</figcaption>
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img src="temp/Circulo Destaque.png" />
+							<figcaption>Bandejas</figcaption>
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img src="temp/Circulo Destaque.png" />
+							<figcaption>Bandejas</figcaption>
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img src="temp/Circulo Destaque.png" />
+							<figcaption>Bandejas</figcaption>
+						</figure>
+					</a>
+					<a href="#">
+						<figure>
+							<img src="temp/Circulo Destaque.png" />
+							<figcaption>Bandejas</figcaption>
+						</figure>
+					</a>
+				</div>
 			</div>
 		</section>
 
 		<section id="presentes-vitrine__1">
-			<h2>Presentes para LoremIpsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+			<div class="wrapper center">
+				<h2 class="uppercase">Presentes para LoremIpsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+			</div>
 
 			<div class="vitrine">
 				<vtex:contentPlaceHolder id="vitrine-presentes-1" />
@@ -79,8 +102,10 @@
 		</section>
 
 		<section id="presentes-vitrine__2">
-			<h2>Presentes para LoremIpsum</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+			<div class="wrapper center">
+				<h2 class="uppercase">Presentes para LoremIpsum</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+			</div>
 
 			<div class="vitrine">
 				<vtex:contentPlaceHolder id="vitrine-presentes-2" />
