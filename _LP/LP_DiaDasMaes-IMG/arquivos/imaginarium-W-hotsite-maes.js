@@ -10,23 +10,31 @@ $(document).ready(function(){
 	if(isMobile()){
 		$('#banner-topo ul.banner-menu').slick({
 			dots: false,
-			arrows: false,
-			infinite: true,
+			arrows: true,
+			prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+			nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+			lazyLoad: 'ondemand',
+			accessibility: true,
+			swipeToSlide: true,
 			slidesToShow: 1,
-			slidesToScroll: 1,
+			slidesToScroll: 1
 		});
 	}
 	$('#presentes-destaq .slicker').slick({
 		dots: false,
-		arrows: false,
-		infinite: true,
+		arrows: true,
+		prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+		lazyLoad: 'ondemand',
+		accessibility: true,
+		swipeToSlide: true,
 		slidesToShow: 5,
 		slidesToScroll: 5,
 		responsive: [
 		{
 			breakpoint: 900,
 			settings: {
-				slidesToShow: 2,
+				slidesToShow: 1,
 				slidesToScroll: 1
 			}
 		}]

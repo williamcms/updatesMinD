@@ -37,8 +37,10 @@ main.content.hotsite *{
 	padding: 0;
 }
 main.content.hotsite img{
+	display: block;
 	max-width: 100%;
 	height: auto;
+	margin: 0 auto;
 }
 main.content.hotsite h2{
 	font-size: 1.625rem;
@@ -50,6 +52,36 @@ main.content.hotsite a{
 	color: inherit;
 	text-decoration: none;
 }
+main.content.hotsite .slick-slider .slick-arrow{
+	font-size: 0;
+	line-height: 0;
+	display: block;
+	width: auto;
+	height: auto;
+	margin-right: 0.5rem;
+	cursor: pointer;
+	color: transparent;
+	border: 0;
+	text-decoration: none;
+	background-color: transparent;
+	transform: translate(0, -50%);
+
+	position: absolute;
+	margin: auto 0;
+	border: solid #858585;
+	border-width: 0 0.3125rem 0.3125rem 0;
+	padding: 0.5rem;
+	top: 50%;
+	z-index: 1;
+}
+main.content.hotsite .slick-slider .slick-arrow.slick-prev{
+	transform: translate(0, -50%) rotate(135deg);
+	left: 1rem;
+}
+main.content.hotsite .slick-slider .slick-arrow.slick-next{
+	transform: translate(0, -50%) rotate(-45deg);
+	right: 1rem;
+}
 main.content.hotsite section#banner-topo{
 	min-height: fit-content;
 	background-color: #4D4D4D;
@@ -60,14 +92,15 @@ main.content.hotsite section#banner-topo > .wrapper{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	grid-row-gap: 7rem;
-	row-gap: 7rem;
+	grid-row-gap: 5rem;
+	row-gap: 5rem;
 }
 main.content.hotsite section#banner-topo > .wrapper > *{
 	flex: 1 1 100%;
 }
 main.content.hotsite section#banner-topo > .wrapper > h1{
 	font-size: 5.188rem;
+	padding: 2rem 0;
 	margin: 0;
 }
 main.content.hotsite section#banner-topo > .wrapper > div.text > p{
@@ -145,7 +178,7 @@ main.content.hotsite section#itens-faq > details > summary::after{
 	border-width: 10px 0 10px 20px;
 	border-color: transparent transparent transparent var(--brand-color);
 	transform: translateY(-50%);
-	transition: 0.2s ease-in-out;
+	transition: 0.5s ease-in-out;
 }
 main.content.hotsite section#itens-faq > details[open] > summary::after{
 	transform: rotate(90deg) translateX(-50%);
@@ -157,9 +190,46 @@ main.content.hotsite section#itens-faq > details > div{
 	border-radius: .5rem;
 	background-color: #ABABAB;
 	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 main.content.hotsite section#itens-faq > details[open] > div{
 	opacity: 1;
-	transition: opacity 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+main.content.hotsite .back-to-top_container{
+	padding: 1rem;
+}
+main.content.hotsite .back-to-top_container > .back-to-top{
+	padding: 1rem 1.5rem;
+	color: #fff;
+}
+@media screen and (max-width: 831px){
+	main.content.hotsite h2{
+		font-size: 1.4rem;
+	}
+	main.content.hotsite section#banner-topo > .wrapper{
+		display: initial;
+	}
+	main.content.hotsite section#banner-topo > .wrapper > h1{
+		font-size: 2.5rem;
+		padding: 1rem 0;
+	}
+	main.content.hotsite section#banner-topo > .wrapper > div.text > p{
+		font-size: 1rem;
+		font-weight: normal;
+		width: 100%;
+		padding: 1rem 0.5rem 2rem 0.5rem;
+	}
+	main.content.hotsite section#presentes-destaq{
+		padding: 1.7rem 0;
+	}
+	main.content.hotsite section#presentes-destaq > .wrapper, 
+	main.content.hotsite section#banner-baixo__flutuante, 
+	main.content.hotsite section#itens-faq{
+		width: 100%;
+	}
+	main.content.hotsite section#banner-baixo__flutuante,
+	main.content.hotsite section#itens-faq{
+		padding: 0 0.5rem;
+	}
 }
