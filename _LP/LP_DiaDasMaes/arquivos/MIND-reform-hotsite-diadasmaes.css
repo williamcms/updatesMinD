@@ -57,13 +57,13 @@ main.hotsite .collections > .collectionWrapper div.slick-slide{
 main.hotsite .collections > .collectionWrapper div.slick-slide > img{
 
 }
-main.hotsite .collections > .collectionWrapper div.slick-slide:not(.slick-center){
+/*main.hotsite .collections > .collectionWrapper div.slick-slide:not(.slick-center){
 	opacity: 0.8;
 }
 main.hotsite .collections > .collectionWrapper div.slick-active.slick-center{
 	opacity: 1;
 	transform: scale(1.08);
-}
+}*/
 main.hotsite .collections > .collectionWrapper img{
 
 }
@@ -72,14 +72,14 @@ main.hotsite .collections > .collectionWrapper img{
 	main.hotsite .moodsDestaq{
 		width: 100%;
 	}
-	main.hotsite .moodsDestaq .slick-list div.item.slick-center figure > figcaption{
+	/*main.hotsite .moodsDestaq .slick-list div.item.slick-center figure > figcaption{
 		opacity: 1;
 		transition: opacity 1s ease
 	}
 	main.hotsite .moodsDestaq .slick-list div.item:not(.slick-center) figure > figcaption{
 		opacity: 0;
 		transition: opacity 1s ease
-	}
+	}*/
 	main.hotsite .collections > h2, main.hotsite .has-shelf--default > h2{
 		padding: 0 1rem;
 	}

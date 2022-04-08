@@ -10,7 +10,7 @@ $(document).ready(function(){
 		accessibility: true,
 		infinite: true,
 		swipeToSlide: true,
-		centerMode: true,
+		centerMode: false,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		responsive: [
@@ -40,7 +40,7 @@ $(document).ready(function(){
 		accessibility: true,
 		infinite: true,
 		swipeToSlide: true,
-		centerMode: true,
+		centerMode: false,
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		responsive: [
