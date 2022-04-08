@@ -170,8 +170,6 @@ main.content.hotsite section#itens-faq > details > summary{
 main.content.hotsite section#itens-faq > details > summary::after{
 	content: '';
 	position: absolute;
-	width: 0;
-	height: 0;
 	right: 1.5rem;
 	top: 50%;
 	border-style: solid;
@@ -201,7 +199,118 @@ main.content.hotsite .back-to-top_container{
 }
 main.content.hotsite .back-to-top_container > .back-to-top{
 	padding: 1rem 1.5rem;
-	color: #fff;
+	color: #FFFFFF;
+}
+main.content.hotsite .prateleira.arrumado{
+	margin: 2rem 0 0 0;
+}
+main.content.hotsite .prateleira.arrumado > h2{
+	display: none;
+}
+main.content.hotsite .prateleira.arrumado > ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+main.content.hotsite .prateleira.arrumado > ul > li{
+	position: relative;
+	list-style: none;
+	flex: 0 1 20%;
+}
+main.content.hotsite .prateleira.arrumado > ul > li .highlight p:not(.flag.colecao---flag-template){
+	display: none;
+}
+main.content.hotsite .prateleira.arrumado > ul > li .data > h3{
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	color: #000000;
+
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 2rem;
+	line-height: 1.4em;
+	margin: 0.625rem 0.3125rem 0.3125rem 0;
+}
+main.content.hotsite .prateleira.arrumado > ul > li .data > .discount > .flag.off{
+	display: none;
+}
+main.content.hotsite .prateleira.arrumado > ul > li .data > .price > a > .newPrice{
+	font-size: 1.125rem;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--brand-color);
+}
+main.content.hotsite .prateleira.arrumado > ul > li .data > .price > a > .installment{
+	font-size: 0.75rem;
+	color: #858585;
+}
+main.content.hotsite .prateleira.arrumado > ul > li .quickview, 
+main.content.hotsite .prateleira.arrumado > ul > li .gift-list-wished, 
+main.content.hotsite .prateleira.arrumado > ul > li .gift-list-purchased, 
+main.content.hotsite .prateleira.arrumado > ul > li .brand, 
+main.content.hotsite .prateleira.arrumado > ul > li .gift-list-insert, 
+main.content.hotsite .prateleira.arrumado > ul > li .category,
+main.content.hotsite .prateleira.arrumado > ul > li .rnk-buy-button-normal > a{
+	display: none;
+}
+main.content.hotsite .prateleira.arrumado > ul > li .rnk-buy-button-normal{
+	min-height: 3.5rem;
+	margin: 0.625rem auto 0 auto;
+}
+main.content.hotsite .prateleira.arrumado > ul > li:hover .rnk-buy-button-normal > a{
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0.1875rem;
+	-webkit-transition: .2s;
+	-o-transition: .2s;
+	transition: .2s;
+	padding: 0.8125rem 0;
+	color: #000000;
+	font-weight: 600;
+	background-color: var(--brand-color);
+	border: 3px solid var(--brand-color);
+	font-size: 12px;
+	letter-spacing: .6px;
+}
+main.content.hotsite .prateleira.arrumado > ul > li:hover .rnk-buy-button-normal:hover > a{
+	background-color: transparent;
+	border: 3px solid var(--brand-color);
+}
+main.content.hotsite .prateleira.arrumado > button.moreProducts{
+	position: relative;
+	display: block;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1rem;
+	margin: 1.5rem auto 0 auto;
+	text-align: center;
+	background: #38AB98;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 15px;
+	padding: 0.5rem 2.5rem;
+}
+main.content.hotsite .prateleira.arrumado > button.moreProducts::after{
+	content: '\2B9E';
+	position: absolute;
+	right: 1rem;
+}
+main.content.hotsite .prateleira.arrumado > button.moreProducts:hover::after{
+	animation: 1s move-arrow-right infinite ease-in-out;
+}
+@keyframes move-arrow-right{
+	0%{
+		right: 1rem;
+	}
+	50%{
+		right: 0.5rem;
+	}
+	100%{
+		right: 1rem;
+	}
 }
 @media screen and (max-width: 831px){
 	main.content.hotsite h2{
