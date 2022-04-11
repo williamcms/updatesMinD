@@ -2104,15 +2104,13 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime:last-o
 	min-height: 8.313rem;
 	justify-content: space-between;
 }
+.has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(1):nth-last-child(3),
 .has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(3):nth-last-child(2){
-	min-height: 4.842rem;
+	min-height: 3.34187rem;
 }
 .has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(3):nth-last-child(3){
-	height: 3rem;
+	height: fit-content;
 	display: flex;
-}
-.has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(1):nth-last-child(3){
-	min-height: 7.654rem;
 }
 .has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__image--hover{
 	position: absolute;
@@ -2244,6 +2242,9 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime:last-o
 	margin-bottom: .5rem;
 	color: var(--gray);
 	font-style: italic;
+}
+.has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__flags{
+	min-height: 2.1875rem;
 }
 div.products > div.pager.top{
 	display: none;
