@@ -4,7 +4,14 @@
 //
 $(document).ready(function(){
 	'use strict';
-
+	//Addons
+	if(typeof(Array.prototype.first) === 'undefined'){
+		Object.defineProperty(Array.prototype, 'first', {
+			value() {
+				return this.find(e => true)     //or this.find(Boolean)
+			}
+		});
+	}
 	var copyText = (copyText = (text) =>{
 		navigator.clipboard.writeText(text);
 	});
