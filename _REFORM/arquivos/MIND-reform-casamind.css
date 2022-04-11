@@ -1846,6 +1846,7 @@ main.collection > .main-container > .infoWrapper .page-title > h1{
 	font-family: 'Didot';
 	text-transform: uppercase;
 	font-weight: 600;
+	word-spacing: .5rem;
 	color: var(--brand-color);
 }
 main.collection > .main-container > .infoWrapper .collection-description{
