@@ -1852,6 +1852,7 @@ main.collection > .main-container > .infoWrapper .page-title > h1{
 main.collection > .main-container > .infoWrapper .collection-description{
 	font-style: italic;
 	color: var(--dark);
+	padding: 0 12rem;
 }
 main.collection > .main-container > .collectionWrapper{
 	margin: 0 2rem;
@@ -2874,6 +2875,9 @@ footer .final-label__address{
 	}
 	/* Product page */
 	/*Collections Page*/
+	main.collection > .main-container > .infoWrapper .collection-description{
+		padding: 0;
+	}
 	main.collection > .main-container > .collectionWrapper{
 		margin: 1rem;
 	}
