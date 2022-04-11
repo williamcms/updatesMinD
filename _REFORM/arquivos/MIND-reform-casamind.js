@@ -301,17 +301,17 @@ $(document).ready(function(){
 		//Verifica se existe a variável da vtex que informa informações de categorias
 		//ou procura informações sobre a coleção, tentando distinguir entre as duas páginas.
 		//Após isso, atribui um indice para paginação e grava a o id referente a vitrine
-		if(typeof vtxctx == 'object' && vtxctx.categoryId != null){
+		if((partialSearchUrl.split('H%3a').length > 1)){
+			let h = partialSearchUrl.split('H%3a');
+				h = h[1].split('&PS', 1);
+			v.attr('data-collectionid', h.toString());
+			return 'collection';
+		}else if(typeof vtxctx == 'object' && vtxctx.categoryId != null && vtxctx.searchTerm != 'colecoes'){
 			v.attr('data-categoryid', vtxctx.categoryId);
 			//Adiciona um título para páginas de categoria e remove caracteres numéricos
 			//Móveis2 --> Móveis
 			t.text((vtxctx.categoryName).replace(/\d+/g, ''));
 			return 'category';
-		}else if((partialSearchUrl.split('H%3a').length > 1)){
-			let h = partialSearchUrl.split('H%3a');
-				h = h[1].split('&PS', 1);
-			v.attr('data-collectionid', h.toString());
-			return 'collection';
 		}else if($('.orderBy > select[onchange]').length != 0){
 			//Último recurso para identificar informações da coleção
 			let h = $('.orderBy > select[onchange]').attr('onchange').split('?PS', 1).toString();
