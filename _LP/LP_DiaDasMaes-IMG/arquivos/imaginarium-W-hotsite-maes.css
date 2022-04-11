@@ -130,6 +130,7 @@ main.content.hotsite section#presentes-destaq{
 	background-color: #EEEEEE;
 }
 main.content.hotsite section#presentes-destaq > .wrapper,
+main.content.hotsite section > .vitrine,
 main.content.hotsite section#banner-baixo__flutuante,
 main.content.hotsite section#itens-faq{
 	width: 70vw;
@@ -333,6 +334,7 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover::after{
 		padding: 1.7rem 0;
 	}
 	main.content.hotsite section#presentes-destaq > .wrapper, 
+	main.content.hotsite section > .vitrine,
 	main.content.hotsite section#banner-baixo__flutuante, 
 	main.content.hotsite section#itens-faq{
 		width: 100%;
