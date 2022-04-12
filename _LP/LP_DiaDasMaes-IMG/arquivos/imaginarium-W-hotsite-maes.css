@@ -234,6 +234,22 @@ main.content.hotsite .prateleira.arrumado > ul > li .data > h3{
 	line-height: 1.4em;
 	margin: 0.625rem 0.3125rem 0.3125rem 0;
 }
+main.content.hotsite .prateleira.arrumado > ul > li a.productImage{
+	position: relative;
+	display: block;
+}
+main.content.hotsite .prateleira.arrumado > ul > li a.productImage > .productImage--hover{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	transition: all .7s ease-in-out;
+}
+main.content.hotsite .prateleira.arrumado > ul > li a.productImage:hover > .productImage--hover{
+	opacity: 1;
+}
 main.content.hotsite .prateleira.arrumado > ul > li .data > .discount > .flag.off{
 	display: none;
 }
@@ -244,8 +260,12 @@ main.content.hotsite .prateleira.arrumado > ul > li .data > .price > a > .newPri
 	color: var(--brand-color);
 }
 main.content.hotsite .prateleira.arrumado > ul > li .data > .price > a > .installment{
+	display: inline-block;
 	font-size: 0.75rem;
 	color: #858585;
+	min-height: 0.938rem;
+	width: 5.313rem;
+	white-space: nowrap;
 }
 main.content.hotsite .prateleira.arrumado > ul > li .quickview, 
 main.content.hotsite .prateleira.arrumado > ul > li .gift-list-wished, 
@@ -293,6 +313,9 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts{
 	border: none;
 	border-radius: 15px;
 	padding: 0.5rem 2.5rem;
+}
+main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
+	filter: brightness(1.1);
 }
 @media screen and (max-width: 831px){
 	main.content.hotsite h2{
