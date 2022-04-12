@@ -130,10 +130,13 @@ main.content.hotsite section#presentes-destaq{
 	background-color: #EEEEEE;
 }
 main.content.hotsite section#presentes-destaq > .wrapper,
-main.content.hotsite section > .vitrine,
 main.content.hotsite section#banner-baixo__flutuante,
 main.content.hotsite section#itens-faq{
 	width: 70vw;
+	margin: 0 auto;
+}
+main.content.hotsite section > .vitrine{
+	width: 76vw;
 	margin: 0 auto;
 }
 main.content.hotsite section#presentes-destaq > .wrapper h2{
@@ -217,6 +220,13 @@ main.content.hotsite .prateleira.arrumado > ul > li{
 	position: relative;
 	list-style: none;
 	flex: 0 1 20%;
+	padding: 1rem;
+	border: 1px solid transparent;
+	border-radius: 0.375rem;
+	transition: all .5s ease;
+}
+main.content.hotsite .prateleira.arrumado > ul > li:hover{
+	border: 1px solid #CCCCCC;
 }
 main.content.hotsite .prateleira.arrumado > ul > li .highlight p:not(.flag.colecao---flag-template){
 	display: none;
