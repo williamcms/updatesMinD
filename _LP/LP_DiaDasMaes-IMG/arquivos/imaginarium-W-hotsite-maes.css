@@ -84,7 +84,9 @@ main.content.hotsite .slick-slider .slick-arrow.slick-next{
 }
 main.content.hotsite section#banner-topo{
 	min-height: fit-content;
-	background-color: #4D4D4D;
+	background-image: url('https://imaginarium.vteximg.com.br/arquivos/20220412_banner_LP.maes.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: #FFFFFF;
 }
 main.content.hotsite section#banner-topo > .wrapper{
@@ -92,28 +94,29 @@ main.content.hotsite section#banner-topo > .wrapper{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	grid-row-gap: 5rem;
-	row-gap: 5rem;
+	grid-row-gap: 4rem;
+	row-gap: 4rem;
 }
 main.content.hotsite section#banner-topo > .wrapper > *{
 	flex: 1 1 100%;
 }
 main.content.hotsite section#banner-topo > .wrapper > h1{
 	font-size: 5.188rem;
-	padding: 2rem 0;
+	font-weight: 900;
+	padding: 10rem 0 0 0;
 	margin: 0;
 }
 main.content.hotsite section#banner-topo > .wrapper > div.text > p{
-	font-size: 1.875rem;
-	font-weight: 600;
+	font-size: 1.5rem;
+	font-weight: 300;
 	margin: 0 auto;
-	width: 70%;
+	width: 57%;
 }
 main.content.hotsite section#banner-topo > .wrapper > ul.banner-menu{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	margin: 0;
+	margin: 0.6rem 0 0 0;
 	padding: 1rem 0;
 	list-style: none;
 	background-color: var(--brand-color);
