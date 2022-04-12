@@ -17,6 +17,7 @@
 	<vtex:metaTags />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Arquivos head desktop -->
 	<vtex:template id="img-includes-header" />
 	<vtex:template id="0-img-web-styles" />
 
@@ -33,6 +34,7 @@
 
 <body>
 	<vtex.cmc:imgicons />
+	<!-- Menu desktop -->
 	<div id="img-header"></div>
 
 	<main class="content hotsite">
@@ -111,7 +113,10 @@
 		</section>
 
 		<section id="banner-meio">
+			<!-- <vtex:contentPlaceHolder id="banner-meio" /> -->
+			<!-- Placeholder -->
 			<img src="https://imaginarium.vteximg.com.br/arquivos/Banner Meio.png" />
+			<!-- Placeholder -->
 		</section>
 
 		<section id="presentes-vitrine__2">
@@ -129,7 +134,10 @@
 		</section>
 
 		<section id="banner-baixo__flutuante">
+			<!-- <vtex:contentPlaceHolder id="banner-baixo-flutuante" /> -->
+			<!-- Placeholder -->
 			<img src="https://imaginarium.vteximg.com.br/arquivos/Banner Float.png" />
+			<!-- Placeholder -->
 		</section>
 
 		<section id="itens-faq">
@@ -158,10 +166,10 @@
 	<div id="img-footer"></div>
 
 	<div style="display: none">
-      <div class="main-search-wrapper hidden-bp-large inline-middle">
-        <vtex.cmc:fullTextSearchBox />
-      </div>
-    </div>
+	  <div class="main-search-wrapper hidden-bp-large inline-middle">
+		<vtex.cmc:fullTextSearchBox />
+	  </div>
+	</div>
 
 	<vtex.cmc:promocpg />
 
@@ -173,6 +181,12 @@
 	<vtex:template id="img-includes-footer-lid" />
 	<vtex:template id="0-img-scripts-react" />
 	<vtex:template id="0-img-web-scripts" />
+	<script>
+		$(window).load(function () {
+			const marginTop = $('header').height();
+			$('main.content').css({ marginTop });
+		})
+	</script>
 </body>
 
 </html>
