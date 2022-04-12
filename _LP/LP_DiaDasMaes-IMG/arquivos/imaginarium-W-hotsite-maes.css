@@ -208,7 +208,7 @@ main.content.hotsite .back-to-top_container > .back-to-top{
 	padding: 1rem 1.5rem;
 	color: #FFFFFF;
 }
-main.content.hotsite .prateleira.arrumado{
+main.content.hotsite .vitrine > .prateleira.arrumado{
 	margin: 2rem 0 0 0;
 }
 main.content.hotsite .prateleira.arrumado > h2{
@@ -359,5 +359,8 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 	main.content.hotsite section#banner-baixo__flutuante,
 	main.content.hotsite section#itens-faq{
 		padding: 0 0.5rem;
+	}
+	main.content.hotsite .prateleira.arrumado > ul > li{
+		flex: 0 1 45%;
 	}
 }
