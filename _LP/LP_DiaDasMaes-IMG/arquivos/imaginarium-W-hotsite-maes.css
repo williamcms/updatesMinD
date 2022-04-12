@@ -294,25 +294,6 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts{
 	border-radius: 15px;
 	padding: 0.5rem 2.5rem;
 }
-main.content.hotsite .prateleira.arrumado > button.moreProducts::after{
-	content: '\2B9E';
-	position: absolute;
-	right: 1rem;
-}
-main.content.hotsite .prateleira.arrumado > button.moreProducts:hover::after{
-	animation: 1s move-arrow-right infinite ease-in-out;
-}
-@keyframes move-arrow-right{
-	0%{
-		right: 1rem;
-	}
-	50%{
-		right: 0.5rem;
-	}
-	100%{
-		right: 1rem;
-	}
-}
 @media screen and (max-width: 831px){
 	main.content.hotsite h2{
 		font-size: 1.4rem;
