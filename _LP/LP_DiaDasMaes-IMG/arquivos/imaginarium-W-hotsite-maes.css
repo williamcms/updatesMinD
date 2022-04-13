@@ -131,6 +131,15 @@ main.content.hotsite section#banner-topo > .wrapper > ul.banner-menu li{
 	list-style: none;
 	display: inline-block;
 }
+@media screen and (min-width: 901px){
+	main.content.hotsite section#banner-topo > .wrapper > ul.banner-menu .slick-track{
+		max-width: 100vw;
+		display: flex;
+		justify-content: center;
+		grid-column-gap: 2rem;
+		column-gap: 2rem;
+	}
+}
 main.content.hotsite section#presentes-destaq{
 	max-width: 100vw;
 	padding: 3rem 0;
@@ -336,6 +345,9 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 	filter: brightness(1.1);
 }
 @media screen and (max-width: 831px){
+	main.content.hotsite{
+		margin-top: 10.25rem;
+	}
 	main.content.hotsite h2{
 		font-size: 1.4rem;
 	}

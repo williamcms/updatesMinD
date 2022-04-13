@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#banner-topo ul.banner-menu').slick({
+	$('#banner-topo .banner-menu').slick({
 		dots: false,
 		arrows: true,
 		prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
@@ -16,7 +16,8 @@ $(document).ready(function(){
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				centerMode: true
+				variableWidth: false,
+				centerMode: false
 			}
 		}]
 	});
@@ -34,7 +35,8 @@ $(document).ready(function(){
 		{
 			breakpoint: 900,
 			settings: {
-				slidesToShow: 1,
+				arrows: false,
+				slidesToShow: 2,
 				slidesToScroll: 1,
 				centerMode: true
 			}
