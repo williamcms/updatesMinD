@@ -7,14 +7,16 @@ $(document).ready(function(){
 		lazyLoad: 'ondemand',
 		accessibility: true,
 		swipeToSlide: true,
-		slidesToShow: 4,
+		slidesToShow: 5,
 		slidesToScroll: 1,
+		variableWidth: true,
 		responsive: [
 		{
 			breakpoint: 900,
 			settings: {
 				slidesToShow: 1,
-				slidesToScroll: 1
+				slidesToScroll: 1,
+				centerMode: true
 			}
 		}]
 	});
@@ -33,7 +35,8 @@ $(document).ready(function(){
 			breakpoint: 900,
 			settings: {
 				slidesToShow: 1,
-				slidesToScroll: 1
+				slidesToScroll: 1,
+				centerMode: true
 			}
 		}]
 	});
