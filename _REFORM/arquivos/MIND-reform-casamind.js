@@ -358,10 +358,9 @@ $(document).ready(function(){
 			url: urlBusca,
 			success: function(data){
 				if(!data){
-					console.log(urlBusca)
 					$(`button.seeMoreProducts[data-controls=${num}]`).fadeOut();
 				}else{
-					if(container.hasClass('has-shelf--default')){
+					if(container.find('button.seeMoreProducts').length > 0){
 						container.find('button.seeMoreProducts').before(data);
 					}else{
 						container.html(data);
@@ -394,7 +393,7 @@ $(document).ready(function(){
 	//Troca de página nas vitrines (opção paged)
 	var changeShelfPage = $('.resultItemsWrapper > .pager > ul.pages').on('click', 'li:not(.pgEmpty, .pgCurrent)', function(){
 		let v = $('.resultItemsWrapper'),
-			li = $('.resultItemsWrapper > .pager > ul.pages > li')
+			li = $('.resultItemsWrapper > .pager > ul.pages > li'),
 			s = $(this);
 
 		li.removeClass('pgCurrent');
