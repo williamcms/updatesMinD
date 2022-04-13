@@ -41,7 +41,8 @@ main.hotsite .moodsDestaq .slick-list div.item figure > figcaption > p{
 	padding: 0 1rem;
 }
 main.hotsite .collections > h2,
-main.hotsite .has-shelf--default > h2{
+main.hotsite .vitrine > h2,
+main.hotsite .vitrine > .products > h2{
 	font-family: 'Addictive';
 	color: var(--brand-color);
 	text-transform: uppercase;

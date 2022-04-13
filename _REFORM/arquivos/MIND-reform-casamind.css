@@ -2055,6 +2055,14 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime:last-o
 	margin: 0 auto;
 }
 .has-shelf--default > h2{
+	/*
+		Esse campo será usado para pegar a informação de id da coleção
+		Os títulos serão colocados por controle de placeholder
+	*/
+	display: none !important;
+}
+.vitrine > h2,
+.vitrine > .products > h2{
 	font-family: 'Helvetica';
 	text-align: center;
 	font-weight: 600;
@@ -2069,7 +2077,8 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime:last-o
 	column-gap: 2rem;
 	grid-row-gap: 2rem;
 	row-gap: 2rem;
-	margin: 2rem 2rem;
+	max-width: 70vw;
+	margin: 2rem auto;
 }
 .has-shelf--default > ul > li{
 	flex: 0 1 22%;
@@ -2572,6 +2581,7 @@ footer .final-label__address{
 }
 @media screen and (max-width: 1245px){
 	.has-shelf--default > ul{
+		max-width: 100%;
 		margin: 2rem 0rem;
 	}
 }
@@ -2983,6 +2993,7 @@ footer .final-label__address{
 		flex-wrap: wrap;
 		grid-row-gap: 1rem;
 		row-gap: 1rem;
+		max-width: 100%;
 		margin: 1.25rem 1.125rem;
 	}
 	.has-shelf--default > ul > li{
