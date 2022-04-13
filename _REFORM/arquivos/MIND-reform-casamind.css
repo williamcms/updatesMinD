@@ -698,6 +698,10 @@ blockquote::before{
 	opacity: .8;
 	right: 0;
 }
+.btn-brand{
+	color: var(--white);
+	background-color: var(--brand-color);
+}
 .btn-blue{
 	color: var(--white);
 	background-color: var(--blue);
