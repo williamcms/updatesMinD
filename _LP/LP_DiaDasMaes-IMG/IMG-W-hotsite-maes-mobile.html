@@ -5,8 +5,6 @@
 	<!-- Remover -->
 	<meta charset="utf-8">
 	<script language="javascript" src="https://io.vtex.com.br/front-libs/jquery/1.8.3/jquery-1.8.3.min.js?v=1.5.47.2456" type="text/javascript"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" media="all" as="style" />
-	<script defer="true" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<!-- Remover -->
 	<vtex:contentPlaceHolder id="page-title-head" />
 
@@ -29,6 +27,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
 	<link href="./arquivos/imaginarium-W-hotsite-maes.css" rel="stylesheet" />
 	<script defer="true" src="./arquivos/imaginarium-W-hotsite-maes.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" media="all" as="style" />
+	<script defer="true" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -173,7 +173,34 @@
 	<vtex:template id="Imaginarium-Mobile-Popup" />
 	<vtex:template id="Imaginarium-Mobile-Footer" />
 	<vtex:template id="Imaginarium-Minicart" />
-	<vtex:template id="Imaginarium-Mobile-Scripts" />
+	<!-- <vtex:template id="Imaginarium-Mobile-Scripts" /> -->
+	<script>
+		<vtex.cmc:freightValue  />
+	</script>
+
+	<script src="/arquivos/imaginarium-common-globals.js?v=24032022"></script> <!-- v=04022022 -->
+	<script src="/arquivos/imaginarium-mobile-general.js?v=112"></script>
+	<script src="/arquivos/imaginarium-common-minicart.js?v=101"></script>
+	<script src="/arquivos/imaginarium-common-wishlist.js?v=10012021:1"></script>
+
+	<script src="/arquivos/vtex-lazyload.min.js"></script>
+	<script src="/arquivos/jquery.mask.min.js"></script>
+
+	<script>
+		<vtex.cmc:MessageBar  />
+	</script>
+
+	<script>
+		$(window).on('load', function() {
+			$(".modal-cpg-higher #promoProducts").slick({
+				dots: false,
+				infinite: false,
+				prevArrow: '<button type="button" class="slick-prev"></button>',
+				nextArrow: '<button type="button" class="slick-next"></button>'
+			})
+		})
+	</script>
+	<!-- <vtex:template id="Imaginarium-Mobile-Scripts" /> -->
 	<script>
 		$(window).load(function () {
 			const marginTop = $('header').height();
