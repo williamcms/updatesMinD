@@ -15,7 +15,6 @@
 <article class="csm-shelf__product" data-id="$id" data-sku="$sku" data-department="$product.DepartmentName" data-category="$product.CategoryName" data-name="$product.Name" itemtype="http://schema.org/Product" itemscope>
 	<meta itemprop="sku" content="$sku" />
 	<meta itemprop="name" content="$title" />
-	<link itemprop="image" href="" />
 	<meta itemprop="description" content="$description" />
 	<div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
 		<meta itemprop="name" content="$brand" />
@@ -106,3 +105,15 @@
 		</div>
 	</section>
 </article>
+<script>
+	(function(){
+		let m = $('article[data-id="$id"]').find('meta[itemprop="sku"]'),
+			s = $('article[data-id="$id"]').find('.csm-shelf__image--static'),
+			h = $('article[data-id="$id"]').find('.csm-shelf__image--hover');
+
+		m.after(`<link itemprop="image" href="${s.find('img').attr('src')}" />`);
+
+		h.data('isempty') == 0 && 
+		m.after(`<link itemprop="image" href="${h.find('img').attr('src')}" />`);
+	})();
+</script>
