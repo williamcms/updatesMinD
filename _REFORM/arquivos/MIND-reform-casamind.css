@@ -317,8 +317,8 @@ input::placeholder{
 input:disabled,
 input[readonly],
 button:disabled{
-	background-color: #E9ECEF !important;
-	opacity: 1;
+	background-color: #E9ECEF;
+	opacity: .7;
 }
 [type=button]:not(:disabled), 
 [type=reset]:not(:disabled), 
@@ -700,7 +700,7 @@ blockquote::before{
 }
 .btn-brand{
 	color: var(--white);
-	background-color: var(--brand-color);
+	background-color: var(--brand-color) !important;
 }
 .btn-blue{
 	color: var(--white);

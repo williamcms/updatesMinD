@@ -358,7 +358,8 @@ $(document).ready(function(){
 			url: urlBusca,
 			success: function(data){
 				if(!data){
-					$(`button.seeMoreProducts[data-controls=${num}]`).fadeOut();
+					$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
+					$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 				}else{
 					if(container.find('button.seeMoreProducts').length > 0){
 						container.find('button.seeMoreProducts').before(data);
