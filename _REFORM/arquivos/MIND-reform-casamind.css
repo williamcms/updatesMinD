@@ -2107,10 +2107,10 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime:last-o
 	width: 100%;
 	color: #303030;
 	font-size: .763rem;
-	padding: 0 0.2rem;
+	padding: 0.5rem 0.2rem;
 	text-align: center;
 	text-transform: initial;
-	line-height: 2.813rem;
+	line-height: 1.5rem;
 	background: rgba(255, 255, 255, .49);
 	z-index: 2;
 }
