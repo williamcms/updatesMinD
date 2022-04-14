@@ -5,6 +5,7 @@
  */
 :root{
 	--brand-color: #4AD6BE;
+	--brand-color-darkened: #257D6D;
 }
 *{
 	scroll-behavior: smooth;
@@ -249,9 +250,10 @@ main.content.hotsite .prateleira.arrumado > ul > li .highlight p:not(.flag.colec
 	display: none;
 }
 main.content.hotsite .prateleira.arrumado > ul > li .data > h3{
-	text-transform: uppercase;
+	text-transform: initial;
 	font-size: 0.75rem;
 	color: #000000;
+	text-align: center;
 
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
@@ -280,16 +282,29 @@ main.content.hotsite .prateleira.arrumado > ul > li a.productImage:hover > .prod
 main.content.hotsite .prateleira.arrumado > ul > li .data > .discount > .flag.off{
 	display: none;
 }
+main.content.hotsite .prateleira.arrumado > ul > li .data > .vurdere-display-rating-sku{
+	margin: 0 auto;
+}
+main.content.hotsite .prateleira.arrumado > ul > li .data > .price{
+	text-align: center;
+}
+main.content.hotsite .prateleira.arrumado > ul > li .data > .price em{
+	font-style: normal;
+}
 main.content.hotsite .prateleira.arrumado > ul > li .data > .price > a > .newPrice{
 	font-size: 1.125rem;
 	font-weight: bold;
 	text-decoration: none;
-	color: var(--brand-color);
+	white-space: nowrap;
+	color: var(--brand-color-darkened);
+}
+main.content.hotsite .prateleira.arrumado > ul > li .data > .price > a > .newPrice > span{
+	display: none;
 }
 main.content.hotsite .prateleira.arrumado > ul > li .data > .price > a > .installment{
 	display: inline-block;
 	font-size: 0.75rem;
-	color: #858585;
+	color: #545454;
 	min-height: 0.938rem;
 	width: 5.313rem;
 	white-space: nowrap;
@@ -307,21 +322,23 @@ main.content.hotsite .prateleira.arrumado > ul > li .rnk-buy-button-normal{
 	min-height: 3.5rem;
 	margin: 0.625rem auto 0 auto;
 }
-main.content.hotsite .prateleira.arrumado > ul > li:hover .rnk-buy-button-normal > a{
-	display: block;
+main.content.hotsite .prateleira.arrumado > ul > li .rnk-buy-button-normal > a{
 	text-align: center;
 	cursor: pointer;
 	border-radius: 0.1875rem;
 	-webkit-transition: .2s;
 	-o-transition: .2s;
 	transition: .2s;
-	padding: 0.8125rem 0;
+	padding: 0.8125rem 0.29rem;
 	color: #000000;
 	font-weight: 600;
 	background-color: var(--brand-color);
 	border: 3px solid var(--brand-color);
 	font-size: 12px;
 	letter-spacing: .6px;
+}
+main.content.hotsite .prateleira.arrumado > ul > li:hover .rnk-buy-button-normal > a{
+	display: block;
 }
 main.content.hotsite .prateleira.arrumado > ul > li:hover .rnk-buy-button-normal:hover > a{
 	background-color: transparent;
@@ -377,7 +394,19 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 	main.content.hotsite section#itens-faq{
 		padding: 0 0.5rem;
 	}
+	main.content.hotsite section#presentes-vitrine__1 > .wrapper, 
+	main.content.hotsite section#presentes-vitrine__2 > .wrapper{
+		width: 90vw;
+	}
+	main.content.hotsite .vitrine > .prateleira.arrumado{
+		margin: 1rem 0 0 0;
+	}
 	main.content.hotsite .prateleira.arrumado > ul > li{
-		flex: 0 1 45%;
+		flex: 0 1 50%;
+	}
+	main.content.hotsite .prateleira.arrumado > ul > li .rnk-buy-button-normal > a{
+		display: block;
+		font-size: 0.625rem;
+		padding: 0.5125rem 0.29rem;
 	}
 }
