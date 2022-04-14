@@ -124,6 +124,7 @@ body{
 }
 main.content.hotsite{
 	font-family: 'Montserrat', sans-serif;
+	margin-top: 12.125rem !important;
 }
 main.content.hotsite *{
 	margin: 0;
@@ -246,7 +247,8 @@ main.content.hotsite section#presentes-destaq{
 main.content.hotsite section#presentes-destaq > .wrapper,
 main.content.hotsite section#banner-baixo__flutuante,
 main.content.hotsite section#itens-faq{
-	width: 70vw;
+	max-width: 70vw;
+	width: fit-content;
 	margin: 0 auto;
 }
 main.content.hotsite section > .vitrine{
@@ -277,9 +279,9 @@ main.content.hotsite section#itens-faq > details{
 }
 main.content.hotsite section#itens-faq > details > summary{
 	position: relative;
-	font-size: 1.2rem;
+	font-size: 1.2rem !important;
 	list-style: none;
-	padding: 1.2rem 0;
+	padding: 1.2rem 3rem 1.2rem 0;
 	border-radius: .5rem;
 	background-color: #DCDCDC;
 	text-align: center;
@@ -461,7 +463,7 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 }
 @media screen and (max-width: 831px){
 	main.content.hotsite{
-		margin-top: 10.25rem;
+		margin-top: 10.25rem !important;
 	}
 	main.content.hotsite h2{
 		font-size: 1.4rem;
