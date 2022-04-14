@@ -78,10 +78,10 @@
 			<a class="csm-shelf__link" href="$uri" title="$title">
 				#if($product.HasBestPrice)
 				<p class="csm-shelf__price--old">
-					De: <span>$price</span>
+					<span>$price</span>
 				</p>
 				<p class="csm-shelf__price--best">
-					Por: <strong itemprop="price">$bestPrice</strong>
+					<strong itemprop="price">$bestPrice</strong>
 				</p>
 				#else
 				<p class="csm-shelf__price--best">
@@ -93,7 +93,8 @@
 		#if($installmentsQuantity > 1)
 		<div class="csm-shelf__installments">
 			<p>
-				<strong class="csm-shelf__installments--quantity">$installmentsQuantity</strong>x de 
+				<strong class="csm-shelf__installments--quantity">$installmentsQuantity</strong>
+				<span>x de </span>
 				<strong class="csm-shelf__installments--value">$installmentsValue</strong>
 			</p>
 		</div>
