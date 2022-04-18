@@ -305,6 +305,7 @@ main.content.hotsite section#itens-faq > details[open] > summary::after{
 	transform: rotate(90deg) translateX(-50%);
 }
 main.content.hotsite section#itens-faq > details > div{
+	font-size: 1.1rem;
 	text-align: center;
 	margin-top: .5rem;
 	padding: 1.7rem;
