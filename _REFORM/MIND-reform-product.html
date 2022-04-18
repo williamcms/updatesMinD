@@ -4,94 +4,108 @@
 <head>
 	<vtex:template id="MIND-reform-head" />
 	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+
+	<vtex.cmc:productRichSnippets showFacebook="1"/>
+	<vtex.cmc:productRichSnippets Twitter="MinDesignsbr"/>
 </head>
 
 <body>
 	<vtex:template id="MIND-reform-header" />
 
+	<vtex.cmc:productRichSnippets showGoogle="1"/>
+
 	<main class="product">
 		<section class="csm-product">
-			<div class="csm-container">
-				<div class="csm-row">
-					<div class="csm-breadcrumbs">
-						<vtex.cmc:breadCrumb />
-					</div>
-					<div class="csm-product__images">
-						<div class="csm-flag">
-							<vtex.cmc:HightLight />
-						</div>
-						<div class="product-images">
-							<vtex.cmc:ProductImage zoom="off" />
-						</div>
-					</div>
-					<div class="csm-product__info">
-						<div class="product-name">
-							<vtex.cmc:productName />
-						</div>
-						<div id="vurdere-socialanchors"></div>
-						<select class="product-sku-selection"></select>
-						<div class="product-price">
-							<vtex.cmc:skuPrice />
-						</div>
-						<div class="price-quanty">
-							<div class="product-quantity-add">
-								<vtex.cmc:stockKeepingUnitAmountAndUnitSelection /> <label class="quantity-label">Quantidade</label></div>
-							<div class="product-buy"> <span class="btn btn-default btn-full btn-aqua btn-buy-prod" type="button" title="Comprar" style="display: none">Comprar</span>
-								<vtex.cmc:BuyButton />
-							</div>
-						</div>
-						<div id="addLista" display="none">
-							<vtex.cmc:GiftListInsertSkuV2 />
-						</div>
-						<ul class="product-aside-top sales-condition">
-							<li class="sale-conditions-item inline-middle"> <i class="sale-conditions-icon fa fa-refresh inline-middle"></i>
-								<p class="sale-conditions-description inline-middle"><strong>DEVOLUÇÃO GRATUITA*!</strong> <br />ISSO MESMO, DE GRAÇA</p>
-							</li>
-							<li class="sale-conditions-item inline-middle"> <i class="sale-conditions-icon fa fa-lock inline-middle"></i>
-								<p class="sale-conditions-description inline-middle">COMPRA <br /><strong>100% SEGURA</strong></p>
-							</li>
-						</ul>
-						<div id="csm-realidadeAumentada" style="display: none">
-							<button style="display: none">
-								<a href="#" rel="ar" id="botaoiOS">
-									<img/>Veja no seu ambiente este produto
-								</a>
-							</button>
 
-							<button style="display: none">
-								<a href="#" id="botaoAndroid">
-									Veja no seu ambiente este produto
-								</a>
-							</button>
+			<div class="breadcrumbs center">
+				<vtex.cmc:breadCrumb />
+			</div>
+
+			<div class="product-data">
+
+				<div class="product__images">
+					<div class="images">
+						<vtex.cmc:ProductImage zoom="on" />
+					</div>
+				</div>
+
+				<div class="product__info">
+					<div class="product-name">
+						<h1><vtex.cmc:productName /></h1>
+					</div>
+
+					<div id="vurdere-socialanchors"></div>
+
+					<select class="product-sku-selection"></select>
+
+					<vtex.cmc:skuSelection />
+
+					<div class="product-price">
+						<vtex.cmc:skuPrice />
+					</div>
+
+					<div class="price-quanty input-group">
+						<div class="product-quantity-add input-group-prepend">
+							<vtex.cmc:stockKeepingUnitAmountAndUnitSelection />
 						</div>
-						<div class="csm-dowload-pdf" style="display:none">
-							<a href="#" id="csm-pdf-to-download" download="" rel="noopener" title="manual do produto">
-								Download do manual
+						<div class="product-buy">
+							<vtex.cmc:BuyButton />
+						</div>
+					</div>
+
+					<div id="addLista" display="none">
+						<vtex.cmc:GiftListInsertSkuV2 />
+					</div>
+
+					<ul class="product-aside-top sales-condition">
+						<li class="sale-conditions-item inline-middle"> <i class="sale-conditions-icon fa fa-refresh inline-middle"></i>
+							<p class="sale-conditions-description inline-middle"><strong>DEVOLUÇÃO GRATUITA!</strong></p>
+						</li>
+						<li class="sale-conditions-item inline-middle"> <i class="sale-conditions-icon fa fa-lock inline-middle"></i>
+							<p class="sale-conditions-description inline-middle">COMPRA <strong>100% SEGURA</strong></p>
+						</li>
+					</ul>
+					<div id="csm-realidadeAumentada" style="display: none">
+						<button style="display: none">
+							<a href="#" rel="ar" id="botaoiOS">
+								<img/>Veja no seu ambiente este produto
 							</a>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ff2974" width="25px" height="25px">
-								<path d="M0 0h24v24H0z" fill="none" />
-								<path d="M11 5v5.59H7.5l4.5 4.5 4.5-4.5H13V5h-2zm-5 9c0 3.31 2.69 6 6 6s6-2.69 6-6h-2c0 2.21-1.79 4-4 4s-4-1.79-4-4H6z" />
-							</svg>
-						</div>
+						</button>
+
+						<button style="display: none">
+							<a href="#" id="botaoAndroid">
+								Veja no seu ambiente este produto
+							</a>
+						</button>
 					</div>
-					
-					 <div class="product-details">
-						<div class="product-details-contentss">
-							<div class="product-details-content specifications">
-								<h3 class="product-title-specifications">Especificações</h3>
-								<vtex.cmc:productSpecification />
-							</div>
-							
-							<div class="product-details-content description">
-								<h3 class="product-title-description">Descrição</h3>
-								<vtex.cmc:ProductDescription />
-							</div>
-						</div>
+					<div class="csm-dowload-pdf" style="display:none">
+						<a href="#" id="csm-pdf-to-download" download="" rel="noopener" title="manual do produto">
+							Download do manual
+						</a>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ff2974" width="25px" height="25px">
+							<path d="M0 0h24v24H0z" fill="none" />
+							<path d="M11 5v5.59H7.5l4.5 4.5 4.5-4.5H13V5h-2zm-5 9c0 3.31 2.69 6 6 6s6-2.69 6-6h-2c0 2.21-1.79 4-4 4s-4-1.79-4-4H6z" />
+						</svg>
 					</div>
-					
 				</div>
 			</div>
+			
+			 <div class="product-details">
+				<div class="product-details-contentss">
+					<div class="product-details-content specifications">
+						<h3 class="product-title-specifications">Especificações</h3>
+						<vtex.cmc:productSpecification />
+					</div>
+					
+					<div class="product-details-content description">
+						<h3 class="product-title-description">Descrição</h3>
+						<vtex.cmc:ProductDescription />
+					</div>
+				</div>
+			</div>
+				
 		</section>
+
 		<div class="csm-product-video"></div>
 			
 		<div id="vurdere-socialexpressions"></div>

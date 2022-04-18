@@ -623,12 +623,19 @@ $(document).ready(function(){
 		//Troca a imagem do produto por outra de tamanho maior
 		//É possivel trocar a dimensão no CMS > Configurações > Tipos de Arquivo,
 		//mas afeta todos os sites
-		(changeProductImage = () =>{
+		var changeProductImage = (changeProductImage = () =>{
 			$("#botaoZoom img").each(function() {
-				$(this).attr("src", $(this).attr("src").replace("-350-303", "-400-600"));
+				$(this).parents('a#botaoZoom').attr("rel", 
+					$(this).parents('a#botaoZoom').attr("rel").replace("-500-500", "-400-600"));
+				$(this).attr("src", $(this).attr("src").replace("-350-303", "-90-130"));
 			});
-		});
-		var realidadeAl = (function() {
+		})();
+		var changeProductImageExpanded = (changeProductImageExpanded = () =>{
+			let img = $('.image-zoom > .zoomPad > img#image-main');
+
+			img.attr("src", img.attr("src").replace("-500-500", "-400-600"));
+		})();
+		var realidadeAl = (function(){
 			let t = navigator.userAgent || navigator.vendor || window.opera, 
 			e = $(".value-field.3D-ios").text(), 
 			i = $(".value-field.3D-android").text(), 
