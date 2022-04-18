@@ -472,6 +472,10 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 #neoassist-widget-frame-1{
 	bottom: 2.3125rem !important;
 }
+#scroll-top{
+	right: 1.25rem !important;
+	bottom: 6.8125rem !important;
+}
 @media screen and (max-width: 831px){
 	main.content.hotsite{
 		margin-top: 10.25rem !important;
@@ -496,7 +500,7 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 		padding: 1.7rem 0;
 	}
 	main.content.hotsite section#presentes-destaq > .wrapper, 
-	main.content.hotsite section > .vitrine,
+	main.content.hotsite section.vitrine > .vitrine,
 	main.content.hotsite section#banner-baixo__flutuante, 
 	main.content.hotsite section#itens-faq{
 		max-width: 100%;
@@ -506,7 +510,7 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 	main.content.hotsite section#itens-faq{
 		padding: 0 0.5rem;
 	}
-	main.content.hotsite section#vitrine > .wrapper{
+	main.content.hotsite section.vitrine{
 		width: 90vw;
 	}
 	main.content.hotsite .vitrine > .prateleira.arrumado{
