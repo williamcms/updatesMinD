@@ -264,6 +264,7 @@ main.content.hotsite section#presentes-destaq > .wrapper .slicker figure{
 	padding: 1rem;
 }
 main.content.hotsite section#presentes-destaq > .wrapper .slicker figure > figcaption{
+	font-weight: 500;
 	margin-top: 1.5rem;
 }
 main.content.hotsite section.vitrine{
