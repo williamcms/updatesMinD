@@ -244,10 +244,6 @@ main.content.hotsite section#presentes-destaq{
 	background-color: #EEEEEE;
 	overflow: hidden;
 }
-main.content.hotsite section#presentes-destaq > .wrapper{
-	width: fit-content;
-}
-main.content.hotsite section#presentes-destaq > .wrapper,
 main.content.hotsite section#banner-baixo__flutuante,
 main.content.hotsite section#itens-faq{
 	max-width: 70vw;
@@ -259,6 +255,9 @@ main.content.hotsite section > .vitrine{
 }
 main.content.hotsite section#presentes-destaq > .wrapper h2{
 	margin: 0 0 1.4rem 0;
+}
+main.content.hotsite section#presentes-destaq > .wrapper .slicker .slick-track{
+	margin: 0 auto;
 }
 main.content.hotsite section#presentes-destaq > .wrapper .slicker figure{
 	text-align: center;
@@ -287,6 +286,10 @@ main.content.hotsite section#itens-faq > details > summary{
 	text-align: center;
 	cursor: pointer;
 }
+main.content.hotsite section#itens-faq > details > summary > *{
+	font-size: 1.2rem !important;
+	margin: 0;
+}
 main.content.hotsite section#itens-faq > details > summary::after{
 	content: '';
 	position: absolute;
@@ -304,7 +307,7 @@ main.content.hotsite section#itens-faq > details[open] > summary::after{
 main.content.hotsite section#itens-faq > details > div{
 	text-align: center;
 	margin-top: .5rem;
-	padding: .7rem;
+	padding: 1.7rem;
 	border-radius: .5rem;
 	background-color: #ABABAB;
 	opacity: 0;
@@ -313,6 +316,9 @@ main.content.hotsite section#itens-faq > details > div{
 main.content.hotsite section#itens-faq > details[open] > div{
 	opacity: 1;
 	transition: all 0.5s ease-in-out;
+}
+main.content.hotsite section#itens-faq > details > div > h3{
+	font-size: 1.4rem;
 }
 main.content.hotsite .back-to-top_container{
 	padding: 1rem;
