@@ -327,8 +327,18 @@ main.content.hotsite .back-to-top_container{
 	padding: 1rem;
 }
 main.content.hotsite .back-to-top_container > .back-to-top{
-	padding: 1rem 1.5rem;
 	color: #FFFFFF;
+	background: #38ab98;
+	font-size: 1rem;
+	padding: 1rem 1.5rem;
+	font-weight: 400;
+	margin-top: 1.5rem;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 0;
+	text-transform: uppercase;
 }
 main.content.hotsite .vitrine > .prateleira.arrumado{
 	margin: 2rem 0 0 0;
@@ -513,6 +523,10 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 	}
 	main.content.hotsite section.vitrine{
 		width: 90vw;
+	}
+	main.content.hotsite .back-to-top_container > .back-to-top{
+		margin-right: 1rem;
+		margin-left: 1rem;
 	}
 	main.content.hotsite .vitrine > .prateleira.arrumado{
 		margin: 1rem 0 0 0;
