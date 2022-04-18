@@ -267,12 +267,10 @@ main.content.hotsite section#presentes-destaq > .wrapper .slicker figure{
 main.content.hotsite section#presentes-destaq > .wrapper .slicker figure > figcaption{
 	margin-top: 1.5rem;
 }
-main.content.hotsite section#presentes-vitrine__1,
-main.content.hotsite section#presentes-vitrine__2{
+main.content.hotsite section.vitrine{
 	padding: 3rem 0;
 }
-main.content.hotsite section#presentes-vitrine__1 > .wrapper,
-main.content.hotsite section#presentes-vitrine__2 > .wrapper{
+main.content.hotsite section.vitrine{
 	width: 70vw;
 	margin: 0 auto;
 }
@@ -500,8 +498,7 @@ main.content.hotsite .prateleira.arrumado > button.moreProducts:hover{
 	main.content.hotsite section#itens-faq{
 		padding: 0 0.5rem;
 	}
-	main.content.hotsite section#presentes-vitrine__1 > .wrapper, 
-	main.content.hotsite section#presentes-vitrine__2 > .wrapper{
+	main.content.hotsite section#vitrine > .wrapper{
 		width: 90vw;
 	}
 	main.content.hotsite .vitrine > .prateleira.arrumado{
