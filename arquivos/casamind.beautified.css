@@ -11804,7 +11804,10 @@ body.home .main-featured .main-banner.owl-carousel {
 body.home .box-banner img {
     display: block;
     width: 100%;
-    height: auto
+    height: auto;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 body.home .ambientes h3 {
