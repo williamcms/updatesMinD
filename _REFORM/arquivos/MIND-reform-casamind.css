@@ -1859,6 +1859,8 @@ main.product .csm-product > .product-data{
 }
 main.product .csm-product > .product-data > .product__images #show{
 	display: flex;
+	grid-column-gap: .2rem;
+	column-gap: .2rem;
 }
 main.product .csm-product > .product-data > .product__images #show > #include{
 	order: 2;
@@ -1897,17 +1899,20 @@ main.product .csm-product > .product-data > .product__info .preco-a-vista.price-
 main.product .csm-product > .product-data > .product__info .quantitySelector .quantityText{
 	display: none !important;
 }
+main.product .csm-product > .product-data > .product__info .blocksContainer{
+	width: 28.047rem;
+}
 main.product .csm-product > .product-data > .product__info .buttonsContainer{
 	display: flex;
 	flex-direction: column;
 	grid-row-gap: .5rem;
 	row-gap: .5rem;
+	width: 100%;
 }
 main.product .csm-product > .product-data > .product__info .price-quanty.input-group label{
 	margin: 0;
 }
-main.product .csm-product > .product-data > .product__info .price-quanty.input-group input,
-main.product .csm-product > .product-data > .product__info #addLista > .icon{
+main.product .csm-product > .product-data > .product__info .input-group-prepend.icon{
 	font-size: 1.5rem;
 	color: var(--brand-color);
 	text-align: center;
@@ -1918,28 +1923,28 @@ main.product .csm-product > .product-data > .product__info #addLista > .icon{
 
 	justify-content: center;
 	align-items: center;
-
+}
+main.product .csm-product > .product-data > .product__info .price-quanty.input-group input{
+	text-align: center;
+	border: none;
 	-moz-appearance: textfield;
 }
 main.product .csm-product > .product-data > .product__info .price-quanty.input-group input::-webkit-outer-spin-button,
-main.product .csm-product > .product-data > .product__info .price-quanty.input-group input::-webkit-inner-spin-button {
+main.product .csm-product > .product-data > .product__info .price-quanty.input-group input::-webkit-inner-spin-button{
 	-webkit-appearance: none;
 }
-main.product .csm-product > .product-data > .product__info .product-buy,
-main.product .csm-product > .product-data > .product__info #addLista > .addButton{
+main.product .csm-product>.product-data>.product__info .input-group-prepend.icon + div{
 	text-align: center;
 	color: var(--white);
 	padding: .3rem 3.5rem;
-	width: 70%;
+	width: 100%;
 	background-color: var(--brand-color);
 	border-radius: 0 .25rem .25rem 0;
 }
-main.product .csm-product > .product-data > .product__info .product-buy:hover,
-main.product .csm-product > .product-data > .product__info #addLista > .addButton:hover{
+main.product .csm-product>.product-data>.product__info .input-group-prepend.icon + div:hover{
 	filter: brightness(.95);
 }
-main.product .csm-product > .product-data > .product__info .product-buy a,
-main.product .csm-product > .product-data > .product__info #addLista > .addButton a{
+main.product .csm-product>.product-data>.product__info .input-group-prepend.icon + div a{
 	text-decoration: none;
 }
 main.product .csm-product > .product-data > .product__info .product-buy{
@@ -1957,8 +1962,8 @@ main.product .csm-product > .product-data > .product__info .info-container{
 	flex-direction: column;
 	grid-column-gap: .5rem;
 	column-gap: .5rem;
-	margin: 1.5rem 0;
-	width: 26.7469rem;
+	margin-top: 1.5rem;
+	width: 100%;
 	background-color: var(--sand);
 	border-radius: 0.475rem;
 }
@@ -2001,6 +2006,43 @@ main.product .csm-product > .product-data > .product__info .info-container > .cs
 }
 main.product .csm-product > .product-data > .product__info .info-container > .csm-dowload-pdf a{
 	text-decoration: none;
+}
+main.product .csm-product > .product-data > .product__info .product-details{
+	margin-top: 1.5rem;
+}
+main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border: 0.0625rem solid var(--gray);
+	border-radius: 0.6rem;
+}
+main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas > h4{
+	border-bottom: 0.0625rem solid var(--gray);
+	text-align: center;
+	padding: 0.3rem;
+}
+main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas > table{
+	border: 0.0625rem solid var(--sand);
+	border-radius: 0.6rem;
+	overflow: hidden;
+}
+main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas > table tr{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas > table tr.even{
+	background-color: var(--sand);
+}
+main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas > table tr > .name-field,
+main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas > table tr > .value-field{
+	flex: 1 1 0px;
+	color: var(--dark);
+	padding: 0.2rem 0.5rem;
+}
+main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas > table tr > .name-field{
+	font-weight: 600;
 }
 /*Vurdere*/
 .vurdere-socialexpressions{

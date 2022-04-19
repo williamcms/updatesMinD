@@ -639,21 +639,35 @@ $(document).ready(function(){
 			let t = navigator.userAgent || navigator.vendor || window.opera, 
 			e = $(".value-field.3D-ios").text(), 
 			i = $(".value-field.3D-android").text(), 
-			o = $(".value-field.3D-ios").text(), 
 			s = $(".value-field.3D-desktop").text();
 
-			"" != o && $("#csm-realidadeAumentada").show(), 
-			"" != s && ($(".productAugmentedRealityBox").show(), 
-				$(".productAugmentedRealityBox").attr("src", s)), 
-			/android/i.test(t) && ($("#botaoAndroid").attr("href", i), 
-				$("#botaoAndroid").closest("button").show()), 
-			/iPad|iPhone|iPod/.test(t) && !window.MSStream && ($("#botaoiOS").attr("href", e), 
-			$("#botaoiOS").closest("button").show(), 
-			$(".productAugmentedRealityBox").hide());
+			if(s != "" && !isMobile()){
+				$("#botaoDesktop").attr("href", s);
+				$("#botaoDesktop").closest("span").show();
+			}else if(i != "" && /android/i.test(t)){
+				$("#botaoAndroid").attr("href", i);
+				$("#botaoAndroid").closest("span").show();
+			}else if(e != "" && !window.MSStream && /iPad|iPhone|iPod/.test(t)){
+				$("#botaoiOS").attr("href", e);
+				$("#botaoiOS").closest("span").show();
+			}else if(isMobile()){
+				$("#botaoAndroid").attr("href", i);
+				$("#botaoAndroid").closest("span").show();
+			}else{
+				return false;
+			}
+
+			$("#csm-realidadeAumentada").show()
 		})();
 		var pdfDowlond = (function() {
 			let t = $(".value-field.pdf-dowload").text();
-			"" != t && ($(".csm-dowload-pdf").show(), $("#csm-pdf-to-download").attr("href", t));
+
+			if(t != ""){
+				$(".csm-dowload-pdf").show();
+				$("#csm-pdf-to-download").attr("href", t);
+			}else{
+				$(".csm-dowload-pdf").remove();
+			}
 		})();
 	}
 	//Newsletter

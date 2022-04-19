@@ -44,61 +44,77 @@
 						<vtex.cmc:skuPrice />
 					</div>
 
-					<div class="buttonsContainer">
-						<div class="price-quanty input-group">
-							<div class="product-quantity-add input-group-prepend">
-								<vtex.cmc:stockKeepingUnitAmountAndUnitSelection />
+					<div class="blocksContainer">
+						<div class="buttonsContainer">
+							<div class="price-quanty input-group">
+								<div class="product-quantity-add input-group-prepend icon">
+									<vtex.cmc:stockKeepingUnitAmountAndUnitSelection />
+								</div>
+								<div class="product-buy">
+									<vtex.cmc:BuyButton />
+								</div>
 							</div>
-							<div class="product-buy">
-								<vtex.cmc:BuyButton />
+
+							<div id="addLista" class="input-group" display="none">
+								<div class="input-group-prepend icon">
+									<span class="fa-solid fa-list-check"></span>
+								</div>
+								<div class="addButton">
+									<vtex.cmc:GiftListInsertSkuV2 />
+								</div>
+							</div>
+
+							<div id="csm-realidadeAumentada" class="input-group" style="display: none">
+								<div class="input-group-prepend icon">
+									<span class="fa-solid fa-mobile-screen-button"></span>
+								</div>
+
+								<div class="arButton">
+									<span style="display: none">
+										<a href="#" rel="ar" id="botaoiOS">
+											<img/>Veja este produto em seu ambiente
+										</a>
+									</span>
+
+									<span style="display: none">
+										<a href="#" rel="ar" id="botaoAndroid">
+											Veja este produto em seu ambiente
+										</a>
+									</span>
+
+									<span style="display: none">
+										<a href="#" rel="ar" id="botaoDesktop">
+											Veja este produto em seu ambiente
+										</a>
+									</span>
+								</div>
 							</div>
 						</div>
 
-						<div id="addLista" class="input-group" display="none">
-							<div class="input-group-prepend icon">
-								<span class="fa-solid fa-list-check"></span>
+						<div class="product-details specifications text-left">
+							<vtex.cmc:productSpecification />
+						</div>
+
+						<div class="info-container center">
+							<ul class="sales-condition">
+								<li class="sale-conditions-item">
+									<span class="fa-solid fa-truck-arrow-right"></span>&#160;<span>DEVOLUÇÃO <strong>GRATUITA</strong>!</span>
+								</li>
+								<li class="sale-conditions-item">
+									<span class="fa-solid fa-shield"></span>&#160;<span>COMPRA <strong>100% SEGURA</strong></span>
+								</li>
+							</ul>
+							<div class="soldby uppercase">
+								<span>Produzido e entregue por&#160;</span><vtex.cmc:brandName/>
 							</div>
-							<div class="addButton">
-								<vtex.cmc:GiftListInsertSkuV2 />
+							<div class="csm-dowload-pdf" style="display:none">
+								<a href="#" id="csm-pdf-to-download" download="" rel="noopener">
+									Download do manual <span class="fa-solid fa-download"></span>
+								</a>
 							</div>
 						</div>
 					</div>
 
-					<div class="info-container center">
-						<ul class="sales-condition">
-							<li class="sale-conditions-item">
-								<span class="fa-solid fa-truck-arrow-right"></span>&#160;<span>DEVOLUÇÃO <strong>GRATUITA</strong>!</span>
-							</li>
-							<li class="sale-conditions-item">
-								<span class="fa-solid fa-shield"></span>&#160;<span>COMPRA <strong>100% SEGURA</strong></span>
-							</li>
-						</ul>
-						<div class="soldby uppercase">
-							<span>Produzido e entregue por&#160;</span><vtex.cmc:brandName/>
-						</div>
-						<div class="csm-dowload-pdf" style="display:none">
-							<a href="#" id="csm-pdf-to-download" download="" rel="noopener">
-								Download do manual <span class="fa-solid fa-download"></span>
-							</a>
-						</div>
-					</div>
-
-					<div id="csm-realidadeAumentada" style="display: none">
-						<button style="display: none">
-							<a href="#" rel="ar" id="botaoiOS">
-								<img/>Veja no seu ambiente este produto
-							</a>
-						</button>
-
-						<button style="display: none">
-							<a href="#" id="botaoAndroid">
-								Veja no seu ambiente este produto
-							</a>
-						</button>
-					</div>
-					<div class="product-details specifications">
-						<vtex.cmc:productSpecification />
-					</div>
 				</div>
 			</div>
 			
