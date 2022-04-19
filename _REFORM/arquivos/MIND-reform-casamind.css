@@ -1934,6 +1934,10 @@ main.product .csm-product > .product-data > .product__info #addLista > .addButto
 	background-color: var(--brand-color);
 	border-radius: 0 .25rem .25rem 0;
 }
+main.product .csm-product > .product-data > .product__info .product-buy:hover,
+main.product .csm-product > .product-data > .product__info #addLista > .addButton:hover{
+	filter: brightness(.95);
+}
 main.product .csm-product > .product-data > .product__info .product-buy a,
 main.product .csm-product > .product-data > .product__info #addLista > .addButton a{
 	text-decoration: none;
@@ -1954,6 +1958,7 @@ main.product .csm-product > .product-data > .product__info .info-container{
 	grid-column-gap: .5rem;
 	column-gap: .5rem;
 	margin: 1.5rem 0;
+	width: 26.7469rem;
 	background-color: var(--sand);
 	border-radius: 0.475rem;
 }
@@ -1965,19 +1970,30 @@ main.product .csm-product > .product-data > .product__info .info-container > *:f
 	border-radius: 0.475rem 0.475rem 0 0;
 }
 main.product .csm-product > .product-data > .product__info .info-container > *:not(:first-child,:last-child){
-	border-right: 0.475rem solid var(--gray);
-	border-left: 0.475rem solid var(--gray);
+	border-right: 0.0625rem solid var(--gray);
+	border-left: 0.0625rem solid var(--gray);
 }
 main.product .csm-product > .product-data > .product__info .info-container > *:last-child{
 	border-radius: 0 0 0.475rem 0.475rem;
 }
+main.product .csm-product > .product-data > .product__info .info-container > *:last-child:not(.csm-dowload-pdf){
+	border-right: 0.0625rem solid var(--gray);
+	border-bottom: 0.0625rem solid var(--gray);
+	border-left: 0.0625rem solid var(--gray);
+}
 main.product .csm-product > .product-data > .product__info .info-container > .sales-condition{
 	display: flex;
 	justify-content: space-around;
+	grid-column-gap: .5rem;
+	column-gap: .5rem;
 }
 main.product .csm-product > .product-data > .product__info .info-container > .soldby{
 	display: flex;
 	justify-content: center;
+}
+main.product .csm-product > .product-data > .product__info .info-container > .soldby > .brandName a{
+	color: var(--brand-color);
+	font-weight: 700;
 }
 main.product .csm-product > .product-data > .product__info .info-container > .csm-dowload-pdf{
 	background-color: var(--brand-color);
@@ -1985,6 +2001,10 @@ main.product .csm-product > .product-data > .product__info .info-container > .cs
 }
 main.product .csm-product > .product-data > .product__info .info-container > .csm-dowload-pdf a{
 	text-decoration: none;
+}
+/*Vurdere*/
+.vurdere-socialexpressions{
+	overflow: hidden;
 }
 /*Collections Page*/
 main.collection > .main-container > .infoWrapper{
