@@ -43,7 +43,7 @@ const ModalCpg = {
 		},
 
 		getShelfByCollection: function(collectionId) {
-			const fq = `fq=H:${1147}`;
+			const fq = `fq=H:${collectionId}`;
 			const sl = `sl=99c99f67-bb7b-4c64-a28d-37b8feeaa4bc`;
 			const sm = `sm=0`
 			const PS = `PS=99`;
