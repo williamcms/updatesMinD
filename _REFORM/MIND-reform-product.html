@@ -36,7 +36,7 @@
 
 					<div id="vurdere-socialanchors"></div>
 
-					<select class="product-sku-selection"></select>
+					<select class="product-sku-selection" style="display: none;"></select>
 
 					<vtex.cmc:skuSelection />
 
@@ -53,18 +53,29 @@
 						</div>
 					</div>
 
-					<div id="addLista" display="none">
-						<vtex.cmc:GiftListInsertSkuV2 />
+					<div id="addLista" class="input-group" display="none">
+						<div class="input-group-prepend icon">
+							<span class="fa-solid fa-gifts"></span>
+						</div>
+						<div class="addButton">
+							<vtex.cmc:GiftListInsertSkuV2 />
+						</div>
 					</div>
 
-					<ul class="product-aside-top sales-condition">
-						<li class="sale-conditions-item inline-middle"> <i class="sale-conditions-icon fa fa-refresh inline-middle"></i>
-							<p class="sale-conditions-description inline-middle"><strong>DEVOLUÇÃO GRATUITA!</strong></p>
-						</li>
-						<li class="sale-conditions-item inline-middle"> <i class="sale-conditions-icon fa fa-lock inline-middle"></i>
-							<p class="sale-conditions-description inline-middle">COMPRA <strong>100% SEGURA</strong></p>
-						</li>
-					</ul>
+					<div class="info-container">
+						<ul class="sales-condition">
+							<li class="sale-conditions-item">
+								<span class="fa-solid fa-truck-arrow-right"></span> <span><strong>DEVOLUÇÃO GRATUITA!</strong></span>
+							</li>
+							<li class="sale-conditions-item">
+								<span class="fa-solid fa-shield"></span> <span>COMPRA <strong>100% SEGURA</strong></span>
+							</li>
+						</ul>
+						<div class="soldby uppercase">
+							Produzido e entregue por <vtex.cmc:brandName/>
+						</div>
+					</div>
+
 					<div id="csm-realidadeAumentada" style="display: none">
 						<button style="display: none">
 							<a href="#" rel="ar" id="botaoiOS">
@@ -79,38 +90,35 @@
 						</button>
 					</div>
 					<div class="csm-dowload-pdf" style="display:none">
-						<a href="#" id="csm-pdf-to-download" download="" rel="noopener" title="manual do produto">
-							Download do manual
+						<a href="#" id="csm-pdf-to-download" download="" rel="noopener">
+							Download do manual <span class="fa-solid fa-download"></span>
 						</a>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ff2974" width="25px" height="25px">
-							<path d="M0 0h24v24H0z" fill="none" />
-							<path d="M11 5v5.59H7.5l4.5 4.5 4.5-4.5H13V5h-2zm-5 9c0 3.31 2.69 6 6 6s6-2.69 6-6h-2c0 2.21-1.79 4-4 4s-4-1.79-4-4H6z" />
-						</svg>
+					</div>
+					<div class="product-details specifications">
+						<vtex.cmc:productSpecification />
 					</div>
 				</div>
 			</div>
 			
-			 <div class="product-details">
-				<div class="product-details-contentss">
-					<div class="product-details-content specifications">
-						<h3 class="product-title-specifications">Especificações</h3>
-						<vtex.cmc:productSpecification />
-					</div>
-					
-					<div class="product-details-content description">
-						<h3 class="product-title-description">Descrição</h3>
-						<vtex.cmc:ProductDescription />
-					</div>
-				</div>
+			<div class="product-details description">
+				<h4 class="product-title-description">Descrição</h4>
+				<vtex.cmc:ProductDescription />
 			</div>
 				
 		</section>
 
 		<div class="csm-product-video"></div>
+
+		<div id="smarthint-position-1"></div>
 			
 		<div id="vurdere-socialexpressions"></div>
 		<div id="vurdere-socialreviews"></div>
 		<div id="vurdere-socialdisplays"></div>
+
+		<div id="smarthint-position-2"></div>
+		<div id="smarthint-position-3"></div>
+		<div id="smarthint-position-4"></div>
+		<div id="smarthint-position-5"></div>
 	</main>
 
 	<vtex:template id="MIND-reform-footer" />

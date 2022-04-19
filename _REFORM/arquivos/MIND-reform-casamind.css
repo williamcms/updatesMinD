@@ -1895,25 +1895,36 @@ main.product .csm-product > .product-data > .product__info .quantitySelector .qu
 main.product .csm-product > .product-data > .product__info .price-quanty.input-group label{
 	margin: 0;
 }
-main.product .csm-product > .product-data > .product__info .price-quanty.input-group input{
+main.product .csm-product > .product-data > .product__info .price-quanty.input-group input,
+main.product .csm-product > .product-data > .product__info #addLista > .icon{
 	font-size: 1.5rem;
 	text-align: center;
 	height: 2.84938rem;
 	width: 5rem;
-	border-color: var(--brand-color);
+	border: .0625rem solid var(--brand-color);
 	border-radius: .25rem 0 0 .25rem;
+
+	justify-content: center;
+	align-items: center;
+	
 	-moz-appearance: textfield;
 }
 main.product .csm-product > .product-data > .product__info .price-quanty.input-group input::-webkit-outer-spin-button,
 main.product .csm-product > .product-data > .product__info .price-quanty.input-group input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 }
-main.product .csm-product > .product-data > .product__info .product-buy{
-	font-size: 1.5rem;
+main.product .csm-product > .product-data > .product__info .product-buy,
+main.product .csm-product > .product-data > .product__info #addLista > .addButton{
 	color: var(--white);
 	padding: .3rem 3.5rem;
 	background-color: var(--brand-color);
 	border-radius: 0 .25rem .25rem 0;
+}
+main.product .csm-product > .product-data > .product__info .product-buy{
+	font-size: 1.5rem;
+}
+main.product .csm-product > .product-data > .product__info #addLista > .addButton{
+	font-size: 1rem;
 }
 /*Collections Page*/
 main.collection > .main-container > .infoWrapper{
