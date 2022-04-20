@@ -23,7 +23,7 @@
 
 			<div class="product-data">
 
-				<div class="product__images">
+				<div class="product__images" aria-hidden="true">
 					<div class="images">
 						<vtex.cmc:ProductImage zoom="on" />
 					</div>
@@ -31,18 +31,25 @@
 
 				<div class="product__info">
 					<div class="product-name">
-						<h1><vtex.cmc:productName /></h1>
+						<h1 tabindex="0"><vtex.cmc:productName /></h1>
 					</div>
 
 					<div id="vurdere-socialanchors"></div>
 
 					<select class="product-sku-selection" style="display: none;"></select>
 
-					<vtex.cmc:skuSelection />
-
-					<div class="product-price">
+					<div class="product-price" tabindex="0">
 						<vtex.cmc:skuPrice />
 					</div>
+
+					<ul class="sales-condition">
+						<li class="sale-conditions-item">
+							<span class="fa-solid fa-truck-arrow-right"></span>&#160;<span>DEVOLUÇÃO <strong>GRATUITA</strong>!</span>
+						</li>
+						<li class="sale-conditions-item">
+							<span class="fa-solid fa-shield"></span>&#160;<span>COMPRA <strong>100% SEGURA</strong></span>
+						</li>
+					</ul>
 
 					<div class="blocksContainer">
 						<div class="buttonsContainer">
@@ -56,35 +63,32 @@
 							</div>
 
 							<div id="addLista" class="input-group" display="none">
-								<div class="input-group-prepend icon">
+								<div class="addButton icon" title="Adicionar à lista de desejos">
 									<span class="fa-solid fa-list-check"></span>
-								</div>
-								<div class="addButton">
 									<vtex.cmc:GiftListInsertSkuV2 />
 								</div>
 							</div>
 
 							<div id="csm-realidadeAumentada" class="input-group" style="display: none">
-								<div class="input-group-prepend icon">
-									<span class="fa-solid fa-mobile-screen-button"></span>
-								</div>
-
-								<div class="arButton">
+								<div class="arButton icon" title="Veja este produto em seu ambiente">
 									<span style="display: none">
 										<a href="#" rel="ar" id="botaoiOS">
-											<img/>Veja este produto em seu ambiente
+											<span class="fa-solid fa-mobile-notch"></span>
+											Veja este produto em seu ambiente
 										</a>
 									</span>
 
 									<span style="display: none">
 										<a href="#" rel="ar" id="botaoAndroid">
+											<span class="fa-solid fa-mobile-screen-button"></span>
 											Veja este produto em seu ambiente
 										</a>
 									</span>
 
 									<span style="display: none">
 										<a href="#" rel="ar" id="botaoDesktop">
-											Veja este produto em seu ambiente
+											<span class="fa-solid fa-computer"></span>
+											Baixe o arquivo e veja este produto em seu ambiente
 										</a>
 									</span>
 								</div>
@@ -96,14 +100,6 @@
 						</div>
 
 						<div class="info-container center">
-							<ul class="sales-condition">
-								<li class="sale-conditions-item">
-									<span class="fa-solid fa-truck-arrow-right"></span>&#160;<span>DEVOLUÇÃO <strong>GRATUITA</strong>!</span>
-								</li>
-								<li class="sale-conditions-item">
-									<span class="fa-solid fa-shield"></span>&#160;<span>COMPRA <strong>100% SEGURA</strong></span>
-								</li>
-							</ul>
 							<div class="soldby uppercase">
 								<span>Produzido e entregue por&#160;</span><vtex.cmc:brandName/>
 							</div>

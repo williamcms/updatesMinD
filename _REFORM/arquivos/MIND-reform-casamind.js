@@ -641,9 +641,19 @@ $(document).ready(function(){
 			i = $(".value-field.3D-android").text(), 
 			s = $(".value-field.3D-desktop").text();
 
+			// Arruma a estilização visto que alguns elementos serão/estão ocultos
+			$.each($('.group.Informacao-Adicional tr').find('th:visible'), function(i){
+				if(i % 2 == 0){
+					$(this).parents('tr').addClass('even')
+				}else{
+					$(this).parents('tr').removeClass('even')
+				}
+			});
+
 			if(s != "" && !isMobile()){
-				$("#botaoDesktop").attr("href", s);
-				$("#botaoDesktop").closest("span").show();
+				// Removido por hora para entender se será utilizado
+				// $("#botaoDesktop").attr("href", s);
+				// $("#botaoDesktop").closest("span").show();
 			}else if(i != "" && /android/i.test(t)){
 				$("#botaoAndroid").attr("href", i);
 				$("#botaoAndroid").closest("span").show();
