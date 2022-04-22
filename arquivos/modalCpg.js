@@ -3,7 +3,7 @@ const ModalCpg = {
 	itemsAdded: [],
 	promo: null,
 	previousOrderForm: {},
-	
+
 	selectors: {
 		overlay: '#e-modalCpg',
 		content: '.e-modalCpg__content',
@@ -29,7 +29,20 @@ const ModalCpg = {
 
 		getProductBySku: function(sku) {
 			const fq = `fq=skuId:${sku}`;
+			const url = `/api/catalog_system/pub/products/search/?${fq}`;
 
+			$.ajax({
+				url,
+				success: function(data) {
+					if (!data.length) return;
+
+					ModalCpg.build.setProduct(data[0], sku);
+				}
+			});
+		},
+
+		getProductById: function(id) {
+			const fq = `fq=productId:${id}`;
 			const url = `/api/catalog_system/pub/products/search/?${fq}`;
 
 			$.ajax({
@@ -57,19 +70,17 @@ const ModalCpg = {
 				success: function(data) {
 					if (!data) return;
 
-					$(ModalCpg.selectors.shelf).append(data);
+					$('.e-modalCpg').append(`<div class="temp-collection">${data}</div>`);
 
 					const ids = [];
 
-					$('.e-modalCpg *[data-skuid]').each((_, element) => {
+					$('.e-modalCpg .temp-collection *[data-skuid]').each((_, element) => {
 						const skuId = $(element).data('skuid');
 
 						ids.push(skuId);
 					})
 
-					$(ModalCpg.selectors.shelf).empty();
-
-					ModalCpg.build.slickShelf();
+					$('.temp-collection').remove();
 
 					ids.forEach(id => {
 						ModalCpg.api.getProductBySku(id);
@@ -109,14 +120,12 @@ const ModalCpg = {
 			});
 		},
 
-		setProduct: function(product) {
+		setProduct: function(product, sku) {
 			const floatToCurrency = (price, base = 1) => `R$ ${(price/base).toFixed(2).toString().replace('.', ',')}`
 
-			const item = product.items[0];
+			const item = sku ? product.items.find((item) => item.itemId == sku) : product.items[0];
 
 			if (!item.sellers[0].commertialOffer.AvailableQuantity) return;
-
-			ModalCpg.build.unslickShelf();
 
 			const skuId = item.itemId;
 			const imageUrl = item.images[0].imageUrl;
@@ -141,11 +150,15 @@ const ModalCpg = {
 					<span class="modalShelfItem__installments">Ou ${installments}x ${installmentsPrice}</span>
 				</li>
 			`);
-
-			ModalCpg.build.slickShelf();
 		},
 
 		setShelfContent: function() {
+			ModalCpg.promo.skus.forEach(function({ id }) {
+				ModalCpg.api.getProductBySku(id);
+			});
+			ModalCpg.promo.products.forEach(function({ id }) {
+				ModalCpg.api.getProductById(id);
+			});
 			ModalCpg.promo.collections.forEach(function({ id }) {
 				ModalCpg.api.getShelfByCollection(id);
 			});
@@ -219,7 +232,7 @@ const ModalCpg = {
 				if (
 					!ModalCpg.previousOrderForm
 					|| ModalCpg.previousOrderForm.items.length >= orderForm.items.length
-					|| orderForm.value < ModalCpg.promo.totalValueFloor
+					|| orderForm.value/100 < ModalCpg.promo.totalValueFloor
 				) return;
 
 				setTimeout(ModalCpg.open, 5000);
@@ -251,7 +264,7 @@ const ModalCpg = {
 	open: function() {
 		$(ModalCpg.selectors.overlay).show();
 		$('body').css('overflow', 'hidden');
-		$('#e-modalCpg-shelf').slick('refresh');
+		ModalCpg.build.slickShelf();
 	},
 
 	close: function() {

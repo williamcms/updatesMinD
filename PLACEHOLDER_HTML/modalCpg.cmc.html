@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    window.modalCpgConfig = {
+        enabled: true, // true - LIGADO | false - DESLIGADO
+        promotionId: 'd54f9d56-1f91-44da-9c9c-4391a77a24c1', // ID da promoção relacionada ao Modal
+        modalTitle: 'Esse descontão é pra você!',  // Título do modal
+        addButtonText: 'Eu quero!', // Texto do botão adicionar à sacola
+        refuseButtonText: 'Não quero, obrigado!', // Texto do botão de recusar
+    }
+</script>
+<div id="e-modalCpg" class="e-modalCpg" style="display: none">
+    <div class="e-modalCpg__content">
+        <span id="e-modalCpg-close" class="e-modalCpg__closeButton"></span>
+
+        <h2>[Título]</h2>
+        <p>Escolha um desses produtos para ganhar <strong><span id="e-modalCpg-discount">[desconto]</span> OFF!</strong></p>
+
+        <ul id="e-modalCpg-shelf"></ul>
+
+        <button id="e-modalCpg-add">
+            <span>[addButtonText]</span>
+            <div class="icon">
+                <span></span>
+            </div>
+        </button>
+        <a href="#" id="e-modalCpg-refuse">[refuseButtonText]</a>
+    </div>
+</div>
