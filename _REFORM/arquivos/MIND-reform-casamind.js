@@ -672,7 +672,7 @@ $(document).ready(function(){
 		var changeProductImageExpanded = (changeProductImageExpanded = () =>{
 			let img = $('.image-zoom > .zoomPad > img#image-main');
 
-			img.attr("src", img.attr("src").replace("-500-500", "-400-600"));
+			img.attr("src", img.attr("src").replace("-500-500", "-500-750"));
 		})();
 		var realidadeAl = (function(){
 			let t = navigator.userAgent || navigator.vendor || window.opera, 

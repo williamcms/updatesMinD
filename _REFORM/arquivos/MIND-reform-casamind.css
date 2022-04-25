@@ -1911,8 +1911,8 @@ main.product .csm-product > .product-data > .product__images #show > .thumbs > .
 	order: 1;
 	max-width: 5.625rem;
 	min-width: 5.625rem;
-	min-height: 37.5rem;
-	max-height: 37.5rem;
+	min-height: 46.875rem;
+	max-height: 46.875rem;
 }
 main.product .csm-product > .product-data > .product__images #show > .thumbs > .slick-list{
 	padding: 0 !important;
@@ -2070,6 +2070,11 @@ main.product .csm-product > .product-data > .product__info .price-quanty.input-g
 main.product .csm-product > .product-data > .product__info .input-group-prepend.icon{
 	padding: 0 .5rem;
 }
+main.product .csm-product > .product-data > .product__info .input-group-prepend.icon > a[role="button"]{
+	text-decoration: none;
+	cursor: pointer;
+	user-select: none;
+}
 main.product .csm-product > .product-data > .product__info .input-group-prepend.icon + div{
 	position: relative;
 	text-align: center;
@@ -2081,9 +2086,6 @@ main.product .csm-product > .product-data > .product__info .input-group-prepend.
 main.product .csm-product > .product-data > .product__info .input-group-prepend.icon + div:hover,
 main.product .csm-product > .product-data > .product__info .addtoCartButton.icon:hover{
 	filter: brightness(.95);
-}
-main.product .csm-product > .product-data > .product__info .input-group-prepend.icon + div a{
-	text-decoration: none;
 }
 main.product .csm-product > .product-data > .product__info .product-buy{
 	font-size: 1.5rem;
