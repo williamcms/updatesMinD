@@ -3264,6 +3264,9 @@ footer .final-label__address{
 		top: 3.75rem !important;
 		height: calc(100% - 3.75rem) !important;
 	}
+	.smarthint .col-main{
+		float: none !important;
+	}
 	/* Product page */
 	/*Collections Page*/
 	main.collection > .main-container > .infoWrapper .collection-description{
