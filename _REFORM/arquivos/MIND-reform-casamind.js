@@ -599,6 +599,12 @@ $(document).ready(function(){
 				}
 			}
 		});
+		var changeQtyBuyButton = $('.product-quantity-add > a[role="button"]').on('click', function(){
+			let input = $(this).parent().find('input[type="number"]');
+			
+			$(this).hasClass('plus') && input.get(0).stepUp() ||
+			$(this).hasClass('minus') && input.val() > 1 && input.get(0).stepDown();
+		});
 		var availableAlert = (function() {
 			try{
 				let t = skuJson.productId;

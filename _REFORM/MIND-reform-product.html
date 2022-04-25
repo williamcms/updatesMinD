@@ -55,11 +55,19 @@
 						<div class="buttonsContainer">
 							<div class="price-quanty input-group">
 								<div class="product-quantity-add input-group-prepend icon">
+									<a role="button" class="minus">-</a>
 									<vtex.cmc:stockKeepingUnitAmountAndUnitSelection />
+									<a role="button" class="plus">+</a>
 								</div>
 								<div class="product-buy">
 									<vtex.cmc:BuyButton />
 								</div>
+							</div>
+
+							<div class="input-group">
+								<button class="addtoCartButton icon" title="Adicionar à sacola">
+									<span class="fa-solid fa-cart-plus"></span>
+								</button>
 							</div>
 
 							<div id="addLista" class="input-group" display="none">
@@ -96,6 +104,7 @@
 						</div>
 
 						<div class="product-details specifications text-left">
+							<div class="info center"><h4 class="bold uppercase">Informação Adicional</h4></div>
 							<vtex.cmc:productSpecification />
 						</div>
 
