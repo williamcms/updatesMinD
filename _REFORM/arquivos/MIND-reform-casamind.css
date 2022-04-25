@@ -2214,7 +2214,7 @@ main.product .csm-product > .description{
 	margin: 0;
 }
 .vurdere-socialexpressions{
-	overflow: hidden;
+	clear: both;
 }
 /*Collections Page*/
 main.collection > .main-container > .infoWrapper{
@@ -2813,6 +2813,9 @@ footer .news-footer .enviarForm:hover{
 	box-shadow: 0.1875rem 0.1875rem 0 var(--brand-color);
 }
 /* Footer */
+footer{
+	clear: both;
+}
 footer .footer-wrapper{
 	margin: 0 !important;
 	float: initial;
