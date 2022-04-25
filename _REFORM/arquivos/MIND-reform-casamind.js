@@ -204,10 +204,9 @@ $(document).ready(function(){
 	var updateMiniCart = (updateMiniCart = () =>{
 		let p = $('.csm-header .csm-minicart .csm-minicart__products .product-list'),
 		item = $('.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items em.amount-items-em').first().text(),
-		minicartIcon = $('.csm-header .csm-middle .csm-center .csm-user > ul > li.csm-cart > a'),
-		itemsQtyMessage = $('.csm-header .csm-middle .csm-center .csm-user > ul > li.csm-cart > a > span.items');
+		minicartIcon = $('ul > li.csm-cart > a');
 
-		itemsQtyMessage.text('Você possui ' + item + ' ' + (item == 1 ? 'item' : 'itens') + 'no Carrinho');
+		minicartIcon.prepend('Você possui ' + item + ' ' + (item == 1 ? 'item' : 'itens') + ' no Carrinho');
 		minicartIcon.attr('aria-label', 'Você possui ' + item + ' ' + (item == 1 ? 'item' : 'itens') + ' no Carrinho');
 		minicartIcon.attr('title', 'Você possui ' + item + ' ' + (item == 1 ? 'item' : 'itens') + ' no Carrinho');
 
@@ -654,6 +653,7 @@ $(document).ready(function(){
 				// Removido por hora para entender se será utilizado
 				// $("#botaoDesktop").attr("href", s);
 				// $("#botaoDesktop").closest("span").show();
+				return false;
 			}else if(i != "" && /android/i.test(t)){
 				$("#botaoAndroid").attr("href", i);
 				$("#botaoAndroid").closest("span").show();
@@ -763,30 +763,6 @@ $(document).ready(function(){
 			});
 		});
 	})();
-
-	// Numeração de resultados de busca
-	// (jQuery, window, document), function(t, e, i, o) {
- //        "use strict";
- //        PFTX.pages.catalog = new PFTX.constructor.page("catalog-category-view"), PFTX.pages.catalog.redesignVitrine = function() {
- //            "gdUwlr1U" === function(t) {
- //                var i, s, n = decodeURIComponent(e.location.search.substring(1)).split("&");
- //                for (s = 0; s < n.length; s++) if ((i = n[s].split("="))[0] === t) return i[1] !== o && i[1];
- //            }("dev") && t("body").addClass("redesignVitrine");
- //        }, PFTX.pages.catalog.urlParameter = function() {
- //            var i = t(".resultado-busca-numero .value").html();
- //            t(".resultado-busca-filtro .sorter").after('<p class="labelQuant">' + i + " Produto(s)</p>"), 
- //            e.location.host.indexOf("casamind") < 0 ? t('select[id="PS"]').html('<option value="12">12</option><option value="24" selected="selected">24</option><option value="36">36</option><option value="48">48</option>') : t('select[id="PS"]').html('<option value="12">12</option><option value="24">24</option><option value="36">36</option><option value="48" selected="selected">48</option>');
- //            var s = function(t) {
- //                var i, s, n = decodeURIComponent(e.location.search.substring(1)).split("&");
- //                for (s = 0; s < n.length; s++) if ((i = n[s].split("="))[0] === t) return i[1] === o || i[1];
- //            }("PS");
- //            t('select[id="PS"] option').each(function(e, i) {
- //                s == t(this).attr("value") && t(this).attr("selected", "selected");
- //            });
- //        }, PFTX.pages.catalog.DOMReady = function() {
- //            PFTX.modules.gridControl.init(), PFTX.pages.catalog.redesignVitrine(), PFTX.pages.catalog.urlParameter();
- //        };
- //    }
 	//NeoAssist 
 	var neoAssist = (function () {
 		$('body').append('<div id="neoAssist"></div>');
