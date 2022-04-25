@@ -275,7 +275,7 @@ $(document).ready(function(){
 				id: e.first().items.first().itemId,
 				quantity: 1,
 				seller: e.first().items.first().sellers.first().sellerId
-			}], null, t).done(function(t){
+			}], null, t).done(function(){
 				updateMiniCart();
 				$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
 					$('#popup-adicionando, #barratempo').removeClass('is--active')
@@ -605,6 +605,40 @@ $(document).ready(function(){
 			$(this).hasClass('plus') && input.get(0).stepUp() ||
 			$(this).hasClass('minus') && input.val() > 1 && input.get(0).stepDown();
 		});
+		var addtoBagPDP = $('button.addtoCartButton.icon').on('click', function(){
+			let buybutton = $('a.buy-button.buy-button-ref').attr('href');
+			var params = {};
+			buybutton.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+				function (str, key, value) {
+					params[key] = value;
+				});
+			return vtexjs.checkout.addToCart([{
+				id: params['sku'],
+				quantity: params['qty'],
+				seller: params['seller']
+			}], null, params['sc']).done(function(){
+				updateMiniCart();
+				$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
+					$('#popup-adicionando, #barratempo').removeClass('is--active')
+				}, 6200);
+			}), false;
+		});
+		$('#show > ul.thumbs').slick({
+			autoplay: false,
+			dots: false,
+			arrows: true,
+			prevArrow: '<button class="slick-prev vertical" aria-label="Anterior" type="button">Anterior</button>',
+			nextArrow: '<button class="slick-next vertical" aria-label="Próximo" type="button">Próximo</button>',
+			lazyLoad: 'ondemand',
+			infinite: true,
+			accessibility: true,
+			swipeToSlide: true,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			vertical: true,
+			verticalSwiping: true,
+			centerMode: true
+		});
 		var availableAlert = (function() {
 			try{
 				let t = skuJson.productId;
@@ -629,9 +663,9 @@ $(document).ready(function(){
 		//É possivel trocar a dimensão no CMS > Configurações > Tipos de Arquivo,
 		//mas afeta todos os sites
 		var changeProductImage = (changeProductImage = () =>{
-			$("#botaoZoom img").each(function() {
-				$(this).parents('a#botaoZoom').attr("rel", 
-					$(this).parents('a#botaoZoom').attr("rel").replace("-500-500", "-400-600"));
+			$("ul.thumbs img").each(function() {
+				$(this).closest('a').attr("rel", 
+					$(this).closest('a').attr("rel").replace("-500-500", "-400-600"));
 				$(this).attr("src", $(this).attr("src").replace("-350-303", "-90-130"));
 			});
 		})();

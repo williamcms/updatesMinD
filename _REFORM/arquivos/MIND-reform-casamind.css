@@ -1080,6 +1080,21 @@ div#ajaxBusy{
 	left: 1rem;
 	animation: move-left 3s ease-in-out infinite;
 }
+.slick-slider button.slick-next.vertical{
+	transform: rotate(45deg);
+	top: initial;
+	bottom: -0.5rem;
+	right: 45%;
+	right: calc(50% - .624rem)!important;
+	animation: move-right-vertical 3s ease-in-out infinite;
+}
+.slick-slider button.slick-prev.vertical{
+	transform: rotate(-135deg);
+	top: -0.5rem;
+	left: 45%;
+	left: calc(50% - .624rem)!important;
+	animation: move-left-vertical 3s ease-in-out infinite;
+}
 @keyframes move-right{
 	0%,
 	100%{
@@ -1096,6 +1111,24 @@ div#ajaxBusy{
 	}
 	50%{
 		transform: rotate(135deg) translate(0.313rem, 0.313rem);
+	}
+}
+@keyframes move-right-vertical{
+	0%,
+	100%{
+		transform: rotate(45deg) translate(0px, 0px);
+	}
+	50%{
+		transform: rotate(45deg) translate(0.313rem, 0.313rem);
+	}
+}
+@keyframes move-left-vertical{
+	0%,
+	100%{
+		transform: rotate(-135deg) translate(0px, 0px);
+	}
+	50%{
+		transform: rotate(-135deg) translate(0.313rem, 0.313rem);
 	}
 }
 .slick-dots li button::before{
@@ -1862,6 +1895,7 @@ main.product .csm-product > .product-data > .product__images #show{
 	display: flex;
 	grid-column-gap: .2rem;
 	column-gap: .2rem;
+	min-width: 30.875rem;
 }
 main.product .csm-product > .product-data > .product__images #show > #include{
 	order: 2;
@@ -1872,13 +1906,25 @@ main.product .csm-product > .product-data > .product__images #show > #include .z
 main.product .csm-product > .product-data > .product__images #show > #include .zoomWrapper{
 	display: none !important;
 }
-main.product .csm-product > .product-data > .product__images #show > .thumbs{
+main.product .csm-product > .product-data > .product__images #show > .thumbs,
+main.product .csm-product > .product-data > .product__images #show > .thumbs > .slick-list{
 	order: 1;
+	max-width: 5.625rem;
+	min-width: 5.625rem;
+	min-height: 37.5rem;
+	max-height: 37.5rem;
+}
+main.product .csm-product > .product-data > .product__images #show > .thumbs > .slick-list{
+	padding: 0 !important;
+	overflow: hidden;
+}
+main.product .csm-product > .product-data > .product__images #show > .thumbs > .slick-list img{
+	margin-bottom: .4rem;
 }
 main.product .csm-product > .product-data > .product__info{
 	display: flex;
 	flex-direction: column;
-	width: 30rem;
+	width: 35rem;
 }
 main.product .csm-product > .product-data > .product__info h1{
 	font-size: 2rem;
@@ -1886,20 +1932,37 @@ main.product .csm-product > .product-data > .product__info h1{
 }
 main.product .csm-product > .product-data > .product__info .descricao-preco{
 	display: flex;
+	flex-wrap: wrap;
 	grid-column-gap: .5rem;
 	column-gap: .5rem;
 	align-items: center;
 }
+main.product .csm-product > .product-data > .product__info .descricao-preco > .valor-de,
 main.product .csm-product > .product-data > .product__info .descricao-preco > .valor-por{
 	font-size: 0rem;
 }
+main.product .csm-product > .product-data > .product__info .descricao-preco > .valor-de{
+	flex-basis: 100%;
+}
+main.product .csm-product > .product-data > .product__info .descricao-preco > .valor-de > strong,
 main.product .csm-product > .product-data > .product__info .descricao-preco > .valor-por > strong{
 	font-family: 'Helvetica';
-	font-size: 2rem;
 	font-style: normal;
+}
+main.product .csm-product > .product-data > .product__info .descricao-preco > .valor-de > strong{
+	font-size: 1.4rem;
+	font-weight: 500 !important;
+	color: var(--dark);
+	text-decoration-line: line-through;
+	text-decoration-style: solid;
+	text-decoration-thickness: 0.125rem;
+}
+main.product .csm-product > .product-data > .product__info .descricao-preco > .valor-por > strong{
+	font-size: 2rem;
 	color: var(--brand-color);
 }
-main.product .csm-product > .product-data > .product__info .descricao-preco > .price-installments{
+main.product .csm-product > .product-data > .product__info .descricao-preco > .price-installments,
+main.product .csm-product > .product-data > .product__info .productPrice > .economia-de{
 	color: var(--dark);
 }
 main.product .csm-product > .product-data > .product__info .preco-a-vista.price-cash,
@@ -2007,12 +2070,8 @@ main.product .csm-product > .product-data > .product__info .price-quanty.input-g
 main.product .csm-product > .product-data > .product__info .input-group-prepend.icon{
 	padding: 0 .5rem;
 }
-main.product .csm-product > .product-data > .product__info .input-group-prepend.icon > a{
-	text-decoration: none;
-	user-select: none;
-	cursor: pointer;
-}
 main.product .csm-product > .product-data > .product__info .input-group-prepend.icon + div{
+	position: relative;
 	text-align: center;
 	color: var(--white);
 	padding: .3rem 3.5rem;
@@ -2028,6 +2087,17 @@ main.product .csm-product > .product-data > .product__info .input-group-prepend.
 }
 main.product .csm-product > .product-data > .product__info .product-buy{
 	font-size: 1.5rem;
+}
+main.product .csm-product > .product-data > .product__info .product-buy > a{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	line-height: 2.6rem;
+	text-decoration: none;
+	user-select: none;
+	cursor: pointer;
 }
 main.product .csm-product > .product-data > .product__info #addLista .glis-sku-single{
 	display: none;
@@ -2132,6 +2202,10 @@ main.product .csm-product > .product-data > .product__info .product-details > #c
 }
 main.product .csm-product > .product-data > .product__info .product-details > #caracteristicas > table tr > .name-field{
 	font-weight: 600;
+}
+main.product .csm-product > .description{
+	width: 67rem;
+	margin: 1rem auto 2rem auto;
 }
 /*Vurdere*/
 #vurdere-socialanchors{
