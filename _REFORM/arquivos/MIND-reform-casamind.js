@@ -28,9 +28,32 @@ $(document).ready(function(){
 			}
 		});
 	}
+	//Aguarda o determinado elemento carregar
+	//Exemplo de uso:
+	// waitForElm('.selector').then((elm) =>{
+	// });
+	function waitForElm(selector){
+		return new Promise(resolve =>{
+			if($(selector)){
+				return resolve($(selector));
+			}
+
+			const observer = new MutationObserver(mutations =>{
+				if($(selector)){
+					resolve($(selector));
+					observer.disconnect();
+				}
+			});
+
+			observer.observe(document.body, {
+				childList: true,
+				subtree: true
+			});
+		});
+	}
 	//Atualiza os parametros do url
 	function updateQueryString(key, value) {
-		if (history.pushState){
+		if(history.pushState){
 			let searchParams = new URLSearchParams(window.location.search);
 			searchParams.set(key, value);
 			let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString();
