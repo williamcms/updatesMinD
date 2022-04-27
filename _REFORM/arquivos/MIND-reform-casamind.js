@@ -688,7 +688,7 @@ $(document).ready(function(){
 		var changeProductImage = (changeProductImage = () =>{
 			$("ul.thumbs img").each(function() {
 				$(this).closest('a').attr("rel", 
-					$(this).closest('a').attr("rel").replace("-500-500", "-400-600"));
+					$(this).closest('a').attr("rel").replace("-500-500", "-500-750"));
 				$(this).attr("src", $(this).attr("src").replace("-350-303", "-90-130"));
 			});
 		})();

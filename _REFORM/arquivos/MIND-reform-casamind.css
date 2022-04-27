@@ -1903,11 +1903,11 @@ main.product .csm-product > .product-data > .product__images #show{
 	display: flex;
 	grid-column-gap: .2rem;
 	column-gap: .2rem;
-	min-width: 30.875rem;
+	min-width: 37.074rem;
 }
 main.product .csm-product > .product-data > .product__images #show > #include{
 	order: 2;
-	min-width: 25rem;
+	min-width: 31.25rem;
 }
 main.product .csm-product > .product-data > .product__images #show > #include .zoomPup,
 main.product .csm-product > .product-data > .product__images #show > #include .zoomWindow,
@@ -2467,19 +2467,19 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime:last-o
 .has-shelf--default > ul > li{
 	flex: 0 1 22%;
 }
-.has-shelf--default > ul > li > .csm-shelf__product,
-.has-shelf--default > ul > li > .csm-shelf__product .csm-shelf__image{
+.csm-shelf__product,
+.csm-shelf__product .csm-shelf__image{
 	position: relative;
 }
-.has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--top{
+.csm-shelf__product > .csm-shelf__product--top{
 	position: relative;
 	overflow: hidden;
 }
-.has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--top .csm-shelf__image img{
+.csm-shelf__product > .csm-shelf__product--top .csm-shelf__image img{
 	width: 100%;
 	height: 100%;
 }
-.has-shelf--default > ul > li > .csm-shelf__product > .csm-shelf__product--top .csm-shelf__outOfStock{
+.csm-shelf__product > .csm-shelf__product--top .csm-shelf__outOfStock{
 	position: absolute;
 	left: 0;
 	right: 0;
