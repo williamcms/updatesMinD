@@ -1061,6 +1061,14 @@ div#ajaxBusy{
 	top: 50%;
 	z-index: 1;
 }
+/* 
+Faz com que as setas nos slicks nas vitrines sejam menos estranhos por conta do tamanho 
+adicional que é usado por conta de haver informações do produto além de imagens
+*/
+.collectionWrap .slick-slider button.slick-next.slick-arrow,
+.collectionWrap .slick-slider button.slick-prev.slick-arrow{
+	top: calc(50% - 5rem);
+}
 /*Remove o icone da smarthint*/
 .slick-slider button.slick-next.slick-arrow::before,
 .slick-slider button.slick-prev.slick-arrow::before{
