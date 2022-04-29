@@ -2240,9 +2240,12 @@ main.collection > .main-container > .infoWrapper .collection-description{
 main.collection > .main-container > .collectionWrapper{
 	margin: 0 2rem 3rem 2rem;
 }
-main.collection > .main-container > .collectionWrapper .row{
+main.collection > .main-container > .collectionWrapper > .row{
 	align-items: flex-start;
 	flex-wrap: nowrap;
+}
+main.collection > .main-container > .collectionWrapper > .row > .side-nav{
+	max-width: 18.75rem;
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul{
 	display: flex;

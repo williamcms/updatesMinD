@@ -390,6 +390,8 @@ $(document).ready(function(){
 	var getShelfProducts = (getShelfProducts = (num = 0) =>{
 		let orderBy = $('.orderByList > ul > li.is--active').attr('data-order');
 
+		let defaultProductMaxQtd = 48;
+
 		let id = (checkPageType() != 'category' ? 'H:' + ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').data('collectionid') : $('.has-shelf--default').eq(num).data('collectionid')) : 'C:' + $('.resultItemsWrapper').data('categoryid'));
 		let page = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-page') : $('.has-shelf--default').attr('data-page'));
 		let shelfTemplate = $('.has-shelf--default').eq(num).find('ul > li[layout]').first().attr('layout');
@@ -408,7 +410,7 @@ $(document).ready(function(){
 			url: urlBusca,
 			success: function(data){
 				if(numBusca.length > 0){
-					if(parseInt(numBusca.text()) <= numAtual){
+					if(parseInt(numBusca.text()) <= numAtual || parseInt(numBusca.text()) > defaultProductMaxQtd){
 						$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
 						$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 					}
