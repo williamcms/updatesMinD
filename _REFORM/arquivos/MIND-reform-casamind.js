@@ -311,7 +311,7 @@ $(document).ready(function(){
 		let options = $('main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul');
 
 		options.toggleClass('is--active');
-	})
+	});
 	var getParamsFromVtexSearch = (() =>{
 		let params = [],
 		partialUrl = decodeURIComponent(partialSearchUrl);
@@ -324,12 +324,27 @@ $(document).ready(function(){
 			}
 		});
 		return params;
-	})
+	});
 	var checkPageType = (checkPageType = () =>{
 		let v = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper') : $('.has-shelf--default')),
 			t = $('.breadcrumbs + .page-title.category-title > h1');
 
 		let params = getParamsFromVtexSearch();
+
+		let defaultProductMaxQtd = 48,
+			numBusca = $('.resultado-busca-numero > .value').eq(0),
+			numAtual = $('ul > li[layout]').length;
+
+		waitForElm('button.seeMoreProducts[data-controls=0]').then((elm) =>{
+			if(numBusca.length > 0){
+				if(parseInt(numBusca.text()) < defaultProductMaxQtd){
+					elm.remove();
+				}else if(parseInt(numBusca.text()) <= numAtual){
+					elm.text('Não há mais produtos para carregar');
+					elm.attr('disabled', true);
+				}
+			}
+		});
 
 		//Atribui um indice de paginação
 		(typeof v.data('page') == 'undefined' && v.attr('data-page', 1));
@@ -390,8 +405,6 @@ $(document).ready(function(){
 	var getShelfProducts = (getShelfProducts = (num = 0) =>{
 		let orderBy = $('.orderByList > ul > li.is--active').attr('data-order');
 
-		let defaultProductMaxQtd = 48;
-
 		let id = (checkPageType() != 'category' ? 'H:' + ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').data('collectionid') : $('.has-shelf--default').eq(num).data('collectionid')) : 'C:' + $('.resultItemsWrapper').data('categoryid'));
 		let page = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-page') : $('.has-shelf--default').attr('data-page'));
 		let shelfTemplate = $('.has-shelf--default').eq(num).find('ul > li[layout]').first().attr('layout');
@@ -401,20 +414,12 @@ $(document).ready(function(){
 		let container = ($('.resultItemsWrapper > [id*=ResultItems_]').length > 0 ? $('.resultItemsWrapper > [id*=ResultItems_]') : $('.has-shelf--default').eq(num));
 
 		let urlBusca = `/buscapagina?fq=${id}&PS=${productQtd}&${selectFilter}&sl=${shelfTemplate}&cc=${productQtd}&sm=0&PageNumber=${page}`;
-		let numBusca = $('.resultado-busca-numero > .value').eq(0);	
-		let numAtual = $('ul > li[layout]').length;
 
 		$.ajax({
 			crossDomain: false,
 			type: 'GET',
 			url: urlBusca,
 			success: function(data){
-				if(numBusca.length > 0){
-					if(parseInt(numBusca.text()) <= numAtual || parseInt(numBusca.text()) > defaultProductMaxQtd){
-						$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
-						$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
-					}
-				}
 				if(!data){
 					$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
 					$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
