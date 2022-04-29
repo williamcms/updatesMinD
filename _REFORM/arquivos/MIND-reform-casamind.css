@@ -785,7 +785,8 @@ blockquote::before{
 }
 /* Alignment Aids */
 .center,
-.text-center{
+.text-center,
+.align-center{
 	text-align: center !important;
 }
 .center_m{
@@ -798,11 +799,13 @@ blockquote::before{
 	text-align: justify !important;
 }
 .left,
-.text-left{
+.text-left,
+.align-left{
 	text-align: left !important;
 }
 .right,
-.text-right{
+.text-right,
+.align-right{
 	text-align: right !important;
 }
 /* Display types */
@@ -3394,12 +3397,12 @@ footer .final-label__address{
 	}
 	.csm-shelf__product .csm-shelf__image--hover{
 		max-height: 13.938rem;
-		max-height: calc(100% - 2.99rem);
+		max-height: calc(100% - 3.01rem);
 	}
 	.csm-shelf__product .csm-shelf__buy{
 		position: initial;
 		transform: translateY(0);
-		margin: 0 0 .5rem 0;
+		margin: 0.2rem 0 .5rem 0;
 		opacity: 1;
 	}
 	.csm-shelf__product > .csm-shelf__product--top .csm-shelf__outOfStock{
