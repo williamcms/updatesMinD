@@ -389,7 +389,7 @@ $(document).ready(function(){
 			// Modelo para vitrines inseridas por meio do controle
 		}else if(v.hasClass('has-shelf--default prateleira')){
 			$.each(v, function(i){
-				if(typeof $(this).data('collectionid') == 'undefined' && $(this).parents('.has-shelf--default').length == 0 && c.find('button.seeMoreProducts[data-controls]').length <= 0){
+				if(typeof $(this).data('collectionid') == 'undefined' && $(this).parents('.has-shelf--default').length == 0 && $(this).find('button.seeMoreProducts[data-controls]').length <= 0){
 					let vId = parseInt($(this).find('h2').text());
 					$(this).append(`<button class="button2 btn-brand seeMoreProducts" data-controls="${i}"><span>Ver mais produtos</span></button>`);
 					$(this).attr('data-collectionid', vId);
