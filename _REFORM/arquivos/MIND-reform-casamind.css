@@ -2437,11 +2437,12 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime:last-o
 	max-width: 83.25rem;
 	margin: 0 auto;
 }
+/*
+	O campo abaixo (.has-shelf--default > h2) será usado para pegar a informação 
+	de id da coleção e os títulos serão colocados por controle de placeholder
+*/
 .has-shelf--default > h2{
-	/*
-		Esse campo será usado para pegar a informação de id da coleção
-		Os títulos serão colocados por controle de placeholder
-	*/
+	
 	display: none !important;
 }
 .vitrine > h2,
