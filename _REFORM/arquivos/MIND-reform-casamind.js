@@ -212,7 +212,6 @@ $(document).ready(function(){
 			return vtexjs.checkout.updateItems([updateItem], null, false);
 		})
 		.done(function(orderForm){
-			//console.log(orderForm);
 			updateMiniCart();
 			(qty == 0 && $('.csm-minicart__products > ul > li')[itemIndex].remove());
 		});
@@ -313,9 +312,24 @@ $(document).ready(function(){
 
 		options.toggleClass('is--active');
 	})
+	var getParamsFromVtexSearch = (() =>{
+		let params = [],
+		partialUrl = decodeURIComponent(partialSearchUrl);
+		partialUrl.slice(1).replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value){
+			if(value.includes(':')){
+				let fq = value.split(':');
+				params[fq[0]] = fq[1];
+			}else{
+				params[key] = value;
+			}
+		});
+		return params;
+	})
 	var checkPageType = (checkPageType = () =>{
 		let v = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper') : $('.has-shelf--default')),
-			t = $('.page-title.category-title > h1');
+			t = $('.breadcrumbs + .page-title.category-title > h1');
+
+		let params = getParamsFromVtexSearch();
 
 		//Atribui um indice de paginação
 		(typeof v.data('page') == 'undefined' && v.attr('data-page', 1));
@@ -325,20 +339,30 @@ $(document).ready(function(){
 		//vitrines colocadas por placeholder.
 		if(typeof partialSearchUrl != 'undefined' && $('.resultItemsWrapper').length > 0){
 			//Quantidade de itens para prateleiras unicas na página
-			(typeof v.data('qty') == 'undefined' && v.attr('data-qty', $('.has-shelf--default > ul > li[layout]').length));
+			(!v.data('qty') && v.attr('data-qty', $('.has-shelf--default > ul > li[layout]').length));
 			//Verifica se existe a variável da vtex que informa informações de categorias
 			//ou procura informações sobre a coleção, tentando distinguir entre as duas páginas.
 			//Após isso, atribui um indice para paginação e grava a o id referente a vitrine
-			if((partialSearchUrl.split('H%3a').length > 1)){
-				let h = partialSearchUrl.split('H%3a');
-					h = h[1].split('&PS', 1);
-				v.attr('data-collectionid', h.toString());
+			if((!!params['H'])){
+				v.attr('data-collectionid', params['H']);
+				//Adiciona o botão ver mais produtos
+				let c = v.find('[id*=ResultItems_]');
+				//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
+				if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
+					c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
+				}
 				return 'collection';
-			}else if(typeof vtxctx == 'object' && vtxctx.categoryId != null && vtxctx.searchTerm != 'colecoes'){
+			}else if(!!vtxctx && !!vtxctx.categoryId && vtxctx.searchTerm != 'colecoes'){
 				v.attr('data-categoryid', vtxctx.categoryId);
 				//Adiciona um título para páginas de categoria e remove caracteres numéricos
 				//Móveis2 --> Móveis
-				t.text((vtxctx.categoryName).replace(/\d+/g, ''));
+				t.text(t.text().replace(/\d+/g, ''));
+				//Adiciona o botão ver mais produtos
+				let c = v.find('[id*=ResultItems_]');
+				//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
+				if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
+					c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
+				}
 				return 'category';
 			}else if($('.orderBy > select[onchange]').length != 0){
 				//Último recurso para identificar informações da coleção
@@ -350,9 +374,9 @@ $(document).ready(function(){
 			// Modelo para vitrines inseridas por meio do controle
 		}else if(v.hasClass('has-shelf--default prateleira')){
 			$.each(v, function(i){
-				if(typeof $(this).data('collectionid') == 'undefined' && $(this).parents('.has-shelf--default').length == 0){
+				if(typeof $(this).data('collectionid') == 'undefined' && $(this).parents('.has-shelf--default').length == 0 && c.find('button.seeMoreProducts[data-controls]').length <= 0){
 					let vId = parseInt($(this).find('h2').text());
-					$(this).append(`<button class="button2 btn-brand seeMoreProducts" data-collectionid="${vId}" data-controls="${i}"><span>Ver mais produtos</span></button>`);
+					$(this).append(`<button class="button2 btn-brand seeMoreProducts" data-controls="${i}"><span>Ver mais produtos</span></button>`);
 					$(this).attr('data-collectionid', vId);
 					$(this).attr('data-num', i);
 					$(this).attr('data-qty', $(this).find('ul > li[layout]').length);
@@ -371,14 +395,24 @@ $(document).ready(function(){
 		let shelfTemplate = $('.has-shelf--default').eq(num).find('ul > li[layout]').first().attr('layout');
 		let productQtd = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-qty') : $('.has-shelf--default').attr('data-qty'));
 		let selectFilter = (typeof orderBy != 'undefined' ? orderBy : 'O=');
+		let aditionalFilters = '';
 		let container = ($('.resultItemsWrapper > [id*=ResultItems_]').length > 0 ? $('.resultItemsWrapper > [id*=ResultItems_]') : $('.has-shelf--default').eq(num));
 
-		let urlBusca = '/buscapagina?fq=' + id + '&PS=' + productQtd + '&' + selectFilter + '&sl=' + shelfTemplate + '&cc=' + productQtd + '&sm=0&PageNumber=' + page;
+		let urlBusca = `/buscapagina?fq=${id}&PS=${productQtd}&${selectFilter}&sl=${shelfTemplate}&cc=${productQtd}&sm=0&PageNumber=${page}`;
+		let numBusca = $('.resultado-busca-numero > .value').eq(0);	
+		let numAtual = $('ul > li[layout]').length;
+
 		$.ajax({
 			crossDomain: false,
 			type: 'GET',
 			url: urlBusca,
 			success: function(data){
+				if(numBusca.length > 0){
+					if(parseInt(numBusca.text()) <= numAtual){
+						$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
+						$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
+					}
+				}
 				if(!data){
 					$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
 					$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
@@ -405,7 +439,7 @@ $(document).ready(function(){
 		getShelfProducts();
 	});
 	// Carrega mais produtos (botão ver mais produtos)
-	var seeMoreProducts = $('.has-shelf--default').on('click', 'button.seeMoreProducts[data-collectionid]', function(){
+	var seeMoreProducts = $('.has-shelf--default').on('click', 'button.seeMoreProducts[data-controls]', function(){
 		let num = $(this).data('controls');
 		let v = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper') : $('.has-shelf--default').eq(num));
 
@@ -795,7 +829,6 @@ $(document).ready(function(){
 		}).done(function(r){
 			let msg = $(r).text().split('.').first();
 			if(msg.length > 12){
-				console
 				msg = msg.trim().replace(' ', ', <strong>') + '</strong>!';
 			}else{
 				msg = 'Olá, <strong>Minder!</strong>';
