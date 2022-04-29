@@ -2432,6 +2432,9 @@ main.collection > .main-container > .collectionWrapper .searchResultsTime{
 main.collection > .main-container > .collectionWrapper .searchResultsTime:last-of-type{
 	display: none;
 }
+button.seeMoreProducts[data-controls]{
+	margin: 2rem auto;
+}
 /* Shelves */
 .has-shelf--default.n4colunas{
 	max-width: 83.25rem;
@@ -3385,9 +3388,6 @@ footer .final-label__address{
 		left: 0;
 		transform: translate(-50%) rotate(45deg);
 		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	}
-	button.seeMoreProducts[data-controls]{
-		margin: 2.5rem auto 0 auto;
 	}
 	/* Shelves */
 	.has-shelf--default > ul{
