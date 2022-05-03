@@ -71,7 +71,7 @@
 										<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}">
 											{{#HasSalePrice}}
 											<p class="csm-shelf__price--old">
-												De: <span>R$ {{PriceInteger}},{{PriceDecimal}}</span>
+												<span>R$ {{PriceInteger}},{{PriceDecimal}}</span>
 											</p>
 											<p class="csm-shelf__price--best">
 												<span style="display: none;" itemprop="priceCurrency"
@@ -81,7 +81,7 @@
 														wfd-invisible="true">
 													Em estoque
 												</span>
-												Por: <strong itemprop="price">R$
+												<strong itemprop="price">R$
 													{{SalePriceInteger}},{{SalePriceDecimal}}</strong>
 											</p>
 											{{/HasSalePrice}}
@@ -101,16 +101,29 @@
 									{{/HasInstallment}}
 									<div class="csm-shelf__flags">
 										<span class="csm-shelf__colection">
-											{{#AditionalFeatures}}
-											{{#highlights-793}}<p class="flag flag-produto-feito-a-mao">
-												flag-produto-feito-a-mao</p>{{/highlights-793}}
-											{{#highlights-794}}<p class="flag flag-produto-sustentavel">
-												flag-produto-sustentavel</p>{{/highlights-794}}
-											{{#highlights-795}}<p class="flag flag-produto-brasileiro">
-												flag-produto-brasileiro</p>{{/highlights-795}}
-											{{#highlights-796}}<p class="flag flag-projeto-social">flag-projeto-social
-											</p>{{/highlights-796}}
-											{{/AditionalFeatures}}
+											{{#highlights-795}}
+												<p class="flag flag-produto-brasileiro">flag-produto-brasileiro</p>
+											{{/highlights-795}}
+
+											{{#highlights-794}}
+												<p class="flag flag-produto-sustentavel">flag-produto-sustentavel</p>
+											{{/highlights-794}}
+
+											{{#highlights-793}}
+												<p class="flag flag-produto-feito-a-mao">flag-produto-feito-a-mao</p>
+											{{/highlights-793}}
+
+											{{#highlights-796}}
+												<p class="flag flag-projeto-social">flag-projeto-social</p>
+											{{/highlights-796}}
+
+											{{#highlights-1067}}
+												<p class="flag flag-produto-bazar">flag-produto-bazar</p>
+											{{/highlights-1067}}
+
+											{{#highlights-823}}
+												<p class="flag mind-todos-marketplace">mind-todos-marketplace</p>
+											{{/highlights-823}}
 										</span>
 										<span class="csm-shelf__promotion"></span>
 									</div>

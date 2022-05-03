@@ -161,12 +161,32 @@
 										{{/HasInstallment}}
 										<div class="csm-shelf__flags">
 											{{#AditionalFeatures}}
-											{{#highlights-795}}
 											<span class="csm-shelf__colection">
-												<p class="flag flag-produto-brasileiro">flag-produto-brasileiro</p>
+												{{#highlights-795}}
+													<p class="flag flag-produto-brasileiro">flag-produto-brasileiro</p>
+												{{/highlights-795}}
+
+												{{#highlights-794}}
+													<p class="flag flag-produto-sustentavel">flag-produto-sustentavel</p>
+												{{/highlights-794}}
+
+												{{#highlights-793}}
+													<p class="flag flag-produto-feito-a-mao">flag-produto-feito-a-mao</p>
+												{{/highlights-793}}
+
+												{{#highlights-796}}
+													<p class="flag flag-projeto-social">flag-projeto-social</p>
+												{{/highlights-796}}
+
+												{{#highlights-1067}}
+													<p class="flag flag-produto-bazar">flag-produto-bazar</p>
+												{{/highlights-1067}}
+
+												{{#highlights-823}}
+													<p class="flag mind-todos-marketplace">mind-todos-marketplace</p>
+												{{/highlights-823}}
 											</span>
 											<span class="csm-shelf__promotion"></span>
-											{{/highlights-795}}
 											{{/AditionalFeatures}}
 										</div>
 									</section>
@@ -200,26 +220,26 @@
 						<div class="cta">
 							{{#Result.HasSalePrice}}
 							<div class="price">
-								De: <span>R$ {{Result.PriceInteger}}, {{Result.SalePriceDecimal}} </span>
+								<span>R$ {{Result.PriceInteger}}, {{Result.SalePriceDecimal}} </span>
 							</div>
 							<div class="sale-price">
-								Por: <span class="corpreco">R$ {{Result.SalePriceInteger}}, {{Result.SalePriceDecimal}}
+								<span class="corpreco">R$ {{Result.SalePriceInteger}}, {{Result.SalePriceDecimal}}
 								</span>
 							</div>
 							{{/Result.HasSalePrice}}
 							{{^Result.HasSalePrice}}
 							<div class="single-price">
-								Por: <span class="corpreco">R$ {{Result.PriceInteger}},
+								<span class="corpreco">R$ {{Result.PriceInteger}},
 									{{Result.SalePriceDecimal}}</span>
 							</div>
 							{{/Result.HasSalePrice}}
-							<button id="smarthint-bought-together-buy"><i class="fa fa-shopping-cart"></i> <span
+							<button id="smarthint-bought-together-buy"><span class="fa fa-shopping-cart"></span> <span
 									class="tituloComprar">Comprar</span></button>
 						</div>
 						{{#Result.HasDiscount}}
-						<div class="save">
-							Economize <span>{{Result.DiscountInteger}},{{Result.SalePriceDecimal}}</span>
-						</div>
+						<em class="save">
+							Economize <span>R$ {{Result.DiscountInteger}},{{Result.SalePriceDecimal}}</span>
+						</em>
 						{{/Result.HasDiscount}}
 					</div>
 				</ul>
