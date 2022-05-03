@@ -1072,11 +1072,6 @@ adicional que é usado por conta de haver informações do produto além de imag
 .collectionWrap .slick-slider button.slick-prev.slick-arrow{
 	top: calc(50% - 5rem);
 }
-/*Remove o icone da smarthint*/
-.slick-slider button.slick-next.slick-arrow::before,
-.slick-slider button.slick-prev.slick-arrow::before{
-	display: none;
-}
 .slick-slider button.slick-next.slick-arrow:hover,
 .slick-slider button.slick-prev.slick-arrow:hover{
 	border-color: var(--brand-color);
@@ -1235,9 +1230,6 @@ body > .ui-autocomplete.ui-widget-content{
 	padding: 0 3rem;
 	border: none;
 	background-color: var(--menu-bg-color);
-}
-.csm-header .csm-search > fieldset.busca > .smarthint-voice-search{
-	position: initial !important;
 }
 .csm-header .csm-search > fieldset.busca > label,
 .csm-header .csm-search > fieldset.busca > legend,
@@ -2477,6 +2469,7 @@ button.seeMoreProducts[data-controls]{
 .csm-shelf__product > .csm-shelf__product--top{
 	position: relative;
 	overflow: hidden;
+	user-select: none;
 }
 .csm-shelf__product > .csm-shelf__product--top .csm-shelf__image img{
 	width: 100%;
@@ -2972,11 +2965,16 @@ footer .final-label__address{
 	text-align: center;
 }
 /*Smarthint*/
-.smarthint{
-	margin: 0 1rem;
+.csm-header .csm-search > fieldset.busca > .smarthint-voice-search{
+	position: initial !important;
 }
-.smarthint .col-main{
-	float: none !important;
+#smarthint-position-1,
+#smarthint-position-2,
+#smarthint-position-3,
+#smarthint-position-4,
+#smarthint-position-5{
+	max-width: 80vw;
+	margin: 1.5rem auto;
 }
 .smarthint .slick-slider button.slick-prev{
 	left: 0;
@@ -2984,13 +2982,36 @@ footer .final-label__address{
 .smarthint .slick-slider button.slick-next{
 	right: 0;
 }
-#smarthint-position-1
-#smarthint-position-2
-#smarthint-position-3
-#smarthint-position-4
-#smarthint-position-5{
-	max-width: 80vw;
-	margin: 0 auto;
+.smarthint .slick-slider article.csm-shelf__product{
+	padding: 0.625rem;
+}
+#smarthint-bought-together .products.bought-together{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-column-gap: 1rem;
+	column-gap: 1rem;
+}
+#smarthint-bought-together .products.bought-together > div{
+	position: relative;
+	flex: 1 1 0px;
+}
+#smarthint-bought-together .products.bought-together .actions{
+	font-size: 0rem;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	grid-row-gap: 1rem;
+	row-gap: 1rem;
+	right: 0;
+	top: 0;
+	padding: 0.5rem;
+	opacity: 0.7;
+	z-index: 99;
+}
+#smarthint-bought-together .products.bought-together .actions > div{
+	width: 1.3625rem;
+	cursor: pointer;
 }
 /*Vurdere*/
 #vurdere-socialanchors{
