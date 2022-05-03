@@ -2978,6 +2978,20 @@ footer .final-label__address{
 .smarthint .col-main{
 	float: none !important;
 }
+.smarthint .slick-slider button.slick-prev{
+	left: 0;
+}
+.smarthint .slick-slider button.slick-next{
+	right: 0;
+}
+#smarthint-position-1
+#smarthint-position-2
+#smarthint-position-3
+#smarthint-position-4
+#smarthint-position-5{
+	max-width: 80vw;
+	margin: 0 auto;
+}
 /*Vurdere*/
 #vurdere-socialanchors{
 	margin: 0;

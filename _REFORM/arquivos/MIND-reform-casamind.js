@@ -371,7 +371,7 @@ $(document).ready(function(){
 				v.attr('data-categoryid', vtxctx.categoryId);
 				//Adiciona um título para páginas de categoria e remove caracteres numéricos
 				//Móveis2 --> Móveis
-				t.text(t.text().replace(/\d+/g, ''));
+				t.text(t.text().replace(/\d+/g, '') || vtxctx.categoryName.replace(/\d+/g, ''));
 				//Adiciona o botão ver mais produtos
 				let c = v.find('[id*=ResultItems_]');
 				//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
