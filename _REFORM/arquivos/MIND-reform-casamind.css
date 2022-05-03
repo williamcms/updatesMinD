@@ -2124,7 +2124,8 @@ main.product .csm-product > .product-data > .product__info .product-buy .portal-
 	font-size: 1rem;
 }
 main.product .csm-product > .product-data > .product__info .product-buy .portal-notify-me-ref fieldset input:not(.btn-ok){
-	border-bottom: 0.0625rem solid var(--brand-color);
+	border: 0.0625rem solid var(--brand-color);
+	border-radius: 0.1625rem;
 }
 main.product .csm-product > .product-data > .product__info .product-buy .portal-notify-me-ref fieldset input.btn-ok{
 	font-size: 1.5rem;
@@ -2134,6 +2135,7 @@ main.product .csm-product > .product-data > .product__info .product-buy .portal-
 	padding: 0.3rem 3.5rem;
 	width: 100%;
 	background-color: var(--brand-color);
+	border-radius: 0.1625rem;
 }
 main.product .csm-product > .product-data > .product__info #addLista .glis-sku-single{
 	display: none;

@@ -34,7 +34,7 @@ $(document).ready(function(){
 	//});
 	function waitForElm(selector){
 		return new Promise(resolve =>{
-			if($(selector)){
+			if(!!$(selector).length){
 				return resolve($(selector));
 			}
 
@@ -522,14 +522,22 @@ $(document).ready(function(){
 	//Restrito a páginas de produto apenas
 	if($('main .csm-product').length != 0){
 		//Tratamentos para quando é exibida mensagem de produto indisponível
-		var productNotAvailable = waitForElm('.portal-notify-me-ref').then((elm) =>{
-			let container = $('.product-data > .product__info .buttonsContainer');
+		var productNotAvailable = waitForElm('fieldset.sku-notifyme-form.notifyme-form').then((elm) =>{
+			console.log('Product unavailable', elm)
+			if(!!elm.length){
+				let wrapper = $('.product-data > .product__info'),
+				container = wrapper.find('.buttonsContainer');
 
-			container.find('div.product-buy').addClass('unavailable');
+				elm.find('#notifymeClientName').attr('aria-label', 'Digite seu nome');
+				elm.find('#notifymeClientEmail').attr('aria-label', 'Digite seu email');
 
-			container.find('.product-quantity-add').remove()
-			container.find('#addToBagPDP').remove()
-			container.find('#addLista').remove()
+				container.find('div.product-buy').addClass('unavailable');
+
+				wrapper.find('.sales-condition').remove();
+				container.find('.product-quantity-add').remove();
+				container.find('#addToBagPDP').remove();
+				container.find('#addLista').remove();
+			}
 		});
 		var selectvariableSKU = $('main .csm-product .product-sku-selection').on('change', function(){
 			let bwrapper = $('main .csm-product div.product-buy'),
@@ -545,7 +553,7 @@ $(document).ready(function(){
 			}else{
 				buttonsContainer.slideDown();
 				pwrapper.slideDown();
-				
+
 				bwrapper.find('a.buy-button.buy-button-ref').get(0).href = item.attr('cart-ref');
 
 				if(!!pwrapper.find('.descricao-preco > em.valor-por').length){
@@ -698,10 +706,10 @@ $(document).ready(function(){
 			prevArrow: '<button class="slick-prev vertical" aria-label="Anterior" type="button">Anterior</button>',
 			nextArrow: '<button class="slick-next vertical" aria-label="Próximo" type="button">Próximo</button>',
 			lazyLoad: 'ondemand',
-			infinite: true,
+			infinite: false,
 			accessibility: true,
 			swipeToSlide: true,
-			slidesToShow: 4,
+			slidesToShow: 5,
 			slidesToScroll: 1,
 			vertical: true,
 			verticalSwiping: true,
