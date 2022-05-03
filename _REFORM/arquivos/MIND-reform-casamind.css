@@ -2218,8 +2218,8 @@ main.product .csm-product > .product-data > .product__info .product-details > #c
 	font-weight: 600;
 }
 main.product .csm-product > .description{
-	width: 67rem;
-	margin: 1rem auto 2rem auto;
+	width: 78rem;
+	margin: 2rem auto;
 }
 /*Collections Page*/
 main.collection > .main-container > .infoWrapper{
