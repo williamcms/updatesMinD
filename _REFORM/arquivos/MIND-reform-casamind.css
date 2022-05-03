@@ -64,7 +64,7 @@
 	margin: 0rem;
 	padding: 0rem;
 	font-size: 1em;
-	font-weight: 400;
+	font-weight: inherit;
 	line-height: 1.5;
 	scroll-behavior: smooth;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -1968,6 +1968,9 @@ main.product .csm-product > .product-data > .product__info .descricao-preco > .p
 main.product .csm-product > .product-data > .product__info .productPrice > .economia-de{
 	color: var(--dark);
 }
+main.product .csm-product > .product-data > .product__info .descricao-preco > .price-installments .skuBestInstallmentNumber{
+	font-weight: 600;
+}
 main.product .csm-product > .product-data > .product__info .preco-a-vista.price-cash,
 main.product .csm-product > .product-data > .product__info .unitSelector,
 main.product .csm-product > .product-data > .product__info .quantitySelector .quantityText{
@@ -2024,6 +2027,8 @@ main.product .csm-product > .product-data > .product__info .arButton.icon{
 	text-align: center;
 	min-height: 2.84938rem;
 	min-width: 5rem;
+	height: 100%;
+	width: 100%;
 	border: none;
 
 	justify-content: center;
@@ -2087,9 +2092,14 @@ main.product .csm-product > .product-data > .product__info .product-buy{
 	width: 100%;
 	background-color: var(--brand-color);
 }
-main.product .csm-product > .product-data > .product__info .product-buy:hover,
+main.product .csm-product > .product-data > .product__info .product-buy.unavailable{
+	color: var(--black);
+	background-color: var(--white);
+}
+main.product .csm-product > .product-data > .product__info .product-buy:not(.unavailable):hover,
 main.product .csm-product > .product-data > .product__info .addtoCartButton.icon:hover,
-main.product .csm-product > .product-data > .product__info .info-container > .csm-dowload-pdf:hover{
+main.product .csm-product > .product-data > .product__info .info-container > .csm-dowload-pdf:hover,
+main.product .csm-product > .product-data > .product__info .product-buy .portal-notify-me-ref fieldset input.btn-ok:hover{
 	filter: brightness(.95);
 }
 main.product .csm-product > .product-data > .product__info .product-buy > a{
@@ -2102,6 +2112,28 @@ main.product .csm-product > .product-data > .product__info .product-buy > a{
 	text-decoration: none;
 	user-select: none;
 	cursor: pointer;
+}
+main.product .csm-product > .product-data > .product__info .product-buy .portal-notify-me-ref fieldset{
+	display: flex;
+	flex-direction: column;
+	grid-row-gap: 1rem;
+	row-gap: 1rem;
+	border: none;
+}
+main.product .csm-product > .product-data > .product__info .product-buy .portal-notify-me-ref fieldset p{
+	font-size: 1rem;
+}
+main.product .csm-product > .product-data > .product__info .product-buy .portal-notify-me-ref fieldset input:not(.btn-ok){
+	border-bottom: 0.0625rem solid var(--brand-color);
+}
+main.product .csm-product > .product-data > .product__info .product-buy .portal-notify-me-ref fieldset input.btn-ok{
+	font-size: 1.5rem;
+	position: relative;
+	text-align: center;
+	color: var(--white);
+	padding: 0.3rem 3.5rem;
+	width: 100%;
+	background-color: var(--brand-color);
 }
 main.product .csm-product > .product-data > .product__info #addLista .glis-sku-single{
 	display: none;
@@ -2778,7 +2810,7 @@ tr .pdf-dowload{
 }
 main .csm-product select.product-sku-selection{
 	display: none;
-	margin-top: 1.2rem;
+	margin: 1.2rem 0;
 }
 /* Newsletter */
 footer .news-footer{

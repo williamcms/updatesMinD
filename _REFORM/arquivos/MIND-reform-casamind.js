@@ -30,8 +30,8 @@ $(document).ready(function(){
 	}
 	//Aguarda o determinado elemento carregar
 	//Exemplo de uso:
-	// waitForElm('.selector').then((elm) =>{
-	// });
+	//waitForElm('.selector').then((elm) =>{
+	//});
 	function waitForElm(selector){
 		return new Promise(resolve =>{
 			if($(selector)){
@@ -386,7 +386,7 @@ $(document).ready(function(){
 					v.attr('data-collectionid', h.toString());
 				return 'undefined';
 			}
-			// Modelo para vitrines inseridas por meio do controle
+			//Modelo para vitrines inseridas por meio do controle
 		}else if(v.hasClass('has-shelf--default prateleira')){
 			$.each(v, function(i){
 				if(typeof $(this).data('collectionid') == 'undefined' && $(this).parents('.has-shelf--default').length == 0 && $(this).find('button.seeMoreProducts[data-controls]').length <= 0){
@@ -445,7 +445,7 @@ $(document).ready(function(){
 
 		getShelfProducts();
 	});
-	// Carrega mais produtos (botão ver mais produtos)
+	//Carrega mais produtos (botão ver mais produtos)
 	var seeMoreProducts = $('.has-shelf--default').on('click', 'button.seeMoreProducts[data-controls]', function(){
 		let num = $(this).data('controls');
 		let v = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper') : $('.has-shelf--default').eq(num));
@@ -521,6 +521,68 @@ $(document).ready(function(){
 	})();
 	//Restrito a páginas de produto apenas
 	if($('main .csm-product').length != 0){
+		//Tratamentos para quando é exibida mensagem de produto indisponível
+		var productNotAvailable = waitForElm('.portal-notify-me-ref').then((elm) =>{
+			let container = $('.product-data > .product__info .buttonsContainer');
+
+			container.find('div.product-buy').addClass('unavailable');
+
+			container.find('.product-quantity-add').remove()
+			container.find('#addToBagPDP').remove()
+			container.find('#addLista').remove()
+		});
+		var selectvariableSKU = $('main .csm-product .product-sku-selection').on('change', function(){
+			let bwrapper = $('main .csm-product div.product-buy'),
+			pwrapper = $('main .csm-product .product__info .product-price'),
+			item = $(this).find(':selected'),
+			buttonsContainer = $('.product-data > .product__info .buttonsContainer');
+
+			if(item.attr('sku-id') == 'none'){
+				buttonsContainer.slideUp();
+
+				$(".available-alert").eq(0).html('<p>Selecione um produto!</p>');
+			}else{
+				buttonsContainer.slideDown();
+				bwrapper.find('a.buy-button.buy-button-ref').get(0).href = item.attr('cart-ref');
+
+				if(!!pwrapper.find('.descricao-preco > em.valor-por').length){
+					pwrapper.find('.descricao-preco > em.valor-por strong.skuBestPrice').text(`R$ ${parseFloat(item.attr('sku-price')).toFixed(2).replace(/\./, ",")}`);
+
+					pwrapper.find('.descricao-preco > em.valor-dividido strong.skuBestInstallmentNumber').text(`${item.attr('sku-installments-amount')}x`);
+					pwrapper.find('.descricao-preco > em.valor-dividido strong.skuBestInstallmentValue').text(`R$ ${parseInt(item.attr('sku-installments-price')).toFixed(2).replace(/\./, ",")}`);
+				}else{
+					pwrapper
+					.append('<div class="descricao-preco"></div>')
+					.find('div.descricao-preco')
+					.append('<em class="valor-por price-best-price"></em>')
+					.append('<em class="valor-dividido price-installments"></em>')
+
+
+					pwrapper.find('.descricao-preco > em.valor-por')
+					.html(`Por: <strong class="skuBestPrice">R$ ${parseFloat(item.attr('sku-price')).toFixed(2).replace(/\./, ",")}</strong>`);
+
+					pwrapper.find('.descricao-preco > em.valor-dividido')
+					.html(`ou <strong class="skuBestInstallmentNumber">${item.attr('sku-installments-amount')}x</strong> de 
+							<strong class="skuBestInstallmentValue">R$ ${item.attr('sku-installments-price')}</strong>`);
+				}
+				if(parseInt(item.attr('sku-qty')) <= 5){
+					$(".available-alert").eq(0).html(`<p>Corre que só tem <strong>${item.attr('sku-qty')}</strong> unidades disponíveis!</p>`);
+					$(".available-alert").eq(0).fadeIn();
+				}else{
+					$(".available-alert").eq(0).fadeOut();
+				}
+
+				if(item.data('sku-images').length > 0){
+					let sku_images = $('#'+ item.attr('sku-id')).data('sku-images'),
+					imagesWrapper = $('.csm-product .csm-product__images .product-images #show ul.thumbs');
+					//Limpa as imagens pre-existentes
+					imagesWrapper.empty();
+					$.each(sku_images, function(i, n){
+						imagesWrapper.append('<li><a href="javascript:void(0);" rel="" zoom="" clas="ON"><img src="'+ n.imageUrl +'" title="'+ n.imageLabel +'" alt="'+ n.imageText +'" /></a></li>')
+					});
+				}
+			}
+		});
 		var variableSKU = (variableSKU = () =>{
 			let arr = $('main .csm-product #___rc-p-sku-ids').get(0).value.split(','),
 			pid = $('main .csm-product #___rc-p-id').get(0).value,
@@ -568,7 +630,7 @@ $(document).ready(function(){
 						})
 						//Caso sejam nomes compostos por duas palavras, divide-os em grupos
 						//Ex: Carvalho Rosa, Carvalho Branco
-						if(variations[i].var.second != null){
+						if(!!variations[i].var.second){
 							if((i > 0 ? variations[i].var.first != variations[i-1].var.first : false ||
 							 i == 0) && f.find('optgroup[label='+ variations[i].var.first +']').length < 1){
 								f.append('<optgroup label="'+ variations[i].var.first +'">');
@@ -602,70 +664,6 @@ $(document).ready(function(){
 				});
 			}
 		})();
-		var selectvariableSKU = $('main .csm-product .product-sku-selection').on('change', function(){
-			let bwrapper = $('main .csm-product div.product-buy'),
-			pwrapper = $('main .csm-product .csm-product__info .product-price'),
-			item = $(this).find(':selected'),
-			priceQty = $('main .csm-product .price-quanty');
-
-			if(item.attr('sku-id') == 'none'){
-				priceQty.slideUp();
-				bwrapper.find('a.buy-button.buy-button-ref').remove();
-				pwrapper.find('.plugin-preco').remove()
-
-				$(".available-alert").eq(0).html('<p>Selecione um produto!</p>');
-			}else{
-				priceQty.slideDown();
-				if(bwrapper.find('a.buy-button.buy-button-ref').length != 0){
-					bwrapper.find('a.buy-button.buy-button-ref').get(0).href = item.attr('cart-ref');
-				}else{
-					bwrapper.html('<a target="_top" class="buy-button buy-button-ref" href="'+ item.attr('cart-ref') +'" style="display:block">Comprar</a>')
-				}
-				if(pwrapper.find('.plugin-preco .productPrice .descricao-preco em.price-best-price').length != 0){
-					pwrapper.find('.plugin-preco .productPrice .descricao-preco em.price-best-price strong.skuBestPrice').text('R$ ' + parseFloat(item.attr('sku-price')).toFixed(2).replace(/\./, ","));
-
-					pwrapper.find('.plugin-preco .productPrice .descricao-preco em.price-installments strong.skuBestInstallmentNumber').text(item.attr('sku-installments-amount') + 'x');
-					pwrapper.find('.plugin-preco .productPrice .descricao-preco em.price-installments strong.skuBestInstallmentValue').text('R$ ' + item.attr('sku-installments-price'));
-				}else{
-					pwrapper
-					.append('<div></div>')
-					.find('div')
-					.addClass('plugin-preco')
-					.append('<div></div>')
-					.find('div')
-					.addClass('productPrice')
-					.append('<div></div>')
-					.find('div')
-					.addClass('descricao-preco')
-
-					pwrapper.find('.plugin-preco .productPrice .descricao-preco')
-					.append('<em class="valor-por price-best-price"></em>')
-					.find('em.price-best-price')
-					.html('Por: <strong class="skuBestPrice">R$ '+ parseFloat(item.attr('sku-price')).toFixed(2).replace(/\./, ",") +'</strong>');
-
-					pwrapper.find('.plugin-preco .productPrice .descricao-preco')
-					.append('<em class="valor-dividido price-installments"></em>')
-					.find('em.price-installments')
-					.html('ou <strong class="skuBestInstallmentNumber">'+ item.attr('sku-installments-amount') +'x</strong> de <strong class="skuBestInstallmentValue">R$ '+ item.attr('sku-installments-price') +'</strong>');
-				}
-				if(parseInt(item.attr('sku-qty')) <= 5){
-					$(".available-alert").eq(0).html('<p>Corre que só tem <strong>' + item.attr('sku-qty') + "</strong> unidades disponíveis!</p>");
-					$(".available-alert").eq(0).fadeIn();
-				}else{
-					$(".available-alert").eq(0).fadeOut();
-				}
-
-				if(item.data('sku-images').length > 0){
-					let sku_images = $('#'+ item.attr('sku-id')).data('sku-images'),
-					imagesWrapper = $('.csm-product .csm-product__images .product-images #show ul.thumbs');
-					//Limpa as imagens pre-existentes
-					imagesWrapper.empty();
-					$.each(sku_images, function(i, n){
-						imagesWrapper.append('<li><a href="javascript:void(0);" rel="" zoom="" clas="ON"><img src="'+ n.imageUrl +'" title="'+ n.imageLabel +'" alt="'+ n.imageText +'" /></a></li>')
-					});
-				}
-			}
-		});
 		var changeQtyBuyButton = $('.product-quantity-add > a[role="button"]').on('click', function(){
 			let input = $(this).parent().find('input[type="number"]');
 			
@@ -747,7 +745,7 @@ $(document).ready(function(){
 			i = $(".value-field.3D-android").text(), 
 			s = $(".value-field.3D-desktop").text();
 
-			// Arruma a estilização visto que alguns elementos serão/estão ocultos
+			//Arruma a estilização visto que alguns elementos serão/estão ocultos
 			$.each($('.group.Informacao-Adicional tr').find('th:visible'), function(i){
 				if(i % 2 == 0){
 					$(this).parents('tr').addClass('even')
@@ -757,9 +755,9 @@ $(document).ready(function(){
 			});
 
 			if(s != "" && !isMobile()){
-				// Removido por hora para entender se será utilizado
-				// $("#botaoDesktop").attr("href", s);
-				// $("#botaoDesktop").closest("span").show();
+				//Removido por hora para entender se será utilizado
+				//$("#botaoDesktop").attr("href", s);
+				//$("#botaoDesktop").closest("span").show();
 				return false;
 			}else if(i != "" && /android/i.test(t)){
 				$("#botaoAndroid").attr("href", i);
