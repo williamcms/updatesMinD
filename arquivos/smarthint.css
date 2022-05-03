@@ -229,7 +229,7 @@ body.home div#smarthint-position-5 .smarthint .slick-next {
 	margin-bottom: 10px;
 }
 
-.smarthint h3 {
+.smarthint h4 {
 	color: #303030;
 	font-size: 15px;
 	font-weight: 600;
@@ -593,7 +593,7 @@ body.home div#smarthint-position-5 .smarthint .slick-next {
 	margin: 0 -20px;
 }
 
-.smarthint .bought-together .result h3 {
+.smarthint .bought-together .result h4 {
 	font-size: 28px;
 	font-weight: 400;
 	margin: 140px 0px 20px;
@@ -753,7 +753,7 @@ div#smarthint-bought-together .icon--minicart svg {
 
 	.smarthint .bought-together .product-image,
 	.smarthint .bought-together .product-info,
-	.smarthint .bought-together .result h3,
+	.smarthint .bought-together .result h4,
 	.smarthint .bought-together .result .cta {
 		float: none;
 		margin: 0 1%;
@@ -851,7 +851,7 @@ div#smarthint-bought-together .icon--minicart svg {
 
 	.smarthint .bought-together .product-image,
 	.smarthint .bought-together .product-info,
-	.smarthint .bought-together .result h3,
+	.smarthint .bought-together .result h4,
 	.smarthint .bought-together .result .cta {
 		float: none;
 		margin: 0 1%;
