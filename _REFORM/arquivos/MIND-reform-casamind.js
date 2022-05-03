@@ -539,10 +539,13 @@ $(document).ready(function(){
 
 			if(item.attr('sku-id') == 'none'){
 				buttonsContainer.slideUp();
+				pwrapper.slideUp();
 
 				$(".available-alert").eq(0).html('<p>Selecione um produto!</p>');
 			}else{
 				buttonsContainer.slideDown();
+				pwrapper.slideDown();
+				
 				bwrapper.find('a.buy-button.buy-button-ref').get(0).href = item.attr('cart-ref');
 
 				if(!!pwrapper.find('.descricao-preco > em.valor-por').length){
