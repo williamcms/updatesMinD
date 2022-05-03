@@ -7,125 +7,117 @@
 			<div class="main">
 				<ul class="slick-that">
 					{{#Products}}
-						<div class="apoio-sh">
-							<li>
-								<article class="csm-shelf__product" data-id="{{ItemGroupId}}" data-sku="{{ProductId}}" itemtype="http://schema.org/Product">
-									<section class="csm-shelf__product--top">
-										<div class="csm-shelf__image">
-											<div class="product-image">
-												<a class="csm-shelf__link" title="{{Title}}" href="{{{Link}}}">
-													<div class="csm-shelf__image--static" itemprop="image">
-														<img img-src="{{{ImageLink}}}" loading="lazy" src="" width="290" height="435" alt="{{Title}}" id="" onerror="this.src='{{{ImageLink}}}';">
-													</div>
-													<div class="csm-shelf__image--hover">
-														<img img-src="{{{SecondImageLink}}}" loading="lazy" src="" width="290" height="435" alt="{{Title}}" id="" onerror="this.src='{{{SecondImageLink}}}';">
-													</div>
-												</a>
-
-												<div class="csm-shelf__buy">
-													<a class="csm-shelf__link js--shelf-buy" href="{{{Link}}}" title="{{Title}}">
-														<strong>
-															Adicionar à
-															<span class="icon--minicart">
-																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511">
-																	<path d="M445.663 469.921L431.301 110.88A15.457 15.457 0 0 0 415.814 96H351v-.5C351 42.841 308.159 0 255.5 0S160 42.841 160 95.5v.5H95.187a15.459 15.459 0 0 0-15.488 14.88L65.337 469.921c-.434 10.842 3.468 21.122 10.985 28.946C83.84 506.691 93.956 511 104.806 511h301.389c10.851 0 20.966-4.309 28.484-12.133 7.516-7.825 11.418-18.104 10.984-28.946zM175 95.5c0-44.388 36.112-80.5 80.5-80.5S336 51.112 336 95.5v.5H175v-.5zm248.862 392.974c-4.663 4.853-10.938 7.526-17.667 7.526H104.806c-6.73 0-13.004-2.672-17.667-7.525-4.663-4.853-7.083-11.229-6.813-17.954L94.687 111.48c.011-.27.23-.48.5-.48H160v48.5a7.5 7.5 0 0 0 15 0V111h161v48.5a7.5 7.5 0 0 0 15 0V111h64.814c.269 0 .488.21.499.48l14.362 359.041c.269 6.724-2.151 13.1-6.813 17.953z">
-																	</path>
-																</svg>
-															</span>
-														</strong>
-													</a>
+					<div class="apoio-sh">
+						<li>
+							<article class="csm-shelf__product" data-id="{{ItemGroupId}}" data-sku="{{ProductId}}"
+								itemtype="http://schema.org/Product">
+								<section class="csm-shelf__product--top">
+									<div class="csm-shelf__image">
+										<div class="product-image">
+											<a class="csm-shelf__link" title="{{Title}}" href="{{{Link}}}">
+												<div class="csm-shelf__image--static" itemprop="image">
+													<img img-src="{{{ImageLink}}}" loading="lazy" src="" width="290"
+														height="435" alt="{{Title}}" id=""
+														onerror="this.src='{{{ImageLink}}}';">
 												</div>
-											</div>
-											<!--<div class="csm-shelf__buy">
-											<a class="bnt-sh" href="{{{Link}}}" title="{{Title}}">
-												<strong>
-													Adicionar à
-													<span class="icon--minicart">
-														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511">
-															<path
-																d="M445.663 469.921L431.301 110.88A15.457 15.457 0 0 0 415.814 96H351v-.5C351 42.841 308.159 0 255.5 0S160 42.841 160 95.5v.5H95.187a15.459 15.459 0 0 0-15.488 14.88L65.337 469.921c-.434 10.842 3.468 21.122 10.985 28.946C83.84 506.691 93.956 511 104.806 511h301.389c10.851 0 20.966-4.309 28.484-12.133 7.516-7.825 11.418-18.104 10.984-28.946zM175 95.5c0-44.388 36.112-80.5 80.5-80.5S336 51.112 336 95.5v.5H175v-.5zm248.862 392.974c-4.663 4.853-10.938 7.526-17.667 7.526H104.806c-6.73 0-13.004-2.672-17.667-7.525-4.663-4.853-7.083-11.229-6.813-17.954L94.687 111.48c.011-.27.23-.48.5-.48H160v48.5a7.5 7.5 0 0 0 15 0V111h161v48.5a7.5 7.5 0 0 0 15 0V111h64.814c.269 0 .488.21.499.48l14.362 359.041c.269 6.724-2.151 13.1-6.813 17.953z">
-															</path>
-														</svg>
-													</span>
-												</strong>
+												<div class="csm-shelf__image--hover">
+													<img img-src="{{{SecondImageLink}}}" loading="lazy" src=""
+														width="290" height="435" alt="{{Title}}" id=""
+														onerror="this.src='{{{SecondImageLink}}}';">
+												</div>
 											</a>
-										</div>-->
-											<div class="button sh" style="display: none;">
-												{{#AditionalFeatures}}
-													<a id="buy-{{{ItemGroupId}}}" class="buttons buy sh" target="_top" title="Adicionar ao carrinho" value="{{addToCartLink}}">Adicionar à
-														sacola
-													</a>
-												{{/AditionalFeatures}}
-											</div>
-										</div>
-									</section>
 
-									<section class="csm-shelf__product--bottom">
-										<div class="csm-shelf__name">
-											<h4>
-												<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}" itemprop="name">
-													{{Title}}
-												</a>
-											</h4>
-										</div>
-										<div class="yv-review-quickreview" value="{{ItemGroupId}}"></div>
-										<div class="csm-shelf__price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-											<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}">
-												{{#HasSalePrice}}
-													<p class="csm-shelf__price--old">
-														De: <span>R$ {{PriceInteger}},{{PriceDecimal}}</span>
-													</p>
-													<p class="csm-shelf__price--best">
-														<span style="display: none;" itemprop="priceCurrency" wfd-invisible="true">R$</span>
-														<span style="display: none;" wfd-invisible="true">
-															<link itemprop="availability" href="http://schema.org/InStock" wfd-invisible="true">
-															Em estoque
+											<div class="csm-shelf__buy">
+												<a class="csm-shelf__link js--shelf-buy"
+													href="{{{Link}}}"
+													title="{{Title}}">
+													<strong>
+														Adicionar à
+														<span class="icon--minicart">
+															<svg xmlns="http://www.w3.org/2000/svg"
+																viewBox="0 0 511 511">
+																<path
+																	d="M445.663 469.921L431.301 110.88A15.457 15.457 0 0 0 415.814 96H351v-.5C351 42.841 308.159 0 255.5 0S160 42.841 160 95.5v.5H95.187a15.459 15.459 0 0 0-15.488 14.88L65.337 469.921c-.434 10.842 3.468 21.122 10.985 28.946C83.84 506.691 93.956 511 104.806 511h301.389c10.851 0 20.966-4.309 28.484-12.133 7.516-7.825 11.418-18.104 10.984-28.946zM175 95.5c0-44.388 36.112-80.5 80.5-80.5S336 51.112 336 95.5v.5H175v-.5zm248.862 392.974c-4.663 4.853-10.938 7.526-17.667 7.526H104.806c-6.73 0-13.004-2.672-17.667-7.525-4.663-4.853-7.083-11.229-6.813-17.954L94.687 111.48c.011-.27.23-.48.5-.48H160v48.5a7.5 7.5 0 0 0 15 0V111h161v48.5a7.5 7.5 0 0 0 15 0V111h64.814c.269 0 .488.21.499.48l14.362 359.041c.269 6.724-2.151 13.1-6.813 17.953z">
+																</path>
+															</svg>
 														</span>
-														Por: <strong itemprop="price">R$
-															{{SalePriceInteger}},{{SalePriceDecimal}}</strong>
-													</p>
-												{{/HasSalePrice}}
-												{{^HasSalePrice}}
-													<strong itemprop="price">R$ {{PriceInteger}},{{PriceDecimal}}</strong>
-												{{/HasSalePrice}}
-											</a>
-										</div>
-										{{#HasInstallment}}
-											<div class="csm-shelf__installments">
-												<p>
-													<strong class="csm-shelf__installments--quantity">{{Installment}}</strong>x
-													de <strong class="csm-shelf__installments--value">R$
-														{{InstallmentAmountInteger}},{{InstallmentAmountDecimal}}</strong>
-												</p>
+													</strong>
+												</a>
 											</div>
-										{{/HasInstallment}}
-										<div class="csm-shelf__flags">
-											<span class="csm-shelf__colection">
-												{{#AditionalFeatures}}
-													{{#highlights-793}}
-														<p class="flag flag-produto-feito-a-mao">
-															flag-produto-feito-a-mao</p>
-													{{/highlights-793}}
-													{{#highlights-794}}
-														<p class="flag flag-produto-sustentavel">
-															flag-produto-sustentavel</p>
-													{{/highlights-794}}
-													{{#highlights-795}}
-														<p class="flag flag-produto-brasileiro">
-															flag-produto-brasileiro</p>
-													{{/highlights-795}}
-													{{#highlights-796}}
-														<p class="flag flag-projeto-social">flag-projeto-social
-														</p>
-													{{/highlights-796}}
-												{{/AditionalFeatures}}
-											</span>
-											<span class="csm-shelf__promotion"></span>
 										</div>
-									</section>
-								</article>
-							</li>
-						</div>
+										<div class="button sh" style="display: none;">
+											{{#AditionalFeatures}}
+											<a id="buy-{{{ItemGroupId}}}" class="buttons buy sh" target="_top"
+												title="Adicionar ao carrinho" value="{{addToCartLink}}">Adicionar à
+												sacola
+											</a>
+											{{/AditionalFeatures}}
+										</div>
+									</div>
+								</section>
+
+								<section class="csm-shelf__product--bottom">
+									<div class="csm-shelf__name">
+										<h4>
+											<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}"
+												itemprop="name">
+												{{Title}}
+											</a>
+										</h4>
+									</div>
+									<div class="yv-review-quickreview" value="{{ItemGroupId}}"></div>
+									<div class="csm-shelf__price" itemprop="offers" itemscope=""
+										itemtype="http://schema.org/Offer">
+										<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}">
+											{{#HasSalePrice}}
+											<p class="csm-shelf__price--old">
+												De: <span>R$ {{PriceInteger}},{{PriceDecimal}}</span>
+											</p>
+											<p class="csm-shelf__price--best">
+												<span style="display: none;" itemprop="priceCurrency"
+													wfd-invisible="true">R$</span>
+												<span style="display: none;" wfd-invisible="true">
+													<link itemprop="availability" href="http://schema.org/InStock"
+														wfd-invisible="true">
+													Em estoque
+												</span>
+												Por: <strong itemprop="price">R$
+													{{SalePriceInteger}},{{SalePriceDecimal}}</strong>
+											</p>
+											{{/HasSalePrice}}
+											{{^HasSalePrice}}
+											<strong itemprop="price">R$ {{PriceInteger}},{{PriceDecimal}}</strong>
+											{{/HasSalePrice}}
+										</a>
+									</div>
+									{{#HasInstallment}}
+									<div class="csm-shelf__installments">
+										<p>
+											<strong class="csm-shelf__installments--quantity">{{Installment}}</strong>x
+											de <strong class="csm-shelf__installments--value">R$
+												{{InstallmentAmountInteger}},{{InstallmentAmountDecimal}}</strong>
+										</p>
+									</div>
+									{{/HasInstallment}}
+									<div class="csm-shelf__flags">
+										<span class="csm-shelf__colection">
+											{{#AditionalFeatures}}
+											{{#highlights-793}}<p class="flag flag-produto-feito-a-mao">
+												flag-produto-feito-a-mao</p>{{/highlights-793}}
+											{{#highlights-794}}<p class="flag flag-produto-sustentavel">
+												flag-produto-sustentavel</p>{{/highlights-794}}
+											{{#highlights-795}}<p class="flag flag-produto-brasileiro">
+												flag-produto-brasileiro</p>{{/highlights-795}}
+											{{#highlights-796}}<p class="flag flag-projeto-social">flag-projeto-social
+											</p>{{/highlights-796}}
+											{{/AditionalFeatures}}
+										</span>
+										<span class="csm-shelf__promotion"></span>
+									</div>
+								</section>
+							</article>
+						</li>
+					</div>
 					{{/Products}}
 				</ul>
 			</div>
@@ -139,94 +131,136 @@
 	<div class="has-shelf--default prateleira n10colunas">
 		<ul class="slick-it">
 			{{#Products}}
-				<div class="apoio-sh">
-					<div class="item-sh" data-slick-index="0" aria-hidden="false" style="width: 337px;">
-						<div>
-							<li layout="07c1d914-79ef-4410-85ec-9592e97f1f0a" class="objetos-de-decoracao-para-sala-quarto-e-cozinha-|-casa-mind" style="width: 100%; display: inline-block;">
-								<article class="csm-shelf__product" data-id="{{ItemGroupId}}" data-sku="{{ProductId}}" data-department="" data-category="" data-name="{{Title}}" itemscope="" itemtype="http://schema.org/Product">
-									<section class="csm-shelf__product--top">
-										<div class="csm-shelf__image">
-											<a class="csm-shelf__link" title="{{Title}}" href="{{{Link}}}" tabindex="0">
-												<div class="csm-shelf__image--static" itemprop="image">
-													<img img-src="{{{ImageLink}}}" src="" width="350" height="500" alt="{{Title}}" id="" loading="lazy" onerror="this.src='{{{ImageLink}}}';">
-												</div>
-											</a>
-										</div>
-									</section>
-									<section class="csm-shelf__product--bottom">
-										<div class="csm-shelf__buy">
-											<a class="csm-shelf__link js--shelf-buy" href="{{{Link}}}" title="{{Title}}" tabindex="0">
-												<div>
-													<span class="e-add-button">
-														Adicionar
-													</span>
-													<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<g clip-path="url(#clip0_190:1032)">
-															<path d="M30.5 30.5H0.5L3 10H28L30.5 30.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-															</path>
-															<path d="M22.813 7.64502C22.7631 5.73873 21.9708 3.92735 20.6049 2.59668C19.2389 1.26601 17.4074 0.521484 15.5005 0.521484C13.5935 0.521484 11.7619 1.26601 10.396 2.59668C9.03007 3.92735 8.23784 5.73873 8.18799 7.64502" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-															<path d="M8.17896 7.64307V13.7141" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-															<path d="M22.8219 7.64307V13.7141" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-														</g>
-														<defs>
-															<clipPath id="clip0_190:1032">
-																<rect width="31" height="31" fill="white"></rect>
-															</clipPath>
-														</defs>
-													</svg>
-												</div>
-											</a>
-										</div>
-										<div class="csm-shelf__name">
-											<h5>
-												<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}" itemprop="name" tabindex="0">
-													{{Title}}
-												</a>
-											</h5>
-										</div>
-										<div class="csm-shelf__price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-											<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}" tabindex="0">
-												{{#HasSalePrice}}
-													<p class="csm-shelf__price--best">
-														<strong itemprop="price">R$
-															{{SalePriceInteger}},{{SalePriceDecimal}}</strong>
-													</p>
-													<p class="csm-shelf__price--old">
-														<span>R$ {{PriceInteger}},{{PriceDecimal}}</span>
-													</p>
-												{{/HasSalePrice}}
-												{{^HasSalePrice}}
-													<p class="csm-shelf__price--best">
-														<strong itemprop="price">R$ {{PriceInteger}},{{PriceDecimal}}</strong>
-													</p>
-												{{/HasSalePrice}}
-											</a>
-										</div>
-										{{#HasInstallment}}
-											<div class="csm-shelf__installments">
-												<p>
-													ou {{Installment}} x de R$
-													{{InstallmentAmountInteger}},{{InstallmentAmountDecimal}}
-												</p>
+			<div class="apoio-sh">
+				<div class="item-sh" data-slick-index="0" aria-hidden="false" style="width: 337px;">
+					<div>
+						<li layout="07c1d914-79ef-4410-85ec-9592e97f1f0a"
+							class="objetos-de-decoracao-para-sala-quarto-e-cozinha-|-casa-mind"
+							style="width: 100%; display: inline-block;">
+							<article class="csm-shelf__product" data-id="{{ItemGroupId}}" data-sku="{{ProductId}}"
+								data-department="" data-category="" data-name="{{Title}}" itemscope=""
+								itemtype="http://schema.org/Product">
+								<section class="csm-shelf__product--top">
+									<div class="csm-shelf__image">
+										<a class="csm-shelf__link" title="{{Title}}" href="{{{Link}}}" tabindex="0">
+											<div class="csm-shelf__image--static" itemprop="image">
+												<img img-src="{{{ImageLink}}}" src="" width="350" height="500"
+													alt="{{Title}}" id="" loading="lazy"
+													onerror="this.src='{{{ImageLink}}}';">
 											</div>
-										{{/HasInstallment}}
-									</section>
-								</article>
-							</li>
-						</div>
+										</a>
+									</div>
+								</section>
+								<section class="csm-shelf__product--bottom">
+									<div class="csm-shelf__buy">
+										<a class="csm-shelf__link js--shelf-buy" href="{{{Link}}}" title="{{Title}}"
+											tabindex="0">
+											<div>
+												<span class="e-add-button">
+													Adicionar
+												</span>
+												<svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0_190:1032)">
+														<path d="M30.5 30.5H0.5L3 10H28L30.5 30.5Z" stroke="white"
+															stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round">
+														</path>
+														<path
+															d="M22.813 7.64502C22.7631 5.73873 21.9708 3.92735 20.6049 2.59668C19.2389 1.26601 17.4074 0.521484 15.5005 0.521484C13.5935 0.521484 11.7619 1.26601 10.396 2.59668C9.03007 3.92735 8.23784 5.73873 8.18799 7.64502"
+															stroke="white" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round"></path>
+														<path d="M8.17896 7.64307V13.7141" stroke="white"
+															stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round"></path>
+														<path d="M22.8219 7.64307V13.7141" stroke="white"
+															stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round"></path>
+													</g>
+													<defs>
+														<clipPath id="clip0_190:1032">
+															<rect width="31" height="31" fill="white"></rect>
+														</clipPath>
+													</defs>
+												</svg>
+											</div>
+										</a>
+									</div>
+									<div class="csm-shelf__name">
+										<h4>
+											<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}"
+												itemprop="name" tabindex="0">
+												{{Title}}
+											</a>
+										</h4>
+									</div>
+									<div class="csm-shelf__price" itemprop="offers" itemscope=""
+										itemtype="http://schema.org/Offer">
+										<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}" tabindex="0">
+											{{#HasSalePrice}}
+											<p class="csm-shelf__price--best">
+												<strong itemprop="price">R$
+													{{SalePriceInteger}},{{SalePriceDecimal}}</strong>
+											</p>
+											<p class="csm-shelf__price--old">
+												<span>R$ {{PriceInteger}},{{PriceDecimal}}</span>
+											</p>
+											{{/HasSalePrice}}
+											{{^HasSalePrice}}
+											<p class="csm-shelf__price--best">
+												<strong itemprop="price">R$ {{PriceInteger}},{{PriceDecimal}}</strong>
+											</p>
+											{{/HasSalePrice}}
+										</a>
+									</div>
+									{{#HasInstallment}}
+									<div class="csm-shelf__installments">
+										<p>
+											ou {{Installment}} x de R$
+											{{InstallmentAmountInteger}},{{InstallmentAmountDecimal}}
+										</p>
+									</div>
+									{{/HasInstallment}}
+								</section>
+							</article>
+						</li>
 					</div>
 				</div>
+			</div>
 			{{/Products}}
 		</ul>
 	</div>
 </div>
-
+<!---->
 <script>
-	$(".smarthint .product-image img").each(function() {
+
+	jQuery(".smarthint .product-image img").each(function () {
 		var imgsrc = jQuery(this).attr('img-src');
 		imgsrc = imgsrc.replace("-300-300", "-290-435");
 		jQuery(this).attr("src", imgsrc);
 	});
+
+	jQuery(".smarthint .csm-shelf__image--static img").each(function () {
+		var imgsrc = jQuery(this).attr('img-src');
+		imgsrc = imgsrc.replace("-300-300", "-350-500");
+		jQuery(this).attr("src", imgsrc);
+	});
+
+	jQuery('.smarthint .button.sh').each(function () {
+		var btnCompra = jQuery(this).find('.buy.sh');
+		btnCompra.off();
+		var url_request = jQuery(this).find('.buy.sh').attr("value");
+		btnCompra.click(() => {
+			jQuery.ajax({
+				type: "POST",
+				url: url_request,
+				contentType: "application/json; charset=utf-8",
+				success: function () {
+					window.location.reload();
+				}
+			});
+		});
+	})
 
 	function ajustarSlick(quantidade, count) {
 		if ((typeof jQuery.fn.slick !== 'undefined')) {
@@ -260,7 +294,7 @@
 		}
 		count++;
 		if (count <= 10) {
-			setTimeout(function() {
+			setTimeout(function () {
 				ajustarSlick(quantidade, count);
 			}, 300);
 		}

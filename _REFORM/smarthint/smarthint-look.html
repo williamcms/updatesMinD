@@ -2,60 +2,60 @@
 	<h3>{{BoxTitle}}</h3>
 	<ul class="slick-it">
 		{{#Products}}
-			<li class="moda--exemplo-">
-				<span class="box-item text-center">
-					{{#ReleaseDateDescription}}
-						<p class="smarthint-release-date-description">
-							<span>{{ReleaseDateDescription}}</span>
-						</p>
-					{{/ReleaseDateDescription}}
-					<a class="product-image" title="{{Title}}" href="{{{Link}}}">
-						<img src="{{{ImageLink}}}" width="292" height="292" alt="{{Title}}">
+		<li class="moda--exemplo-">
+			<span class="box-item text-center">
+				{{#ReleaseDateDescription}}
+  				<p class="smarthint-release-date-description">
+  					<span>{{ReleaseDateDescription}}</span>
+  				</p>
+  				{{/ReleaseDateDescription}}
+				<a class="product-image" title="{{Title}}" href="{{{Link}}}">
+					<img src="{{{ImageLink}}}" width="292" height="292" alt="{{Title}}" >
+				</a>
+				<b class="product-name">
+					<a title="{{Title}}" href="{{{Link}}}">
+						{{Title}}
 					</a>
-					<b class="product-name">
-						<a title="{{Title}}" href="{{{Link}}}">
-							{{Title}}
-						</a>
-					</b>
-					<span class="price">
-						<a title="{{Title}}" href="{{{Link}}}">
-							{{#HasSalePrice}}
-								<span class="old-price">R$ {{PriceInteger}},{{PriceDecimal}}</span>
-								<span class="best-price">R$ {{SalePriceInteger}},{{SalePriceDecimal}} </span>
-							{{/HasSalePrice}}
-							{{^HasSalePrice}}
-								<span class="best-price">R$ {{PriceInteger}},{{PriceDecimal}} </span>
-							{{/HasSalePrice}}
-
-							{{#HasInstallment}}
-								<em class="installment">
-									ou até {{Installment}}x de R$ {{InstallmentAmountInteger}},{{InstallmentAmountDecimal}}
-								</em>
-							{{/HasInstallment}}
-							{{#HasPromotion}}
-								<div class="price-bullet price-bullet-percentage">
-									<div>
-										<span class="value">
-											<span class="integer">{{PromotionDiscount}}</span>
-											<span class="symbol">%</span>
-										</span>
-									</div>
-									<span class="off">OFF</span>
-								</div>
-							{{/HasPromotion}}
+				</b>
+				<span class="price">
+					<a title="{{Title}}" href="{{{Link}}}">
+						{{#HasSalePrice}}
+							<span class="old-price">R$ {{PriceInteger}},{{PriceDecimal}}</span>
+							<span class="best-price">R$  {{SalePriceInteger}},{{SalePriceDecimal}} </span>
+						{{/HasSalePrice}}
+						{{^HasSalePrice}}
+							<span class="best-price">R$  {{PriceInteger}},{{PriceDecimal}} </span>
+						{{/HasSalePrice}}						
+						
+						{{#HasInstallment}}
+							<em class="installment">
+								ou até {{Installment}}x de R$ {{InstallmentAmountInteger}},{{InstallmentAmountDecimal}}
+							</em>
+						{{/HasInstallment}}
+						{{#HasPromotion}}
+						<div class="price-bullet price-bullet-percentage" >
+							<div>
+								<span class="value">
+									<span class="integer">{{PromotionDiscount}}</span> 
+									<span class="symbol">%</span>
+								</span>
+							</div>
+							<span class="off">OFF</span>
+						</div>
+						{{/HasPromotion}}
+					</a>
+				</span>
+				<div class="wrapper-buy-button-asynchronous bba3">
+					<span class="add">
+						<a title="{{Title}}" href="{{{Link}}}" class="btn-add-buy-button-asynchronous btn-not-clicked asynchronousBuyButton actionActivated vtexsm_activated btover-active">
+							Comprar 
+						<i class="fa fa-lock"></i>
 						</a>
 					</span>
-					<div class="wrapper-buy-button-asynchronous bba3">
-						<span class="add">
-							<a title="{{Title}}" href="{{{Link}}}" class="btn-add-buy-button-asynchronous btn-not-clicked asynchronousBuyButton actionActivated vtexsm_activated btover-active">
-								Comprar
-								<i class="fa fa-lock"></i>
-							</a>
-						</span>
-						<div class="buy-button-asynchronous message-user3"></div>
-					</div>
-				</span>
-			</li>
+					<div class="buy-button-asynchronous message-user3"></div>
+				</div>
+			</span>
+		</li>
 		{{/Products}}
 	</ul>
 </div>
