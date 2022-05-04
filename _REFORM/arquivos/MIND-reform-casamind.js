@@ -585,13 +585,14 @@ $(document).ready(function(){
 				}
 
 				if(item.data('sku-images').length > 0){
-					let sku_images = $('#'+ item.attr('sku-id')).data('sku-images'),
-					imagesWrapper = $('.csm-product .csm-product__images .product-images #show ul.thumbs');
-					//Limpa as imagens pre-existentes
-					imagesWrapper.empty();
-					$.each(sku_images, function(i, n){
-						imagesWrapper.append('<li><a href="javascript:void(0);" rel="" zoom="" clas="ON"><img src="'+ n.imageUrl +'" title="'+ n.imageLabel +'" alt="'+ n.imageText +'" /></a></li>')
-					});
+					let sku_image = item.data('sku-images').first(),
+						imageExpanded = $('.zoomPad > #image-main');
+					//Coleta o id da imagem para substituição
+					let ids = sku_image.imageUrl.match(/ids\/\d+/g);
+					//Troca da imagem para uma com especificação de tamanho
+					let image = sku_image.imageUrl.replace(/ids\/\d+/g, ids.toString() + '-0-750');
+					//Troca a imagem de exibição para a do item selecionado
+					imageExpanded.attr('src', image);
 				}
 			}
 		});
@@ -742,14 +743,14 @@ $(document).ready(function(){
 		var changeProductImage = (changeProductImage = () =>{
 			$("ul.thumbs img").each(function(){
 				$(this).closest('a').attr("rel", 
-					$(this).closest('a').attr("rel").replace("-500-500", "-500-750"));
-				$(this).attr("src", $(this).attr("src").replace("-350-303", "-90-130"));
+					$(this).closest('a').attr("rel").replace("-500-500", "-0-750"));
+				$(this).attr("src", $(this).attr("src").replace("-350-303", "-0-130"));
 			});
 		})();
 		var changeProductImageExpanded = (changeProductImageExpanded = () =>{
 			let img = $('.image-zoom > .zoomPad > img#image-main');
 
-			img.attr("src", img.attr("src").replace("-500-500", "-500-750"));
+			img.attr("src", img.attr("src").replace("-500-500", "-0-750"));
 		})();
 		var realidadeAl = (function(){
 			let t = navigator.userAgent || navigator.vendor || window.opera, 
