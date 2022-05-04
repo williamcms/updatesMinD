@@ -523,11 +523,11 @@ $(document).ready(function(){
 	if($('main .csm-product').length != 0){
 		//Tratamentos para quando é exibida mensagem de produto indisponível
 		var productNotAvailable = waitForElm('fieldset.sku-notifyme-form.notifyme-form').then((elm) =>{
-			console.log('Product unavailable', elm)
-			if(!!elm.length){
-				let wrapper = $('.product-data > .product__info'),
-				container = wrapper.find('.buttonsContainer');
+			let wrapper = $('.product-data > .product__info'),
+				container = wrapper.find('.buttonsContainer'),
+				buybutton = container.find('.buy-button.buy-button-ref');
 
+			if(!!elm.length && elm.is(':visible') && !buybutton.is(':visible')){
 				elm.find('#notifymeClientName').attr('aria-label', 'Digite seu nome');
 				elm.find('#notifymeClientEmail').attr('aria-label', 'Digite seu email');
 

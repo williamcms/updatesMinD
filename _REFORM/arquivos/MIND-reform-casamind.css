@@ -2076,6 +2076,7 @@ main.product .csm-product > .product-data > .product__info .price-quanty.input-g
 	-webkit-appearance: none;
 }
 main.product .csm-product > .product-data > .product__info .input-group-prepend.icon{
+	width: auto;
 	padding: 0 .5rem;
 }
 main.product .csm-product > .product-data > .product__info .input-group-prepend.icon > a[role="button"]{
