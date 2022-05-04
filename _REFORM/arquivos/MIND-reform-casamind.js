@@ -528,8 +528,9 @@ $(document).ready(function(){
 				buybutton = container.find('.buy-button.buy-button-ref');
 
 			if(!!elm.length && elm.is(':visible') && !buybutton.is(':visible')){
-				elm.find('#notifymeClientName').attr('aria-label', 'Digite seu nome');
-				elm.find('#notifymeClientEmail').attr('aria-label', 'Digite seu email');
+				elm.find('#notifymeClientName').attr('aria-label', 'Digite seu nome para ser avisado da disponibilidade deste produto!');
+				elm.find('#notifymeClientEmail').attr('aria-label', 'Digite seu email para ser avisado da disponibilidade deste produto!');
+				elm.find('#notifymeButtonOK').attr('aria-label', 'Enviar formulário');
 
 				container.find('div.product-buy').addClass('unavailable');
 
