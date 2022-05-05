@@ -126,7 +126,6 @@ $(document).ready(function(){
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
 		accessibility: true,
-		focusOnChange: true,
 		swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
@@ -140,7 +139,6 @@ $(document).ready(function(){
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
 		accessibility: true,
-		focusOnChange: true,
 		swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
@@ -154,7 +152,6 @@ $(document).ready(function(){
 		nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
 		lazyLoad: 'ondemand',
 		accessibility: true,
-		focusOnChange: true,
 		swipeToSlide: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
@@ -714,7 +711,7 @@ $(document).ready(function(){
 			infinite: false,
 			accessibility: true,
 			focusOnChange: true,
-			swipeToSlide: false,
+			swipeToSlide: true,
 			slidesToShow: 5,
 			slidesToScroll: 1,
 			vertical: true,
