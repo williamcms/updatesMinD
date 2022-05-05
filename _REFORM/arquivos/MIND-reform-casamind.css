@@ -3464,8 +3464,48 @@ footer .final-label__address{
 	main.product .csm-product > .product-data{
 		flex-wrap: wrap;
 	}
+	main.product .csm-product > .product-data > .product__images #show{
+		justify-content: center;
+		min-width: fit-content;
+	}
 	main.product .csm-product > .product-data > .product__images #show > #include{
 		display: none;
+	}
+	main.product .csm-product > .product-data > .product__images #show > .thumbs, 
+	main.product .csm-product > .product-data > .product__images #show > .thumbs > .slick-list{
+		max-width: 100%;
+	}
+	main.product .csm-product > .product-data > .product__info{
+		width: 100%;
+		padding: .5rem;
+	}
+	main.product .csm-product > .product-data > .product__info > .product-name{
+		text-align: center;
+	}
+	main.product .csm-product > .product-data > .product__info .buttonsContainer{
+		flex-wrap: wrap;
+		justify-content: space-between;
+		grid-column-gap: 1rem;
+		column-gap: 1rem;
+		grid-row-gap: 1rem;
+		row-gap: 1rem;
+	}
+	main.product .csm-product > .product-data > .product__info .buttonsContainer > *:not(:first-child){
+		flex-basis: 30%;
+	}
+	main.product .csm-product > .product-data > .product__info .available-alert{
+		margin-top: 1rem;
+	}
+	main.product .csm-product > .product-data > .product__info .info-container > .soldby{
+		flex-wrap: wrap;
+		border: 1px solid var(--brand-color);
+	}
+	main.product .csm-product > .product-data > .product__info .info-container > .soldby::before{
+		display: none;
+	}
+	main.product .csm-product > .description{
+		width: 100%;
+		padding: 0 .8rem;
 	}
 	/*Collections Page*/
 	main.collection > .main-container > .infoWrapper .collection-description{
@@ -3697,9 +3737,32 @@ footer .final-label__address{
 		float: right;
 	}
 	/*Smarthint*/
+	#smarthint-position-1, 
+	#smarthint-position-2, 
+	#smarthint-position-3, 
+	#smarthint-position-4, 
+	#smarthint-position-5{
+		max-width: 90vw;
+	}
 	div#smarthint-search-result{
 		top: 3.75rem !important;
 		height: calc(100% - 3.75rem) !important;
+	}
+	#smarthint-bought-together .products.bought-together{
+		flex-wrap: wrap;
+		grid-row-gap: 4rem;
+		row-gap: 4rem;
+	}
+	#smarthint-bought-together .products.bought-together > div{
+		flex: 0 1 100%;
+	}
+	#smarthint-bought-together .products.bought-together > div:not(:last-child):after{
+		right: initial;
+		bottom: -1.8rem;
+		margin: 0;
+	}
+	#smarthint-bought-together .products.bought-together > div:nth-last-child(2):after{
+		transform: rotate(90deg);
 	}
 }
 @media print{

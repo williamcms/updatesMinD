@@ -701,23 +701,56 @@ $(document).ready(function(){
 				}, 6200);
 			}), false;
 		});
-		$('#show > ul.thumbs').slick({
-			autoplay: false,
-			dots: false,
-			arrows: true,
-			prevArrow: '<button class="slick-prev vertical" aria-label="Anterior" type="button">Anterior</button>',
-			nextArrow: '<button class="slick-next vertical" aria-label="Próximo" type="button">Próximo</button>',
-			lazyLoad: 'ondemand',
-			infinite: false,
-			accessibility: true,
-			focusOnChange: true,
-			swipeToSlide: true,
-			slidesToShow: 5,
-			slidesToScroll: 1,
-			vertical: true,
-			verticalSwiping: true,
-			centerMode: true
-		});
+		//O slick vertical é quebrado quando usado, 
+		//criar outra instancia do slick para o mobile
+		//pois não é possível desativa-lo pelo responsive
+		if(isMobile()){
+			$('#show > ul.thumbs').slick({
+				autoplay: false,
+				dots: false,
+				arrows: true,
+				prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+				nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+				lazyLoad: 'ondemand',
+				infinite: false,
+				accessibility: true,
+				focusOnChange: true,
+				swipeToSlide: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				vertical: false,
+				verticalSwiping: false,
+				centerMode: true
+			});
+		}else{
+			$('#show > ul.thumbs').slick({
+				autoplay: false,
+				dots: false,
+				arrows: true,
+				prevArrow: '<button class="slick-prev vertical" aria-label="Anterior" type="button">Anterior</button>',
+				nextArrow: '<button class="slick-next vertical" aria-label="Próximo" type="button">Próximo</button>',
+				lazyLoad: 'ondemand',
+				infinite: false,
+				accessibility: true,
+				focusOnChange: true,
+				swipeToSlide: true,
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				vertical: true,
+				verticalSwiping: true,
+				centerMode: true,
+				responsive: [
+				{
+					breakpoint: 900,
+					settings: {
+						prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+						nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				}]
+			});
+		}
 		var availableAlert = (function(){
 			try{
 				let t = skuJson.productId;
