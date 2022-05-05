@@ -3457,6 +3457,12 @@ footer .final-label__address{
 		top: 0;
 	}
 	/*Product page*/
+	main.product .csm-product > .product-data{
+		flex-wrap: wrap;
+	}
+	main.product .csm-product > .product-data > .product__images #show > #include{
+		display: none;
+	}
 	/*Collections Page*/
 	main.collection > .main-container > .infoWrapper .collection-description{
 		padding: 0;

@@ -743,9 +743,15 @@ $(document).ready(function(){
 		//mas afeta todos os sites
 		var changeProductImage = (changeProductImage = () =>{
 			$("ul.thumbs img").each(function(){
-				$(this).closest('a').attr("rel", 
+				if(isMobile()){
+					$(this).closest('a').attr("rel", 
 					$(this).closest('a').attr("rel").replace("-500-500", "-0-750"));
-				$(this).attr("src", $(this).attr("src").replace("-350-303", "-0-130"));
+					$(this).attr("src", $(this).attr("src").replace("-350-303", "-0-130"));
+				}else{
+					$(this).closest('a').attr("rel", 
+					$(this).closest('a').attr("rel").replace("-500-500", "-0-300"));
+					$(this).attr("src", $(this).attr("src").replace("-350-303", "-0-300"));
+				}
 			});
 		})();
 		var changeProductImageExpanded = (changeProductImageExpanded = () =>{
