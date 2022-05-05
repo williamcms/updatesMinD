@@ -1946,8 +1946,8 @@ main.product .csm-product > .product-data > .product__images #show > .thumbs > .
 	order: 1;
 	max-width: 5.625rem;
 	min-width: 5.625rem;
-	min-height: 46.875rem;
-	max-height: 46.875rem;
+	min-height: calc(100% - .35rem);
+	max-height: 100%;
 }
 main.product .csm-product > .product-data > .product__images #show > .thumbs > .slick-list{
 	padding: 0 !important;
