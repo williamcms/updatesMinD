@@ -720,7 +720,7 @@ $(document).ready(function(){
 				slidesToScroll: 1,
 				vertical: false,
 				verticalSwiping: false,
-				centerMode: true
+				centerMode: false
 			});
 		}else{
 			$('#show > ul.thumbs').slick({

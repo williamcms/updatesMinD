@@ -3484,7 +3484,8 @@ footer .final-label__address{
 	}
 	main.product .csm-product > .product-data > .product__images #show > .thumbs, 
 	main.product .csm-product > .product-data > .product__images #show > .thumbs > .slick-list{
-		max-width: 100%;
+		max-width: 100vw;
+		max-height: 100%;
 	}
 	main.product .csm-product > .product-data > .product__info{
 		width: 100%;
