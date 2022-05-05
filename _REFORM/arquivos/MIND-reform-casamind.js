@@ -743,14 +743,14 @@ $(document).ready(function(){
 		//mas afeta todos os sites
 		var changeProductImage = (changeProductImage = () =>{
 			$("ul.thumbs img").each(function(){
-				if(isMobile()){
+				if(!isMobile()){
 					$(this).closest('a').attr("rel", 
-					$(this).closest('a').attr("rel").replace("-500-500", "-0-750"));
-					$(this).attr("src", $(this).attr("src").replace("-350-303", "-0-130"));
+					$(this).closest('a').attr("rel").replace(/\-(\d+)-(\d+)\//g, "-0-750/"));
+					$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-0-130/"));
 				}else{
 					$(this).closest('a').attr("rel", 
-					$(this).closest('a').attr("rel").replace("-500-500", "-0-300"));
-					$(this).attr("src", $(this).attr("src").replace("-350-303", "-0-300"));
+					$(this).closest('a').attr("rel").replace(/\-(\d+)-(\d+)\//g, "-0-300/"));
+					$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-0-300/"));
 				}
 			});
 		})();
