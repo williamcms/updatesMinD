@@ -1090,7 +1090,7 @@ header + .maincontentstarts{
 .slick-slider button.slick-prev.slick-arrow{
 	position: absolute;
 	margin: auto 0;
-	border: solid #ed7397;
+	border: solid #F65484;
 	border-width: 0 0.3125rem 0.3125rem 0;
 	padding: .5rem;
 	top: 50%;
@@ -1107,6 +1107,17 @@ adicional que é usado por conta de haver informações do produto além de imag
 .slick-slider button.slick-next.slick-arrow:hover,
 .slick-slider button.slick-prev.slick-arrow:hover{
 	border-color: var(--brand-color);
+}
+.slick-slider button.slick-next.slick-arrow.slick-disabled,
+.slick-slider button.slick-prev.slick-arrow.slick-disabled{
+	border-color: #F65484;
+	opacity: 0.7;
+	animation: none;
+}
+.slick-slider button.slick-next.slick-arrow.slick-disabled:hover,
+.slick-slider button.slick-prev.slick-arrow.slick-disabled:hover{
+	border-color: #F65484;
+	opacity: 0.7;
 }
 .slick-slider button.slick-next{
 	transform: rotate(-45deg);
