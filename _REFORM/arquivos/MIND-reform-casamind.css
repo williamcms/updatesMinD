@@ -2073,9 +2073,13 @@ main.product .csm-product > .product-data > .product__info .addtoCartButton.icon
 	background-color: var(--brand-color);
 }
 main.product .csm-product > .product-data > .product__info .addButton.icon:hover,
-main.product .csm-product > .product-data > .product__info .arButton.icon:hover{
+main.product .csm-product > .product-data > .product__info .arButton.icon:not([disabled]):hover{
 	background-color: var(--brand-color);
 	color: var(--white);
+}
+main.product .csm-product > .product-data > .product__info .arButton.icon[disabled]{
+	background-color: var(--gray-lighter);
+	opacity: 0.8;
 }
 main.product .csm-product > .product-data > .product__info .addButton.icon,
 main.product .csm-product > .product-data > .product__info .arButton.icon a{

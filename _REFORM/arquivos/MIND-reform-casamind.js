@@ -785,6 +785,13 @@ $(document).ready(function(){
 			}else if(e != "" && !window.MSStream && /iPad|iPhone|iPod/.test(t)){
 				$("#botaoiOS").attr("href", e);
 				$("#botaoiOS").closest("span").show();
+			}else if(isMobile() && i == ''){
+				$("#botaoAndroid").attr("href", '');
+				$("#botaoAndroid").attr("disabled", true);
+				$("#botaoAndroid").parents('.arButton.icon').attr("disabled", true);
+				$("#botaoAndroid").find('.text').text("Visualização em realidade aumentada não disponível para esse produto");
+				$("#botaoAndroid").parents('.arButton.icon').attr("title", "Visualização em realidade aumentada não disponível para esse produto");
+				$("#botaoAndroid").closest("span").show();
 			}else if(isMobile()){
 				$("#botaoAndroid").attr("href", i);
 				$("#botaoAndroid").closest("span").show();
