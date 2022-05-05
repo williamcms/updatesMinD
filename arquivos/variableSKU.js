@@ -34,8 +34,8 @@ $(document).ready(function() {
 					prevAvaliable = (i == 0 && avaliable > 0 ? ' selected' : (i > 0 && avaliable > 0 && prevAvaliable == null ? ' selected' : ''));
 					//Coleta o nome das variações para criar o select
 					$.each(e.first().items.sort(), function(x){
-						let [first, ...rest] = this.name.split(' '),
-						second = (rest.join(' ') == '' ? null : rest.join(' '));
+						let [first, ...rest] = this.name.split('+'),
+						second = (rest.join('+') == '' ? null : rest.join('+'));
 						variations[x] = {'var' : {first, second}}
 					})
 					//Coleta a melhor forma de pagamento parcelado
