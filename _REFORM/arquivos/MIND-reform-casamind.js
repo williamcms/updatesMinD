@@ -819,7 +819,7 @@ $(document).ready(function(){
 				$("#botaoiOS").attr("href", e);
 				$("#botaoiOS").closest("span").show();
 			}else if(isMobile() && i == ''){
-				$("#botaoAndroid").attr("href", '');
+				$("#botaoAndroid").attr("href", 'javascript:undefined');
 				$("#botaoAndroid").attr("disabled", true);
 				$("#botaoAndroid").parents('.arButton.icon').attr("disabled", true);
 				$("#botaoAndroid").find('.text').text("Visualização em realidade aumentada não disponível para esse produto");
