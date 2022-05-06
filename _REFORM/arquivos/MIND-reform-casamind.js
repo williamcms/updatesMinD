@@ -782,8 +782,8 @@ $(document).ready(function(){
 					$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-0-130/"));
 				}else{
 					$(this).closest('a').attr("rel", 
-					$(this).closest('a').attr("rel").replace(/\-(\d+)-(\d+)\//g, "-0-300/"));
-					$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-0-300/"));
+					$(this).closest('a').attr("rel").replace(/\-(\d+)-(\d+)\//g, "-400-0/"));
+					$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-400-0/"));
 				}
 			});
 		})();
