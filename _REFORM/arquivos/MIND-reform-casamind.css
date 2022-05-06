@@ -2089,8 +2089,8 @@ main.product .csm-product > .product-data > .product__info .arButton.icon:not([d
 	color: var(--white);
 }
 main.product .csm-product > .product-data > .product__info .arButton.icon[disabled]{
-	background-color: var(--gray-lighter);
-	opacity: 0.8;
+	background-color: var(--sand);
+	opacity: 0.6;
 }
 main.product .csm-product > .product-data > .product__info .addButton.icon,
 main.product .csm-product > .product-data > .product__info .arButton.icon a{
@@ -2293,6 +2293,25 @@ main.product .csm-product > .product-data > .product__info .product-details > #c
 main.product .csm-product > .description{
 	width: 78rem;
 	margin: 2rem auto;
+}
+/*Wishlist Modal*/
+#TB_overlay{
+	background-color: rgba(0, 0, 0, .1);
+}
+#TB_window{
+	text-align: center;
+	width: 39.375rem;
+	height: 26.9375rem;
+	top: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	margin: auto !important;
+	background-color: var(--white);
+	border-radius: 0.25rem;
+}
+#TB_ajaxContent{
+	width: 100% !important;
 }
 /*Collections Page*/
 main.collection > .main-container > .infoWrapper{
@@ -3518,6 +3537,10 @@ footer .final-label__address{
 	main.product .csm-product > .description{
 		width: 100%;
 		padding: 0 .8rem;
+	}
+	/*Wishlist Modal*/
+	#TB_window{
+		width: 95% !important;
 	}
 	/*Collections Page*/
 	main.collection > .main-container > .infoWrapper .collection-description{
