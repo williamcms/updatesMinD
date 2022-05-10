@@ -2326,6 +2326,7 @@ main.collection > .main-container > .infoWrapper .page-title > h1{
 }
 main.collection > .main-container > .infoWrapper .collection-description{
 	font-style: italic;
+	text-align: center;
 	color: var(--dark);
 	padding: 0 12rem;
 }
@@ -3544,7 +3545,8 @@ footer .final-label__address{
 	}
 	/*Collections Page*/
 	main.collection > .main-container > .infoWrapper .collection-description{
-		padding: 0;
+		text-align: justify;
+		padding: 0 1rem;
 	}
 	main.collection > .main-container > .collectionWrapper{
 		margin: 1rem;
