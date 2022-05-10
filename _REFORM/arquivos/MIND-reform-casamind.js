@@ -367,7 +367,7 @@ $(document).ready(function(){
 					c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
 				}
 				return 'collection';
-			}else if(!!vtxctx && !!vtxctx.categoryId && vtxctx.searchTerm != 'colecoes'){
+			}else if(!!vtxctx && !!vtxctx.categoryId && vtxctx.searchTerm != 'colecoes' && vtxctx.searchTerm != 'mindmais'){
 				v.attr('data-categoryid', vtxctx.categoryId);
 				//Adiciona um título para páginas de categoria e remove caracteres numéricos
 				//Móveis2 --> Móveis
