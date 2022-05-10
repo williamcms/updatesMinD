@@ -645,17 +645,17 @@ $(document).ready(function(){
 						//Ex: Carvalho Rosa, Carvalho Branco
 						if(!!variations[i].var.second){
 							if((i > 0 ? variations[i].var.first != variations[i-1].var.first : false ||
-							 i == 0) && f.find('optgroup[label='+ variations[i].var.first +']').length < 1){
+							 i == 0) && f.find('optgroup[label="'+ variations[i].var.first +'"]').length < 1){
 								f.append('<optgroup label="'+ variations[i].var.first +'">');
 								
 							}
 
-							f.find('optgroup[label='+ variations[i].var.first +']').eq(0).append('<option class="sku-item" sku-id="'+ this.itemId +'" id="'+ this.itemId +'" sku-price="'+ this.sellers.first().commertialOffer.Price +'" sku-installments-price="'+ prices.Value +'" sku-installments-amount="'+ prices.NumberOfInstallments +'" sku-qty="'+ this.sellers.first().commertialOffer.AvailableQuantity +'" cart-ref="'+ this.sellers.first().addToCartLink +'" '+ (avaliable <= 0 ? 'disabled' : '') + prevAvaliable +'>'+variations[i].var.second+'</option>');
+							f.find('optgroup[label="'+ variations[i].var.first +'"]').eq(0).append('<option class="sku-item" sku-id="'+ this.itemId +'" id="'+ this.itemId +'" sku-price="'+ this.sellers.first().commertialOffer.Price +'" sku-installments-price="'+ prices.Value +'" sku-installments-amount="'+ prices.NumberOfInstallments +'" sku-qty="'+ this.sellers.first().commertialOffer.AvailableQuantity +'" cart-ref="'+ this.sellers.first().addToCartLink +'" '+ (avaliable <= 0 ? 'disabled' : '') + prevAvaliable +'>'+variations[i].var.second+'</option>');
 							$('#' + this.itemId).data('sku-images', this.images);
 
 							if(((i > 0 ? true : false) && 
 								(i < Object.keys(variations).length - 1 && i > 0 ? variations[i].var.first != variations[i+1].var.first : '') || 
-								i == Object.keys(variations).length - 1) && f.find('optgroup[label='+ variations[i].var.first +']').length < 1){
+								i == Object.keys(variations).length - 1) && f.find('optgroup[label="'+ variations[i].var.first +'"]').length < 1){
 								f.append('</optgroup>');	
 							}
 							//Caso sejam nomes simples

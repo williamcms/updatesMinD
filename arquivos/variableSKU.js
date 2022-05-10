@@ -9,6 +9,7 @@ $(document).ready(function() {
 		var arr = $('main .csm-product #___rc-p-sku-ids').get(0).value.split(','),
 		pid = $('main .csm-product #___rc-p-id').get(0).value,
 		f = $('main .csm-product .product-sku-selection').eq(0),
+		unitSelector = $('.unitSelector'),
 		prevAvaliable = null,
 		bwrapper = $('main .csm-product div.product-buy'),
 		bExists = $('main .csm-product div.product-buy a.buy-button.buy-button-ref');
@@ -21,7 +22,8 @@ $(document).ready(function() {
 				url: '/api/catalog_system/pub/products/search/?fq=productId:' + pid
 			}).done(function(e){
 				//Exibe o select
-				f.slideDown()
+				f.slideDown();
+				unitSelector.slideUp();
 				
 				$.each(e.first().items, function(i){
 					let avaliable = this.sellers.first().commertialOffer.AvailableQuantity,
@@ -51,17 +53,17 @@ $(document).ready(function() {
 					//Ex: Carvalho Rosa, Carvalho Branco
 					if(variations[i].var.second != null){
 						if((i > 0 ? variations[i].var.first != variations[i-1].var.first : false ||
-						 i == 0) && f.find('optgroup[label='+ variations[i].var.first +']').length < 1){
+						 i == 0) && f.find('optgroup[label="'+ variations[i].var.first +'"]').length < 1){
 							f.append('<optgroup label="'+ variations[i].var.first +'">');
 							
 						}
 
-						f.find('optgroup[label='+ variations[i].var.first +']').eq(0).append('<option class="sku-item" sku-id="'+ this.itemId +'" id="'+ this.itemId +'" sku-price="'+ this.sellers.first().commertialOffer.Price +'" sku-installments-price="'+ prices.Value +'" sku-installments-amount="'+ prices.NumberOfInstallments +'" sku-qty="'+ this.sellers.first().commertialOffer.AvailableQuantity +'" cart-ref="'+ this.sellers.first().addToCartLink +'" '+ (avaliable <= 0 ? 'disabled' : '') + prevAvaliable +'>'+variations[i].var.second+'</option>');
+						f.find('optgroup[label="'+ variations[i].var.first +'"]').eq(0).append('<option class="sku-item" sku-id="'+ this.itemId +'" id="'+ this.itemId +'" sku-price="'+ this.sellers.first().commertialOffer.Price +'" sku-installments-price="'+ prices.Value +'" sku-installments-amount="'+ prices.NumberOfInstallments +'" sku-qty="'+ this.sellers.first().commertialOffer.AvailableQuantity +'" cart-ref="'+ this.sellers.first().addToCartLink +'" '+ (avaliable <= 0 ? 'disabled' : '') + prevAvaliable +'>'+variations[i].var.second+'</option>');
 						$('#' + this.itemId).data('sku-images', this.images);
 
 						if(((i > 0 ? true : false) && 
 							(i < Object.keys(variations).length - 1 && i > 0 ? variations[i].var.first != variations[i+1].var.first : '') || 
-							i == Object.keys(variations).length - 1) && f.find('optgroup[label='+ variations[i].var.first +']').length < 1){
+							i == Object.keys(variations).length - 1) && f.find('optgroup[label="'+ variations[i].var.first +'"]').length < 1){
 							f.append('</optgroup>');	
 						}
 						//Caso sejam nomes simples
