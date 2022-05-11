@@ -402,7 +402,8 @@ $(document).ready(function(){
 		return false;
 	});
 	//Retorna uma seleção de vitrines (prateleia) levando em conta os filtros
-	var getShelfProducts = (getShelfProducts = (num = 0) =>{
+	//getShelfProducts(index da vitrine, adicionar contéudo no final, antes do botão ver mais?)
+	var getShelfProducts = (getShelfProducts = (num = 0, seemore = 0) =>{
 		let orderBy = $('.orderByList > ul > li.is--active').attr('data-order');
 
 		let id = (checkPageType() != 'category' ? 'H:' + ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').data('collectionid') : $('.has-shelf--default').eq(num).data('collectionid')) : 'C:' + $('.resultItemsWrapper').data('categoryid'));
@@ -424,10 +425,12 @@ $(document).ready(function(){
 					$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
 					$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 				}else{
-					if(container.find('button.seeMoreProducts').length > 0){
+					if(container.find('button.seeMoreProducts').length > 0 && seemore == 1){
 						container.find('button.seeMoreProducts').before(data);
 					}else{
 						container.html(data);
+						//Adiciona elementos necessários
+						checkPageType();
 					}
 				}
 			}
@@ -452,7 +455,7 @@ $(document).ready(function(){
 
 		v.attr('data-page', parseInt(v.attr('data-page')) + 1);
 
-		getShelfProducts(v.data('num'));
+		getShelfProducts(num, 1);
 	});
 	//Troca de página nas vitrines (opção paged)
 	var changeShelfPage = $('.resultItemsWrapper > .pager > ul.pages').on('click', 'li:not(.pgEmpty, .pgCurrent)', function(){

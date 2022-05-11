@@ -1,0 +1,115 @@
+/*
+ *  Código por William Di Biasi Bogik
+ *
+ */
+@charset "utf-8";
+:root{
+	--brand-color: #4cbba8 !important;
+}
+header.csm-header{
+	height: auto;
+	min-height: 5rem;
+}
+header.csm-header > nav > ul{
+	display: flex;
+	justify-content: center;
+}
+header.csm-header > nav > ul > li{
+	padding: 1rem;
+}
+main.dev{
+	padding: 0.5rem 3rem;
+}
+main.dev .emailType-0{
+	display: block;
+}
+main.dev .emailType-1{
+	display: none;
+}
+main.dev .btn-add > i{
+	color: var(--green);
+	font-size: 1.5rem;
+}
+main.dev .getDetails.change{
+	color: var(--warning);
+}
+main.dev .getDetails.complete{
+	color: var(--green);
+}
+main.dev #banners .form-group > div.row > div:last-child > a,
+main.dev #vitrines .form-group > div.row > div:last-child > a,
+main.dev #bannerstopfooter .form-group > div.row > div:last-child > a{
+	display: none !important;
+	color: var(--danger);
+}
+main.dev #banners .form-group:last-child > div.row > div:last-child{
+	padding-right: 2rem !important;
+}
+main.dev #banners .form-group:not(:last-child) > div.row > div:last-child{
+	padding-right: 2.9rem;
+}
+main.dev #bannerstopfooter .form-group:not(:last-child) > div.row > div:last-child{
+	padding-right: 3.3rem;
+}
+main.dev #banners .form-group:first-child > div.row > div:last-child > a,
+main.dev #vitrines .form-group:first-child > div.row > div:last-child > a,
+main.dev #bannerstopfooter .form-group:first-child > div.row > div:last-child > a{
+    display: none !important;
+}
+main.dev #banners .form-group:last-child:not(:nth-child(-n+1)) > div.row > div:last-child > a,
+main.dev #vitrines .form-group:last-child:not(:nth-child(-n+3)) > div.row > div:last-child > a,
+main.dev #bannerstopfooter .form-group:last-child:not(:nth-child(-n+1)) > div.row > div:last-child > a{
+	display: block !important;
+}
+main.dev #viewRenderedHTML{
+	max-width: 730px;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+}
+main.dev #viewRenderedHTML img{
+	width: 228px;
+	height: initial;
+	max-width: fit-content;
+}
+main.dev #viewHTMLCode{
+	display: block;
+	padding: 1rem;
+	width: 50vw;
+	height: 20vw;
+	margin: 0 auto;
+	border-radius: .5rem;
+	background: #263238;
+	color: var(--white) !important;
+}
+main.dev #copytext{
+	position: relative;
+}
+main.dev #copytext > .copy{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	padding: 0.2rem 1rem;
+	border-radius: .1rem;
+	background-color: var(--brand-color);
+	color: var(--white);
+	cursor: pointer;
+	user-select: none;
+	opacity: .9;
+}
+main.dev #copytext > .copy:hover{
+	opacity: 1;
+}
+main.dev #viewHTMLCode::-webkit-scrollbar{
+	width: 10px;
+}
+main.dev #viewHTMLCode::-webkit-scrollbar-track{
+	background: #f1f1f1;
+}
+main.dev #viewHTMLCode::-webkit-scrollbar-thumb{
+	background: var(--brand-color);
+}
+main.dev #viewHTMLCode::-webkit-scrollbar-thumb:hover{
+	background: var(--brand-color);
+}

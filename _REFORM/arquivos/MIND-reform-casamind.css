@@ -1551,7 +1551,8 @@ body > .ui-autocomplete.ui-widget-content{
 	justify-content: flex-start;
 }
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown > ul > li{
-	flex: 0 1 0rem;
+	flex-grow: 1;
+	flex-shrink: 1;
 	min-width: 15.625rem;
 	white-space: nowrap;
 	margin: 0 1.5rem 1rem 0;
