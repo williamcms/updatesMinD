@@ -3,10 +3,6 @@
  *
  */
 @charset "utf-8";
-/*
- *	Code by William Di Biasi Bogik
- *
- */
 :root{
 	--menu-bg-color: #FFFFFF;
 	--hm-menu-bar: #E94273;
@@ -43,26 +39,6 @@
 	--mobile-header: 6.137rem;
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-@font-face{
-	font-family: 'Helvetica';
-	font-weight: normal;
-	font-display: swap;
-	src: url('https://lojamindesigns.vteximg.com.br/arquivos/Helvetica.ttf.css?v=1') format('truetype');
-}
-@font-face{
-	font-family: 'Didot';
-	font-weight: normal;
-	font-display: swap;
-	src: url('https://lojamindesigns.vteximg.com.br/arquivos/Didot-HTF-M64-Medium.ttf.css?v=1') format('truetype');
-}
-/*@font-face{
-	font-family: 'Font Awesome 6 Free';
-	font-weight: 900;
-	font-display: swap;
-	src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
-		 url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
-		 url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
-}*/
 *{
 	font-family: 'Quicksand', 'Helvetica Neue', Verdana, Arial, sans-serif;
 	margin: 0rem;
