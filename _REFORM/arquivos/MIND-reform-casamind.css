@@ -172,6 +172,23 @@ input.invalid{
 input:not(.invalid) ~ .invalid-input{
 	display: none;
 }
+.form-check-label{
+	margin-bottom: 0;
+}
+.form-group{
+	margin-bottom:1rem;
+}
+.form-group .btn-group,
+.form-group .dropdown-menu{
+	width: 100%;
+}
+[readonly="true"]{
+	background-color:#E9ECEF;
+	opacity:1;
+}
+.text-muted{
+	color:var(--gray) !important;
+}
 .invalid-input{
 	width: 1.5rem;
 	height: 1.5rem;
@@ -552,23 +569,6 @@ button.custom-select{
 .modalform .modaldados{
 	margin: 1%;
 	padding: 0.9375rem;
-}
-.form-check-label{
-	margin-bottom: 0;
-}
-.form-group{
-	margin-bottom:1rem;
-}
-.form-group .btn-group,
-.form-group .dropdown-menu{
-	width: 100%;
-}
-[readonly="true"]{
-	background-color:#E9ECEF;
-	opacity:1;
-}
-.text-muted{
-	color:var(--gray) !important;
 }
 /* Input's append & Prepend */
 .input-group{
