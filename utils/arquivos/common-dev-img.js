@@ -162,7 +162,7 @@ $(document).ready(function(){
 				bannerlink = $(this).find('input[name=banner-link-'+ i +']').val()  + '?reportEmail=banner_'+ bannerlocal +'_' + i,
 				bannertitle = $(this).find('input[name=banner-title-'+ i +']').val();
 
-				if(bannerlink != ''){
+				if(!!bannerimage){
 					if(bannerlocal === 'top'){
 						bannerTempTop += espaco + banner.replaceAll('BANNERLINK', bannerlink).replaceAll('BANNERALT', bannertitle).replaceAll('BANNERIMAGEM', bannerimage);
 					}

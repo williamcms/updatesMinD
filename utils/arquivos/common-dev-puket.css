@@ -4,14 +4,7 @@
  */
 @charset "utf-8";
 :root{
-	--menu-bg-color: #FFFFFF;
-	--hm-menu-bar: #E94273;
-	--hm-menu-bar-change: #E94273;
-	--menu-bg-color-mobile: #FFFFFF;
-	--menu-bg-color-mobile-behind: rgba(10, 11, 13, .2);
-	--body-bg-color: #FFFFFF;
-	--body-txt-color: #000000;
-	--brand-color: #E94273;
+	--brand-color: #4cbba8;
 	--sand: #F7F7F5;
 	--blue: #80BDFF;
 	--indigo: #6610f2;
@@ -33,10 +26,6 @@
 	--danger: #FF5252;
 	--light: #F8F9FA;
 	--dark: #343A40;
-
-	--desktop-header: 13.063rem;
-	--desktop-header-scroll: 10.14rem;
-	--mobile-header: 6.137rem;
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 *{

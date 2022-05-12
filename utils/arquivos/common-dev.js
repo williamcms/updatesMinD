@@ -158,23 +158,16 @@ $(document).ready(function(){
 				bannerlink = $(this).find('input[name=banner-link-'+ i +']').val()  + '?reportEmail=banner_'+ bannerlocal +'_' + i,
 				bannertitle = $(this).find('input[name=banner-title-'+ i +']').val();
 
-				if(bannerlocal === 'top'){
-					if(bannerTempTop.length > 0){
-						bannerTempTop += espaco;
+				if(!!bannerimage){
+					if(bannerlocal === 'top'){
+						bannerTempTop += espaco + banner.replaceAll('BANNERLINK', bannerlink).replaceAll('BANNERALT', bannertitle).replaceAll('BANNERIMAGEM', bannerimage);
 					}
-					bannerTempTop += banner.replaceAll('BANNERLINK', bannerlink).replaceAll('BANNERALT', bannertitle).replaceAll('BANNERIMAGEM', bannerimage);
-				}
-				if(bannerlocal === 'mid'){
-					if(bannerTempMid.length > 0){
-						bannerTempMid += espaco;
+					if(bannerlocal === 'mid'){
+						bannerTempMid += espaco + banner.replaceAll('BANNERLINK', bannerlink).replaceAll('BANNERALT', bannertitle).replaceAll('BANNERIMAGEM', bannerimage);
 					}
-					bannerTempMid += banner.replaceAll('BANNERLINK', bannerlink).replaceAll('BANNERALT', bannertitle).replaceAll('BANNERIMAGEM', bannerimage);
-				}
-				if(bannerlocal === 'bot'){
-					if(bannerTempBot.length > 0){
-						bannerTempBot += espaco;
+					if(bannerlocal === 'bot'){
+						bannerTempBot += espaco + banner.replaceAll('BANNERLINK', bannerlink).replaceAll('BANNERALT', bannertitle).replaceAll('BANNERIMAGEM', bannerimage);
 					}
-					bannerTempBot += banner.replaceAll('BANNERLINK', bannerlink).replaceAll('BANNERALT', bannertitle).replaceAll('BANNERIMAGEM', bannerimage);
 				}
 			});
 			//vitrines & banner meio
