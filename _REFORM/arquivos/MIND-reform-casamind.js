@@ -368,7 +368,11 @@ $(document).ready(function(){
 				}
 				return 'collection';
 			}else if(!!vtxctx && !!vtxctx.categoryId && vtxctx.searchTerm != 'colecoes' && vtxctx.searchTerm != 'mindmais'){
-				v.attr('data-categoryid', vtxctx.categoryId);
+				let categoryId = vtxctx.categoryId;
+				if(!!vtxctx.departmentyId && vtxctx.categoryId != vtxctx.departmentyId){
+					categoryId = vtxctx.departmentyId + '/' + vtxctx.categoryId;
+				}
+				v.attr('data-categoryid', categoryId);
 				//Adiciona um título para páginas de categoria e remove caracteres numéricos
 				//Móveis2 --> Móveis
 				t.text(t.text().replace(/\d+/g, '') || vtxctx.categoryName.replace(/\d+/g, ''));
