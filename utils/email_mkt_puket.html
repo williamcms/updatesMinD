@@ -15,8 +15,6 @@
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,700|Lato:400,700,400italic,900|Quicksand:400,300,700' rel='stylesheet' type='text/css' />
 
-	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="https://lojamindesigns.vteximg.com.br/arquivos/MIND-reform-casamind.css?v=3.4.10" media="all" />
 	<!-- End Default -->
 
 	<!-- Remover -->
@@ -25,13 +23,11 @@
 	<!-- Remover -->
 	
 	<title>Imaginarium | Email Marketing Generator</title>
-	<script>$(document).prop('title', 'Imaginarium | <vtex:contentPlaceHolder id="pageTitle" />');</script>
-	<vtex:template id="MIND-reform-head" />
-	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+	<script>$(document).prop('title', 'Puket | <vtex:contentPlaceHolder id="pageTitle" />');</script>
 
 	<!-- Page specific -->
-	<link rel="stylesheet" type="text/css" href="./arquivos/common-dev-img.css" media="all" />
-	<script type="text/javascript" src="./arquivos/common-dev-img.js"></script>
+	<link rel="stylesheet" type="text/css" href="./arquivos/common-dev-puket.css" media="all" />
+	<script type="text/javascript" src="./arquivos/common-dev-puket.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -73,14 +69,30 @@
 			</div>
 
 			<div class="form-group">
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<label class="input-group-text">Tipo</label>
+				<div class="row">
+					<div class="col">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<label class="input-group-text">Tipo</label>
+							</div>
+							<select name="emailType">
+								<option value="0">Vitrines</option>
+								<option value="1">News topo/footer</option>
+							</select>
+						</div>
 					</div>
-					<select name="emailType">
-						<option value="0">Vitrines</option>
-						<option value="1">News topo/footer</option>
-					</select>
+					<div class="col">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<label class="input-group-text">Tipo de Header/Footer</label>
+							</div>
+							<select name="footer-header-type">
+								<option value="0">Site</option>
+								<option value="1">Omni</option>
+								<option value="2">Franquia</option>
+							</select>
+						</div>
+					</div>
 				</div>
 			</div>
 
