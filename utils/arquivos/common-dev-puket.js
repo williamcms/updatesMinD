@@ -53,7 +53,7 @@ $(document).ready(function(){
 			contentType: 'application/json; charset=utf-8',
 			crossDomain: false,
 			type: 'GET',
-			url: '/api/catalog_system/pub/products/search/?fq=alternateIds_RefId:' + ref
+			url: '/api/catalog_system/pub/products/search/?fq=skuId:' + ref
 		}).done(function(e){
 			//Pega o melhor parcelamento
 			let prices = {},
