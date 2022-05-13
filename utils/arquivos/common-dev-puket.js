@@ -32,17 +32,6 @@ $(document).ready(function(){
 		$('#viewRenderedHTML').empty()
 		$('#viewHTMLCode').empty()
 	});
-	var enableStoreNameEdit = $('select[name="footer-header-type"]').on('change', function(){
-		let omni = $('#nomeLojaAtual');
-		let selectedType = $(this).find('option:selected').val();
-
-		if(selectedType == 1){
-			omni.slideDown();
-		}else{
-			omni.slideUp();
-		}
-		
-	});
 	var mountResults = $(document).on('click', '.getDetails', function(){
 		let inputN = $(this).data('input'),
 		ref = $('input[name=vitrine-'+ inputN +']').val(),
@@ -132,8 +121,7 @@ $(document).ready(function(){
 			footer_franquia = ' <tr> <td> <table cellpadding="0" cellspacing="0" border="0" align="center" width="730"> <tr> <td height="24"></td></tr></table> </td></tr><tr> <td> <table cellpadding="0" cellspacing="0" border="0" align="center" width="730"> <tr> <td> <a href="https://www.puket.com.br/institucional/nossas-lojas?ReportEmail=footer_franquias_lojas" target="_blank"> <img src="https://imagens.imgnet.com.br/puket/_2021/ECM/Header/whats.png" alt="Ei! Você também pode comprar com a gente pelo Whatsapp! É so clicar aqui" title="Ei! Você também pode comprar com a gente pelo Whatsapp! É so clicar aqui" width="100%" border="0" style="display:block; background: #ff60a8; color:#FFFFFF; text-align: center;" align="center"> </a> </td></tr></table> </td></tr><tr> <td> <table cellpadding="0" cellspacing="0" border="0" align="center" width="730"> <tr> <td height="24"></td></tr></table> </td></tr><tr> <td> <table cellpadding="0" cellspacing="0" border="0" align="center" width="730"> <tr> <td> <a href="https://linktr.ee/puket_email" target="_blank"> <img src="https://imagens.imgnet.com.br/puket/_2021/ECM/Header_Footer_2021/Footer_omni_2022_02.png" alt="Siga a Puket" title="Siga a Puket" width="100%" border="0" style="display:block;" align="center"> </a> </td></tr></table> </td></tr><tr> <td> <table cellpadding="0" cellspacing="0" border="0" align="center" width="730"> <tr> <td height="24"></td></tr></table> </td></tr><tr> <td> <table cellpadding="0" cellspacing="0" border="0" align="center" width="730" style="font-size: 10px; text-align: center;"> <tr> <td> Não fique de fora!! Adicione o endereço: <a href="mailto:contato@mkt.puket.com.br" style="text-decoration:none;color:#ff129e">contato@mkt.puket.com.br</a> em sua lista de remetentes confiáveis para garantir que as nossas mensagens e ofertas cheguem à sua caixa de e-mails. Você está recebendo este email através da assinatura.<br/><br/> A Puket respeita a sua privacidade e opinião. Caso queira deixar de receber os nossos e-mails<br/><a style="text-decoration:none;color:#ff129e" href="[unsubscribe]">descadastre-se aqui.</a> Ao solicitar o cancelamento, pode-se levar até três dias úteis para atualização da solicitação em nosso sistema.<br/><br/> <font style="font-weight: bold;">Informações:</font><br/><br/> Os preços anunciados são válidos apenas para o mesmo dia de envio deste e-mail, podendo ser alterados nos dias seguintes. A oferta dos produtos está sujeita à disponibilidade em estoque. Caso haja diferença entre os valores deste e-mail e da loja, o valor que prevalecerá será o da loja. As imagens encontradas neste e-mail são meramente ilustrativas.<br/><br/> Consulte nossa <a href="https://www.puket.com.br/fale-com/privacidade" style="text-decoration:none; color:#f2008b" target="_blank">Política de Privacidade</a> para mais informações.<br/><br/> Esse email foi enviado por:<br/><br/> </td></tr></table> </td></tr><tr> <td> <table cellpadding="0" cellspacing="0" border="0" align="center" width="730"> <tr> <td align="center"> <img src="https://imagens.imgnet.com.br/puket/_2021/ECM/Header_Footer_2021/Footer_Novo/footer-novo_14.png" alt="Puket" border="0" style="display:block;" align="center"> </td></tr></table> </td></tr>',
 			banner = '<div class="img-container center autowidth big" align="center" style="padding-right: 0px; padding-left: 0px;"><a href="BANNERLINK" title="BANNERALT"><img class="center autowidth" align="center" border="0" src="BANNERIMAGEM" alt="BANNERALT" title="BANNERALT" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 730px; max-width: 100%; display: block;" width="730" /></a><p style="font-family: ff-cocon-pro, sans-serif; font-size:11px;font-weight: 100; color:#787878; text-decoration: none;margin-bottom:16px">BANNERTEXT</p></div>',
 			preheader = $('input[name=preheader]').val(),
-			bannerTemp = '',
-			nomeLojaAtual = $('input[name="nomeLojaAtual"]').val();
+			bannerTemp = '';
 			
 			$.each($('#bannerstopfooter > .form-group'), function(i){
 				let bannerimage = $(this).find('input[name=banners-image-'+ i +']').val(),
@@ -150,7 +138,7 @@ $(document).ready(function(){
 				menu = menu_site;
 			}else if(difType == 1){
 				footer = footer_omni;
-				menu = menu_omni.replaceAll('*|DATA_LOJA_NOME_ATUAL|*', nomeLojaAtual);
+				menu = menu_omni;
 			}else{
 				footer = footer_franquia;
 				menu = menu_franquia;
@@ -182,8 +170,7 @@ $(document).ready(function(){
 			color = $('input[name=vitrine-price-color]').val(),
 			textColor = $('input[name=vitrine-text-color]').val(),
 			installmentsColor = $('input[name=vitrine-installments-color]').val(),
-			botaoCTA = $('select[name=vitrine-botao-cta]').val(),
-			nomeLojaAtual = $('input[name="nomeLojaAtual"]').val();
+			botaoCTA = $('select[name=vitrine-botao-cta]').val();
 			
 			let vitrineTemp = '',
 			vitrineLinha = '',
@@ -261,7 +248,7 @@ $(document).ready(function(){
 				menu = menu_site;
 			}else if(difType == 1){
 				footer = footer_omni;
-				menu = menu_omni.replaceAll('*|DATA_LOJA_NOME_ATUAL|*', nomeLojaAtual);
+				menu = menu_omni;
 			}else{
 				footer = footer_franquia;
 				menu = menu_franquia;
