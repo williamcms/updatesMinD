@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+	xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+<head>
+	<title>MinD | Wishlist</title>
+	<script>$(document).prop('title','Casa MinD | <vtex:contentPlaceHolder id="pageTitle" />');</script>
+	<vtex:template id="MIND-reform-head" />
+	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+
+	<!-- Especifico da página -->
+	<link rel="stylesheet" type="text/css" href="/arquivos/MIND-reform-wishlist.min.css" media="all" as="style" />
+	<!-- Especifico da página -->
+</head>
+
+<body>
+	<vtex:template id="MIND-reform-header" />
+
+	<main class="hotsite main-container">
+		<div class="main-info row p-5">
+			<div class="col">
+				<vtex:contentPlaceHolder id="top-image"/>
+			</div>
+			<div class="col text">
+				<vtex:contentPlaceHolder id="top-text"/>
+				<div class="redes-sociais">
+					<vtex:contentPlaceHolder id="top-redes-sociais"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="vitrine pt-5 pb-4">
+				<h2><vtex:contentPlaceHolder id="vitrine-wishlist-title"/></h2>
+			<div class="products">
+				<vtex:contentPlaceHolder id="vitrine-wishlist"/>
+			</div>
+		</div>
+
+	</main>
+
+	<vtex:template id="MIND-reform-footer" />
+</body>
+</html>
