@@ -388,6 +388,12 @@ $(document).ready(function(){
 				let h = $('.orderBy > select[onchange]').attr('onchange').split('?PS', 1).toString();
 					h = h.split('\'/')[1];
 					v.attr('data-collectionid', h.toString());
+					//Adiciona o botão ver mais produtos
+					let c = v.find('[id*=ResultItems_]');
+					//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
+					if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
+						c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
+					}
 				return 'undefined';
 			}
 			//Modelo para vitrines inseridas por meio do controle
@@ -425,16 +431,21 @@ $(document).ready(function(){
 			type: 'GET',
 			url: urlBusca,
 			success: function(data){
-				if(!data){
-					$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
-					$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
-				}else{
+				let realShelfLength = $(data).contents().find('li[layout]').length;
+				if(data){
+					//Verifica se há o botão e se o resultado deve ser inserido
+					//incrementando (1) ou substituir o que já existe (0).
 					if(container.find('button.seeMoreProducts').length > 0 && seemore == 1){
 						container.find('button.seeMoreProducts').before(data);
 					}else{
 						container.html(data);
 						//Adiciona elementos necessários
 						checkPageType();
+					}
+					//Verifica se a busca retornou menos resultados do que deveria e desativa o botão
+					if(realShelfLength < productQtd){
+						$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
+						$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 					}
 				}
 			}
