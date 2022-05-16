@@ -794,11 +794,9 @@ $(document).ready(function(){
 				}
 			});
 		})();
-		var changeProductImageExpanded = (changeProductImageExpanded = () =>{
-			let img = $('.image-zoom > .zoomPad > img#image-main');
-
-			img.attr("src", img.attr("src").replace("-500-500", "-0-750"));
-		})();
+		var changeProductImageExpanded = waitForElm('.zoomPad > img#image-main').then((elm) =>{
+			elm.attr("src", elm.attr("src").replace(/\-(\d+)-(\d+)\//g, "-0-750"));
+		});
 		var realidadeAl = (function(){
 			let t = navigator.userAgent || navigator.vendor || window.opera, 
 			e = $(".value-field.3D-ios").text(), 
