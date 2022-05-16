@@ -795,7 +795,7 @@ $(document).ready(function(){
 			});
 		})();
 		var changeProductImageExpanded = waitForElm('.zoomPad > img#image-main').then((elm) =>{
-			elm.attr("src", elm.attr("src").replace(/\-(\d+)-(\d+)\//g, "-0-750"));
+			elm.attr("src", elm.attr("src").replace(/\-(\d+)-(\d+)\//g, "-0-750/"));
 		});
 		var realidadeAl = (function(){
 			let t = navigator.userAgent || navigator.vendor || window.opera, 
@@ -848,6 +848,39 @@ $(document).ready(function(){
 			}else{
 				$(".csm-dowload-pdf").remove();
 			}
+		})();
+		var videoOnPDP = (async () => {
+			const response = await fetch(`/api/catalog_system/pub/products/search/?fq=productId:${skuJson.productId}`);
+			const [productInfo] = await response.json();
+			const video = productInfo.items.first().Videos;
+
+			let container = $('.csm-product-video');
+
+			if(!video.first()) return;
+
+			container.addClass('is--active');
+
+			$.each(video, function(i, e){
+				let autoplay = (i == 0 ? 1 : 0);
+				container.append(`
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/${e}?&mute=1&autoplay=${autoplay}&rel=0&loop=1&controls=0&modestbranding=1" 
+						title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				`);
+			})
+
+			$('.csm-product-video.is--active').slick({
+				autoplay: false,
+				autoplaySpeed: 3000,
+				dots: false,
+				arrows: true,
+				prevArrow: '<button class="slick-prev" aria-label="Anterior" type="button">Anterior</button>',
+				nextArrow: '<button class="slick-next" aria-label="Próximo" type="button">Próximo</button>',
+				lazyLoad: 'ondemand',
+				accessibility: true,
+				swipeToSlide: true,
+				slidesToShow: 1,
+				slidesToScroll: 1
+			});
 		})();
 	}
 	//Newsletter

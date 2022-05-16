@@ -2295,6 +2295,14 @@ main.product .csm-product > .description{
 	width: 78rem;
 	margin: 2rem auto;
 }
+main.product .csm-product + .csm-product-video.is--active,
+main.product .csm-product + .csm-product-video.is--active iframe{
+	width: 100%;
+	min-height: 35rem !important;
+}
+.ytp-show-cards-title{
+	clip-path: inset(50% 50% 50% 50%);
+}
 /*Wishlist Modal*/
 #TB_overlay{
 	background-color: rgba(0, 0, 0, .1);
