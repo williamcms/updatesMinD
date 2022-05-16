@@ -1,8 +1,11 @@
 @charset "utf-8";
 /*
- *  Code by William Di Biasi Bogik
- *
- */
+*  Code by William Di Biasi Bogik
+*
+*/
+:root{
+	--campaign-color: #6B0B1C;
+}
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 main.hotsite .moodsDestaq{
 	width: 90vw !important;
@@ -17,13 +20,13 @@ main.hotsite .moodsDestaq .slick-list div.item figure > figcaption,
 main.hotsite .moodsDestaq .slick-list div.item figure > figcaption > p{
 	font-family: 'Playfair Display', serif !important;
 	font-size: 1.2rem;
-	color: var(--brand-color);
+	color: var(--campaign-color);
 	padding: 0 1rem;
 }
 main.hotsite h1,
 main.hotsite h2{
 	font-family: 'Playfair Display', serif !important;
-	color: var(--brand-color);
+	color: var(--campaign-color);
 	text-transform: uppercase;
 }
 main.hotsite .collections > .collectionWrapper{
