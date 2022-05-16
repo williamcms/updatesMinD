@@ -2300,9 +2300,6 @@ main.product .csm-product + .csm-product-video.is--active iframe{
 	width: 100%;
 	min-height: 35rem !important;
 }
-.ytp-show-cards-title{
-	clip-path: inset(50% 50% 50% 50%);
-}
 /*Wishlist Modal*/
 #TB_overlay{
 	background-color: rgba(0, 0, 0, .1);
