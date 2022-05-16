@@ -3654,6 +3654,9 @@ footer .final-label__address{
 		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	}
 	/* Shelves */
+	.vitrine > h2{
+		padding-top: 2rem !important;
+	}
 	.has-shelf--default > ul{
 		flex-wrap: wrap;
 		grid-row-gap: 1rem;
