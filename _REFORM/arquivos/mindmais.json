@@ -134,7 +134,7 @@
 			"bannerPageM" : "https://imaginarium.vteximg.com.br/arquivos/amabile_v2_banner_top_mobile_451x300_min.jpg",
 			"navBrands" : "https://lojamindesigns.vteximg.com.br/arquivos/amabile_v2_banner_linha_desk_385x570_min.jpg",
 			"pageTitle" : "MinD+ Amabile",
-			"pageDescription" : "",
+			"pageDescription" : "A amabile nasceu do desejo de compartilhar as pequenas coisas que fazem os dias ficarem mais leves e gostosos. Tudo aquilo que tornam alguns momentos simples, mais especiais. Velas artesanais feitas com muito carinho, e uma curadoria de coisas amáveis.",
 			"collection": 917,
 			"pageLink" : "https://www.casamind.com.br/mindmais/amabile",
 			"date" : "09/22/2021",
@@ -408,7 +408,7 @@
 			"collection": 1083,
 			"pageLink" : "https://www.casamind.com.br/mindmais/jungle",
 			"date" : "12/22/2022",
-			"active": 1
+			"active": 0
 		},
 		"leeve" : {
 			"name" : "LEEVE",
@@ -479,7 +479,7 @@
 			"bannerPageM" : "https://imaginarium.vteximg.com.br/arquivos/MUTUA_v2_banner_top_mobile_451x300_min.jpg",
 			"navBrands" : "https://lojamindesigns.vteximg.com.br/arquivos/MUTUA_v2_banner_linha_desk_385x570_min.jpg",
 			"pageTitle" : "MinD+ Mutuá",
-			"pageDescription" : "",
+			"pageDescription" : "Velas artesanais, ecológicas e aromáticas inspiradas em símbolos e artefatos da cosmologia afro-brasileira. Design exclusivo e versátil que permite um uso utilitário, espiritual ou decorativo.",
 			"collection": 891,
 			"pageLink" : "https://www.casamind.com.br/mindmais/mutua",
 			"date" : "08/16/2021",
@@ -599,7 +599,7 @@
 			"bannerPageM" : "https://imaginarium.vteximg.com.br/arquivos/PAIRA_v2_banner_top_mobile_451x300_min.jpg",
 			"navBrands" : "https://lojamindesigns.vteximg.com.br/arquivos/PAIRA_v2_banner_linha_desk_385x570_min.jpg",
 			"pageTitle" : "MinD+ Paira",
-			"pageDescription" : "",
+			"pageDescription" : "Paira é o sentimento de movimentar-se por diversas vivências e espaços. O exercício complementar de perceber o que podemos vir a ser e o que de fato somos. Objetos cotidianos que imprimem experimentos, fruto da disposição em criar a partir do diálogo entre design e arte.",
 			"collection": 863,
 			"pageLink" : "https://www.casamind.com.br/mindmais/paira",
 			"date" : "09/29/2021",
