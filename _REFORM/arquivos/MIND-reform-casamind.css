@@ -2305,7 +2305,10 @@ main.product .csm-product + .csm-product-video.is--active iframe{
 #TB_window{
 	text-align: center;
 	width: 39.375rem;
+	max-width: 100vw;
+	min-height: 26.9375rem;
 	height: 26.9375rem;
+	height: fit-content;
 	top: 0 !important;
 	right: 0 !important;
 	bottom: 0 !important;
@@ -2316,6 +2319,118 @@ main.product .csm-product + .csm-product-video.is--active iframe{
 }
 #TB_ajaxContent{
 	width: 100% !important;
+	max-width: 100vw;
+	height: 100% !important;
+	height: fit-content !important;
+}
+#TB_window #TB_ajaxWindowTitle{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+#TB_window #TB_closeAjaxWindow{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 .6rem !important;
+}
+#TB_window #TB_closeAjaxWindow > #TB_closeWindowButton{
+	font-size: 0rem;
+	text-decoration: none;
+}
+#TB_window #TB_closeAjaxWindow > #TB_closeWindowButton::after{
+	content: '\00D7';
+	font-size: 1.2rem;
+}
+#TB_window #TB_ajaxContent::-webkit-scrollbar{
+	width: 0.625rem;
+}
+#TB_window #TB_ajaxContent::-webkit-scrollbar-track{
+	background: var(--gray-lighter);
+}
+#TB_window #TB_ajaxContent::-webkit-scrollbar-thumb{
+	background: var(--brand-color);
+	opacity: .9;
+}
+#TB_window #TB_ajaxContent::-webkit-scrollbar-thumb:hover{
+	background: var(--brand-color);
+	opacity: 1;
+}
+#TB_window #TB_ajaxContent .glis-title{
+	font-family: 'Didot';
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--brand-color);
+}
+#TB_window #TB_ajaxContent .glis-selected{
+	font-style: italic;
+	color: var(--dark);
+}
+#TB_window #TB_ajaxContent .glis-create,
+#TB_window #TB_ajaxContent .glis-mylist{
+	margin-top: .5rem;
+	border: 0.0625rem solid var(--brand-color);
+	border-radius: 0.1875rem;
+}
+#TB_window #TB_ajaxContent .glis-new-title,
+#TB_window #TB_ajaxContent .glis-existing-title{
+	display: block;
+	color: var(--white);
+	background-color: var(--brand-color);
+}
+#TB_window #TB_ajaxContent .glis-create-form{
+	padding: .5rem;
+}
+#TB_window #TB_ajaxContent .glis-create-form > .glis-create-form-name{
+	text-align: left;
+	margin-top: .3rem;
+}
+#TB_window #TB_ajaxContent .glis-create-form > .glis-create-form-name .glis-form-name-obr{
+	display: none;
+}
+#TB_window #TB_ajaxContent .glis-create-form > .glis-create-form-name .giftlisterror{
+	border-color: var(--red);
+	animation: shake-slowly 1s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes shake-slowly{
+	0%, 90%{
+		transform: translateX(-0.5rem);
+	}
+
+	20%, 80%{
+		transform: translateX(0.5rem);
+	}
+
+	30%, 50%, 70%{
+		transform: translateX(-0.5rem);
+	}
+
+	40%, 60%{
+		transform: translateX(0.5rem);
+	}
+}
+#TB_window #TB_ajaxContent .glis-create-form > .glis-create-form-submit{
+	font-size: 1.2rem;
+	color: var(--brand-color);
+	margin: 0.8rem 0 0 0;
+	padding: 0.3rem 1.5rem;
+	background-color: var(--white);
+	border: 0.0625rem solid var(--brand-color);
+	transform: all 1s ease-in-out;
+}
+#TB_window #TB_ajaxContent .glis-create-form > .glis-create-form-submit a{
+	text-decoration: none;
+}
+#TB_window #TB_ajaxContent .glis-create-form > .glis-create-form-submit:hover{
+	color: var(--white);
+	background-color: var(--brand-color);
+}
+#TB_window #TB_ajaxContent .glis-new-info{
+	font-size: .95rem;
+	font-style: italic;
+	color: var(--dark);
+}
+#TB_window #TB_ajaxContent .glis-mylist a{
+	text-decoration: none;
 }
 /*Collections Page*/
 main.collection > .main-container > .infoWrapper{
