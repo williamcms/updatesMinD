@@ -3260,7 +3260,8 @@ footer .final-label__address{
 	text-decoration-style: solid;
 	text-decoration-thickness: 0.125rem;
 }
-.smarthint .result .sale-price{
+.smarthint .result .sale-price,
+.smarthint .result .single-price{
 	font-size: 1.4rem;
 	font-weight: 600;
 	color: var(--brand-color);
