@@ -18,13 +18,20 @@ main.hotsite .main-info{
 main.hotsite h1{
 	font-size: 2rem !important;
 }
-main.hotsite .text{
+main.hotsite .text,
+main.hotsite .text > .quote{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	grid-row-gap: 1rem;
 	row-gap: 1rem;
+}
+main.hotsite .text > .quote > p:first-of-type::before{
+	content: '\201C';
+}
+main.hotsite .text > .quote > p:last-of-type::after{
+	content: '\201D';
 }
 main.hotsite .text .frase-efeito > p{
 	font-style: italic;
