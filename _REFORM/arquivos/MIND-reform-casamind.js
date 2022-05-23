@@ -874,7 +874,7 @@ $(document).ready(function(){
 			$.each(video, function(i, e){
 				let autoplay = (i == 0 ? 1 : 0);
 				container.append(`
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/${e}?&mute=1&autoplay=${autoplay}&rel=0&loop=1&controls=0&modestbranding=1" 
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/${e}?&mute=1&autoplay=${autoplay}&rel=0&loop=1&controls=1&modestbranding=1" 
 						title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				`);
 			});
