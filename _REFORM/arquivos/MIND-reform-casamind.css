@@ -2438,6 +2438,46 @@ main.collection > .main-container > .infoWrapper .collection-description{
 	color: var(--dark);
 	padding: 0 12rem;
 }
+main.collection > .main-container > .infoWrapper .collection-description details{
+	text-align: justify;
+}
+main.collection > .main-container > .infoWrapper .collection-description details a{
+	color: var(--brand-color);
+	font-weight: 600;
+}
+/*Workaround para deixar o cursor normal nos textos mas como pointer no texto 'ver mais'*/
+main.collection > .main-container > .infoWrapper .collection-description details p,
+main.collection > .main-container > .infoWrapper .collection-description details span,
+main.collection > .main-container > .infoWrapper .collection-description details h2,
+main.collection > .main-container > .infoWrapper .collection-description details h3,
+main.collection > .main-container > .infoWrapper .collection-description details h4,
+main.collection > .main-container > .infoWrapper .collection-description details h5,
+main.collection > .main-container > .infoWrapper .collection-description details h6{
+	cursor: auto !important;
+}
+main.collection > .main-container > .infoWrapper .collection-description details summary{
+	cursor: pointer;
+}
+main.collection > .main-container > .infoWrapper .collection-description details summary::marker{
+	content: 'Clique para ver mais';
+	font-size: .9em;
+	font-style: italic;
+	color: var(--brand-color);
+}
+main.collection > .main-container > .infoWrapper .collection-description details[open] summary::marker{
+	content: 'Clique para ver menos';
+}
+main.collection > .main-container > .infoWrapper .collection-description h2{
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+main.collection > .main-container > .infoWrapper .collection-description h3,
+main.collection > .main-container > .infoWrapper .collection-description h4,
+main.collection > .main-container > .infoWrapper .collection-description h5,
+main.collection > .main-container > .infoWrapper .collection-description h6{
+	font-size: 1.1rem;
+	font-weight: bold;
+}
 main.collection > .main-container > .collectionWrapper{
 	margin: 0 2rem 3rem 2rem;
 }
