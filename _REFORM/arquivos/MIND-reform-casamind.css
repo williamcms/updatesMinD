@@ -98,6 +98,10 @@ svg{
 	image-rendering: crisp-edges;
 	image-rendering: -webkit-optimize-contrast;
 }
+.rsize{
+	width: var(--w);
+	height: var(--h);
+}
 a{
 	color: inherit;
 	background-color: transparent;
@@ -2036,6 +2040,13 @@ main.product .csm-product > .product-data > .product__info .sales-condition span
 main.product .csm-product > .product-data > .product__info .sales-condition span.fa-shield{
 	color: var(--blue);
 }
+main.product .csm-product > .product-data > .product__info .sales-condition span.fa-tags{
+	color: #FF8769;
+}
+main.product .csm-product > .product-data > .product__info .sales-condition span.fa-pix{
+	color: #32BBAC;
+}
+
 main.product .csm-product > .product-data > .product__info .blocksContainer{
 	display: flex;
 	flex-direction: column;
