@@ -1111,7 +1111,7 @@ adicional que é usado por conta de haver informações do produto além de imag
 .slick-slider button.slick-next.slick-arrow:hover,
 .slick-slider button.slick-prev.slick-arrow:hover{
 	border-color: var(--brand-color);
-	animation: none;
+	animation-play-state: paused;
 }
 .slick-slider button.slick-next.slick-arrow.slick-disabled,
 .slick-slider button.slick-prev.slick-arrow.slick-disabled{
