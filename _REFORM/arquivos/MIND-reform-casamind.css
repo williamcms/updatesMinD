@@ -1793,8 +1793,8 @@ body > .ui-autocomplete.ui-widget-content{
 	border-radius: 50%;
 	position: absolute;
 	box-shadow: 0.25rem 0 0.125rem -0.125rem var(--brand-color), -0.25rem 0 0.125rem -0.125rem var(--brand-color);
-	-webkit-animation: 1s linear 1s infinite rotate;
-	-webkit-transition: 1s;
+	animation: 1s linear 1s infinite rotate;
+	transition: 1s;
 }
 @keyframes rotate{
 	0%{
@@ -1841,29 +1841,6 @@ body > .ui-autocomplete.ui-widget-content{
 	letter-spacing: 0.01875rem;
 	line-height: 2.1875rem;
 	text-transform: uppercase;
-}
-.csm-header .csm-cart .portal-totalizers-ref .amount-items-in-cart .cart-info .amount-items .amount-items-action::before{
-	content: "";
-	width: 1.3125rem;
-	height: 1.5625rem;
-	border-radius: 50%;
-	position: absolute;
-	box-shadow: 0.25rem 0 0.125rem -0.125rem var(--brand-color), -0.25rem 0 0.125rem -0.125rem var(--brand-color);
-	left: 1.0625rem;
-	top: -0.0625rem;
-}
-.csm-header .csm-cart .portal-totalizers-ref .amount-items-in-cart .cart-info .amount-items .amount-items-action::after{
-	content: "";
-	width: 1.6875rem;
-	height: 1.875rem;
-	border-radius: 50%;
-	position: absolute;
-	box-shadow: 0.25rem 0 0.125rem -0.125rem var(--brand-color), -0.25rem 0 0.125rem -0.125rem var(--brand-color);
-	lefT: 0.875rem;
-	top: -0.25rem;
-	animation: 1s linear 1s infinite rotate;
-	-webkit-animation: 1s linear 1s infinite rotate;
-	-webkit-transition: 1s;
 }
 /* Added to cart message */
 .csm-header #popup-adicionando{
@@ -3960,4 +3937,9 @@ footer .final-label__address{
 		page-break-inside: avoid;
 	}
 	/* New */
+}
+@media(prefers-reduced-motion){
+	.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items em.amount-items-em::after{
+		animation: 3s linear 3s infinite rotate;
+	}
 }
