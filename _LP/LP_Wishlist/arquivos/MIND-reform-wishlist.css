@@ -7,8 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 main.hotsite h1,
-main.hotsite h2,
-main.hotsite h3{
+main.hotsite h2{
 	font-family: 'Playfair Display', serif !important;
 	color: var(--brand-color);
 }
