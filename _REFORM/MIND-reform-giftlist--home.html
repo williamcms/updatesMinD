@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+	<title>Casa MinD | Lista de presentes</title>
+	<script>$(document).prop('title', 'Casa MinD | Lista de presentes');</script>
+	<vtex:template id="MIND-reform-head" />
+	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+
+	<!-- Especifico da página -->
+	<link rel="stylesheet" type="text/css" href="/arquivos/MIND-reform-giftlist.min.css" media="all" as="style" />
+	<!-- Especifico da página -->
+</head>
+
+<body>
+	<vtex:template id="MIND-reform-header" />
+
+	<div class="giftlist banner__top">
+		<div class="desktop-view">
+			<vtex:contentPlaceHolder id="banner-top-desktop" />
+		</div>
+		<div class="mobile-view">
+			<vtex:contentPlaceHolder id="banner-top-mobile" />
+		</div>
+	</div>
+
+	<main class="giftlist">
+		<h1 class="center highlight">Lista de Presentes</h1>
+
+		<section class="giftlist-actions row">
+
+			<div class="actions col center">
+				<div class="actions__item">
+					<p class="bold pb-1">Ainda não tem uma lista?</p>
+					<a href="/_secure/giftlist/create" role="button" class="button2 btn-brand">
+						<span>Criar lista</span>
+					</a>
+				</div>
+
+				<div class="actions__item pt-3">
+					<p class="bold pb-1">Quer gerenciar uma lista?</p>
+					<a href="/_secure/GiftList/Manage" role="button" class="button2 btn-brand">
+						<span>Editar listas</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="divider"></div>
+			</div>
+
+			<div class="giftlist-search col">
+				<div class="giftlist-search__text center">
+					<p class="bold">Procurando uma lista?</p>
+					<i class="text-muted">Para encontrar a lista é só preencher algum dos campos abaixo:</i>
+				</div>
+
+				<div class="giftlist-search__form">
+					<vtex.cmc:GiftListSearchV2 />
+				</div>
+
+			</div>
+		</section>
+
+		<section class="how-to p-3">
+			<h2 class="center highlight">Dúvida em como criar a lista?</h2>
+			<h3 class="center">Veja o passo a passo!</h3>
+
+			<div class="how-to-steps row">
+				<div class="how-to__step col">
+					<h4>Crie a lista</h4>
+					<p>É só clicar no botão criar lista, escolher o tipo de lista para o seu momento (Open House, Chá de cozinha, Aniversário, Casamento, Lista de desejos, etc.) e cadastre sua lista</p>
+				</div>
+				<div class="how-to__step col">
+					<h4>Adicione presentes</h4>
+					<p>Adicione produtos à sua lista, é só clicar no ícone de “adicionar à lista” na página do produto escolhido.</p>
+				</div>
+				<div class="how-to__step col">
+					<h4>Gerencie a lista </h4>
+					<p>Você pode editar sua lista sempre que desejar, para isso é só clicar no botão editar lista abaixo.</p>
+				</div>
+				<div class="how-to__step col">
+					<h4>Divulgue sua lista</h4>
+					<p>Compartilhe sua lista com seus convidados. Assim que os produtos forem comprados, serão enviados diretamente para o endereço que você cadastrou!</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<vtex:template id="MIND-reform-footer" />
+</body>
+</html>

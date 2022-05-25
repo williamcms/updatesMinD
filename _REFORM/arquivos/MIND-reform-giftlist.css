@@ -1,0 +1,71 @@
+@charset "utf-8";
+/*
+ *	Code by William Di Biasi Bogik
+ *
+ */
+:root{
+	--buttons-desktop: 14.0625rem;
+}
+main.giftlist h1{
+	font-family: Segoe Script, Quicksand, 'Helvetica Neue', Verdana, Arial, sans-serif;
+}
+main.giftlist h2,
+main.giftlist h3{
+	font-size: 1.3rem;
+}
+main.giftlist h4{
+	font-size: 1.2rem;
+}
+main.giftlist .giftlist-actions.row{
+	justify-content: center;
+}
+main.giftlist .giftlist-actions.row > .actions.col .button2{
+	min-width: var(--buttons-desktop);
+}
+main.giftlist .giftlist-actions.row > .col-auto > .divider{
+	border-right: 0.125rem solid var(--brand-color);
+    height: 15rem;
+}
+main.giftlist .giftlist-actions.row > .giftlist-search.col .glsearch-title,
+main.giftlist .giftlist-actions.row > .giftlist-search.col .glsearch-type,
+main.giftlist .giftlist-actions.row > .giftlist-search.col .glsearch-id,
+main.giftlist .giftlist-actions.row > .giftlist-search.col .glsearch-eventlocation,
+main.giftlist .giftlist-actions.row > .giftlist-search.col .glsearch-eventcity{
+	display: none;
+}
+main.giftlist .giftlist-actions.row > .giftlist-search.col .glsearch-find{
+	text-align: center;
+}
+main.giftlist .giftlist-actions.row > .giftlist-search.col .glsearch-find #giftlistsearchfind{
+	position: relative;
+	text-align: center;
+	color: var(--white);
+	margin: 1rem auto;
+	padding: 0.3rem 3.5rem;
+	width: var(--buttons-desktop);
+	background-color: var(--brand-color);
+	border-radius: 0.1625rem;
+	border: none;
+}
+main.giftlist .giftlist-actions.row > .giftlist-search.col fieldset.glsearch{
+	border: none;
+}
+main.giftlist .giftlist-actions.row > .giftlist-search.col .giftlist-search__text,
+main.giftlist .giftlist-actions.row > .giftlist-search.col .giftlistsearchul.glsearch-ul{
+	width: 75%;
+}
+main.giftlist .giftlist-actions.row > .giftlist-search.col .giftlist-search__text i.text-muted{
+	font-size: .94em;
+}
+main.giftlist .how-to{
+	margin-top: 2rem;
+	background-color: var(--sand);
+}
+main.giftlist .how-to > .how-to-steps.row{
+	align-items: flex-start;
+	counter-reset: steps;
+}
+main.giftlist .how-to > .how-to-steps.row > .how-to__step > h4::before{
+	counter-increment: steps;
+	content: counter(steps) '. ';
+}
