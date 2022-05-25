@@ -2293,7 +2293,6 @@ main.product .csm-product + .csm-product-video.is--active iframe{
 	text-align: center;
 	width: 39.375rem;
 	max-width: 100vw;
-	min-height: 26.9375rem;
 	height: 26.9375rem;
 	height: fit-content;
 	top: 0 !important;
