@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+	<title>Casa MinD | Criar lista de presentes</title>
+	<script>$(document).prop('title', 'Casa MinD | Criar lista de presentes');</script>
+	<vtex:template id="MIND-reform-head" />
+	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+
+	<!-- Especifico da página -->
+	<link rel="stylesheet" type="text/css" href="/arquivos/MIND-reform-giftlist.min.css" media="all" as="style" />
+	<script defer="true" type="text/javascript" src="/arquivos/MIND-reform-giftlist.js"></script>
+	<!-- Especifico da página -->
+</head>
+
+<body>
+	<vtex:template id="MIND-reform-header" />
+	
+	<div class="giftlist banner__top">
+		<div class="desktop-view">
+			<vtex:contentPlaceHolder id="banner-top-desktop" />
+		</div>
+		<div class="mobile-view">
+			<vtex:contentPlaceHolder id="banner-top-mobile" />
+		</div>
+	</div>
+	
+	<main class="giftlist">
+		<h1 class="center highlight">Criar lista de Presentes</h1>
+		<div class="giftlist create">
+	  
+			<div class="create-form">
+				<vtex.cmc:GiftListFormV2 />
+			</div>
+			
+		</div>
+	</main>
+	<vtex:template id="MIND-reform-footer" />
+</body>
+</html>
