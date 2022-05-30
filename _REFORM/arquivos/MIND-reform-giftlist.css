@@ -44,18 +44,18 @@ main.giftlist.home .giftlist-actions.row > .col-auto > .divider{
 	border-right: 0.125rem solid var(--brand-color);
 	height: 15rem;
 }
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-title,
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-type,
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-id,
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-eventlocation,
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-eventcity,
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-result{
+main.giftlist .glsearch-title,
+main.giftlist .glsearch-type,
+main.giftlist .glsearch-id,
+main.giftlist .glsearch-eventlocation,
+main.giftlist .glsearch-eventcity,
+main.giftlist.home .glsearch-result{
 	display: none !important;
 }
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-find{
+main.giftlist .glsearch-find{
 	text-align: center;
 }
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-find #giftlistsearchfind{
+main.giftlist .glsearch-find #giftlistsearchfind{
 	position: relative;
 	text-align: center;
 	color: var(--white);
@@ -66,35 +66,35 @@ main.giftlist.home .giftlist-actions.row > .giftlist-search.col .glsearch-find #
 	border-radius: 0.1625rem;
 	border: none;
 }
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .giftlist-search__text,
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .giftlistsearchul.glsearch-ul{
+main.giftlist .giftlist-search__text,
+main.giftlist .giftlistsearchul.glsearch-ul{
 	width: 75%;
 }
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .giftlistsearchul > li:not(:first-child){
+main.giftlist .giftlistsearchul > li:not(:first-child){
 	margin-top: .5rem
 }
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .giftlistsearchul > li > span{
+main.giftlist .giftlistsearchul > li > span{
 	display: block;
 	font-weight: 500;
 	max-width: var(--buttons-desktop);
 	margin: 0 auto;
 }
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .giftlistsearchul > li > input{
+main.giftlist .giftlistsearchul > li > input{
 	display: block;
 	max-width: var(--buttons-desktop);
 	margin: 0 auto;
 }
-main.giftlist.home .giftlist-actions.row > .giftlist-search.col .giftlist-search__text i.text-muted{
+main.giftlist .giftlist-search__text i.text-muted{
 	font-size: .94em;
 }
-main.giftlist.home .giftlist-results > .glsearch-result .giftlist-table{
+main.giftlist .glsearch-result .giftlist-table{
 	margin: 0 auto;
 }
-main.giftlist.home .giftlist-results > .glsearch-result th{
+main.giftlist .glsearch-result th{
 	font-weight: 600;
 }
-main.giftlist.home .giftlist-results > .glsearch-result th,
-main.giftlist.home .giftlist-results > .glsearch-result td{
+main.giftlist .glsearch-result th,
+main.giftlist .glsearch-result td{
 	padding-right: 1rem;
 }
 main.giftlist.home .how-to{
