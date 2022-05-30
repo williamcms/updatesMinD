@@ -6,6 +6,11 @@
 :root{
 	--buttons-desktop: 16.0625rem;
 }
+main.giftlist .error,
+main.giftlist .giftlisterror{
+	border-color: var(--red) !important;
+	animation: shake-slowly 1s cubic-bezier(.36,.07,.19,.97) both !important;
+}
 main.giftlist h1{
 	font-family: Segoe Script, Quicksand, 'Helvetica Neue', Verdana, Arial, sans-serif;
 }
@@ -105,6 +110,9 @@ main.giftlist.home .how-to > .how-to-steps.row > .how-to__step > h4::before{
 	counter-increment: steps;
 	content: counter(steps) '. ';
 }
+main.giftlist.create{
+	padding: 1rem 2rem;
+}
 main.giftlist.create #giftlistform{
 	display: flex;
 	flex-wrap: wrap;
@@ -112,30 +120,41 @@ main.giftlist.create #giftlistform{
 	gap: 2rem;
 }
 main.giftlist.create #giftlistform > *{
-	flex: 1 1 50%;
+	flex: 1 1 45%;
+	overflow: auto;
 }
 main.giftlist.create #giftlistform .image{
 	display: none;
 }
-main.giftlist.create #giftlistform .giftlistul > li{
+main.giftlist.create #giftlistform .giftlistul{
+	max-width: 44vw;
+}
+main.giftlist.create #giftlistform .giftlistul > li,
+main.giftlist.create #addresscomponent .address-data p.input{
+	position: relative;
 	display: flex;
 	align-items: stretch;
+	line-height: 2.375rem;
 	margin-bottom: .5rem;
 }
 main.giftlist.create #giftlistform .giftlistul > li#title1{
 	display: flex !important;
 }
-main.giftlist.create #giftlistform .giftlistul > li > label{
+main.giftlist.create #giftlistform .giftlistul > li > label,
+main.giftlist.create #addresscomponent .address-data p.input > label:not([for="ship-commercial"]){
 	flex-basis: auto;
 	white-space: nowrap;
 	color: var(--dark);
 	background-color: var(--sand);
 	padding: .375rem .75rem;
 	margin: 0;
-	border: .0625rem solid var(--gray-lighter);
+	border-top: .0625rem solid var(--gray-lighter);
+	border-bottom: .0625rem solid var(--gray-lighter);
+	border-left: .0625rem solid var(--gray-lighter);
 	border-radius: .25rem 0 0 .25rem;
 }
-main.giftlist.create #giftlistform .giftlistul > li > label + *{
+main.giftlist.create #giftlistform .giftlistul > li > label + *,
+main.giftlist.create #addresscomponent .address-data p.input > label + *{
 	border-radius: 0 .25rem .25rem 0;
 }
 main.giftlist.create #giftlistform .giftlistul > li > label[for="giftlistname"]::after,
@@ -159,6 +178,10 @@ main.giftlist.create #giftlistform .giftlistul #visibility-wrapper{
 main.giftlist.create #giftlistform .giftlistul #giftlisturl-site{
 	background-color: var(--sand);
 	padding: 0 .5rem;
+	overflow: auto;
+}
+main.giftlist.create #giftlistform .giftlistul #giftlisturl{
+	display: none !important;
 }
 main.giftlist.create #giftlistform .giftlistul #visibility-wrapper > input{
 	flex: 0 1 10%;
@@ -183,7 +206,7 @@ main.giftlist.create #giftlistform #members-box > .member-range{
 	color: var(--gray)!important;
 }
 main.giftlist.create #giftlistform #members-box > .giftlistmember-add{
-	display: block !important;
+	display: block;
 	padding: .5rem;
 	text-align: center;
 }
@@ -197,6 +220,7 @@ main.giftlist.create #giftlistform #members-box > .giftlistmember-add > a{
 	border: 0.0625rem solid var(--brand-color);
 }
 main.giftlist.create #giftlistform #members-box > .giftlistmember-add > a:hover{
+	color: var(--white);
 	background-color: var(--brand-color);
 }
 main.giftlist.create #giftlistform .address-component h3{
@@ -216,8 +240,6 @@ main.giftlist.create #giftlistform .address-component .address-list-items > fiel
 	flex-direction: column;
 	grid-column-gap: 1rem;
 	column-gap: 1rem;
-}
-main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item > *{
 	flex: 1 1 0px;
 }
 main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item > span.link-box-select{
@@ -232,18 +254,27 @@ main.giftlist.create #giftlistform .address-component .address-list-items > fiel
 	border-top: 0.0625rem solid var(--brand-color);
 	border-right: 0.0625rem solid var(--brand-color);
 	border-left: 0.0625rem solid var(--brand-color);
+	cursor: pointer;
+
+	flex-basis: 90%;
+}
+main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item > .input > label{
+	cursor: pointer;
 }
 main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item > a.link-box-select,
 main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item > span.text-box-selected{
 	text-align: center;
 	border-radius: 0 0 6px 6px;
 	border: 0.0625rem solid var(--brand-color);
+
+	flex-basis: 10%;
 }
 main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item > a.link-box-select{
 	text-decoration: none;
 	color: var(--brand-color);
 	background-color: var(--white);
 }
+main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item:hover > a.link-box-select,
 main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item > a.link-box-select:hover{
 	color: var(--white);
 	background-color: var(--brand-color);
@@ -255,6 +286,7 @@ main.giftlist.create #giftlistform .address-component .address-list-items > fiel
 main.giftlist.create #giftlistform .address-component p.link.edit.address-edit, 
 main.giftlist.create #giftlistform .address-component p.link.create.address-create{
 	display: inline-block;
+	margin: .5rem 0;
 }
 main.giftlist.create #giftlistform .address-component p.link.edit.address-edit > a, 
 main.giftlist.create #giftlistform .address-component p.link.create.address-create > a{
@@ -272,9 +304,97 @@ main.giftlist.create #giftlistform .address-component p.link.create.address-crea
 	color: var(--white);
 	background-color: var(--brand-color);
 }
+main.giftlist.create #addresscomponent .address-form > p.cancel-address-form{
+	display: none;
+}
+main.giftlist.create #addresscomponent .address-data p.input.ship-country,
+main.giftlist.create #addresscomponent .address-data p.input.ship-postal-code > small{
+	display: none;
+}
+main.giftlist.create #addresscomponent .address-data p.input.ship-commercial{
+	justify-content: center;
+}
+main.giftlist.create #addresscomponent .address-data p.input > label[for="ship-commercial"]{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-column-gap: 0.5rem;
+	column-gap: 0.5rem;
+}
+main.giftlist.create #addresscomponent .address-data p.input > .help.error-list.parsley-error-list{
+	position: absolute;
+	font-size: .8rem;
+	font-style: italic;
+	color: var(--dark);
+	bottom: 0;
+	right: 0;
+}
+main.giftlist.create #addresscomponent .address-data > p.cancel-address-form,
+main.giftlist.create #addresscomponent .address-data > p.submit.btn-submit-wrapper{
+	display: inline-block;
+	margin: .5rem .5rem .5rem 0;
+}
+main.giftlist.create #addresscomponent .address-data > p.cancel-address-form > a,
+main.giftlist.create #addresscomponent .address-data > p.submit.btn-submit-wrapper > button{
+	display: block;
+	text-decoration: none;
+	white-space: nowrap;
+	padding: 0.3rem 2.5rem;
+	width: 100%;
+	color: var(--brand-color);
+	background-color: var(--white);
+	border: 1px solid var(--brand-color);
+}
+main.giftlist.create #addresscomponent .address-data > p.cancel-address-form > a:hover,
+main.giftlist.create #addresscomponent .address-data > p.submit.btn-submit-wrapper > button:hover{
+	color: var(--white);
+	background-color: var(--brand-color);
+}
 main.giftlist.create #giftlistform .therms-area,
 main.giftlist.create #giftlistform .action-area{
 	flex-basis: 100%;
+}
+main.giftlist.create #giftlistform .therms-area > .therms-text{
+	overflow: auto;
+	height: 11.1875rem;
+	padding: .2rem .5rem;
+	border: 0.0625rem solid var(--gray-lighter);
+	border-radius: .3625rem;
+}
+main.giftlist.create #giftlistform .therms-area > #therms-accept{
+	font-weight: 500;
+	text-align: center;
+	padding: .5rem 0;
+}
+main.giftlist.create #giftlistform .action-area > .form-action{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	grid-column-gap: 1rem;
+	column-gap: 1rem;
+}
+main.giftlist.create #giftlistform .action-area > .form-action > .cancel > .button.giftlistv2cancel,
+main.giftlist.create #giftlistform .action-area > .form-action > .save > .button.giftlistv2save{
+	border: 0.0625rem solid var(--brand-color);
+	min-width: 8.5rem;
+	padding: 0.325rem 0.625rem;
+	border-radius: 0.125rem;
+}
+main.giftlist.create #giftlistform .action-area > .form-action > .cancel > .button.giftlistv2cancel{
+	color: var(--brand-color);
+	background-color: var(--white);
+}
+main.giftlist.create #giftlistform .action-area > .form-action > .cancel > .button.giftlistv2cancel:hover{
+	color: var(--white);
+	background-color: var(--brand-color);
+}
+main.giftlist.create #giftlistform .action-area > .form-action > .save > .button.giftlistv2save{
+	color: var(--white);
+	background-color: var(--brand-color);
+}
+main.giftlist.create #giftlistform .action-area > .form-action > .save > .button.giftlistv2save:hover{
+	filter: brightness(.95);
 }
 @media screen and (max-width: 831px){
 	main.giftlist.home .giftlist-actions.row{
