@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+	<title>Casa MinD | Visualize e compartilhe a lista</title>
+	<script>$(document).prop('title', 'Casa MinD | Visualize e compartilhe a lista');</script>
+	<vtex:template id="MIND-reform-head" />
+	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+
+	<!-- Especifico da página -->
+	<link rel="stylesheet" type="text/css" href="/arquivos/MIND-reform-giftlist.min.css" media="all" as="style" />
+	<script defer="true" type="text/javascript" src="/arquivos/MIND-reform-giftlist.js"></script>
+	<!-- Especifico da página -->
+</head>
+
+<body>
+	<vtex:template id="MIND-reform-header" />
+	<!-- Main -->
+	<main class="giftlist shelf">
+			
+		<div class="sidebar">
+			<ul class="nav nav-list bs-docs-sidenav giftlist-sidenav">
+				<li><a href="/giftlist/">Buscar uma Lista</a></li>
+				<li><a href="/giftlist/create/">Criar nova Lista</a></li>
+				<li><a href="/giftlist/manage/">Gerenciar minhas Listas</a></li>
+			</ul>
+			<vtex.cmc:giftListNavigation />
+		</div>
+		
+		<div class="collection">
+			<h1>Produtos na lista</h1>
+			
+			<vtex.cmc:GiftListInfoV2 />
+			<vtex.cmc:GiftListInsertSkuV2 popup="true" />
+
+			<div class="collectionItems">
+				<vtex.cmc:giftListShelfPaged layout="eb4b0aa8-eda2-42a3-aebc-21a1a4ced5b5" itemCount="48" columnCount="48" />
+			</div>
+			<vtex.cmc:giftListSendToCartButton />
+			
+		</div>
+
+	</main>
+	<vtex:template id="MIND-reform-footer" />
+</body>
+</html>
