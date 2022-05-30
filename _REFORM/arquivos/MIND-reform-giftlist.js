@@ -2,12 +2,9 @@ $(document).ready(function(){
 	// Função para algumas otimizações, 
 	// como indicador de campo númerico para mobile
 	(() =>{
-		let giftlisteventdate = $('#giftlisteventdate'),
-			thermsText = $('.therms-text');
+		let giftlisteventdate = $('#giftlisteventdate');
 
 		giftlisteventdate.prop('inputmode', 'numeric');
-		thermsText.html(thermsText.html().replaceAll('4007-2188', '3003-3516'));
-		thermsText.html(thermsText.html().replaceAll('www.casamind.com.br/contato', 'www.casamind.com.br/central-de-relacionamento'));
 	})();
 	// Função para preencher alguns campos com base no CEP
 	$('body').on('blur', '.address-form-new #ship-postal-code', function(evt) {
