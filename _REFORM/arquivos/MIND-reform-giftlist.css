@@ -66,20 +66,20 @@ main.giftlist .glsearch-find #giftlistsearchfind{
 	border-radius: 0.1625rem;
 	border: none;
 }
-main.giftlist .giftlist-search__text,
-main.giftlist .giftlistsearchul.glsearch-ul{
+main.giftlist.home .giftlist-search__text,
+main.giftlist.home .giftlistsearchul.glsearch-ul{
 	width: 75%;
 }
 main.giftlist .giftlistsearchul > li:not(:first-child){
 	margin-top: .5rem
 }
-main.giftlist .giftlistsearchul > li > span{
+main.giftlist.home .giftlistsearchul > li > span{
 	display: block;
 	font-weight: 500;
 	max-width: var(--buttons-desktop);
 	margin: 0 auto;
 }
-main.giftlist .giftlistsearchul > li > input{
+main.giftlist.home .giftlistsearchul > li > input{
 	display: block;
 	max-width: var(--buttons-desktop);
 	margin: 0 auto;
