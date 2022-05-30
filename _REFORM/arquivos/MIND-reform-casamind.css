@@ -2361,7 +2361,7 @@ main.product .csm-product + .csm-product-video.is--active iframe{
 #TB_window #TB_ajaxContent .glis-new-title,
 #TB_window #TB_ajaxContent .glis-existing-title{
 	display: block;
-	margin: -.5rem -.5rem 0 -.5rem;
+	margin: -.5rem -.5rem 0.5rem -.5rem;
 	color: var(--white);
 	background-color: var(--brand-color);
 }
