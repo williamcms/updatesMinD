@@ -11,6 +11,9 @@ main.giftlist .giftlisterror{
 	border-color: var(--red) !important;
 	animation: shake-slowly 1s cubic-bezier(.36,.07,.19,.97) both !important;
 }
+main.giftlist .hide{
+	display: none !important;
+}
 main.giftlist h1{
 	font-family: Segoe Script, Quicksand, 'Helvetica Neue', Verdana, Arial, sans-serif;
 }
