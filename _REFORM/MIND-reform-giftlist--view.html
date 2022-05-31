@@ -16,30 +16,73 @@
 <body>
 	<vtex:template id="MIND-reform-header" />
 	<!-- Main -->
-	<main class="giftlist shelf">
-
-		<div class="row">
-		
-			<div class="sidebar col">
-				<ul class="nav nav-list bs-docs-sidenav giftlist-sidenav">
-					<li><a href="/giftlist/">Buscar uma Lista</a></li>
-					<li><a href="/giftlist/create/">Criar nova Lista</a></li>
-					<li><a href="/giftlist/manage/">Gerenciar minhas Listas</a></li>
-				</ul>
-				<vtex.cmc:giftListNavigation />
-			</div>
-			
-			<div class="collection col">
-				<h1>Produtos na lista</h1>
-				
+	<main class="giftlist collection shelf">
+		<div class="main-container">
+			<div class="infoWrapper">
 				<vtex.cmc:GiftListInfoV2 />
-				<vtex.cmc:GiftListInsertSkuV2 mode="combo" />
+			</div>
 
-				<div class="collectionItems">
-					<vtex.cmc:giftListShelfPaged layout="eb4b0aa8-eda2-42a3-aebc-21a1a4ced5b5" itemCount="48" columnCount="48" />
+			<div class="collectionWrapper">
+				<div class="row">
+				
+					<div class="col-auto side-nav">
+						<ul class="optionsList">
+							<li><a href="/giftlist/">Buscar uma Lista</a></li>
+							<li><a href="/giftlist/create/">Criar nova Lista</a></li>
+							<li><a href="/giftlist/manage/">Gerenciar minhas Listas</a></li>
+						</ul>
+						<div class="orderByList">
+								<h3>Ordenar</h3>
+								<div class="filterSelector"></div>
+								<ul aria-label="Ordernar por:">
+									<li data-order="O=OrderByPriceASC">
+										<a href="?O=OrderByPriceASC">
+										<div class="iconwrapper"><div class="orderby-icon"></div></div>
+										<span>Menor <span>preço</span></span></a>
+									</li>
+									<li data-order="O=OrderByPriceDESC">
+										<a href="?O=OrderByPriceDESC">
+										<div class="iconwrapper"><div class="orderby-icon"></div></div>
+										<span>Maior <span>preço</span></span></a>
+									</li>
+									<li data-order="O=OrderByTopSaleDESC">
+										<a href="?O=OrderByTopSaleDESC">
+										<div class="iconwrapper"><div class="orderby-icon"></div></div>
+										<span>Mais <span>Vendidos</span></span></a>
+									</li>
+									<li data-order="O=OrderByReviewRateDESC">
+										<a href="?O=OrderByReviewRateDESC">
+										<div class="iconwrapper"><div class="orderby-icon"></div></div>
+										<span>Melhores <span>Avaliações</span></span></a>
+									</li>
+									<li data-order="O=OrderByReleaseDateDESC">
+										<a href="?O=OrderByReleaseDateDESC">
+										<div class="iconwrapper"><div class="orderby-icon"></div></div>
+										<span>Data de <span>Lançamento</span></span></a>
+									</li>
+									<li data-order="O=OrderByBestDiscountDESC">
+										<a href="?O=OrderByBestDiscountDESC">
+										<div class="iconwrapper"><div class="orderby-icon"></div></div>
+										<span>Melhor <span>Desconto</span></span></a>
+									</li>
+								</ul>
+							</div>
+						<vtex.cmc:giftListNavigation />
+					</div>
+					
+					<div class="collection col">
+						<h1>Produtos na lista</h1>
+						
+						<vtex.cmc:GiftListInsertSkuV2 mode="combo" />
+
+						<div class="collectionItems">
+							<vtex.cmc:giftListShelfPaged layout="eb4b0aa8-eda2-42a3-aebc-21a1a4ced5b5" itemCount="48" columnCount="48" />
+						</div>
+
+						<vtex.cmc:giftListSendToCartButton />
+					</div>
+
 				</div>
-
-				<vtex.cmc:giftListSendToCartButton />
 			</div>
 		</div>
 
