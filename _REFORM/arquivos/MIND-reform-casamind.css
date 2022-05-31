@@ -2862,17 +2862,17 @@ button.seeMoreProducts[data-controls]{
 .csm-shelf__product .csm-shelf__price > a.csm-shelf__link{
 	text-decoration: none;
 }
-.csm-shelf__product .csm-shelf__price > a.csm-shelf__link > .csm-shelf__price--best > strong{
+.csm-shelf__product .csm-shelf__price > .csm-shelf__price--best > strong{
 	color: var(--brand-color);
 }
-.csm-shelf__product .csm-shelf__price > a.csm-shelf__link > .csm-shelf__price--old{
+.csm-shelf__product .csm-shelf__price > .csm-shelf__price--old{
 	position: relative;
 	max-height: 1.5rem;
 	max-height: -moz-max-content;
 	max-height: fit-content;
 	height: fit-content;
 }
-.csm-shelf__product .csm-shelf__price > a.csm-shelf__link > .csm-shelf__price--old > span{
+.csm-shelf__product .csm-shelf__price > .csm-shelf__price--old > span{
 	text-decoration-line: line-through;
 	text-decoration-color: var(--brand-color);
 	text-decoration-style: solid;
