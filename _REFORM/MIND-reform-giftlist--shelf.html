@@ -1,57 +1,101 @@
 #set($id = $product.Id)
+#set($sku = $product.productVariantId)
 #set($uri = $product.Uri)
-#set($escapedName = $product.HtmlEscapedName)
+#set($title = $product.HtmlEscapedName)
+#set($skuName = $product.SkuName)
+#set($description = $product.DescriptionShort)
+#set($brand = $product.BrandName)
+#set($inStock = $product.IsInStock)
+#set($price = $product.ListPrice)
+#set($bestPrice = $product.BestPrice)
+#set($installmentsQuantity = $product.NumbersOfInstallment)
+#set($installmentsValue = $product.InstallmentValue)
+#set($giftListPurchasedAmount = $product.GiftListPurchasedAmount)
+#set($giftListWishedAmount = $product.GiftListWishedAmount)
 
-<div class="item">
-	<div class="top">
-		<p class="insert">$product.InsertSku</p>
-		#if($product.GiftListPurchasedAmount > 0)
-			#if($product.GiftListPurchasedAmount > 1)
-				<p class="purchased">$product.GiftListPurchasedAmount comprados</p>
-			#else
-				<p class="purchased">$product.GiftListPurchasedAmount comprado</p>
-			#end
-		#else
-			<p class="purchased not-purchased">nenhum comprado</p>
-		#end
-
-		#if($product.GiftListWishedAmount > 0)
-			#if($product.GiftListWishedAmount > 1)
-				<p class="wished">$product.GiftListWishedAmount desejados</p>
-			#else
-				<p class="wished">$product.GiftListWishedAmount desejado</p>
-			#end
-		#else
-			<p class="wished not-wished">nenhum desejado</p>
-		#end
-	</div>
-	<div class="mid">
-		<a class="productImage" title="$escapedName" href="$uri">$product.GetImageTag(2)</a>
-	</div>
-	<div class="bottom">
-		<h3><a title="$escapedName" href="$uri">$product.SkuName</a></h3>
-		<div class="discount">$product.DiscountHightLight</div>
-		#if($product.IsInStock)
-			<p class="price">
-				<a title="$escapedName" href="$uri">
-					#if($product.HasBestPrice)
-						<span class="oldPrice"><span>De: </span>$product.ListPrice</span>
+<article class="shelf__product">
+	<section class="shelf__product--top">
+		<div class="checkboxOnly">$product.InsertSku</div>
+		
+		<div class="amount">
+			#if($giftListPurchasedAmount < $giftListWishedAmount)
+			<div class="row">
+				<div class="col">
+					#if($giftListPurchasedAmount > 0)
+					<p class="purchased">$giftListPurchasedAmount</p>
+					#else
+					<p class="purchased not-purchased">0</p>
 					#end
-					<span class="newPrice"><span>Por: </span><em>$product.BestPrice</em></span>
-					<em class="installment">
-						#if($product.NumbersOfInstallment > 1)
-							ou até ${product.NumbersOfInstallment}X de $product.InstallmentValue
-						#else
-							à vista
-						#end
-					</em>
-				</a>
-			</p>
-			<span class="cont-buy-button">
+				</div>
+
+				<div class="col-auto">/</div>
+
+				<div class="col">
+					#if($giftListWishedAmount > 0)
+					<p class="wished">$giftListWishedAmount</p>
+					#else
+					<p class="wished not-wished">0</p>
+					#end
+				</div>
+			</div>
+			#else
+			<div>Quantidade desejada atingida! &#10084;</div>
+			#end
+		</div>
+	</section>
+
+	<section class="shelf__product--mid">
+		<div class="shelf__image">
+			<a class="productImage" title="$title" href="$uri">$product.GetImageTag(2)</a>
+		</div>
+	</section>
+
+	<section class="shelf__product--bottom">
+		<h3><a title="$title" href="$uri">$skuName</a></h3>
+
+		<div class="card-info">
+
+			<div class="shelf__rating">
+				<div class="vurdere-display-rating-sku" data-sku="$id"></div>
+			</div>
+			#if($product.IsInStock)
+			<div class="shelf__price">
+				#if($product.HasBestPrice)
+				<p class="shelf__price--old">
+					<span>$price</span>
+				</p>
+				#end
+				<p class="shelf__price--best">
+					<strong>$bestPrice</strong>
+				</p>
+
+				<div class="shelf__installments">
+					<p>
+						<strong class="shelf__installments--quantity">$installmentsQuantity</strong>
+						<span>x de </span>
+						<strong class="shelf__installments--value">$installmentsValue</strong>
+					</p>
+				</div>
+			</div>
+			#end
+		</div>
+		<div class="info italic text-muted">
+			$description
+		</div>
+		#if($product.IsInStock)
+		<div class="buyArea input-group">
+			<div class="amount input-group-prepend">
+				<a role="button" class="minus">-</a>
+				$product.InsertSku
+				<a role="button" class="plus">+</a>
+			</div>
+			<span class="buyButton">
 				$product.BottomBuyAsynchronous
 			</span>
-		#else
-			<p class="outOfStock">Produto Esgotado</p> 
+		</div>
+		#else	
+		<p class="outOfStock">Produto Esgotado</p>
 		#end
-	</div>
-</div>
+
+	</section>
+</article>

@@ -14,7 +14,8 @@ main.giftlist .giftlisterror{
 main.giftlist .hide{
 	display: none !important;
 }
-main.giftlist h1{
+main.giftlist h1,
+main.giftlist h3.giftlistinfo-title{
 	font-family: Segoe Script, Quicksand, 'Helvetica Neue', Verdana, Arial, sans-serif;
 }
 main.giftlist h2,
