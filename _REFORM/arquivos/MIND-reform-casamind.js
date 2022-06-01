@@ -453,7 +453,10 @@ $(document).ready(function(){
 	});
 	//Alterna entre os filtros clicados
 	var changeShelfFilter = $('.orderByList > ul > li').on('click', function(e){
-		e.preventDefault();
+		//Permite que o redirecionamento gerado pela href seja possível quando necessário
+		if(!$('.orderByList .filterSelector').hasClass('allow-redir')){
+			e.preventDefault();
+		}
 		//Remove qualquer filtro ativo
 		$('.orderByList > ul > li').removeClass('is--active')
 		//Aplica o novo filtro
