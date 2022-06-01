@@ -2513,9 +2513,11 @@ main.collection > .main-container > .collectionWrapper > .row > .col-auto > .ord
 	border-radius: 60%;
 	background-color: var(--white);
 	box-shadow: 0 7px 10px rgb(0 0 0 / 10%);
+	color: var(--dark);
 	width: 3.875rem;
 	height: 3.875rem;
 	margin: 0 auto;
+	overflow: hidden;
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li div.orderby-icon,
 main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList > .filterSelector{
@@ -3704,6 +3706,9 @@ footer .final-label__address{
 	main.collection > .main-container > .collectionWrapper .searchResultsTime{
 		text-align: center;
 	}
+	main.collection > .main-container > .collectionWrapper > .row{
+		flex-wrap: wrap;
+	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto.side-nav{
 		margin: 0;
 		padding: 0;
@@ -3723,7 +3728,7 @@ footer .final-label__address{
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList h3{
 		display: none;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul{
 		display: none;
 		position: fixed;
 		flex-direction: column;
@@ -3734,37 +3739,37 @@ footer .final-label__address{
 		bottom: 6rem;
 		z-index: 9;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul.is--active{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul.is--active{
 		display: flex !important;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul.is--active > li{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul.is--active > li{
 		display: block !important;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul:not(.is--active) > li{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul:not(.is--active) > li{
 		width: 100%;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li a{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li a{
 		display: flex;
 		flex-wrap: nowrap;
 		flex-direction: row;
 		grid-column-gap: 0.9rem;
 		column-gap: 0.9rem;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li div.iconwrapper{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li div.iconwrapper{
 		width: 3.575rem;
 		height: 3.375rem;
 		margin: 0;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li div.orderby-icon{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li div.orderby-icon{
 		background-size: auto !important;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li div.orderby-icon,
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList > .filterSelector{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li div.orderby-icon,
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > .filterSelector{
 		width: 1.575rem;
 		height: 1.575rem;
 		padding: 1.575rem;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li a > span{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li a > span{
 		display: none;
 		position: relative;
 		font-size: 0.875rem;
@@ -3776,13 +3781,13 @@ footer .final-label__address{
 		background: var(--brand-color);
 		box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li:hover a > span{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li:hover a > span{
 		display: block !important;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li a > span > span{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li a > span > span{
 		display: inline-block;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li a > span::before{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li a > span::before{
 		content: "";
 		position: absolute;
 		height: 0.5rem;
