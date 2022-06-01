@@ -20,7 +20,7 @@
 		<div class="amount">
 			#if($giftListPurchasedAmount < $giftListWishedAmount)
 			<div class="row">
-				<div class="col">
+				<div class="col text-right" title="Comprado">
 					#if($giftListPurchasedAmount > 0)
 					<p class="purchased">$giftListPurchasedAmount</p>
 					#else
@@ -30,7 +30,7 @@
 
 				<div class="col-auto">/</div>
 
-				<div class="col">
+				<div class="col text-left" title="Desejado">
 					#if($giftListWishedAmount > 0)
 					<p class="wished">$giftListWishedAmount</p>
 					#else
@@ -46,14 +46,14 @@
 
 	<section class="shelf__product--mid">
 		<div class="shelf__image">
-			<a class="productImage" title="$title" href="$uri">$product.GetImageTag(2)</a>
+			<div class="productImage" title="$title">$product.GetImageTag(2)</div>
 		</div>
 	</section>
 
 	<section class="shelf__product--bottom">
 		<h3><a title="$title" href="$uri">$skuName</a></h3>
 
-		<div class="card-info">
+		<div class="pl-2 pr-2 pb-3">
 
 			<div class="shelf__rating">
 				<div class="vurdere-display-rating-sku" data-sku="$id"></div>
@@ -68,19 +68,11 @@
 				<p class="shelf__price--best">
 					<strong>$bestPrice</strong>
 				</p>
-
-				<div class="shelf__installments">
-					<p>
-						<strong class="shelf__installments--quantity">$installmentsQuantity</strong>
-						<span>x de </span>
-						<strong class="shelf__installments--value">$installmentsValue</strong>
-					</p>
-				</div>
 			</div>
 			#end
 		</div>
 		<div class="info italic text-muted">
-			$description
+			<!-- $description -->
 		</div>
 		#if($product.IsInStock)
 		<div class="buyArea input-group">

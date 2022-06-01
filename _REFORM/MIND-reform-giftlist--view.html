@@ -16,10 +16,10 @@
 <body>
 	<vtex:template id="MIND-reform-header" />
 	<!-- Main -->
-	<main class="giftlist collection shelf">
+	<main class="giftlist collection view">
 		<div class="main-container">
 			<div class="infoWrapper">
-				<h1 class="highlight bold">Produtos na lista</h1>
+				<h1 class="highlight bold center">Produtos na lista</h1>
 				<vtex.cmc:GiftListInfoV2 />
 			</div>
 
@@ -27,11 +27,36 @@
 				<div class="row">
 				
 					<div class="col-auto side-nav">
-						<ul class="optionsList">
-							<li><a href="/giftlist/">Buscar uma Lista</a></li>
-							<li><a href="/giftlist/create/">Criar nova Lista</a></li>
-							<li><a href="/giftlist/manage/">Gerenciar minhas Listas</a></li>
-						</ul>
+						<div class="orderByList notFixed">
+							<h3>Opções da lista</h3>
+							<ul class="optionsList">
+								<li>
+									<a href="/giftlist/">
+										<div class="iconwrapper">
+											<span class="fa-solid fa-magnifying-glass"></span>
+										</div>
+										<span>Buscar <span>lista</span></span>
+									</a>
+								</li>
+								<li>
+									<a href="/giftlist/create/">
+										<div class="iconwrapper">
+											<span class="fa-solid fa-plus"></span>
+										</div>
+										<span>Criar <span>lista</span></span>
+									</a>
+								</li>
+								<li>
+									<a href="/giftlist/manage/">
+										<div class="iconwrapper">
+											<span class="fa-solid fa-pen"></span>
+										</div>
+										<span>Gerenciar <span>listas</span></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+							
 						<div class="orderByList">
 								<h3>Ordenar</h3>
 								<div class="filterSelector allow-redir"></div>
@@ -75,14 +100,12 @@
 						<vtex.cmc:GiftListInsertSkuV2 mode="combo" />
 
 						<div class="collectionItems">
-							<vtex.cmc:giftListShelfPaged layout="eb4b0aa8-eda2-42a3-aebc-21a1a4ced5b5" itemCount="48" columnCount="48" />
+							<vtex.cmc:giftListShelfPaged layout="eb4b0aa8-eda2-42a3-aebc-21a1a4ced5b5" itemCount="50" columnCount="50" />
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<vtex.cmc:GiftListSearchV2 />
 	</main>
 	<vtex:template id="MIND-reform-footer" />
 </body>

@@ -18,8 +18,8 @@ main.giftlist h1,
 main.giftlist h3.giftlistinfo-title{
 	font-family: Segoe Script, Quicksand, 'Helvetica Neue', Verdana, Arial, sans-serif;
 }
-main.giftlist h2,
-main.giftlist h3{
+main.giftlist.home h2,
+main.giftlist.home h3{
 	font-size: 1.3rem;
 }
 main.giftlist.home h4{
@@ -399,6 +399,242 @@ main.giftlist.create #giftlistform .action-area > .form-action > .save > .button
 }
 main.giftlist.create #giftlistform .action-area > .form-action > .save > .button.giftlistv2save:hover{
 	filter: brightness(.95);
+}
+main.giftlist.view{
+	background-color: rgba(247, 247, 247, .4);
+}
+main.giftlist.view .giftlist.giftlistinfo{
+	display: block;
+	min-width: 40vw;
+	max-width: 60vw;
+	width: fit-content;
+	margin: 0 auto;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-title{
+	text-align: center;
+	font-weight: 600;
+	color: var(--brand-color);
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-description{
+	display: block;
+	font-style: italic;
+	text-align: center;
+	color: var(--dark);
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-actions{
+	display: none;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members{
+	position: relative;
+	margin: 1.5rem 0;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:before,
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 0.125rem;
+	background: var(--brand-color);
+	opacity: .7;
+	z-index: -1;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:before{
+	top: -.75rem;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:after{
+	bottom: -.75rem;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members > .list-members{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	grid-gap: 1rem;
+	gap: 1rem;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members > .list-members > li{
+	flex-basis: 45%;
+	text-align: center;
+	white-space: nowrap;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members > .list-members > li li.title{
+	display: block;
+	font-weight: 500;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members > .list-members > li li.name,
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members > .list-members > li li.surname{
+	display: inline-block;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members > .list-members > li li.name > span,
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members > .list-members > li li.surname > span{
+	display: none;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-image,
+main.giftlist.view .giftlist.giftlistinfo > label[for="glmsg"]{
+	display: none;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-message{
+	display: block;
+	font-style: italic;
+	text-align: center;
+	color: var(--dark);
+	margin-bottom: 1rem;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-link{
+	display: flex;
+	flex-wrap: nowrap;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-link > .link-title{
+	white-space: nowrap;
+	color: var(--dark);
+	background-color: var(--sand);
+	padding: 0.375rem 0.75rem;
+	margin: 0;
+	border-top: 0.0625rem solid var(--gray-lighter);
+	border-bottom: 0.0625rem solid var(--gray-lighter);
+	border-left: 0.0625rem solid var(--gray-lighter);
+	border-radius: 0.25rem 0 0 0.25rem;
+}
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-link > input{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+	padding: 0 0 0 .5rem;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border: 0.0625rem solid var(--gray-lighter);
+	opacity: 1 !important;
+	overflow: auto;
+}
+main.giftlist.view .collectionWrapper .side-nav > .orderByList > .optionsList .iconwrapper > span{
+	font-size: 1.2rem;
+	line-height: 3.875rem;
+}
+main.giftlist.view .collectionWrapper .collection .giftlist-insertsku-wrapper{
+
+}
+main.giftlist.view .collectionWrapper .collection .giftlist-print-wrapper{
+	/*Está opção está extremamente bugada e não deve ser habilitada*/
+	display: none !important;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product{
+	display: flex;
+	flex-direction: column;
+	background-color: var(--white);
+	border: 0.0625rem solid var(--brand-color);
+	border-radius: .6rem;
+	overflow: hidden;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product .checkboxOnly{
+	position: relative;
+	text-align: center;
+	background-color: var(--brand-color);
+	border-radius: 0.375rem 0.375rem 0 0;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product .checkboxOnly li > input:not(input[type="checkbox"]){
+	display: none !important;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product .checkboxOnly li > label{
+	position: absolute;
+	font-size: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > h3{
+	margin: 0;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > h3 > a{
+	display: block;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	text-overflow: -o-ellipsis-lastline;
+	height: 2.3125rem;
+	font-size: .9375rem;
+	text-align: center;
+	line-height: 1.2rem;
+	font-weight: 600;
+	text-decoration: none;
+	overflow: hidden;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom .shelf__price{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	grid-column-gap: 1rem;
+	column-gap: 1rem;
+	grid-row-gap: .5rem;
+	row-gap: .5rem;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom .shelf__price > .shelf__price--old{
+	text-decoration-line: line-through;
+	text-decoration-color: var(--brand-color);
+	text-decoration-style: solid;
+	text-decoration-thickness: 0.125rem;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom .shelf__price > .shelf__price--best{
+	color: var(--brand-color);
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea{
+	justify-content: center;
+	align-items: stretch;
+	text-align: center;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > *{
+	flex-basis: 50%;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount{
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding: 0 .5rem;
+	color: var(--brand-color);
+	border-top: 0.0625rem solid var(--brand-color);
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount a.minus,
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount a.plus{
+	text-decoration: none;
+	cursor: pointer;
+	user-select: none;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount fieldset{
+	padding: 0;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount input.insert-sku-quantity{
+	text-align: center;
+	background-color: transparent;
+	width: fit-content;
+	border: none;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount li > *:not(input.insert-sku-quantity){
+	display: none;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .buyButton{
+	position: relative;
+	font-size: 1.5rem;
+	text-align: center;
+	color: var(--white);
+	padding: 0.5rem 1.5rem;
+	width: 100%;
+	background-color: var(--brand-color);
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .buyButton a.btn-add-buy-button-asynchronous a{
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    line-height: 2.6rem;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
 }
 @media screen and (max-width: 831px){
 	main.giftlist.home .giftlist-actions.row{

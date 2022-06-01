@@ -79,6 +79,13 @@ $(document).ready(function(){
 			giftlisteventcity.slideDown();
 		}
 	});
+	// Botões de adicionar/remover quantidade
+	$('.shelf__product > .shelf__product--bottom .amount a[role="button"]').on('click', function(){
+		let input = $(this).parent().find('input.insert-sku-quantity');
+			
+		$(this).hasClass('plus') && input.val(parseInt(input.val()) + 1) ||
+		$(this).hasClass('minus') && input.val() > 1 && input.val(parseInt(input.val()) - 1);
+	});
 	// Shelf
 	setTimeout(function(){
 		if(!$('body').hasClass('giftlisttype-20')){
