@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+	<title>Casa MinD | Gerenciar suas listas</title>
+	<script>$(document).prop('title', 'Casa MinD | Gerenciar suas listas');</script>
+	<vtex:template id="MIND-reform-head" />
+	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+
+	<!-- Especifico da página -->
+	<link rel="stylesheet" type="text/css" href="/arquivos/MIND-reform-giftlist.min.css" media="all" as="style" />
+	<script defer="true" type="text/javascript" src="/arquivos/MIND-reform-giftlist.js"></script>
+	<!-- Especifico da página -->
+</head>
+
+<body>
+	<vtex:template id="MIND-reform-header" />
+	<!-- Main -->
+	<main class="giftlist collection manage">
+		<h1 class="highlight bold center">Gerenciar lista de presentes</h1>
+		<p class="text-muted">Abaixo você consegue gerenciar suas listas criadas, elas são separadas por tipo de lista.</p>
+		<div class="listManager">
+			<vtex.cmc:GiftListManagerV2 />
+		</div>
+
+	</main>
+	<vtex:template id="MIND-reform-footer" />
+</body>
+</html>
