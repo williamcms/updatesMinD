@@ -6,6 +6,19 @@ $(document).ready(function(){
 
 		giftlisteventdate.prop('inputmode', 'numeric');
 	})();
+	//Altera o tamanho das imagens para se encaixar melhor e não ter faixas brancas
+	var changeProductImageOnGiftList = (changeProductImage = () =>{
+		$(".productImage img").each(function(){
+			$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-500-0/"));
+		});
+	})();
+	var changeProductTextOnGiftList = (changeProductImage = () =>{
+		$(".buyButton a.btn-add-buy-button-asynchronous").each(function(){
+			let pName = $(this).parents('.shelf__product--bottom').find('h3 > a').text();
+			$(this).text('Presentear');
+			$(this).attr("aria-label", `Presentear ${pName}`);
+		});
+	})();
 	// Função para preencher alguns campos com base no CEP
 	$('body').on('blur', '.address-form-new #ship-postal-code', function(evt) {
 		let cep = $(this).val();
@@ -86,71 +99,4 @@ $(document).ready(function(){
 		$(this).hasClass('plus') && input.val(parseInt(input.val()) + 1) ||
 		$(this).hasClass('minus') && input.val() > 1 && input.val(parseInt(input.val()) - 1);
 	});
-	// Shelf
-	setTimeout(function(){
-		if(!$('body').hasClass('giftlisttype-20')){
-			$('.send-to-cart-wrapper a').click(function(event) {
-				setTimeout(function(){ 
-					window.location.href = "/checkout/#/cart";
-				}, 1000);
-			});
-
-			$('.btn-add-buy-button-asynchronous').text('Presentear');
-
-		}else{
-			$('.btn-add-buy-button-asynchronous').text('Adicionar à sacola');
-			$(".giftlistinfo-link").css("display", "none");
-			$(".giftlistinfo-actions").css("display", "none");
-			$(".add").addClass("addBotao");
-
-			$('body').on('click', '.btn-add-buy-button-asynchronous', function(e){
-				e.preventDefault();
-				e.stopPropagation();
-
-				var _productId = $(this).parents('.wrapper-buy-button-asynchronous').find('.buy-button-asynchronous-product-id').val(),
-				_salesChannel = document.cookie.split('; VTEXSC=').pop().split(";").shift().split('sc=')[1];
-
-				var products = {
-					id: _productId,
-					quantity: 1,
-					seller: '1'
-				};
-
-				vtexjs.checkout.addToCart([products], null, _salesChannel)
-				.done(function(orderForm) {
-					console.log(orderForm)
-					$('.vtexsc-cart').show();
-					$("#popup-adicionando, #barratempo").addClass("active");
-
-					setTimeout(function(){
-						$('.vtexsc-cart').hide();
-						$("#popup-adicionando, #barratempo").removeClass("active");
-
-					}, 2200);
-				});
-
-				return false;
-			});
-
-			$('body').on('click', '.buy-button.button-send-to-cart', function(e){
-				e.preventDefault();
-				e.stopPropagation();
-
-				var gId = $(this).attr('id').split('-')[1];
-
-				$.ajax({
-					type: "POST",
-					dataType: "text",
-					url: '/no-cache/giftlistv2/sendtocart/' + gId,
-					success: function (data) {
-						window.location.replace('/checkout/#/cart/');
-					},
-					error: function (xmlHttpRequest, textStatus) {
-						console.log('Error: ', textStatus);
-					}
-				});
-				return false;
-			});
-		}
-	}, 3000);
 })

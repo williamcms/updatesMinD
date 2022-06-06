@@ -519,7 +519,12 @@ main.giftlist.view .collectionWrapper .collection .giftlist-print-wrapper{
 	/*Está opção está extremamente bugada e não deve ser habilitada*/
 	display: none !important;
 }
+main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper{
+	color: var(--dark);
+	text-align: center;
+}
 main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product{
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	background-color: var(--white);
@@ -533,6 +538,10 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	background-color: var(--brand-color);
 	border-radius: 0.375rem 0.375rem 0 0;
 }
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product .checkboxOnly > .product-insertsku.must-login{
+	display: block !important;
+	height: fit-content !important;
+}
 main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product .checkboxOnly li > input:not(input[type="checkbox"]){
 	display: none !important;
 }
@@ -543,6 +552,17 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--top > .amount{
+	position: absolute;
+	right: 0;
+}
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--top > .amount > .amountWrapper{
+	color: var(--dark);
+	background-color: var(--sand);
+	padding: 0.5rem 0.3rem 0.5rem 0.5rem;
+	margin: 0.3rem 0;
+	border-radius: 0.6rem 0 0 0.6rem;
 }
 main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > h3{
 	margin: 0;
@@ -590,11 +610,11 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	flex-basis: 50%;
 }
 main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount{
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
 	font-size: 1.2rem;
 	font-weight: 600;
-	padding: 0 .5rem;
+	padding: 0 .7rem;
 	color: var(--brand-color);
 	border-top: 0.0625rem solid var(--brand-color);
 }
@@ -604,6 +624,9 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	cursor: pointer;
 	user-select: none;
 }
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount .product-insertsku.must-login{
+	display: block !important;
+}
 main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount fieldset{
 	padding: 0;
 }
@@ -611,6 +634,7 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	text-align: center;
 	background-color: transparent;
 	width: fit-content;
+	padding: 0;
 	border: none;
 }
 main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .amount li > *:not(input.insert-sku-quantity){
@@ -622,19 +646,21 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	text-align: center;
 	color: var(--white);
 	padding: 0.5rem 1.5rem;
+	min-width: 9rem;
+	min-height: 2.6rem;
 	width: 100%;
 	background-color: var(--brand-color);
 }
-main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .buyButton a.btn-add-buy-button-asynchronous a{
+main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > .buyArea > .buyButton a.btn-add-buy-button-asynchronous{
 	position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    line-height: 2.6rem;
-    text-decoration: none;
-    user-select: none;
-    cursor: pointer;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	line-height: 2.6rem;
+	text-decoration: none;
+	user-select: none;
+	cursor: pointer;
 }
 @media screen and (max-width: 831px){
 	main.giftlist.home .giftlist-actions.row{

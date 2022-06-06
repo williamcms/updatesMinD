@@ -18,29 +18,17 @@
 		<div class="checkboxOnly">$product.InsertSku</div>
 		
 		<div class="amount">
-			#if($giftListPurchasedAmount < $giftListWishedAmount)
-			<div class="row">
-				<div class="col text-right" title="Comprado">
-					#if($giftListPurchasedAmount > 0)
-					<p class="purchased">$giftListPurchasedAmount</p>
-					#else
-					<p class="purchased not-purchased">0</p>
-					#end
+			<div class="amountWrapper">
+				<div class="gifted" title="Presenteado">
+					<span class="fa-solid fa-hand-holding-heart"></span>&nbsp;
+					<span class="purchased" aria-label="Quantidade presenteada: $giftListPurchasedAmount">$giftListPurchasedAmount</span>
 				</div>
 
-				<div class="col-auto">/</div>
-
-				<div class="col text-left" title="Desejado">
-					#if($giftListWishedAmount > 0)
-					<p class="wished">$giftListWishedAmount</p>
-					#else
-					<p class="wished not-wished">0</p>
-					#end
+				<div class="wished" title="Desejado">
+					<span class="fa-solid fa-basket-shopping"></span>&nbsp;
+					<span class="wished" aria-label="Quantidade desejada: $giftListWishedAmount">$giftListWishedAmount</span>
 				</div>
 			</div>
-			#else
-			<div>Quantidade desejada atingida! &#10084;</div>
-			#end
 		</div>
 	</section>
 
