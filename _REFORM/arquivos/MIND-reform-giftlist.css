@@ -662,9 +662,43 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	user-select: none;
 	cursor: pointer;
 }
+main.giftlist.manage{
+	background-color: rgba(247, 247, 247, .4);
+}
+main.giftlist.manage > .listManager .glmanager-type{
+	text-align: center;
+	margin-top: 1.5rem;
+}
+main.giftlist.manage > .listManager .glmanager-type > h2{
+	position: relative;
+	font-size: 1.7rem;
+	display: inline-block;
+}
+main.giftlist.manage > .listManager .glmanager-type > h2::before{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 80vw;
+	height: 0.0625rem;
+	background: var(--brand-color);
+	z-index: -1;
+}
+main.giftlist.manage > .listManager .glmanager-type > h2:after{
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--white);
+	z-index: -1;
+}
 main.giftlist.manage > .listManager .giftlist-table{
 	text-align: center;
 	margin: 0 auto;
+	width: 100%;
+	max-width: 80vw;
 	border: 0.0625rem solid var(--gray-lighter);
 	box-shadow: 0 0.4375rem 0.625rem rgb(0 0 0 / 10%);
 }
@@ -676,31 +710,37 @@ main.giftlist.manage > .listManager .giftlist-table thead th{
 	padding: 0 0.5rem;
 }
 main.giftlist.manage > .listManager .giftlist-table tbody td{
+	height: 2.89875rem;
 	padding: 0 0.5rem;
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-member{
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-height: 2.89875rem;
+	width: 21.875rem;
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-header-desired{
+	width: 13.125rem;
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-header-purchased{
+	width: 13.6875rem;
 }
 main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action{
 	position: relative;
 	background-color: var(--red);
-	border: 0.5rem solid white;
+	padding: 0.2rem 0.5rem;
+	min-width: 6.375rem;
+	width: 6.375rem;
+	max-width: 6.375rem;
+	border: 0.5rem solid var(--white);
 }
 main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action:before{
 	content: 'Ações';
 	color: var(--white);
 	border-radius: 0.2rem;
 	padding: 0.3rem;
-}
-main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions{
-	display: none;
-	position: absolute;
-	left: 0;
-	text-align: center;
-	background-color: var(--sand);
-	margin-top: 0.35rem;
-	padding: 0.5rem;
-	white-space: nowrap;
-	border: 0.0625rem solid var(--gray-lighter);
-	border-radius: 0.6rem;
-	box-shadow: 0 0.4375rem 0.625rem rgb(0 0 0 / 10%);
 }
 main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action:hover > ul{
 	display: block;
@@ -723,6 +763,22 @@ main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-actio
 	border-top: 0.25rem solid;
 	border-right: 0.25rem solid transparent;
 	border-left: 0.25rem solid transparent;
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions{
+	display: none;
+	position: absolute;
+	left: 0;
+	text-align: center;
+	background-color: var(--sand);
+	margin-top: 0.35rem;
+	padding: 0.5rem;
+	min-width: 7.1875rem;
+	width: 100%;
+	white-space: nowrap;
+	border: 0.0625rem solid var(--gray-lighter);
+	border-radius: 0.6rem;
+	box-shadow: 0 0.4375rem 0.625rem rgb(0 0 0 / 10%);
+	z-index: 1;
 }
 @media screen and (max-width: 51.9375rem){
 	main.giftlist.home .giftlist-actions.row{
