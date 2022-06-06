@@ -2496,7 +2496,7 @@ main.collection > .main-container > .collectionWrapper > .row > .col-auto .order
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li{
 	flex: 1 1 33%;
-	width: 3.125rem;
+	width: auto;
 	overflow: visible !important;
 	cursor: pointer;
 }
