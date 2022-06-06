@@ -168,11 +168,11 @@ $(document).ready(function(){
 		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-expanded', $x);
 		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-hidden', !$x);
 	});
-	var showDropDownMenu = $('.csm-has-sub').on('click keyup', function(e){
+	var showDropDownMenu = $('.csm-has-sub').on('click keyup hover', function(e){
 		if(e.which == 9){
 			$($(this).find('.csm-dropdown')).addClass("change");
 		}else{
-			$($(this).find('.csm-dropdown')).toggleClass("change");
+			$($(this).find('.csm-dropdown')).removeClass("change");
 		}
 	});
 	var tabOnDropDownMenu = $('.csm-has-sub > .csm-dropdown > ul > li:last-child').on('keydown', function(e){
