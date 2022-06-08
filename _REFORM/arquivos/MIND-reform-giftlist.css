@@ -658,14 +658,14 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	user-select: none;
 	cursor: pointer;
 }
-main.giftlist.manage > .listManager > ul.giftlist-action{
+main.giftlist.manage > .listManager .giftlistmanager > ul.giftlist-action{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	grid-gap: 1rem;
 	gap: 1rem;
 }
-main.giftlist.manage > .listManager > ul.giftlist-action > li a{
+main.giftlist.manage > .listManager .giftlistmanager > ul.giftlist-action > li a{
 	position: relative;
 	text-decoration: none;
 	text-align: center;
@@ -675,7 +675,7 @@ main.giftlist.manage > .listManager > ul.giftlist-action > li a{
 	width: 100%;
 	background-color: var(--brand-color);
 }
-main.giftlist.manage > .listManager > ul.giftlist-action > li a:hover{
+main.giftlist.manage > .listManager .giftlistmanager > ul.giftlist-action > li a:hover{
 	filter: brightness(.95);
 }
 main.giftlist.manage > .listManager .glmanager-type{
