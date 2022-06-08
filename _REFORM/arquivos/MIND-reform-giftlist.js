@@ -2,9 +2,16 @@ $(document).ready(function(){
 	// Função para algumas otimizações, 
 	// como indicador de campo númerico para mobile
 	(() =>{
-		let giftlisteventdate = $('#giftlisteventdate');
+		let giftlisteventdate = $('#giftlisteventdate')
+			actionShare = $('.glmanager-actions > .action-share');
 
 		giftlisteventdate.prop('inputmode', 'numeric');
+
+		if(!!actionShare){
+			$.each(actionShare, function(){
+				$(this).find('a').text('Compartilhar')
+			})
+		}
 	})();
 	//Altera o tamanho das imagens para se encaixar melhor e não ter faixas brancas
 	var changeProductImageOnGiftList = (changeProductImage = () =>{

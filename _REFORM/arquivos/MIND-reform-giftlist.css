@@ -6,6 +6,9 @@
 :root{
 	--buttons-desktop: 16.0625rem;
 }
+main.giftlist{
+	background-color: rgba(247, 247, 247, .4);
+}
 main.giftlist .error,
 main.giftlist .giftlisterror{
 	border-color: var(--red) !important;
@@ -400,9 +403,6 @@ main.giftlist.create #giftlistform .action-area > .form-action > .save > .button
 main.giftlist.create #giftlistform .action-area > .form-action > .save > .button.giftlistv2save:hover{
 	filter: brightness(.95);
 }
-main.giftlist.view{
-	background-color: rgba(247, 247, 247, .4);
-}
 main.giftlist.view .giftlist.giftlistinfo{
 	display: block;
 	min-width: 40vw;
@@ -518,6 +518,8 @@ main.giftlist.view .collectionWrapper .collection .giftlist-print-wrapper{
 }
 main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper{
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-wrap: wrap;
 	grid-gap: 1rem;
 	gap: 1rem;
@@ -532,9 +534,19 @@ main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper 
 	color: var(--white);
 	padding: 0.5rem 1.5rem;
 	min-width: 9rem;
-	min-height: 2.6rem;
-	width: 100%;
+	min-height: 2.7rem;
 	background-color: var(--brand-color);
+}
+main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist,
+main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist label,
+main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .giftlist-insertsku-popup,
+main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .giftlist-insertsku-popup a{
+	cursor: pointer;
+	text-decoration: none;
+}
+main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist:hover,
+main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .giftlist-insertsku-popup:hover{
+	filter: brightness(.95);
 }
 main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist > input{
 	position: absolute;
@@ -680,8 +692,25 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	user-select: none;
 	cursor: pointer;
 }
-main.giftlist.manage{
-	background-color: rgba(247, 247, 247, .4);
+main.giftlist.manage > .listManager > ul.giftlist-action{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	grid-gap: 1rem;
+	gap: 1rem;
+}
+main.giftlist.manage > .listManager > ul.giftlist-action > li a{
+	position: relative;
+	text-decoration: none;
+	text-align: center;
+	white-space: nowrap;
+	color: var(--white);
+	padding: .5rem 1.5rem;
+	width: 100%;
+	background-color: var(--brand-color);
+}
+main.giftlist.manage > .listManager > ul.giftlist-action > li a:hover{
+	filter: brightness(.95);
 }
 main.giftlist.manage > .listManager .glmanager-type{
 	text-align: center;
@@ -706,8 +735,8 @@ main.giftlist.manage > .listManager .glmanager-type > h2::before{
 main.giftlist.manage > .listManager .glmanager-type > h2:after{
 	content: '';
 	position: absolute;
-	left: 0;
-	width: 100%;
+	left: -3%;
+	width: 107%;
 	height: 100%;
 	background: var(--white);
 	z-index: -1;
@@ -789,7 +818,6 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 	text-align: center;
 	background-color: var(--sand);
 	margin-top: 0.35rem;
-	padding: 0.5rem;
 	min-width: 7.1875rem;
 	width: 100%;
 	white-space: nowrap;
@@ -798,7 +826,22 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 	box-shadow: 0 0.4375rem 0.625rem rgb(0 0 0 / 10%);
 	z-index: 1;
 }
-@media screen and (max-width: 51.9375rem){
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li{
+	padding: .2rem;
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li:hover{
+	background: var(--gray-lighter);
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li:first-of-type{
+	border-radius: .6rem .6rem 0 0;
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li:last-of-type{
+	border-radius: 0 0 .6rem .6rem;
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li a{
+	text-decoration: none;
+}
+@media screen and (max-width: 831px){
 	main.giftlist.home .giftlist-actions.row{
 		margin: 0 auto;
 	}

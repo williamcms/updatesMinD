@@ -2477,7 +2477,7 @@ main.collection > .main-container > .infoWrapper .collection-description h6{
 	font-weight: bold;
 }
 main.collection > .main-container > .collectionWrapper{
-	margin: 0 2rem 3rem 2rem;
+	padding: 0 2rem 3rem 2rem;
 }
 main.collection > .main-container > .collectionWrapper > .row{
 	align-items: flex-start;
@@ -3701,7 +3701,7 @@ footer .final-label__address{
 		padding: 0 1rem;
 	}
 	main.collection > .main-container > .collectionWrapper{
-		margin: 1rem;
+		padding: 1rem;
 	}
 	main.collection > .main-container > .collectionWrapper .searchResultsTime{
 		text-align: center;
