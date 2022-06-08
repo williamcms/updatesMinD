@@ -309,7 +309,7 @@ $(document).ready(function(){
 		});
 	});
 	//Coleções / Categorias
-	//Abre a seleção de filtros da página de coleção
+	//Abre a seleção de filtros da página de coleção (mobile)
 	var openFilterSelection = $('.orderByList > .filterSelector').on('click', function(){
 		let options = $('main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul');
 
@@ -457,16 +457,19 @@ $(document).ready(function(){
 	//Alterna entre os filtros clicados
 	var changeShelfFilter = $('.orderByList > ul > li').on('click', function(e){
 		//Permite que o redirecionamento gerado pela href seja possível quando necessário
-		if(!$('.orderByList .filterSelector').hasClass('allow-redir')){
+		if(!$(this).closest('.orderByList').hasClass('allow-redir')){
 			e.preventDefault();
 		}
 		//Remove qualquer filtro ativo
-		$('.orderByList > ul > li').removeClass('is--active')
+		$(this).closest('ul').find('li').removeClass('is--active');
+
 		//Aplica o novo filtro
 		$(this).addClass('is--active');
-		//Altera o url com o parâmetro do filtro selecionado
-		updateQueryString('O', $(this).data('order').split('O=')[1]);
 
+		if(!!$(this).data('order')){
+			//Altera o url com o parâmetro do filtro selecionado
+			updateQueryString('O', $(this).data('order').split('O=')[1]);
+		}
 		getShelfProducts();
 	});
 	//Carrega mais produtos (botão ver mais produtos)

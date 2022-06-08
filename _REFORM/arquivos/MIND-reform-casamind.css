@@ -3725,7 +3725,7 @@ footer .final-label__address{
 		z-index: 9;
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto #filtersBox,
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList h3{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto > .orderByList:not(.notFixed) h3{
 		display: none;
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul{

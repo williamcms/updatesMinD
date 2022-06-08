@@ -517,41 +517,7 @@ main.giftlist.view .collectionWrapper .collection .giftlist-print-wrapper{
 	display: none !important;
 }
 main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	grid-gap: 1rem;
-	gap: 1rem;
-	color: var(--dark);
-	text-align: center;
-}
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist,
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .giftlist-insertsku-popup{
-	display: inline-block;
-	position: relative;
-	text-align: center;
-	color: var(--white);
-	padding: 0.5rem 1.5rem;
-	min-width: 9rem;
-	min-height: 2.7rem;
-	background-color: var(--brand-color);
-}
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist,
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist label,
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .giftlist-insertsku-popup,
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .giftlist-insertsku-popup a{
-	cursor: pointer;
-	text-decoration: none;
-}
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist:hover,
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .giftlist-insertsku-popup:hover{
-	filter: brightness(.95);
-}
-main.giftlist.view .collectionWrapper .collection > .giftlist-insertsku-wrapper .glis-sku-listtolist > input{
-	position: absolute;
-	clip-path: inset(50% 50% 50% 50%);
-	overflow: hidden;
+	display: none !important;
 }
 main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product{
 	position: relative;
