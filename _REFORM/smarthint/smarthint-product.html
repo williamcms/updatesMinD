@@ -9,13 +9,12 @@
 					{{#Products}}
 					<div class="apoio-sh">
 						<li>
-							<article class="csm-shelf__product" data-id="{{ItemGroupId}}" data-sku="{{ProductId}}"
-								itemtype="http://schema.org/Product">
+							<article class="csm-shelf__product" data-id="{{ItemGroupId}}" data-sku="{{ProductId}}">
 								<section class="csm-shelf__product--top">
 									<div class="csm-shelf__image">
 										<div class="product-image">
 											<a class="csm-shelf__link" title="{{Title}}" href="{{{Link}}}">
-												<div class="csm-shelf__image--static" itemprop="image">
+												<div class="csm-shelf__image--static">
 													<img img-src="{{{ImageLink}}}" loading="lazy" src="" width="290"
 														height="435" alt="{{Title}}" id=""
 														onerror="this.src='{{{ImageLink}}}';">
@@ -59,34 +58,24 @@
 								<section class="csm-shelf__product--bottom">
 									<div class="csm-shelf__name">
 										<h4>
-											<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}"
-												itemprop="name">
+											<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}">
 												{{Title}}
 											</a>
 										</h4>
 									</div>
 									<div class="yv-review-quickreview" value="{{ItemGroupId}}"></div>
-									<div class="csm-shelf__price" itemprop="offers" itemscope=""
-										itemtype="http://schema.org/Offer">
+									<div class="csm-shelf__price">
 										<a class="csm-shelf__link" href="{{{Link}}}" title="{{Title}}">
 											{{#HasSalePrice}}
 											<p class="csm-shelf__price--old">
 												<span>R$ {{PriceInteger}},{{PriceDecimal}}</span>
 											</p>
 											<p class="csm-shelf__price--best">
-												<span style="display: none;" itemprop="priceCurrency"
-													wfd-invisible="true">R$</span>
-												<span style="display: none;" wfd-invisible="true">
-													<link itemprop="availability" href="http://schema.org/InStock"
-														wfd-invisible="true">
-													Em estoque
-												</span>
-												<strong itemprop="price">R$
-													{{SalePriceInteger}},{{SalePriceDecimal}}</strong>
+												<strong>R$ {{SalePriceInteger}},{{SalePriceDecimal}}</strong>
 											</p>
 											{{/HasSalePrice}}
 											{{^HasSalePrice}}
-											<strong itemprop="price">R$ {{PriceInteger}},{{PriceDecimal}}</strong>
+											<strong>R$ {{PriceInteger}},{{PriceDecimal}}</strong>
 											{{/HasSalePrice}}
 										</a>
 									</div>
