@@ -781,6 +781,7 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 	display: none;
 	position: absolute;
 	left: 0;
+	transform: translateX(-13%);
 	text-align: center;
 	background-color: var(--sand);
 	margin-top: 0.35rem;
