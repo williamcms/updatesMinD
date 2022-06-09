@@ -1721,7 +1721,7 @@ body > .ui-autocomplete.ui-widget-content{
 }
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper > .product__info-container > .product__info > .product__management input{
-	max-width: 2rem; 
+	max-width: 3rem; 
 	width: auto;
 	margin: 0 .3rem;
 	text-align: center;
