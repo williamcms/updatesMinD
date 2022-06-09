@@ -44,14 +44,6 @@
 												</a>
 											</div>
 										</div>
-										<div class="button sh" style="display: none;">
-											{{#AditionalFeatures}}
-											<a id="buy-{{{ItemGroupId}}}" class="buttons buy sh" target="_top"
-												title="Adicionar ao carrinho" value="{{addToCartLink}}">Adicionar à
-												sacola
-											</a>
-											{{/AditionalFeatures}}
-										</div>
 									</div>
 								</section>
 
@@ -134,22 +126,6 @@
 		imgsrc = imgsrc.replace(/\-(\d+)-(\d+)\//g, "-290-435/");
 		jQuery(this).attr("src", imgsrc);
 	});
-
-	jQuery('.smarthint .button.sh').each(function () {
-		var btnCompra = jQuery(this).find('.buy.sh');
-		btnCompra.off();
-		var url_request = jQuery(this).find('.buy.sh').attr("value");
-		btnCompra.click(() => {
-			jQuery.ajax({
-				type: "POST",
-				url: url_request,
-				contentType: "application/json; charset=utf-8",
-				success: function () {
-					window.location.reload();
-				}
-			});
-		});
-	})
 
 	function ajustarSlick(quantidade, count) {
 		if ((typeof jQuery.fn.slick !== 'undefined')) {
