@@ -953,8 +953,8 @@ $(document).ready(function(){
 				"content-type": "application/json; charset=utf-8"
 			}
 		}).done(function(r){
-			let msg = $(r).text().split('.').first();
-			if(msg.length > 12){
+			let msg = $(r).text().split('.').first().trim();
+			if(msg != 'Olá, bem vindo'){
 				msg = msg.trim().replace(' ', ', <strong>') + '</strong>!';
 			}else{
 				msg = 'Olá, <strong>Minder!</strong>';
