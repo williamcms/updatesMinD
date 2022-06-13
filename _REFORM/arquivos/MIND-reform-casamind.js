@@ -524,7 +524,7 @@ $(document).ready(function(){
 		//Alterna os filtros e permite desselecionar um filtro selecionado
 		$.each(elm.closest('ul').find('li'), function(){
 			$(this).find('.iconwrapper > span').attr('class') == elm.find('.iconwrapper > span').attr('class') ?
-				$(this).toggleClass('is--active') : $(this).removeClass('is--active');
+				$(this).toggleClass('is--active') : !$(this).hasClass('sameOnly') && $(this).removeClass('is--active');
 		});
 	});
 	//Carrega mais produtos (botão ver mais produtos)
