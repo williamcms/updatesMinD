@@ -2,6 +2,37 @@
  *	Código por William Di Biasi Bogik
  *
  */
+//Addons
+if(typeof(Array.prototype.first) === 'undefined'){
+	Object.defineProperty(Array.prototype, 'first', {
+		value(){
+			return this.find(e => true)     //or this.find(Boolean)
+		}
+	});
+}
+//Aguarda o determinado elemento carregar
+//Exemplo de uso:
+//waitForElm('.selector').then((elm) =>{
+//});
+function waitForElm(selector){
+	return new Promise(resolve =>{
+		if(!!$(selector).length){
+			return resolve($(selector));
+		}
+
+		const observer = new MutationObserver(mutations =>{
+			if($(selector)){
+				resolve($(selector));
+				observer.disconnect();
+			}
+		});
+
+		observer.observe(document.body, {
+			childList: true,
+			subtree: true
+		});
+	});
+}
 var isMobile = (isMobile = () => {
 	let isMobile = false; //initiate as false
 	//device detection
@@ -58,37 +89,6 @@ var createAlert = (createAlert = (headColor, head, msg, button, ms) =>{
 });
 $(document).ready(function(){
 	"use strict";
-	//Addons
-	if(typeof(Array.prototype.first) === 'undefined'){
-		Object.defineProperty(Array.prototype, 'first', {
-			value(){
-				return this.find(e => true)     //or this.find(Boolean)
-			}
-		});
-	}
-	//Aguarda o determinado elemento carregar
-	//Exemplo de uso:
-	//waitForElm('.selector').then((elm) =>{
-	//});
-	function waitForElm(selector){
-		return new Promise(resolve =>{
-			if(!!$(selector).length){
-				return resolve($(selector));
-			}
-
-			const observer = new MutationObserver(mutations =>{
-				if($(selector)){
-					resolve($(selector));
-					observer.disconnect();
-				}
-			});
-
-			observer.observe(document.body, {
-				childList: true,
-				subtree: true
-			});
-		});
-	}
 	//Atualiza os parametros do url
 	function updateQueryString(key, value){
 		if(history.pushState){
