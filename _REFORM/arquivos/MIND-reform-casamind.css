@@ -2500,8 +2500,8 @@ main.collection > .main-container > .collectionWrapper > .row > .col-auto .order
 	overflow: visible !important;
 	cursor: pointer;
 }
-main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li:hover a,
-main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li.is--active a,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li:hover *,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li.is--active *,
 main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li:hover div.iconwrapper,
 main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li.is--active div.iconwrapper{
 	color: var(--brand-color);
@@ -2595,9 +2595,15 @@ main.collection > .main-container > .collectionWrapper > .row > .col-auto .order
 	-webkit-mask-image: url('https://imaginarium.vteximg.com.br/arquivos/rnk-maior-desconto-preto.svg');
 	mask-image: url('https://imaginarium.vteximg.com.br/arquivos/rnk-maior-desconto-preto.svg');
 }
-main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li a{
+main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li a,
+main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li label{
+	display: block;
 	font-size: .9rem;
 	line-height: .9rem;
+}
+main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li div.iconwrapper + *{
+	display: block;
+	margin: 0.5rem 0 0 0;
 }
 main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList > ul > li a > span > span{
 	display: block;

@@ -107,17 +107,10 @@ $(document).ready(function(){
 		$(this).hasClass('minus') && input.val() > 1 && input.val(parseInt(input.val()) - 1);
 	});
 	// Botão Selecionar todos
-	$('.orderByList > ul.optionsList > li a#selectallproducts').on('click', function(){
-		let inputs = $('.collectionItems .shelf__product .checkboxOnly input[type="checkbox"]'),
-			elm = $(this);
+	waitForElm($('.collectionWrapper .collection > .giftlist-insertsku-wrapper input[type="checkbox"]')).then((elm)=>{
+		let button = $('.orderByList > ul > li #selectallproducts');
 
-		$.each(inputs, function(){
-			if(elm.closest('li').hasClass('is--active')){
-				$(this).prop('checked', false);
-			}else{
-				$(this).prop('checked', true);
-			}
-		})
+		button.attr("for", elm.attr("id"));
 	});
 	// Botão incluir selecionados na lista
 	$('.orderByList > ul.optionsList > li a#addselectedproducts').on('click', function(){
