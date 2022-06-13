@@ -18,6 +18,36 @@ var formOff = (formOff = (num) => {
 	$("#form"+num).fadeOut();
 	//window.location = window.location;
 });
+var createAlert = (createAlert = (headColor, head, msg, button, ms) =>{
+	function _button(button){
+		this.text = button.text,
+		this.color = button.class,
+		this.link = button.link
+	};
+	let id = `alertbox${Math.floor((Math.random() * 1000))}`,
+		fixedOn = $('body'),
+		_btn = new _button(button),
+		box = `
+			<div class="overlayform" id="${id}" 
+			aria-label="Janela sobreposta ao contéudo, precione Esc para fecha-la ou aguarde ${ms/1000} segundos">
+				<div class="alertbox">
+					<div class="header">
+						<div class="pr-2 pl-2 ${headColor}">${head}</div>
+					</div>
+					<div class="content p-3">
+						<p class="pb-3">${msg}</p>
+						<a href="${_btn.link}" class="button2 ${_btn.color}
+						${!!_btn.link ? 'd-block' : 'd-none'}">
+							<span>${_btn.text}</span>
+						</a>
+					</div>
+				</div>
+			</div>`;
+
+	fixedOn.append(box).fadeIn(), setTimeout(function(){
+		// fixedOn.find(`#${id}`).remove();
+	}, ms);
+});
 $(document).ready(function(){
 	"use strict";
 	//Addons
