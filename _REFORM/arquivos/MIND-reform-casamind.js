@@ -315,6 +315,9 @@ $(document).ready(function(){
 		qty = parseInt($('.csm-header .csm-minicart .product-list input[ndx='+ index +']').val());
 		vtexUpdateItem(index, 0);
 	});
+	var updateMiniCartTrigger = $(document).on('updateMiniCart', function(){
+		updateMiniCart();
+	});
 	var addtoBag = $(document).on('click', '.js--shelf-buy', function(e){
 		e.preventDefault(), e.stopPropagation();
 		let pid = $(this).parents('.csm-shelf__product').data('id'),
