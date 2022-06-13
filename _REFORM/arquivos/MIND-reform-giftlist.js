@@ -130,7 +130,15 @@ $(document).ready(function(){
 	});
 	// Botão presentear selecionados
 	$('.orderByList > ul.optionsList > li a#giftselected').on('click', function(){
-		let selected = $('.collectionItems .shelf__product .checkboxOnly input[type="checkbox"][checked="checked"]');
+		let selected = $('.collectionItems .shelf__product .checkboxOnly input[type="checkbox"][checked="checked"]').parents('.shelf__product').find('a.btn-add-buy-button-asynchronous');
+		let checkout = '/checkout/cart/add?';
+		let href = $.map(selected, function(val, i){
+			let url = decodeURIComponent($(val).attr('href'));
+			url.slice(1).replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value){
+				checkout += str.replace('?', '&')
+			});
+		});
+
 		if(selected.length < 1){
 			createAlert(
 				'btn-red', 
@@ -141,22 +149,20 @@ $(document).ready(function(){
 			)
 			return 0;
 		}
-		$.each(selected, function(){
-			let href = $(this).parents('.shelf__product').find('a.btn-add-buy-button-asynchronous').attr('href');
 
-			$.ajax({
-				type: 'POST',
-				url: href,
-				success: function(){
-					$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
-						$('#popup-adicionando, #barratempo').removeClass('is--active')
-					}, 6200);
-				},
-				error: function(){
-					alert('Um erro ocorreu, tente novamente em alguns momentos!')
-				}
-			})
+
+		$.ajax({
+			type: 'POST',
+			url: checkout,
+			success: function(){
+				$('#popup-adicionando, #barratempo').addClass('is--active'), $(document).trigger('updateMiniCart'), 
+				setTimeout(function(){
+					$('#popup-adicionando, #barratempo').removeClass('is--active');
+				}, 6200);
+			},
+			error: function(){
+				alert('Um erro ocorreu, tente novamente em alguns momentos!');
+			}
 		});
-		$(document).trigger('updateMiniCart');
 	});
 });
