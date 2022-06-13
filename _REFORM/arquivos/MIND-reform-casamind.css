@@ -3077,6 +3077,7 @@ footer .news-footer .enviarForm:hover{
 	background: var(--white);
 	border-radius: 0.6rem;
 	min-width: 21.875rem;
+	width: fit-content;
 	max-width: 50vw;
 	height: 12.5rem;
 	height: fit-content;

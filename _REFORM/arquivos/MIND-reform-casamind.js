@@ -18,6 +18,14 @@ var formOff = (formOff = (num) => {
 	$("#form"+num).fadeOut();
 	//window.location = window.location;
 });
+//Cria alertas de forma fácil sem precisar mexer no HTML
+// var          | example             | type
+// headColor    | btn-red             | classes
+// head         | msg                 | string
+// msg          | msg                 | string
+// button       | {text, link, class} | obj
+// ms           | 2000                | ms
+//Se ms for igual a 0, o aviso so será fechado ao clicar fora da área do alerta
 var createAlert = (createAlert = (headColor, head, msg, button, ms) =>{
 	function _button(button){
 		this.text = button.text,
@@ -35,17 +43,17 @@ var createAlert = (createAlert = (headColor, head, msg, button, ms) =>{
 						<div class="pr-2 pl-2 ${headColor}">${head}</div>
 					</div>
 					<div class="content p-3">
-						<p class="pb-3">${msg}</p>
+						<p class="pb-3 text-center">${msg}</p>
 						<a href="${_btn.link}" class="button2 ${_btn.color}
-						${!!_btn.link ? 'd-block' : 'd-none'}">
+						${!!_btn.link ? '' : 'd-none'}">
 							<span>${_btn.text}</span>
 						</a>
 					</div>
 				</div>
 			</div>`;
 
-	fixedOn.append(box).fadeIn(), setTimeout(function(){
-		// fixedOn.find(`#${id}`).remove();
+	fixedOn.append(box), $(`#${id}`).fadeIn(), ms != 0 && setTimeout(function(){
+		fixedOn.find(`#${id}`).fadeOut();
 	}, ms);
 });
 $(document).ready(function(){
