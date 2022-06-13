@@ -488,7 +488,7 @@ $(document).ready(function(){
 		})
 	});
 	//Alterna entre os filtros clicados
-	var changeShelfFilter = $('.orderByList > ul > li').on('click', function(e){
+	var changeShelfFilter = $('.orderByList > ul:not(.optionsList) > li').on('click', function(e){
 		//Permite que o redirecionamento gerado pela href seja possível quando necessário
 		if(!$(this).closest('.orderByList').hasClass('allow-redir')){
 			e.preventDefault();
@@ -504,6 +504,20 @@ $(document).ready(function(){
 			updateQueryString('O', $(this).data('order').split('O=')[1]);
 		}
 		getShelfProducts();
+	});
+	//Alterna entre os filtros clicados (sem atualização de prateleira)
+	var changeShelfFilter = $('.orderByList > ul.optionsList > li').on('click', function(e){
+		let elm = $(this);
+
+		//Permite que o redirecionamento gerado pela href seja possível quando necessário
+		if(!elm.closest('.orderByList').hasClass('allow-redir')){
+			e.preventDefault();
+		}
+		//Alterna os filtros e permite desselecionar um filtro selecionado
+		$.each(elm.closest('ul').find('li'), function(){
+			$(this).find('.iconwrapper > span').attr('class') == elm.find('.iconwrapper > span').attr('class') ?
+				$(this).toggleClass('is--active') : $(this).removeClass('is--active');
+		});
 	});
 	//Carrega mais produtos (botão ver mais produtos)
 	var seeMoreProducts = $('.has-shelf--default').on('click', 'button.seeMoreProducts[data-controls]', function(){
