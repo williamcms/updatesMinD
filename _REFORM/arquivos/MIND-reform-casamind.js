@@ -514,7 +514,7 @@ $(document).ready(function(){
 		getShelfProducts();
 	});
 	//Alterna entre os filtros clicados (sem atualização de prateleira)
-	var changeShelfFilter = $('.orderByList > ul.optionsList > li').on('click', function(e){
+	var changeShelfFilterAlt = $('.orderByList > ul.optionsList > li').on('click', function(e){
 		let elm = $(this);
 
 		//Permite que o redirecionamento gerado pela href seja possível quando necessário
