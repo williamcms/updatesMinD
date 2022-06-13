@@ -543,7 +543,7 @@ button.custom-select{
 	right: 0;
 	bottom: 0;
 	background-color: rgba(0,0,0,0.5);
-	z-index: 1060;
+	z-index: 9999;
 	overflow-y: scroll;
 	overflow-y: overlay;
 }
