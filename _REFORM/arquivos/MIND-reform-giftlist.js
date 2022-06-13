@@ -106,4 +106,35 @@ $(document).ready(function(){
 		$(this).hasClass('plus') && input.val(parseInt(input.val()) + 1) ||
 		$(this).hasClass('minus') && input.val() > 1 && input.val(parseInt(input.val()) - 1);
 	});
-})
+	// Botão presentear selecionados
+	$('.orderByList > ul.optionsList > li a#giftselected').on('click', function(){
+		let selected = $('.collectionItems .shelf__product .checkboxOnly input[type="checkbox"][checked="checked"]');
+		if(selected.length < 1){
+			createAlert(
+				'btn-red', 
+				'Erro!', 
+				'Você precisa selecionar pelo menos um item para utilizar essa opção', 
+				{}, 
+				3000
+			)
+			return 0;
+		}
+		$.each(selected, function(){
+			let href = $(this).parents('.shelf__product').find('a.btn-add-buy-button-asynchronous').attr('href');
+
+			$.ajax({
+				type: 'POST',
+				url: href,
+				success: function(){
+					$('#popup-adicionando, #barratempo').addClass('is--active'), setTimeout(function(){
+						$('#popup-adicionando, #barratempo').removeClass('is--active')
+					}, 6200);
+				},
+				error: function(){
+					alert('Um erro ocorreu, tente novamente em alguns momentos!')
+				}
+			})
+		});
+		$(document).trigger('updateMiniCart');
+	});
+});
