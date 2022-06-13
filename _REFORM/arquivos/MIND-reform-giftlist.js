@@ -106,6 +106,35 @@ $(document).ready(function(){
 		$(this).hasClass('plus') && input.val(parseInt(input.val()) + 1) ||
 		$(this).hasClass('minus') && input.val() > 1 && input.val(parseInt(input.val()) - 1);
 	});
+	// Botão Selecionar todos
+	$('.orderByList > ul.optionsList > li a#selectallproducts').on('click', function(){
+		let inputs = $('.collectionItems .shelf__product .checkboxOnly input[type="checkbox"]'),
+			elm = $(this);
+
+		$.each(inputs, function(){
+			if(elm.closest('li').hasClass('is--active')){
+				$(this).prop('checked', false);
+			}else{
+				$(this).prop('checked', true);
+			}
+		})
+	});
+	// Botão incluir selecionados na lista
+	$('.orderByList > ul.optionsList > li a#addselectedproducts').on('click', function(){
+		let button = $('.giftlist-insertsku-wrapper .giftlist-insertsku-popup a');
+
+		if(button.length < 1){
+			createAlert(
+				'btn-red', 
+				'Erro!', 
+				'Você precisa realizar o login para utilizar essa opção.', 
+				{text: 'Login', link: `/login?ReturnUrl=${window.location.pathname}`, class: 'btn-red'}, 
+				3000
+			)
+			return 0;
+		}
+		button.click();
+	});
 	// Botão presentear selecionados
 	$('.orderByList > ul.optionsList > li a#giftselected').on('click', function(){
 		let selected = $('.collectionItems .shelf__product .checkboxOnly input[type="checkbox"][checked="checked"]');
