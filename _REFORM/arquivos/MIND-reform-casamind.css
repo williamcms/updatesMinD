@@ -385,6 +385,7 @@ span{
 }
 fieldset{
 	padding: 0.5rem;
+	border: 0.0625rem solid var(--gray-lighter);
 }
 /* Dropdown & Custom Select */
 .btn-group, 
@@ -2308,6 +2309,7 @@ main.product .csm-product + .csm-product-video.is--active iframe{
 	max-width: 100vw;
 	height: 100% !important;
 	height: fit-content !important;
+	max-height: 100vh;
 }
 #TB_window #TB_ajaxWindowTitle{
 	padding: 0 !important;
