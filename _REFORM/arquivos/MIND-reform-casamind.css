@@ -3373,18 +3373,6 @@ footer .final-label__address{
 	}
 }
 @media screen and (max-width: 831px){
-	input[type=text],
-	input[type=number],
-	input[type=email],
-	input[type=tel],
-	input[type=password],
-	input[type=date],
-	input[type=datetime-local],
-	input[type=month],
-	input[type=time],
-	input[type=url]{
-		height: 06vh !important;
-	}
 	/* Default */
 	.overlayform .modalform > .modaldados .input-group{
 		flex-wrap: wrap;
