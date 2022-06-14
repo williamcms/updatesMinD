@@ -428,8 +428,8 @@ main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members{
 	position: relative;
 	margin: 1.5rem 0;
 }
-main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:before,
-main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:after{
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members::before,
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members::after{
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -438,10 +438,10 @@ main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:after{
 	opacity: .7;
 	z-index: -1;
 }
-main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:before{
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members::before{
 	top: -.75rem;
 }
-main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members:after{
+main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members::after{
 	bottom: -.75rem;
 }
 main.giftlist.view .giftlist.giftlistinfo > .giftlistinfo-members > .list-members{
@@ -698,7 +698,7 @@ main.giftlist.manage > .listManager .glmanager-type > h2::before{
 	background: var(--brand-color);
 	z-index: -1;
 }
-main.giftlist.manage > .listManager .glmanager-type > h2:after{
+main.giftlist.manage > .listManager .glmanager-type > h2::after{
 	content: '';
 	position: absolute;
 	left: -3%;
@@ -758,7 +758,7 @@ main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-actio
 main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action:hover > ul{
 	display: block;
 }
-main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action:after{
+main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action::after{
 	content: '';
 	display: inline-block;
 	color: var(--white);
@@ -771,7 +771,7 @@ main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-actio
 	border-bottom: 0.25rem solid transparent;
 	border-right: 0.25rem solid transparent;
 }
-main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action:hover:after{
+main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action:hover::after{
 	content: '';
 	border-top: 0.25rem solid;
 	border-right: 0.25rem solid transparent;
