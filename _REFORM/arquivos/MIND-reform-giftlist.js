@@ -15,7 +15,7 @@ $(document).ready(function(){
 	})();
 	//Altera o tamanho das imagens para se encaixar melhor e não ter faixas brancas
 	var changeProductImageOnGiftList = (changeProductImage = () =>{
-		$(".productImage img").each(function(){
+		$(".productImage img, a.urlproduct > img").each(function(){
 			$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-500-0/"));
 		});
 	})();
@@ -26,6 +26,11 @@ $(document).ready(function(){
 			$(this).attr("aria-label", `Presentear ${pName}`);
 		});
 	})();
+	var selectCheckbox = $('.giftlistproductsv2 tr > td.checkuncheck').on('click', function(e){
+		let input = $(this).find('input[type="checkbox"].checkuncheckthis');
+
+		input.attr('checked', !input.is(':checked'));
+	});
 	// Função para preencher alguns campos com base no CEP
 	$('body').on('blur', '.address-form-new #ship-postal-code', function(evt) {
 		let cep = $(this).val();
@@ -112,6 +117,13 @@ $(document).ready(function(){
 
 		button.attr("for", elm.attr("id"));
 	});
+	waitForElm($('table.giftlistproductsv2 > thead > tr > th > input[type="checkbox"]')).then((elm)=>{
+		let button = $('.orderByList > ul > li #selectallproducts');
+
+		elm.attr('id', 'checkuncheckall');
+
+		button.attr("for", elm.attr("id"));
+	});
 	// Botão incluir selecionados na lista
 	$('.orderByList > ul.optionsList > li a#addselectedproducts').on('click', function(){
 		let button = $('.giftlist-insertsku-wrapper .giftlist-insertsku-popup a');
@@ -150,7 +162,6 @@ $(document).ready(function(){
 			return 0;
 		}
 
-
 		$.ajax({
 			type: 'POST',
 			url: checkout,
@@ -164,5 +175,13 @@ $(document).ready(function(){
 				alert('Um erro ocorreu, tente novamente em alguns momentos!');
 			}
 		});
+	});
+	// Botão Compartilhar lista
+	$('.orderByList > ul.optionsList > li a#sharethislist').on('click', function(){
+		$('#btnReferAFriend').click();
+	});
+	// Botão Visualizar lista
+	waitForElm($('.orderByList > ul.optionsList > li a#giftviewasguest')).then((elm)=>{
+		elm.attr('href', $('.action-view > a').attr('href'));
 	});
 });
