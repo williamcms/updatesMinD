@@ -2406,6 +2406,11 @@ main.product .csm-product + .csm-product-video.is--active iframe{
 	border: 0.0625rem solid var(--brand-color);
 	transition: all 1s ease-in-out;
 }
+#TB_window #TB_ajaxContent .glis-create-form > .glis-create-form-submit:hover,
+#TB_window #TB_ajaxContent .glis-send-link > a:hover{
+	color: var(--white);
+	background-color: var(--brand-color);
+}
 #TB_window #TB_ajaxContent .glis-create-form > .glis-create-form-submit a{
 	text-decoration: none;
 }
