@@ -742,16 +742,16 @@ main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-header-pur
 }
 main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action{
 	position: relative;
-	background-color: var(--red);
+	background-color: var(--white);
 	padding: 0.2rem 0.5rem;
 	min-width: 6.375rem;
 	width: 6.375rem;
 	max-width: 6.375rem;
-	border: 0.5rem solid var(--white);
+	border: 0.0625rem solid var(--brand-color);
 }
 main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action:before{
 	content: 'Ações';
-	color: var(--white);
+	color: var(--brand-color);
 	border-radius: 0.2rem;
 	padding: 0.3rem;
 }
@@ -761,7 +761,7 @@ main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-actio
 main.giftlist.manage > .listManager .giftlist-table tbody td.giftlist-body-action::after{
 	content: '';
 	display: inline-block;
-	color: var(--white);
+	color: var(--brand-color);
 	width: 0;
 	height: 0;
 	margin-left: 0.125rem;
@@ -781,10 +781,10 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 	display: none;
 	position: absolute;
 	left: 0;
-	transform: translateX(-13%);
+	transform: translateX(-7%);
 	text-align: center;
 	background-color: var(--sand);
-	margin-top: 0.35rem;
+	margin-top: .69rem;
 	min-width: 7.1875rem;
 	width: 100%;
 	white-space: nowrap;
@@ -793,19 +793,23 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 	box-shadow: 0 0.4375rem 0.625rem rgb(0 0 0 / 10%);
 	z-index: 1;
 }
-main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li{
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > li{
 	padding: .2rem;
 }
-main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li:hover{
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > li.action-buy{
+	/*Botão não funciona*/
+	display: none !important;
+}
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > li:hover{
 	background: var(--gray-lighter);
 }
-main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li:first-of-type{
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > li:first-of-type{
 	border-radius: .6rem .6rem 0 0;
 }
-main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li:last-of-type{
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > li:last-of-type{
 	border-radius: 0 0 .6rem .6rem;
 }
-main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > ul > li a{
+main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-actions > li a{
 	text-decoration: none;
 }
 /*Ver Compras em Manage*/
@@ -843,6 +847,7 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 	font-size: 1.5rem;
 	font-weight: 600;
 	color: var(--brand-color);
+	padding: .5rem 0;
 }
 #TB_ajaxContent > #refer-a-friend-form-gift-list > #div-title > p::before{
 	content: 'Compartilhar';
@@ -861,6 +866,9 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 		flex-wrap: wrap;
 		grid-gap: 0.3rem;
 		gap: 0.3rem;
+	}
+	#TB_ajaxContent > #refer-a-friend-form-gift-list > fieldset#fldFriendsData > #grp-amigo-indicar > *{
+		flex: 1 1 49%;
 	}
 	#TB_ajaxContent > #refer-a-friend-form-gift-list > fieldset#fldFriendsData > #grp-amigo-indicar > label, 
 	#TB_ajaxContent > #refer-a-friend-form-gift-list > fieldset#fldFriendsData > #grp-amigo-indicar > span,
@@ -1066,14 +1074,12 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 		right: 0;
 		left: initial;
 		transform: none;
+		margin-top: 0.135rem;
 	}
 	#TB_ajaxContent > .order-info > .order-info-list table{
 		table-layout: fixed;
 		width: 100%;
 		max-width: 100%;
-	}
-	#TB_ajaxContent > .order-info > .order-info-list table thead tr{
-
 	}
 	#TB_ajaxContent > .order-info > .order-info-list table thead tr th{
 		font-size: 0.69em;
@@ -1084,7 +1090,7 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 		display: table-caption;
 	}
 	#TB_ajaxContent > .order-info > .order-info-list > li > table > thead tr th{
-		white-space: nowrap;
+		padding: 0.2rem;
 	}
 	#TB_ajaxContent > .order-info > .order-info-list table tbody tr img{
 		max-width: 4rem;
