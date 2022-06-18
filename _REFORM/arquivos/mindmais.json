@@ -410,6 +410,21 @@
 			"date" : "12/22/2022",
 			"active": 0
 		},
+		"linee" : {
+			"name" : "Linee",
+			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/LINEE-v2_logo_menu.png",
+			"bannerD" : "https://imaginarium.vteximg.com.br/arquivos/LINEE-v2_banner_mindmais_desk_1920x600.png",
+			"bannerM" : "https://imaginarium.vteximg.com.br/arquivos/LINEE-v2_banner_mindmais_mob_500x600.png",
+			"bannerPageD" : "https://imaginarium.vteximg.com.br/arquivos/LINEE-v2_banner_top_desk_1920x200.png",
+			"bannerPageM" : "https://imaginarium.vteximg.com.br/arquivos/LINEE-v2_banner_top_mobile_451x300.png",
+			"navBrands" : "https://lojamindesigns.vteximg.com.br/arquivos/LINEE-v2_banner_linha_desk_385x570.png",
+			"pageTitle" : "MinD+ Linee",
+			"pageDescription" : "Fabricação nacional de móveis e decoração com design exclusivo. Peças simples, acessíveis e minimalistas que se adaptam ao universo que as rodeiam, e que conversam com todos os estilos.",
+			"collection": 836,
+			"pageLink" : "https://www.casamind.com.br/mindmais/linee",
+			"date" : "06/18/2022",
+			"active": 1
+		},
 		"leeve" : {
 			"name" : "LEEVE",
 			"logo" : "https://lojamindesigns.vteximg.com.br/arquivos/LEEVE_v2_logo_menu_min.jpg",
