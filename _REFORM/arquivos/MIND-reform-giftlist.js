@@ -15,10 +15,22 @@ $(document).ready(function(){
 	})();
 	//Altera o tamanho das imagens para se encaixar melhor e não ter faixas brancas
 	var changeProductImageOnGiftList = (changeProductImage = () =>{
-		$(".productImage img, a.urlproduct > img").each(function(){
+		$(".collectionItems img").each(function(){
+			console.log('1');
 			$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-500-0/"));
 		});
 	})();
+	var changeImageSizesAfterPageChange = $(document).on('click', '.ko-grid-pageLinks > a', function(){
+		setTimeout(function(){
+			console.log('2');
+			$(".collectionItems img").each(function(){
+				$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-500-0/"));
+			});
+			document.querySelector('.main-container').scrollIntoView({
+				behavior: 'smooth'
+			});
+		}, 800);
+	});
 	var changeProductTextOnGiftList = (changeProductImage = () =>{
 		$(".buyButton a.btn-add-buy-button-asynchronous").each(function(){
 			let pName = $(this).parents('.shelf__product--bottom').find('h3 > a').text();
