@@ -1019,6 +1019,9 @@ main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions > a.de
 	bottom: 0;
 	left: 0;
 }
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions > a:not(.deletethissku){
+	display: none;
+}
 main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions:hover{
 	filter: brightness(.95);
 }
