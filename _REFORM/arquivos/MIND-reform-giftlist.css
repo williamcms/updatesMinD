@@ -6,6 +6,10 @@
 :root{
 	--buttons-desktop: 16.0625rem;
 }
+main.collection .pager.bottom, 
+main.collection .pager.top{
+	display: block !important;
+}
 main.giftlist{
 	background-color: rgba(247, 247, 247, .4);
 }
