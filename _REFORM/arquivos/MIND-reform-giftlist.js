@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	// Função para algumas otimizações, 
 	// como indicador de campo númerico para mobile
-	(() =>{
+	var optimizations = (() =>{
 		let giftlisteventdate = $('#giftlisteventdate')
 			actionShare = $('.glmanager-actions > .action-share');
 
@@ -32,7 +32,7 @@ $(document).ready(function(){
 		input.attr('checked', !input.is(':checked'));
 	});
 	// Função para preencher alguns campos com base no CEP
-	$('body').on('blur', '.address-form-new #ship-postal-code', function(evt) {
+	var getaddressfromapi = $('body').on('blur', '.address-form-new #ship-postal-code', function(evt) {
 		let cep = $(this).val();
 
 		$.ajax({
@@ -66,7 +66,7 @@ $(document).ready(function(){
 		})
 	});
 	// Função para gerar automáticamente um valor para o endereço de compartilhamento da lista
-	$('#giftlistform input, #giftlistform select').on('keypress keyup change blur', function(){
+	var autogeneratename = $('#giftlistform input, #giftlistform select').on('keypress keyup change blur', function(){
 		let giftlisttype = $('#giftlisttype').find(':selected').text(),
 			giftlistname = $('#giftlistname').val(),
 			giftlisturl = $('#giftlisturl-site'),
@@ -89,7 +89,7 @@ $(document).ready(function(){
 		}
 	});
 	// Função para ocultar um ou mais campos com base na lista
-	$("#giftlisttype").on('change', function(){
+	var hidefieldsfromform = $("#giftlisttype").on('change', function(){
 		// 20 - guideshop / 6 - lista de presentes / ...etc.
 		let skipCity = ['20', '6'],
 			selectedOption = $(this).find(':selected').val();
@@ -105,19 +105,19 @@ $(document).ready(function(){
 		}
 	});
 	// Botões de adicionar/remover quantidade
-	$('.shelf__product > .shelf__product--bottom .amount a[role="button"]').on('click', function(){
+	var changeqtybuttons = $('.shelf__product > .shelf__product--bottom .amount a[role="button"]').on('click', function(){
 		let input = $(this).parent().find('input.insert-sku-quantity');
 			
 		$(this).hasClass('plus') && input.val(parseInt(input.val()) + 1) ||
 		$(this).hasClass('minus') && input.val() > 1 && input.val(parseInt(input.val()) - 1);
 	});
 	// Botão Selecionar todos
-	waitForElm($('.collectionWrapper .collection > .giftlist-insertsku-wrapper input[type="checkbox"]')).then((elm)=>{
+	var selectallproducts = waitForElm($('.collectionWrapper .collection > .giftlist-insertsku-wrapper input[type="checkbox"]')).then((elm)=>{
 		let button = $('.orderByList > ul > li #selectallproducts');
 
 		button.attr("for", elm.attr("id"));
 	});
-	waitForElm($('table.giftlistproductsv2 > thead > tr > th > input[type="checkbox"]')).then((elm)=>{
+	var checkuncheckall = waitForElm($('table.giftlistproductsv2 > thead > tr > th > input[type="checkbox"]')).then((elm)=>{
 		let button = $('.orderByList > ul > li #selectallproducts');
 
 		elm.attr('id', 'checkuncheckall');
@@ -125,7 +125,7 @@ $(document).ready(function(){
 		button.attr("for", elm.attr("id"));
 	});
 	// Botão incluir selecionados na lista
-	$('.orderByList > ul.optionsList > li a#addselectedproducts').on('click', function(){
+	var addselectedproducts = $('.orderByList > ul.optionsList > li a#addselectedproducts').on('click', function(){
 		let button = $('.giftlist-insertsku-wrapper .giftlist-insertsku-popup a');
 
 		if(button.length < 1){
@@ -141,7 +141,7 @@ $(document).ready(function(){
 		button.click();
 	});
 	// Botão presentear selecionados
-	$('.orderByList > ul.optionsList > li a#giftselected').on('click', function(){
+	var giftselected = $('.orderByList > ul.optionsList > li a#giftselected').on('click', function(){
 		let selected = $('.collectionItems .shelf__product .checkboxOnly input[type="checkbox"][checked="checked"]').parents('.shelf__product').find('a.btn-add-buy-button-asynchronous');
 		let checkout = '/checkout/cart/add?';
 		let href = $.map(selected, function(val, i){
@@ -177,7 +177,7 @@ $(document).ready(function(){
 		});
 	});
 	// Botão Compartilhar lista
-	$('.orderByList > ul.optionsList > li a#sharethislist').on('click', function(){
+	var sharethislist = $('.orderByList > ul.optionsList > li a#sharethislist').on('click', function(){
 		$('#btnReferAFriend').click();
 	});
 	// Botão remover selecionados
