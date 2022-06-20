@@ -38,7 +38,7 @@ $(document).ready(function(){
 			$(this).attr("aria-label", `Presentear ${pName}`);
 		});
 	})();
-	var selectCheckbox = $('.giftlistproductsv2 tr > td.checkuncheck').on('click', function(e){
+	var selectCheckbox = $(document).on('click', '.giftlistproductsv2 tr > td.checkuncheck', function(e){
 		let input = $(this).find('input[type="checkbox"].checkuncheckthis');
 
 		input.attr('checked', !input.is(':checked'));
