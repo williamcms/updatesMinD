@@ -994,6 +994,9 @@ main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions{
 	min-height: 2rem;
 }
 main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.wished > input.giftlistsku-input-wishedamt{
+	background-color: var(--white);
+	border-top: 0.0625rem solid var(--brand-color);
+	border-right: 0.0625rem solid var(--brand-color);
 	border-radius: 0 0 0 .6rem;
 }
 main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions{
