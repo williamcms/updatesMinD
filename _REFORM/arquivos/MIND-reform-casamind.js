@@ -402,6 +402,17 @@ $(document).ready(function(){
 					c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
 				}
 				return 'category';
+			}else if($('main').hasClass('giftlist')){
+				let gl = $("input#gid").val() || $('.action-buy > a').length > 0 && $('.action-buy > a').attr('id').replace('sendtocart-', '') || '0';
+
+				v.attr('data-giftlistid', gl);
+
+				let c = v.find('[id*=ResultItems_]');
+				//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
+				if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
+					c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
+				}
+				return 'giftlist';
 			}else if($('.orderBy > select[onchange]').length != 0){
 				//Último recurso para identificar informações da coleção
 				let h = $('.orderBy > select[onchange]').attr('onchange').split('?PS', 1).toString();
@@ -435,7 +446,12 @@ $(document).ready(function(){
 	var getShelfProducts = (getShelfProducts = (num = 0, seemore = 0) =>{
 		let orderBy = $('.orderByList > ul > li.is--active').attr('data-order');
 
-		let id = (checkPageType() != 'category' ? 'H:' + ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').data('collectionid') : $('.has-shelf--default').eq(num).data('collectionid')) : 'C:' + $('.resultItemsWrapper').data('categoryid'));
+		let pageType = checkPageType();
+		if(pageType === 'giftlist'){
+			return false;
+		}
+
+		let id = (pageType != 'category' ? 'H:' + ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').data('collectionid') : $('.has-shelf--default').eq(num).data('collectionid')) : 'C:' + $('.resultItemsWrapper').data('categoryid'));
 		let page = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-page') : $('.has-shelf--default').attr('data-page'));
 		let shelfTemplate = $('.has-shelf--default').eq(num).find('ul > li[layout]').first().attr('layout');
 		let productQtd = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-qty') : $('.has-shelf--default').attr('data-qty'));
