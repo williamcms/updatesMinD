@@ -912,7 +912,7 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 	white-space: nowrap;
 	margin: 0.5rem 0;
 	padding: 0.3rem 1.5rem;
-	transition: 1s all ease;
+	transition: .6s all ease;
 }
 #TB_ajaxContent > #refer-a-friend-form-gift-list > p > *:first-child{
 	color: var(--brand-color);
@@ -923,6 +923,11 @@ main.giftlist.manage > .listManager .giftlist-table tbody td > ul.glmanager-acti
 #TB_ajaxContent > #refer-a-friend-form-gift-list > p > *:first-child:hover{
 	color: var(--white);
 	background-color: var(--brand-color);
+}
+#TB_ajaxContent > #refer-a-friend-form-gift-list > p > *:first-child:hover + input{
+	color: var(--brand-color);
+	background-color: var(--white);
+	border: 1px solid var(--brand-color);
 }
 #TB_ajaxContent > #refer-a-friend-form-gift-list > p > *:last-child{
 	color: var(--white);
@@ -947,27 +952,84 @@ main.giftlist.products table.giftlistproductsv2 > tbody{
 }
 main.giftlist.products table.giftlistproductsv2 > tbody > tr{
 	position: relative;
-	flex: 0 1 22%;
+	flex: 0 1 18%;
 
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	padding-top: 2.5rem;
 	max-width: 31.25rem;
+	border: 0.0625rem solid var(--brand-color);
+	border-radius: 0.6rem;
+	overflow: hidden;
 }
 main.giftlist.products table.giftlistproductsv2 > tbody > tr > td:not(.wished, .actions){
 	flex-basis: 100%;
-
+}
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.name,
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.name > a{
+	display: block;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 	text-overflow: -o-ellipsis-lastline;
+	height: 2.3125rem;
+	font-size: .9375rem;
+	text-align: center;
+	line-height: 1.2rem;
+	font-weight: 600;
+	text-decoration: none;
 	overflow: hidden;
+}
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.price{
+	color: var(--brand-color);
+	text-align: center;
+	font-weight: 600;
+	padding: 0 .5rem 1rem .5rem;
 }
 main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.wished, 
 main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions{
 	position: relative;
 	flex-basis: 50%;
+	min-height: 2rem;
+}
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.wished > input.giftlistsku-input-wishedamt{
+	border-radius: 0 0 0 .6rem;
+}
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions{
+	position: relative;
+	background-color: #C8C8C8;
+}
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions > a.deletethissku{
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;
+	text-transform: capitalize;
+	line-height: 2rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions:hover{
+	filter: brightness(.95);
+}
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.purchased{
+	position: absolute;
+	right: 0;
+	top: 2.5rem;
+	color: var(--dark);
+	background-color: var(--sand);
+	padding: 0.5rem 0.3rem 0.5rem 0.5rem;
+	margin: 0.3rem 0;
+	border-radius: 0.6rem 0 0 0.6rem;
+}
+main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.purchased::before{
+	content: "\f4be";
+	font-family: "Font Awesome 6 Free";
+	margin-right: 0.5rem;
+	font-weight: 900;
 }
 main.giftlist.products table.giftlistproductsv2 > tbody > tr > td > a.inputedit.edit, 
 main.giftlist.products table.giftlistproductsv2 > tbody > tr > td > a.inputedit.save {
@@ -987,6 +1049,40 @@ main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.checkuncheck{
 	height: 2.5rem;
 	background-color: var(--brand-color);
 	border-radius: 0.375rem 0.375rem 0 0;
+}
+main.giftlist.products .ko-grid-pageLinks{
+	display: flex;
+	flex: 1 1 0rem;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem;
+}
+main.giftlist.products .ko-grid-pageLinks > span{
+	text-transform: capitalize;
+}
+main.giftlist.products .ko-grid-pageLinks > *{
+	text-decoration: none;
+	border: .01rem solid var(--gray-lighter);
+	padding: .2rem .5rem;
+	color: var(--black);
+}
+main.giftlist.products .ko-grid-pageLinks > *.selected{
+	font-weight: 900;
+	color: var(--white);
+	background-color: var(--brand-color);
+	border-color: var(--brand-color);
+}
+main.giftlist.products .ko-grid-pageLinks > *:first-child{
+	border-radius: .5rem 0 0 .5rem;
+}
+main.giftlist.products .ko-grid-pageLinks > *:last-child{
+	border-radius: 0 .5rem .5rem 0;
+}
+main.giftlist.products .ko-grid-pageLinks > * + *{
+	border-left: none;
+}
+main.giftlist.products #giftlistproduct > .giftlist-remove-sku{
+	display: none !important;
 }
 @media screen and (max-width: 831px){
 	main.giftlist.home .giftlist-actions.row{
@@ -1154,5 +1250,26 @@ main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.checkuncheck{
 	}
 	#TB_ajaxContent > .order-info > .order-info-list table tbody tr img{
 		max-width: 4rem;
+	}
+	main.giftlist.products table.giftlistproductsv2 > tbody{
+		grid-gap: .5rem;
+		gap: .5rem;
+	}
+	main.giftlist.products table.giftlistproductsv2 > tbody > tr{
+		flex: 0 1 47%;
+	}
+	main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.image{
+		max-height: 14.0625rem;
+	}
+	main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.price{
+		padding: 0.5rem 1rem;
+	}
+	main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.actions, 
+	main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.wished{
+		flex-basis: 100%;
+	}
+	main.giftlist.products table.giftlistproductsv2 > tbody > tr > td.wished > input.giftlistsku-input-wishedamt{
+		height: auto;
+		border-radius: 0;
 	}
 }
