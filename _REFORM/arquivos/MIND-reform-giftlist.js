@@ -180,8 +180,8 @@ $(document).ready(function(){
 	$('.orderByList > ul.optionsList > li a#sharethislist').on('click', function(){
 		$('#btnReferAFriend').click();
 	});
-	// Botão Visualizar lista
-	waitForElm($('.orderByList > ul.optionsList > li a#giftviewasguest')).then((elm)=>{
-		elm.attr('href', $('.action-view > a').attr('href'));
+	// Botão remover selecionados
+	var removeselecteditems = $('.orderByList > ul.optionsList > li a#removeselecteditems').on('click', function(){
+		$('#giftlistremovecheckedskus').click();
 	});
 });
