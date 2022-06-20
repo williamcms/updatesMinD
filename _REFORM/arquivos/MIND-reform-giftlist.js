@@ -1,4 +1,63 @@
 $(document).ready(function(){
+	// Funções da Giftlist da vtex
+	// Obtem uma giftlist com base nas informações fornecidas
+	var giftList;
+
+	giftList = {
+		GiftListId: $("input#gid").val() || $('.action-buy > a').length > 0 && $('.action-buy > a').attr('id').replace('sendtocart-', '') || '0',
+		ImageTypeId: $("input#iid").val() || '3',
+		ShowPopup: $("input#spu").val() || 'false',
+		UrlOrder: $("input#uor").val() != undefined && encodeURIComponent($("input#uor").val()) || false,
+		PageSize: $("input#pgs").val() || 10,
+		getSkuListFromGiftList: function getSkuListFromGiftList(giftListId, imageTypeId, pageSize, showPopup, callback){
+			var url = `/no-cache/giftlistv2/getskulist/${giftListId}/${imageTypeId}/${pageSize}/${showPopup}`;
+			$.getJSON(url, function(data){
+				if((typeof callback === 'function') && (typeof data != 'undefined')){
+					callback(data);
+				}
+			});
+		},
+		// Altera a quantidade de itens desejados
+		changeWishedQty: function changeWishedQty(giftListId, skuId, newAmount, callback) {
+			var url = `/no-cache/giftlistv2/changewishedamount/${giftListId}/${skuId}/${newAmount}`;
+			$.post(url, function(data){
+				if((typeof callback === 'function') && (typeof data != 'undefined')){
+					callback(data);
+				}
+			});
+		},
+		// Obtem a lista de pessoas que contribuiram com a lista
+		showOrdersFromItem: function showOrdersFromItem(giftListId, skuId, hideclosebtn = false, callback) {
+			var url = `/no-cache/giftlistv2/getskuorderinfo/${giftListId}/${skuId}/${hideclosebtn}`;
+			$.post(url, function(data){
+				if(data != ''){
+					if(typeof callback === 'function'){
+						callback(data)
+					}
+				}else{
+					console.log('showOrdersFromItem: Sua requisição não retornou resultados!');
+				}
+			});
+		},
+		// Obtem as estatisticas da lista
+		getListStatistics: function getListStatistics(giftListId, imageTypeId, urlOrder, callback){
+			var url = `/no-cache/giftlistv2/getstatistics/${giftListId}/${imageTypeId}/${urlOrder}`;
+			$.ajax({
+				type: 'POST',
+				url: url,
+				data: '',
+				success: function(data){
+					if(data != '') {
+						if(typeof callback === 'function'){
+							callback(data);
+						}
+					}else{
+						console.log('getListStatistics: Sua requisição não retornou resultados!');
+					}
+				}
+			});
+		}
+	}
 	// Função para algumas otimizações, 
 	// como indicador de campo númerico para mobile
 	var optimizations = (() =>{
