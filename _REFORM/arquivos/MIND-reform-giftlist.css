@@ -127,7 +127,7 @@ main.giftlist.home .how-to > .how-to-steps.row > .how-to__step > h4::before{
 	content: counter(steps) '. ';
 }
 main.giftlist.create{
-	padding: 1rem 2rem;
+	padding: 0.5rem 2rem 1rem 2rem;
 }
 main.giftlist.create #giftlistform{
 	display: flex;
@@ -172,6 +172,18 @@ main.giftlist.create #addresscomponent .address-data p.input > label:not([for="s
 main.giftlist.create #giftlistform .giftlistul > li > label + *,
 main.giftlist.create #addresscomponent .address-data p.input > label + *{
 	border-radius: 0 .25rem .25rem 0;
+}
+/*Assegura que todos os inputs dentro das listas vão estar com as bordas certas*/
+main.giftlist.create #giftlistform .giftlistul > li > input{
+	border-radius: 0 .25rem .25rem 0;
+}
+main.giftlist.create #giftlistform .giftlistul > li > label + #giftlisttype-disabled{
+	color: var(--brand-color)!important;
+	background-color: #e9ecef;
+	width: 100%;
+	padding: 0.225rem 0.525rem;
+	border: 0.0625rem solid var(--gray-lighter);
+	opacity: .7;
 }
 main.giftlist.create #giftlistform .giftlistul > li > label[for="giftlistname"]::after,
 main.giftlist.create #giftlistform .giftlistul > li > label[for="giftlisteventdate"]::after,
@@ -1136,6 +1148,7 @@ main.giftlist.products #giftlistproduct > .giftlist-remove-sku{
 	}
 	main.giftlist.create #giftlistform .giftlistul{
 		max-width: 87vw;
+		margin: 0 auto;
 	}
 	main.giftlist.create #giftlistform .giftlistul > li > label[for="visibility-wrapper"]{
 		white-space: normal;

@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
 
 <head>
-	<title>Casa MinD | Gerenciar seus produtos</title>
-	<script>$(document).prop('title', 'Casa MinD | Gerenciar seus produtos');</script>
+	<title>Casa MinD | Editar sua lista de presentes</title>
+	<script>$(document).prop('title', 'Casa MinD | Editar sua lista de presentes');</script>
 	<vtex:template id="MIND-reform-head" />
 	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
 
@@ -15,24 +15,19 @@
 
 <body>
 	<vtex:template id="MIND-reform-header" />
-
-	<main class="giftlist collection products">
 	
-		<div class="main-container">
-			<div class="infoWrapper">
-				<h1 class="highlight bold center">Gerenciar produtos em sua lista</h1>
-				<vtex.cmc:GiftListInfoV2 />
-			</div>
+	<main class="giftlist create">
+		<div class="infoWrapper pb-5">
+			<h1 class="highlight bold center">Editar sua lista</h1>
+			<vtex.cmc:GiftListInfoV2 />
+		</div>
 
-			<div class="row">
-				<div class="col-auto side-nav">
-					<vtex:template id="new-GiftList-Sidebar-nav" />
-				</div>
-				
-				<div class="listManager col">
-					<vtex.cmc:GiftListFormV2 />
-				</div>
+		<div class="giftlist create">
+
+			<div class="create-form">
+				<vtex.cmc:GiftListFormV2 />
 			</div>
+			
 		</div>
 	</main>
 	<vtex:template id="MIND-reform-footer" />
