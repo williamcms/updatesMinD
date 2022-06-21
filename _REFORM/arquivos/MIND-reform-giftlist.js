@@ -188,6 +188,9 @@ $(document).ready(function(){
 
 		button.attr("for", elm.attr("id"));
 	});
+	waitForElm($('table.giftlistproductsv2 > thead > tr > th > input[type="checkbox"]')).then((elm)=>{
+		elm.attr('id', 'checkuncheckall');
+	});
 	// Botão incluir selecionados na lista
 	var addselectedproducts = $('.orderByList > ul.optionsList > li a#addselectedproducts').on('click', function(){
 		let button = $('.giftlist-insertsku-wrapper .giftlist-insertsku-popup a');
