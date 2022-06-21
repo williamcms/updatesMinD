@@ -85,7 +85,7 @@ $(document).ready(function(){
 			$(".collectionItems img").each(function(){
 				$(this).attr("src", $(this).attr("src").replace(/\-(\d+)-(\d+)\//g, "-500-0/"));
 			});
-			document.querySelector('.main-container').scrollIntoView({
+			document.querySelector(isMobile() ? '.col-auto.side-nav' : '.main-container').scrollIntoView({
 				behavior: 'smooth'
 			});
 		}, 500);
