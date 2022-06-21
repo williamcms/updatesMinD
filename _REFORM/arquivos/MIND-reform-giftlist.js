@@ -183,7 +183,7 @@ $(document).ready(function(){
 		$(this).hasClass('minus') && input.val() > 1 && input.val(parseInt(input.val()) - 1);
 	});
 	// Botão Selecionar todos
-	var selectallproducts = waitForElm($('.collectionWrapper .collection > .giftlist-insertsku-wrapper input[type="checkbox"]')).then((elm)=>{
+	waitForElm($('.collectionWrapper .collection > .giftlist-insertsku-wrapper input[type="checkbox"]')).then((elm)=>{
 		let button = $('.orderByList > ul > li #selectallproducts');
 
 		button.attr("for", elm.attr("id"));
