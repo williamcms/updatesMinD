@@ -344,7 +344,7 @@ $(document).ready(function(){
  +'"></li>');
 					p.find('li[data-id='+ this.id +']').addClass('item-list').append('<div class="product-wrapper"></div><small class="message text-muted italic center_m"></small>');
 					if($('li[data-id='+ this.id +']').attr('available-qty') <= 5){
-						p.find('li[data-id='+ this.id +'] small.message').text('Há apenas ' + $('li[data-id='+ this.id +']').attr('available-qty') + ($('li[data-id='+ this.id +']').attr('available-qty') <= 1 ? ' unidade disponível' : ' unidades disponíveis'));
+						p.find('li[data-id='+ this.id +'] small.message').text('Há apenas ' + $('li[data-id='+ this.id +']').attr('available-qty') + ($('li[data-id='+ this.id +']').attr('available-qty') == 1 ? ' unidade disponível' : ' unidades disponíveis'));
 					}
 					p.find('li[data-id='+ this.id +'] div.product-wrapper').append('<div class="product__image"><img src="'+ (this.imageUrl).replace("-350-303", "-400-600") +'" alt="'+ this.name +'" title="'+ this.name +'" /></div>');
 					p.find('li[data-id='+ this.id +'] div.product-wrapper').append('<div class="product__info-container"></div><a ndx="'+ i +'" role="button" class="remove" title="Remover produto">Remover</a>');
