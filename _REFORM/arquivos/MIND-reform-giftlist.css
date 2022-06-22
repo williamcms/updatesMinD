@@ -579,7 +579,7 @@ main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__produ
 	color: var(--dark);
 	background-color: var(--sand);
 	padding: 0.5rem 0.3rem 0.5rem 0.5rem;
-	margin: 0.3rem 0;
+	margin: 0.7rem 0;
 	border-radius: 0.6rem 0 0 0.6rem;
 }
 main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--bottom > h3{
@@ -1174,7 +1174,8 @@ main.giftlist.products #giftlistproduct > .giftlist-remove-sku{
 		flex-wrap: wrap;
 	}
 	main.giftlist .giftlist.giftlistinfo > .giftlistinfo-link > *{
-		flex: 1 1 0px;
+		flex: 1 1 100%;
+		min-height: 2.375rem;
 	}
 	main.giftlist .giftlist.giftlistinfo > .giftlistinfo-link > .link-title{
 		border-top: 0.0625rem solid var(--gray-lighter);
@@ -1222,6 +1223,14 @@ main.giftlist.products #giftlistproduct > .giftlist-remove-sku{
 	}
 	main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--top > .amount > .amountWrapper .wished > span.fa-solid:first-child::after{
 		content: 'Desejado';
+	}
+	main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--top > .amount > .amountWrapper *::after{
+		position: absolute;
+		z-index: -1;
+	}
+	main.giftlist.view .collectionWrapper .collection .collectionItems .shelf__product > .shelf__product--top > .amount > .amountWrapper:hover *::after{
+		position: initial;
+		z-index: initial;
 	}
 	main.giftlist.manage > .listManager .giftlist-table{
 		table-layout: fixed;
