@@ -10,6 +10,95 @@ if(typeof(Array.prototype.first) === 'undefined'){
 		}
 	});
 }
+//Define a~função getSkuData caso não exista
+//Função da vtex com correções para funcionar por si mesma
+if(typeof getSkuData == 'undefined'){
+	function getSkuData(skuId){
+		var skuData = {
+			"id": 0,
+			"idProduct": 0,
+			"name": "",
+			"listPrice": 0,
+			"price": 0,
+			"availability": false,
+			"availabilitymessage": "",
+			"bestInstallmentValue": 0,
+			"bestInstallmentNumer": 0,
+			"images": [],
+			"reference": "",
+			"hasExtendedWarranty": false,
+			"hasExtendedWarrantyPage": false,
+			"notifyMe": false,
+			"HasServiceAtProductPage": false,
+			"HasServiceAtCartPage": false,
+			"HasServiceAtServicePage": false,
+			"RealHeight": 0,
+			"RealWidth": 0,
+			"RealLength": 0,
+			"RealWeightKg": 0,
+			"RewardValue": 0,
+			"Ean": "",
+			"DefaultSellerId": 0,
+			"SalesChannel": 1
+		}
+
+		if(typeof ListSkuData == 'undefined'){
+			var ListSkuData = new Array();
+		}
+
+		if(skuId > 0){
+			if(ListSkuData[`sku${skuId}`] === undefined){
+				$.ajax({
+					type: "GET",
+					url: `/produto/sku/${skuId}`,
+					dataType: 'json',
+					async: false,
+					success: function(dataValue){
+						var temp = "";
+						for(var i in dataValue){
+							if(!isNaN(i)){
+								skuData.id = dataValue[i].Id;
+								skuData.idProduct = dataValue[i].IdProduct;
+								skuData.name = dataValue[i].Name;
+								skuData.listPrice = dataValue[i].ListPrice;
+								skuData.price = dataValue[i].Price;
+								skuData.availability = dataValue[i].Availability;
+								skuData.availabilitymessage = dataValue[i].AvailabilityMessage;
+								skuData.bestInstallmentValue = dataValue[i].BestInstallmentValue;
+								skuData.bestInstallmentNumber = dataValue[i].BestInstallmentNumber;
+								skuData.images = dataValue[i].Images;
+								skuData.reference = dataValue[i].Reference;
+								skuData.hasExtendedWarranty = dataValue[i].HasExtendedWarranty;
+								skuData.hasExtendedWarrantyPage = dataValue[i].HasExtendedWarrantyPage;
+								skuData.notifyMe = dataValue[i].NotifyMe;
+								skuData.HasServiceAtServicePage = dataValue[i].HasServiceAtServicePage;
+								skuData.HasServiceAtCartPage = dataValue[i].HasServiceAtCartPage;
+								skuData.HasServiceAtProductPage = dataValue[i].HasServiceAtProductPage;
+								skuData.RealHeight = dataValue[i].RealHeight;
+								skuData.RealWidth = dataValue[i].RealWidth;
+								skuData.RealLength = dataValue[i].RealLength;
+								skuData.RealWeightKg = dataValue[i].RealWeightKg;
+								skuData.RewardValue = dataValue[i].RewardValue;
+								skuData.Ean = dataValue[i].Ean;
+								skuData.DefaultSellerId = dataValue[i].DefaultSellerId;
+								skuData.SkuSellersInformation = dataValue[i].SkuSellersInformation;
+								ListSkuData["sku" + dataValue[i].Id] = skuData;
+							}
+						}
+					},
+					error: function(){
+						alert("erro ao buscar objeto SKU");
+					}
+				});
+			}
+			skuData = ListSkuData[`sku${skuId}`];
+		}
+		else{
+			alert("SKU nÃ£o encontrado");
+		}
+		return skuData;
+	}
+}
 //Aguarda o determinado elemento carregar
 //Exemplo de uso:
 //waitForElm('.selector').then((elm) =>{
