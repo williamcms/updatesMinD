@@ -183,13 +183,13 @@ $(document).ready(function(){
 		$(this).hasClass('minus') && input.val() > 1 && input.val(parseInt(input.val()) - 1);
 	});
 	// Botão Selecionar todos
-	waitForElm($('.collectionWrapper .collection > .giftlist-insertsku-wrapper input[type="checkbox"]')).then((elm)=>{
-		let button = $('.orderByList > ul > li #selectallproducts');
+	var selectAllProducts = $('#selectallproducts').on('click', function(){
+		let checkbox = ($('.giftlist-insertsku-wrapper input[type="checkbox"]').length > 0 ? 
+			$('.giftlist-insertsku-wrapper input[type="checkbox"]') : 
+			$('table.giftlistproductsv2 > thead > tr > th > input[type="checkbox"]'));
 
-		button.attr("for", elm.attr("id"));
-	});
-	waitForElm($('table.giftlistproductsv2 > thead > tr > th > input[type="checkbox"]')).then((elm)=>{
-		elm.attr('id', 'checkuncheckall');
+		!checkbox.attr('id') && checkbox.attr('id', 'checkuncheckall');
+		$(this).attr('for', checkbox.attr('id'));
 	});
 	// Botão incluir selecionados na lista
 	var addselectedproducts = $('.orderByList > ul.optionsList > li a#addselectedproducts').on('click', function(){
