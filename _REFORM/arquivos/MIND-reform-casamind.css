@@ -1526,7 +1526,7 @@ body > .ui-autocomplete.ui-widget-content{
 	font-size: .9rem;
 	border-bottom: 0.125rem solid transparent;
 }
-.csm-header .csm-navigation > .csm-center ul > li > a:hover{
+.csm-header .csm-navigation > .csm-center > ul > li > a:hover{
 	color: var(--brand-color);
 	font-weight: 600;
 	transition: all .1s ease-in-out;
@@ -1546,7 +1546,7 @@ body > .ui-autocomplete.ui-widget-content{
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub:hover > .csm-dropdown,
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > a:focus + .csm-dropdown,
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown.change{
-	display: flex;
+	display: flex !important;
 }
 .csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown > ul{
 	display: flex;
@@ -3778,13 +3778,8 @@ footer .final-label__address{
 		height: 3.375rem;
 		margin: 0;
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li div.orderby-icon{
-		background-size: auto !important;
-	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li div.orderby-icon,
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > .filterSelector{
-		width: 1.575rem;
-		height: 1.575rem;
 		padding: 1.575rem;
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li a > span{
@@ -3804,6 +3799,7 @@ footer .final-label__address{
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li a > span > span{
 		display: inline-block;
+		color: inherit;
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li a > span::before{
 		content: "";
@@ -3961,7 +3957,7 @@ footer .final-label__address{
 		max-width: 90vw;
 	}
 	div#smarthint-search-result{
-		top: 3.75rem !important;
+		top: var(--mobile-header) !important;
 		height: calc(100% - 3.75rem) !important;
 	}
 	#smarthint-bought-together .products.bought-together{

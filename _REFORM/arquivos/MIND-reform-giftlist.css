@@ -62,7 +62,7 @@ main.giftlist .glsearch-type,
 main.giftlist .glsearch-id,
 main.giftlist .glsearch-eventlocation,
 main.giftlist .glsearch-eventcity,
-main.giftlist.home .glsearch-result{
+main.giftlist.home .giftlist-search > .glsearch-result{
 	display: none !important;
 }
 main.giftlist .glsearch-find{
@@ -314,6 +314,7 @@ main.giftlist.create #giftlistform .address-component .address-list-items > fiel
 main.giftlist.create #giftlistform .address-component p.link.edit.address-edit, 
 main.giftlist.create #giftlistform .address-component p.link.create.address-create{
 	display: inline-block;
+	text-align: center;
 	margin: .5rem 0;
 }
 main.giftlist.create #giftlistform .address-component p.link.edit.address-edit > a, 
@@ -1122,6 +1123,10 @@ main.giftlist.products #giftlistproduct > .giftlist-remove-sku{
 	main.giftlist.home .giftlist-actions.row > .giftlist-search.col .giftlistsearchul.glsearch-ul{
 		width: 100%;
 	}
+	main.giftlist .giftlist-table .giftlist-header-codigo,
+	main.giftlist .giftlist-table .giftlist-body-codigo{
+		display: none;
+	}
 	main.giftlist.home .how-to > .how-to-steps.row > .how-to__step.col{
 		flex-basis: 100%;
 	}
@@ -1161,6 +1166,9 @@ main.giftlist.products #giftlistproduct > .giftlist-remove-sku{
 	main.giftlist.create #giftlistform .giftlistul > li > label{
 		padding: 0.375rem 0.5rem;
 	}
+	main.giftlist.create #giftlistform .address-component .address-list-items > fieldset .address-item > .input{
+		flex-direction: column;
+	}
 	main.giftlist.create #giftlistform .address-component p.link.create.address-create, 
 	main.giftlist.create #giftlistform .address-component p.link.edit.address-edit{
 		display: block;
@@ -1190,12 +1198,16 @@ main.giftlist.products #giftlistproduct > .giftlist-remove-sku{
 		border-top-right-radius: 0;
 		border: 0.0625rem solid var(--gray-lighter);
 	}
-	main.collection > .main-container > .collectionWrapper > .row > .col-auto.side-nav{
+	main.collection > .main-container > .collectionWrapper > .row > .col-auto.side-nav,
+	main.collection > .main-container > .collectionWrapper > .row > .collection.col{
 		flex-basis: 100%;
 		margin: 0 auto;
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto.side-nav > .navigation{
 		display: none;
+	}
+	main.collection > .main-container > .collectionWrapper > .row > .collection.col{
+		margin-top: 1.5rem;
 	}
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > .filterSelector, 
 	main.collection > .main-container > .collectionWrapper > .row > .col-auto .orderByList:not(.notFixed) > ul > li div.orderby-icon,

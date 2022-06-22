@@ -61,10 +61,10 @@ $(document).ready(function(){
 	// Função para algumas otimizações, 
 	// como indicador de campo númerico para mobile
 	var optimizations = (() =>{
-		let giftlisteventdate = $('#giftlisteventdate')
+		let giftlisteventdate = $('#giftlisteventdate'),
 			actionShare = $('.glmanager-actions > .action-share');
 
-		giftlisteventdate.prop('inputmode', 'numeric');
+		giftlisteventdate.attr('inputmode', 'numeric');
 
 		if(!!actionShare){
 			$.each(actionShare, function(){
@@ -148,7 +148,7 @@ $(document).ready(function(){
 		let str = giftlisttype + giftlistname + creationdate;
 		// Remove acentuações e espaços
 		let url = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-			url = str.replace(/\s/g, '').toLowerCase();
+			url = url.replace(/\s/g, '').toLowerCase();
 
 		$('#giftlisturl').val(url);
 
