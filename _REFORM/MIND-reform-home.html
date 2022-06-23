@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+	<title>Casa MinD | Home</title>
+	<script>$(document).prop('title','Casa MinD | Home');</script>
+	<vtex:template id="MIND-reform-head" />
+	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+</head>
+
+<body>
+	<vtex:template id="MIND-reform-header" />
+	
+	<main class="main-wrapper">
+
+		<div class="main-featured">
+			<div class="slick-carousel-both desktop-view">
+				<vtex:contentPlaceHolder id="main-featured" />
+			</div>
+
+			<div class="slick-carousel-both mobile-view">
+				<vtex:contentPlaceHolder id="main-featured-mobile" />
+			</div>
+		</div>
+
+		<div class="featured">
+			<!-- medium -->
+			<vtex:contentPlaceHolder id="additional-banners-before" />
+			<!-- large -->
+			<vtex:contentPlaceHolder id="first-banner" />
+			<!-- medium -->
+			<vtex:contentPlaceHolder id="second-banner" />
+			<!-- small -->
+			<vtex:contentPlaceHolder id="fourth-banner" />
+			<!-- small -->
+			<vtex:contentPlaceHolder id="fifth-banner" />
+			<!-- medium -->
+			<vtex:contentPlaceHolder id="additional-banners-after" />
+		</div>
+
+		<div class="giftlist">
+			<vtex:contentPlaceHolder id="giftlist-banners" />
+		</div>
+
+		<div class="influencers">
+			<vtex:contentPlaceHolder id="influencers-banners" />
+		</div>
+
+		<div class="architects">
+			<vtex:contentPlaceHolder id="architects-banners" />
+		</div>
+			
+	</main>
+	<vtex:template id="MIND-reform-footer" />
+</body>
+</html>
