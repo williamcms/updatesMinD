@@ -1195,7 +1195,7 @@ adicional que é usado por conta de haver informações do produto além de imag
 }
 .slick-dots li.slick-active button::before{
 	padding: .79rem;
-	background-color: var(--brand-color);
+	background-color: var(--brand-color) !important;
 	opacity: 1;
 }
 .slick-slider.navbar{
