@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+	<title>Casa MinD | Minha Conta</title>
+	<script>$(document).prop('title','Casa MinD | Minha Conta');</script>
+	<vtex:template id="MIND-reform-head" />
+	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+</head>
+
+<body>
+	<vtex:template id="MIND-reform-header" />
+	
+	<main class="main-wrapper">
+	
+		<div class="main-container">
+			<vtex.cmc:accountUserProfile />
+		</div>
+		
+	</main>
+	<vtex:template id="MIND-reform-footer" />
+</body>
+</html>

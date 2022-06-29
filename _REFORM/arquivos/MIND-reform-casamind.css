@@ -3183,6 +3183,33 @@ footer .news-footer .enviarForm:hover{
 	margin: auto;
 	overflow: hidden;
 }
+/* Account / Orders */
+body.account .b--action-primary{
+	border-color: var(--brand-color);
+}
+body.account .bg-action-primary{
+	background-color: var(--brand-color);
+}
+body.account .c-action-primary,
+body.account .c-on-action-secondary{
+	color: var(--brand-color);
+}
+body.account .vtex-account__menu{
+	min-width: 20%;
+	width: auto;
+}
+body.account .vtex-account__profile .vtex-button > div{
+	color: var(--brand-color);
+	border: 1px solid var(--brand-color);
+	background-color: var(--white);
+}
+body.account .vtex-account__profile .vtex-button > div:hover{
+	color: var(--white);
+	background-color: var(--brand-color);
+}
+body.account .vtex-account__order-details > div > section{
+	display: flex;
+}
 /* Footer */
 footer{
 	margin-top: 1rem;
@@ -4008,6 +4035,10 @@ footer .final-label__address{
 	body.institucional > main div.institucional ul,
 	body.institucional > main div.institucional ol{
 		margin: 0 0 0 1rem;
+	}
+	/* Account / Orders */
+	body.account .vtex-account__order-details > div > section{
+		display: initial;
 	}
 	/* Footer */
 	footer .news-footer .input-group{
