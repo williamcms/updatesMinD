@@ -545,8 +545,21 @@ $(document).ready(function(){
 		let shelfTemplate = $('.has-shelf--default').eq(num).find('ul > li[layout]').first().attr('layout');
 		let productQtd = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-qty') : $('.has-shelf--default').attr('data-qty'));
 		let selectFilter = (typeof orderBy != 'undefined' ? orderBy : 'O=');
-		let aditionalFilters = '';
+		let pFrom = 0;
+		let pTo = 0;
+		let price = `P:[${pFrom}TO${pTo}]`;
 		let container = ($('.resultItemsWrapper > [id*=ResultItems_]').length > 0 ? $('.resultItemsWrapper > [id*=ResultItems_]') : $('.has-shelf--default').eq(num));
+
+		// Tratativa para Faixa de preço (ex: site/de-10-a-70)
+		let idNew = id.replace(/[A-z]:/g, ''),
+			temp = Array();
+			idNew = idNew.split('-').map(function(elm, i){
+				elm != 'de' && elm != 'a' && temp.push(elm);
+			});
+
+		if(temp.length == 2){
+			id = `P:[${temp[0]}TO${temp[1]}]`;
+		}
 
 		let urlBusca = `/buscapagina?fq=${id}&PS=${productQtd}&${selectFilter}&sl=${shelfTemplate}&cc=${productQtd}&sm=0&PageNumber=${page}`;
 
@@ -572,8 +585,12 @@ $(document).ready(function(){
 						$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 					}
 				}
+			},
+			error: function(data){
+				$(`button.seeMoreProducts[data-controls=${num}]`).text('Erro! Não é possível carregar mais produtos');
+				$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 			}
-		})
+		});
 	});
 	//Alterna entre os filtros clicados
 	var changeShelfFilter = $('.orderByList > ul:not(.optionsList) > li').on('click', function(e){
