@@ -532,15 +532,20 @@ $(document).ready(function(){
 	});
 	//Retorna uma seleção de vitrines (prateleia) levando em conta os filtros
 	//getShelfProducts(index da vitrine, adicionar contéudo no final, antes do botão ver mais?)
-	var getShelfProducts = (getShelfProducts = (num = 0, seemore = 0) =>{
+	var getShelfProducts = (getShelfProducts = (num = 0, seemore = 0, check = 1) =>{
 		let orderBy = $('.orderByList > ul > li.is--active').attr('data-order');
+		let pageType = null;
 
-		let pageType = checkPageType();
+		if(check == 1){
+			pageType = checkPageType();
+		}else{
+			pageType = check;
+		}
 		if(pageType === 'giftlist'){
 			return false;
 		}
 
-		let id = (pageType != 'category' ? 'H:' + ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').data('collectionid') : $('.has-shelf--default').eq(num).data('collectionid')) : 'C:' + $('.resultItemsWrapper').data('categoryid'));
+		let id = (pageType != 'category' ? 'H:' + ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-collectionid') : $('.has-shelf--default').eq(num).attr('data-collectionid')) : 'C:' + $('.resultItemsWrapper').attr('data-categoryid'));
 		let page = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-page') : $('.has-shelf--default').attr('data-page'));
 		let shelfTemplate = $('.has-shelf--default').eq(num).find('ul > li[layout]').first().attr('layout');
 		let productQtd = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-qty') : $('.has-shelf--default').attr('data-qty'));
@@ -576,8 +581,6 @@ $(document).ready(function(){
 						container.find('button.seeMoreProducts').before(data);
 					}else{
 						container.html(data);
-						//Adiciona elementos necessários
-						checkPageType();
 					}
 					//Verifica se a busca retornou menos resultados do que deveria e desativa o botão
 					if(realShelfLength < productQtd){
@@ -644,6 +647,18 @@ $(document).ready(function(){
 		v.attr('data-page', parseInt(s.text()));
 
 		getShelfProducts();
+	});
+	//Influencia a coleção por trocar as informações do container
+	//Útil para navegação de várias coleções em uma página por meio de um controlador
+	var collectionController = $('.collection-controller-item').on('click', function(){
+		let collectionid = $(this).attr('data-collectionid'),
+			container = $(this).attr('data-controls'),
+			qty = $(this).attr('data-qty');
+
+		$(container).attr('data-qty', qty);
+		$(container).attr('data-collectionid', collectionid);
+
+		getShelfProducts(0, 0, 'collection');
 	});
 	//Pequena animação para o filtro mobile
 	if(isMobile()){
