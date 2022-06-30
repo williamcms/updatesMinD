@@ -467,52 +467,32 @@ $(document).ready(function(){
 			//ou procura informações sobre a coleção, tentando distinguir entre as duas páginas.
 			//Após isso, atribui um indice para paginação e grava a o id referente a vitrine
 			if((!!params['H'])){
-				v.attr('data-collectionid', params['H']);
-				//Adiciona o botão ver mais produtos
-				let c = v.find('[id*=ResultItems_]');
-				//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
-				if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
-					c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
-				}
+				!v.attr('data-collectionid') && v.attr('data-collectionid', params['H']);
+				
 				return 'collection';
 			}else if(!!vtxctx && !!vtxctx.categoryId && vtxctx.searchTerm != 'colecoes' && vtxctx.searchTerm != 'mindmais'){
 				let categoryId = vtxctx.categoryId;
 				if(!!vtxctx.departmentyId && vtxctx.categoryId != vtxctx.departmentyId){
 					categoryId = vtxctx.departmentyId + '/' + vtxctx.categoryId;
 				}
-				v.attr('data-categoryid', categoryId);
+				!v.attr('data-categoryid') && v.attr('data-categoryid', categoryId);
 				//Adiciona um título para páginas de categoria e remove caracteres numéricos
 				//Móveis2 --> Móveis
 				t.text(t.text().replace(/\d+/g, '') || vtxctx.categoryName.replace(/\d+/g, ''));
-				//Adiciona o botão ver mais produtos
-				let c = v.find('[id*=ResultItems_]');
-				//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
-				if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
-					c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
-				}
+				
 				return 'category';
 			}else if($('main').hasClass('giftlist')){
 				let gl = $("input#gid").val() || $('.action-buy > a').length > 0 && $('.action-buy > a').attr('id').replace('sendtocart-', '') || '0';
 
 				v.attr('data-giftlistid', gl);
 
-				let c = v.find('[id*=ResultItems_]');
-				//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
-				if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
-					c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
-				}
 				return 'giftlist';
 			}else if($('.orderBy > select[onchange]').length != 0){
 				//Último recurso para identificar informações da coleção
 				let h = $('.orderBy > select[onchange]').attr('onchange').split('?PS', 1).toString();
 					h = h.split('\'/')[1];
-					v.attr('data-collectionid', h.toString());
-					//Adiciona o botão ver mais produtos
-					let c = v.find('[id*=ResultItems_]');
-					//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
-					if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
-						c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
-					}
+					!v.attr('data-collectionid') && v.attr('data-collectionid', h.toString());
+					
 				return 'undefined';
 			}
 			//Modelo para vitrines inseridas por meio do controle
@@ -532,15 +512,12 @@ $(document).ready(function(){
 	});
 	//Retorna uma seleção de vitrines (prateleia) levando em conta os filtros
 	//getShelfProducts(index da vitrine, adicionar contéudo no final, antes do botão ver mais?)
-	var getShelfProducts = (getShelfProducts = (num = 0, seemore = 0, check = 1) =>{
+	var getShelfProducts = (getShelfProducts = (num = 0, seemore = 0) =>{
 		let orderBy = $('.orderByList > ul > li.is--active').attr('data-order');
 		let pageType = null;
 
-		if(check == 1){
-			pageType = checkPageType();
-		}else{
-			pageType = check;
-		}
+		pageType = checkPageType();
+
 		if(pageType === 'giftlist'){
 			return false;
 		}
@@ -586,7 +563,17 @@ $(document).ready(function(){
 					if(realShelfLength < productQtd){
 						$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
 						$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
+					}else{
+						//Adiciona o botão ver mais produtos
+						//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
+						//vitrines que necessitam de um número diferente serão criados pelo checkPageType
+						if(container.find('button.seeMoreProducts[data-controls]').length <= 0){
+							container.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
+						}
 					}
+				}else{
+					$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
+					$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 				}
 			},
 			error: function(data){
