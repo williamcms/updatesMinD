@@ -642,10 +642,18 @@ $(document).ready(function(){
 			container = $(this).attr('data-controls'),
 			qty = $(this).attr('data-qty');
 
+		//Alterna a classe is--active
+		$('.collection-controller-item').removeClass('is--active');
+		$(this).addClass('is--active');
+
+		//Remove o contador de itens e tempo, pois esse tipo de troca de vitrines não atualiza
+		$('.itemsWrapper .searchResultsTime').remove();
+
 		$(container).attr('data-qty', qty);
 		$(container).attr('data-collectionid', collectionid);
+		$(container).attr('data-page', 1);
 
-		getShelfProducts(0, 0, 'collection');
+		getShelfProducts(0, 0);
 	});
 	//Pequena animação para o filtro mobile
 	if(isMobile()){
