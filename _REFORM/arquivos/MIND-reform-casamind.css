@@ -3210,6 +3210,30 @@ body.account .vtex-account__profile .vtex-button > div:hover{
 body.account .vtex-account__order-details > div > section{
 	display: flex;
 }
+/* Collection Controller */
+.collection-controller{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	grid-gap: 5rem;
+	gap: 5rem;
+}
+.collection-controller .collection-controller-item{
+	flex-basis: 15%;
+	cursor: pointer;
+}
+.collection-controller .collection-controller-item.is--active > picture > img{
+	border: 2px solid var(--brand-color);
+	border-radius: 60%;
+}
+.collection-controller .collection-controller-item > picture > figcaption{
+	font-family: monospace;
+	font-size: 1.1rem;
+	font-style: normal;
+}
+.collection-controller .collection-controller-item.is--active > picture > figcaption{
+	color: var(--brand-color);
+}
 /* Footer */
 footer{
 	margin-top: 1rem;
@@ -4039,6 +4063,17 @@ footer .final-label__address{
 	/* Account / Orders */
 	body.account .vtex-account__order-details > div > section{
 		display: initial;
+	}
+	/* Collection Controller */
+	.collection-controller{
+		grid-gap: 2rem;
+		gap: 2rem;
+	}
+	.collection-controller .collection-controller-item{
+		flex-basis: 35%;
+	}
+	.collection-controller .collection-controller-item > picture > figcaption{
+		font-size: 1.1rem;
 	}
 	/* Footer */
 	footer .news-footer .input-group{
