@@ -870,34 +870,34 @@ blockquote::before{
 	}
 }
 /* Orientation types */
-.w-25{
+body:not(.account) .w-25{
 	width: 25%;
 }
-.w-50{
+body:not(.account) .w-50{
 	width: 50%;
 }
-.w-75{
+body:not(.account) .w-75{
 	width: 75%;
 }
-.w-100{
+body:not(.account) .w-100{
 	width: 100%;
 }
-.h-25{
+body:not(.account) .h-25{
 	height: 25%;
 }
-.h-50{
+body:not(.account) .h-50{
 	height: 50%;
 }
-.h-75{
+body:not(.account) .h-75{
 	height: 75%;
 }
-.h-100{
+body:not(.account) .h-100{
 	height: 100%;
 }
-.mw-100{
+body:not(.account) .mw-100{
 	max-width: 100%;
 }
-.mh-100{
+body:not(.account) .mh-100{
 	max-height: 100%;
 }
 /* Fast Paddings */
@@ -1043,7 +1043,7 @@ section.accessibility > .links > a:not(:focus),
 #maincontentstarts:not(:focus){
 	position: absolute;
 	clip-path: inset(50% 50% 50% 50%);
-	overflow: hidden;	
+	overflow: hidden;
 }
 header + .maincontentstarts{
 	position: relative;
@@ -1722,7 +1722,7 @@ body > .ui-autocomplete.ui-widget-content{
 }
 .csm-header .csm-minicart .csm-minicart__products ul.product-list > li.item-list > 
 .product-wrapper > .product__info-container > .product__info > .product__management input{
-	max-width: 3rem; 
+	max-width: 3rem;
 	width: auto;
 	margin: 0 .3rem;
 	text-align: center;
@@ -3184,6 +3184,9 @@ footer .news-footer .enviarForm:hover{
 	overflow: hidden;
 }
 /* Account / Orders */
+body.account .vtex-pageHeader__container{
+	background-color: var(--sand);
+}
 body.account .b--action-primary{
 	border-color: var(--brand-color);
 }
@@ -3191,8 +3194,10 @@ body.account .bg-action-primary{
 	background-color: var(--brand-color);
 }
 body.account .c-action-primary,
-body.account .c-on-action-secondary{
+body.account .c-on-action-secondary,
+body.account .c-link *{
 	color: var(--brand-color);
+	fill: var(--brand-color);
 }
 body.account .vtex-account__menu{
 	min-width: 20%;
@@ -3207,8 +3212,9 @@ body.account .vtex-account__profile .vtex-button > div:hover{
 	color: var(--white);
 	background-color: var(--brand-color);
 }
-body.account .vtex-account__order-details > div > section{
-	display: flex;
+body.account .myo-product-table > thead > tr > th{
+	font-weight: 600;
+	border-bottom: .125rem solid var(--gray-lighter);
 }
 /* Collection Controller */
 .collection-controller{
@@ -3494,7 +3500,7 @@ footer .final-label__address{
 	right: -2.1rem;
 	margin-bottom: 6.75rem;
 	background: var(--brand-color);
-	border-radius: 60%;	
+	border-radius: 60%;
 }
 #smarthint-bought-together .products.bought-together>div:not(:nth-last-child(-1n+2)):after{
 	content: '+';
@@ -4061,9 +4067,6 @@ footer .final-label__address{
 		margin: 0 0 0 1rem;
 	}
 	/* Account / Orders */
-	body.account .vtex-account__order-details > div > section{
-		display: initial;
-	}
 	/* Collection Controller */
 	.collection-controller{
 		grid-gap: 2rem;
