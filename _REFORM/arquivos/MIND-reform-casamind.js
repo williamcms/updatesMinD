@@ -884,6 +884,8 @@ $(document).ready(function(){
 			
 			$(this).hasClass('plus') && input.get(0).stepUp() ||
 			$(this).hasClass('minus') && input.val() > 1 && input.get(0).stepDown();
+
+			input.trigger('change');
 		});
 		var addtoBagPDP = $('button.addtoCartButton.icon').on('click', function(){
 			let buybutton = $('a.buy-button.buy-button-ref').attr('href');
