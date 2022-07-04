@@ -535,7 +535,8 @@ $(document).ready(function(){
 		let page = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-page') : $('.has-shelf--default').attr('data-page'));
 		let shelfTemplate = $('.has-shelf--default').eq(num).find('ul > li[layout]').first().attr('layout');
 		let productQtd = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-qty') : $('.has-shelf--default').attr('data-qty'));
-		let selectFilter = (typeof orderBy != 'undefined' ? orderBy : 'O=');
+		let params = getParamsFromVtexSearch();
+		let selectFilter = (typeof orderBy != 'undefined' ? orderBy : (!!params['O'] ? `O=${params['O']}` : 'O='));
 		let pFrom = 0;
 		let pTo = 0;
 		let price = `P:[${pFrom}TO${pTo}]`;
