@@ -36,7 +36,7 @@
 
 	--desktop-header: 13.063rem;
 	--desktop-header-scroll: 10.14rem;
-	--mobile-header: 6.137rem;
+	--mobile-header: 5.4375rem;
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @font-face{
@@ -3585,6 +3585,9 @@ footer .final-label__address{
 		overflow-y: overlay !important;
 		overflow-x: hidden !important;
 	}
+	.csm-header .csm-middle{
+		min-height: var(--mobile-header);
+	}
 	.csm-header .csm-middle .csm-center .csm-search{
 		display: block;
 		position: absolute;
@@ -3994,6 +3997,13 @@ footer .final-label__address{
 	.csm-shelf__product .csm-shelf__price > a{
 		flex-wrap: wrap;
 	}
+	.csm-shelf__product .csm-shelf__price > a > *{
+		flex-basis: 100%;
+	}
+	.csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(1):nth-last-child(3),
+	.csm-shelf__product > .csm-shelf__product--bottom > div:nth-child(3):nth-last-child(2){
+		min-height: 3.84187rem;
+	}
 	/* Flags */
 	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection{
 		justify-content: flex-start;
@@ -4004,7 +4014,7 @@ footer .final-label__address{
 		margin: 0;
 		left: 0;
 	}
-	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag:nth-child(n+4):not(.mind-todos-marketplace, .mind-flag-frete-gratis){
+	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag:nth-child(n):not(.mind-todos-marketplace, .mind-flag-frete-gratis){
 		display: none;
 	}
 	.csm-shelf__product > .csm-shelf__product--bottom > .csm-shelf__flags > .csm-shelf__colection > .flag:nth-child(2)::after{
@@ -4019,6 +4029,7 @@ footer .final-label__address{
 	}
 	.csm-shelf__product .csm-shelf__flags{
 		min-height: 0rem;
+		max-height: 0rem;
 	}
 	/* Home */
 	body.home > main.main-wrapper{
