@@ -435,7 +435,8 @@ $(document).ready(function(){
 	});
 	var checkPageType = (checkPageType = () =>{
 		let v = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper') : $('.has-shelf--default')),
-			t = $('.breadcrumbs + .page-title.category-title > h1');
+			t = $('.breadcrumbs + .page-title.category-title > h1'),
+			c = v.find('[id*=ResultItems_]');
 
 		let params = getParamsFromVtexSearch();
 
@@ -479,6 +480,14 @@ $(document).ready(function(){
 				//Adiciona um título para páginas de categoria e remove caracteres numéricos
 				//Móveis2 --> Móveis
 				t.text(t.text().replace(/\d+/g, '') || vtxctx.categoryName.replace(/\d+/g, ''));
+				//Botão ver mais
+				if(numBusca.length > 0){
+					if(parseInt(numBusca.text()) > numAtual){
+						if(c.find('button.seeMoreProducts[data-controls]').length <= 0){
+							c.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
+						}
+					}
+				}
 				
 				return 'category';
 			}else if($('main').hasClass('giftlist')){
