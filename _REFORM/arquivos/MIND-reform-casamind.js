@@ -549,6 +549,10 @@ $(document).ready(function(){
 				elm != 'de' && elm != 'a' && temp.push(elm);
 			});
 
+		// Tempo de busca - Numero de itens possíveis na prateleira
+		let numBusca = $('.resultado-busca-numero > .value').eq(0),
+			numAtual = $('ul > li[layout]').length;
+
 		if(temp.length == 2){
 			id = `P:[${temp[0]}TO${temp[1]}]`;
 		}
@@ -570,14 +574,14 @@ $(document).ready(function(){
 						container.html(data);
 					}
 					//Verifica se a busca retornou menos resultados do que deveria e desativa o botão
-					if(realShelfLength < productQtd){
+					if(realShelfLength <= productQtd){
 						$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
 						$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 					}else{
 						//Adiciona o botão ver mais produtos
 						//data-controls definido para zero pois esse tipo de págia possui apenas uma lista/vitrine de produtos
 						//vitrines que necessitam de um número diferente serão criados pelo checkPageType
-						if(container.find('button.seeMoreProducts[data-controls]').length <= 0){
+						if(container.find('button.seeMoreProducts[data-controls]').length <= 0 && (numBusca.length > 0 ? parseInt(numBusca.text()) > productQtd : true)){
 							container.append(`<button class="button2 btn-brand seeMoreProducts" data-controls="0"><span>Ver mais produtos</span></button>`);
 						}
 					}
