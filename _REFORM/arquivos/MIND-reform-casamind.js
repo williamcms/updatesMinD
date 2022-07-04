@@ -422,7 +422,7 @@ $(document).ready(function(){
 	});
 	var getParamsFromVtexSearch = (() =>{
 		let params = [],
-		partialUrl = decodeURIComponent(partialSearchUrl);
+		partialUrl = unescape(partialSearchUrl);
 		partialUrl.slice(1).replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value){
 			if(value.includes(':')){
 				let fq = value.split(':');
