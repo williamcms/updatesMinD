@@ -3200,6 +3200,22 @@ body.account .c-link *{
 	color: var(--brand-color);
 	fill: var(--brand-color);
 }
+body.account * > button.hover-bg-action-secondary{
+	transition: .5s all ease;
+}
+body.account *:not(div > .vtex-pageHeader-link__container) > button.hover-bg-action-secondary{
+	color: var(--brand-color);
+	background-color: var(--white);
+	border: 1px solid var(--brand-color);
+}
+body.account *:not(div > .vtex-pageHeader-link__container) > button.hover-bg-action-secondary:focus,
+body.account *:not(div > .vtex-pageHeader-link__container) > button.hover-bg-action-secondary:hover{
+	color: var(--white);
+	background-color: var(--brand-color);
+}
+body.account .vtex-input-prefix__group > input{
+	border: none;
+}
 body.account .vtex-account__menu{
 	min-width: 20%;
 	width: auto;
