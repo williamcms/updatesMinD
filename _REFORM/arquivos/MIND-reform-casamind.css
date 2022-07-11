@@ -1526,7 +1526,8 @@ body > .ui-autocomplete.ui-widget-content{
 	font-size: .9rem;
 	border-bottom: 0.125rem solid transparent;
 }
-.csm-header .csm-navigation > .csm-center > ul > li > a:hover{
+.csm-header .csm-navigation > .csm-center > ul > li > a:hover,
+.csm-header .csm-navigation > .csm-center > ul > li > a + .csm-dropdown li a:hover{
 	color: var(--brand-color);
 	font-weight: 600;
 	transition: all .1s ease-in-out;
