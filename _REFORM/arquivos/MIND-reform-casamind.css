@@ -2699,12 +2699,13 @@ button.seeMoreProducts[data-controls]{
 	de id da coleção e os títulos serão colocados por controle de placeholder
 */
 .has-shelf--default > h2{
-	
 	display: none !important;
 }
 .vitrine > h2,
-.vitrine > .products > h2{
-	font-family: 'Helvetica';
+.vitrine > div > h2,
+.vitrine > h3,
+.vitrine > div > h3{
+	font-family: 'Didot';
 	text-align: center;
 	font-weight: 600;
 	color: var(--brand-color);
