@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+	<title>Casa MinD | Decoração para Casa</title>
+	<script>$(document).prop('title','Casa MinD | Decoração para Casa');</script>
+	<vtex:template id="MIND-reform-head" />
+	<vtex:contentPlaceHolder id="metaTagsAdicionais" />
+</head>
+
+<body>
+	<vtex:template id="MIND-reform-header" />
+	
+	<main class="main-wrapper">
+		
+		<div class="main-featured">
+			<div class="slick-carousel-both desktop-view">
+				<vtex:contentPlaceHolder id="main-featured" />
+			</div>
+
+			<div class="slick-carousel-arrows mobile-view">
+				<vtex:contentPlaceHolder id="main-featured-mobile" />
+			</div>
+		</div>
+
+		<div class="second-featured slick-carousel-arrows" 
+			data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "responsive": [{"breakpoint": 831, "settings": {"slidesToShow": 1}}]}'>
+			<vtex:contentPlaceHolder id="second-featured" />
+		</div>
+
+		<div class="third-featured slick-carousel-arrows" 
+			data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "responsive": [{"breakpoint": 831, "settings": {"slidesToShow": 1}}]}'>
+			<vtex:contentPlaceHolder id="third-featured" />
+		</div>
+			
+	</main>
+	<vtex:template id="MIND-reform-footer" />
+</body>
+</html>
