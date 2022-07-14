@@ -1271,6 +1271,7 @@ body > .ui-autocomplete.ui-widget-content{
 	border: 0;
 }
 .csm-header .csm-search > fieldset.busca{
+	position: relative;
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
@@ -3526,6 +3527,14 @@ footer .final-label__address{
 #smarthint-bought-together .products.bought-together>div:nth-last-child(2):after{
 	content: '=';
 }
+#smarthint-search-mostsearchedterms{
+	text-align: left;
+	left: 0;
+	margin: 0 auto;
+	border-radius: 0 !important;
+	width: calc(100% - 6rem) !important;
+	margin-top: 0.2rem !important;
+}
 /*Vurdere*/
 #vurdere-socialanchors{
 	margin: 0;
@@ -4209,6 +4218,10 @@ footer .final-label__address{
 	}
 	#smarthint-bought-together .products.bought-together > div:nth-last-child(2):after{
 		transform: rotate(90deg);
+	}
+	#smarthint-search-mostsearchedterms{
+		width: 100% !important;
+		margin-top: 0;
 	}
 }
 @media print{
