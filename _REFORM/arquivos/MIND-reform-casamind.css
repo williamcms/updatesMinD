@@ -3082,8 +3082,10 @@ body.home > main.main-wrapper > .featured > .right > :first-child{
 body.home > main.main-wrapper > .featured > .right > :not(:first-child){
 	flex-basis: 48%;
 }
-body.home > main.main-wrapper > .additional{
-	padding: 0 .6rem;
+body.home > main.main-wrapper > .featured,
+body.home > main.main-wrapper > .additional,
+body.home > main.main-wrapper > .giftlist > *:nth-child(1):nth-last-child(1){
+	padding: 0 1rem;
 }
 body.home > main.main-wrapper > .additional img,
 body.home > main.main-wrapper > .featured img{
@@ -3096,12 +3098,26 @@ body.home > main.main-wrapper > .giftlist{
 	grid-gap: .5rem;
 	gap: .5rem;
 }
-body.home > main.main-wrapper > .influencers{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	grid-gap: .5rem;
-	gap: .5rem;
+body.home > main.main-wrapper > .giftlist > *:nth-child(1):nth-last-child(1){
+	flex-basis: 100%;
+}
+body.home > main.main-wrapper > .giftlist > *:nth-child(1):nth-last-child(1) img{
+	width: 100%;
+}
+body.home > main.main-wrapper > .giftlist + .second-featured{
+	margin: 1rem auto;
+}
+body.home > main.main-wrapper > .second-featured{
+	margin: 2rem auto 1rem auto;
+}
+body.home > main.main-wrapper > .second-featured button.slick-prev{
+	left: 0;
+}
+body.home > main.main-wrapper > .second-featured .slick-track > div{
+	padding: 1rem;
+}
+body.home > main.main-wrapper > .second-featured button.slick-next{
+	right: 0;
 }
 body.home > main.main-wrapper > .architects{
 	display: flex;
@@ -4077,7 +4093,9 @@ footer .final-label__address{
 	body.home > main.main-wrapper > .featured > .right > :not(:first-child){
 		flex-basis: 48%;
 	}
-	body.home > main.main-wrapper > .additional{
+	body.home > main.main-wrapper > .featured,
+	body.home > main.main-wrapper > .additional,
+	body.home > main.main-wrapper > .giftlist > *:nth-child(1):nth-last-child(1){
 		padding: 0;
 	}
 	body.home > main.main-wrapper > .giftlist{
