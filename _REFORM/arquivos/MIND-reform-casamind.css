@@ -3433,7 +3433,7 @@ footer .final-label__address{
 #smarthint-position-4,
 #smarthint-position-5{
 	max-width: 80vw;
-	margin: 1.5rem auto;
+	margin: 1.5rem auto .5rem auto;
 }
 .smarthint h4{
 	font-size: 1rem;
