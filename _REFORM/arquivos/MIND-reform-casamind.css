@@ -1099,6 +1099,13 @@ header + .maincontentstarts{
 	top: 50%;
 	z-index: 1;
 }
+.slick-slider button.slick-next.slick-arrow::after,
+.slick-slider button.slick-prev.slick-arrow::after{
+	content: '';
+	position: absolute;
+	padding: 2rem;
+	transform: rotate(45deg) translate(-2.5rem, 0rem);
+}
 /* 
 Faz com que as setas nos slicks nas vitrines sejam menos estranhos por conta do tamanho 
 adicional que é usado por conta de haver informações do produto além de imagens
