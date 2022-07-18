@@ -10,7 +10,7 @@ if(typeof(Array.prototype.first) === 'undefined'){
 		}
 	});
 }
-//Define a~função getSkuData caso não exista
+//Define a função getSkuData caso não exista
 //Função da vtex com correções para funcionar por si mesma
 if(typeof getSkuData == 'undefined'){
 	function getSkuData(skuId){
@@ -175,6 +175,18 @@ var createAlert = (createAlert = (headColor, head, msg, button, ms) =>{
 	fixedOn.append(box), $(`#${id}`).fadeIn(), ms != 0 && setTimeout(function(){
 		fixedOn.find(`#${id}`).fadeOut();
 	}, ms);
+});
+//Fecha o último overlay aberto e visível com a tecla ESC
+var closeOnEsc = $(document).on('keydown', function(evt){
+	if(evt.keyCode == 27){
+		let overlay = $('.overlayform'),
+			topIndex = 0;
+
+		$.each(overlay, function(){
+			$(this).is(':visible') && (topIndex = $(this));
+		})
+		!!topIndex && topIndex.fadeOut();
+	}
 });
 $(document).ready(function(){
 	"use strict";
