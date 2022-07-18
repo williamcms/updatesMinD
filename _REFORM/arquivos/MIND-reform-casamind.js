@@ -156,7 +156,7 @@ var createAlert = (createAlert = (headColor, head, msg, button, ms) =>{
 		fixedOn = $('body'),
 		_btn = new _button(button),
 		box = `
-			<div class="overlayform" id="${id}" 
+			<div class="overlayform" id="${id}" tabindex="0" role="alert"
 			aria-label="Janela sobreposta ao contéudo, precione Esc para fecha-la ou aguarde ${ms/1000} segundos">
 				<div class="alertbox">
 					<div class="header">
