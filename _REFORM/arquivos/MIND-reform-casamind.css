@@ -3057,7 +3057,7 @@ main .csm-product select.product-sku-selection{
 /* Home */
 body.home > main.main-wrapper{
 	display: block;
-	max-width: 65vw !important;
+	max-width: 75vw !important;
 	margin: 0 auto;
 }
 body.home > main.main-wrapper > .main-featured .slick-dots li button::before{
