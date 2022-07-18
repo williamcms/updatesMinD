@@ -4095,8 +4095,10 @@ footer .final-label__address{
 	}
 	body.home > main.main-wrapper > .featured,
 	body.home > main.main-wrapper > .additional,
-	body.home > main.main-wrapper > .giftlist > *:nth-child(1):nth-last-child(1){
-		padding: 0;
+	body.home > main.main-wrapper > .giftlist > *:nth-child(1):nth-last-child(1),
+	body.home > main.main-wrapper > .second-featured{
+		padding-right: 0;
+		padding-left: 0;
 	}
 	body.home > main.main-wrapper > .giftlist{
 		flex-wrap: wrap;
