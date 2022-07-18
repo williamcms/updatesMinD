@@ -156,15 +156,15 @@ var createAlert = (createAlert = (headColor, head, msg, button, ms) =>{
 		fixedOn = $('body'),
 		_btn = new _button(button),
 		box = `
-			<div class="overlayform" id="${id}" tabindex="0" role="alert"
-			aria-label="Janela sobreposta ao contéudo, precione Esc para fecha-la ou aguarde ${ms/1000} segundos">
-				<div class="alertbox">
+			<div class="overlayform" id="${id}">
+				<div class="alertbox" tabindex="0" role="alert" aria-modal="true"
+			aria-label="Janela sobreposta ao conteúdo, pressione ESC para fecha-la${!!ms ? ', essa janela será fechado em ' + ms/1000 + ' segundos' : ''}">
 					<div class="header">
 						<div class="pr-2 pl-2 ${headColor}">${head}</div>
 					</div>
 					<div class="content p-3">
 						<p class="pb-3 text-center">${msg}</p>
-						<a href="${_btn.link}" class="button2 ${_btn.color}
+						<a href="${_btn.link}" role="button" class="button2 ${_btn.color}
 						${!!_btn.link ? '' : 'd-none'}">
 							<span>${_btn.text}</span>
 						</a>
