@@ -282,7 +282,7 @@ $(document).ready(function(){
 		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-expanded', $x);
 		$(".csm-header .csm-middle .csm-center .csm-mobile button.js--open-menu").attr('aria-hidden', !$x);
 	});
-	var showDropDownMenu = $('.csm-has-sub').on('click keyup hover', function(e){
+	var showDropDownMenu = $('.csm-has-sub').on('click keyup keydown hover', function(e){
 		if(e.which == 9){
 			$($(this).find('.csm-dropdown')).addClass("change");
 		}else{

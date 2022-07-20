@@ -3607,7 +3607,8 @@ footer .final-label__address{
 	textarea{
 		height: 10vh !important;
 	}
-	body{
+	body,
+	main{
 		max-width: 100vw;
 		overflow-x: hidden;
 	}
@@ -3800,13 +3801,6 @@ footer .final-label__address{
 	.csm-header .csm-navigation > .csm-center > ul > li > a{
 		font-weight: 400;
 		font-size: 0.9rem;
-	}
-	.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown,
-	.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub:hover > .csm-dropdown{
-		display: none;
-	}
-	.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown.change{
-		display: flex;
 	}
 	.csm-header .csm-navigation > .csm-center > ul > li:not(:last-child),
 	.csm-header .csm-navigation > .csm-center > ul > li.csm-has-sub > .csm-dropdown > ul > li:not(:last-child){
