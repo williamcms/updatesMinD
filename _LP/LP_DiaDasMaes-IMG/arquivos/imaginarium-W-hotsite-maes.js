@@ -7,7 +7,7 @@ $(document).ready(function(){
 		lazyLoad: 'ondemand',
 		accessibility: true,
 		swipeToSlide: true,
-		slidesToShow: 5,
+		slidesToShow: 6,
 		slidesToScroll: 1,
 		variableWidth: true,
 		responsive: [
