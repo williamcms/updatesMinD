@@ -1313,6 +1313,7 @@ body > .ui-autocomplete.ui-widget-content{
 .csm-header .csm-benefits{
 	background-color: var(--brand-color);
 	color: var(--white);
+	font-weight: 500;
 }
 .csm-header .csm-benefits .csm-center-benefits{
 	display: flex;
@@ -4266,5 +4267,10 @@ footer .final-label__address{
 @media(prefers-reduced-motion){
 	.csm-header .csm-cart .portal-totalizers-ref > .amount-items-in-cart > .cartInfoWrapper .amount-items em.amount-items-em::after{
 		animation: 3s linear 3s infinite rotate;
+	}
+}
+@media(prefers-contrast: more){
+	:root{
+		--brand-color: #DC3068 !important;
 	}
 }
