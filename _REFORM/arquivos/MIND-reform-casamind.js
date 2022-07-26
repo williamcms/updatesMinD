@@ -94,7 +94,7 @@ if(typeof getSkuData == 'undefined'){
 			skuData = ListSkuData[`sku${skuId}`];
 		}
 		else{
-			alert("SKU nÃ£o encontrado");
+			alert("SKU não encontrado");
 		}
 		return skuData;
 	}
