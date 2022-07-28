@@ -519,12 +519,14 @@ $(document).ready(function(){
 			//Modelo para vitrines inseridas por meio do controle
 		}else if(v.hasClass('has-shelf--default prateleira')){
 			$.each(v, function(i){
-				if(typeof $(this).data('collectionid') == 'undefined' && $(this).parents('.has-shelf--default').length == 0 && $(this).find('button.seeMoreProducts[data-controls]').length <= 0){
+				if($(this).parents('.has-shelf--default').length == 0 && $(this).find('button.seeMoreProducts[data-controls]').length <= 0){
 					let vId = parseInt($(this).find('h2').text());
 					$(this).append(`<button class="button2 btn-brand seeMoreProducts" data-controls="${i}"><span>Ver mais produtos</span></button>`);
-					$(this).attr('data-collectionid', vId);
-					$(this).attr('data-num', i);
-					$(this).attr('data-qty', $(this).find('ul > li[layout]').length);
+					if(typeof $(this).data('collectionid') == 'undefined'){
+						$(this).attr('data-collectionid', vId);
+						$(this).attr('data-num', i);
+						$(this).attr('data-qty', $(this).find('ul > li[layout]').length);
+					}
 				}
 			});
 			return 'hotsite';
@@ -586,7 +588,7 @@ $(document).ready(function(){
 						container.html(data);
 					}
 					//Verifica se a busca retornou menos resultados do que deveria e desativa o botão
-					if(realShelfLength <= productQtd){
+					if(realShelfLength < productQtd){
 						$(`button.seeMoreProducts[data-controls=${num}]`).text('Não há mais produtos para carregar');
 						$(`button.seeMoreProducts[data-controls=${num}]`).attr('disabled', true);
 					}else{
@@ -679,7 +681,7 @@ $(document).ready(function(){
 		$(container).attr('data-collectionid', collectionid);
 		$(container).attr('data-page', 1);
 
-		getShelfProducts(0, 0);
+		getShelfProducts();
 	});
 	//Pequena animação para o filtro mobile
 	if(isMobile()){
