@@ -761,7 +761,7 @@ html body .csm-general .csm-header>.csm-center {
 
 @media only screen and (min-width:100px) and (max-width:768px) {
     html body .main-container {
-        padding-top: 90px !important
+        padding-top: 105px !important
     }
 
     html body .main-container.mind-colecao {
