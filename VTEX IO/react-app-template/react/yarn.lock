@@ -1981,9 +1981,9 @@ capture-exit@^2.0.0:
   dependencies:
     rsvp "^4.8.4"
 
-"casamind.appexample@https://william--casamind.myvtex.com/_v/private/typings/linked/v1/casamind.appexample@0.0.0+build1659127623/public/@types/casamind.appexample":
+"casamind.appexample@https://william--casamind.myvtex.com/_v/private/typings/linked/v1/casamind.appexample@0.0.0+build1659130877/public/@types/casamind.appexample":
   version "0.0.0"
-  resolved "https://william--casamind.myvtex.com/_v/private/typings/linked/v1/casamind.appexample@0.0.0+build1659127623/public/@types/casamind.appexample#e7e2014d7d56c80c6f7759a663f1a114392fef3f"
+  resolved "https://william--casamind.myvtex.com/_v/private/typings/linked/v1/casamind.appexample@0.0.0+build1659130877/public/@types/casamind.appexample#e8a602b42a9242245ed77b78ffeb18af9f68b913"
 
 caseless@~0.12.0:
   version "0.12.0"
