@@ -12,5 +12,11 @@
 			"textPosition": "CENTER",
 			"font": "t-heading-1"
 		}
+	},
+	"hello-world": { 
+		"props": { 
+			"name": "Minder",
+			"font": "t-heading-2"
+		}
 	}
 }
