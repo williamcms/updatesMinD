@@ -1,8 +1,5 @@
 {
 	"hello-world": {
-		"component": "HelloWorld",
-		"props": {
-			"name": "Will"
-		}
+		"component": "HelloWorld"
 	}
 }
