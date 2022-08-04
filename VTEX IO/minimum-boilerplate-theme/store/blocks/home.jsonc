@@ -5,11 +5,36 @@
 			"responsive-layout.mobile#home-mobile",
 			"rich-text",
 			"hello-world",
+			"flex-layout.row#spacer-1",
 			"info-card#button-right",
 			"info-card#button-left",
 			"flex-layout.row#infocard-delete",
-			"slider-layout#home"
+			"flex-layout.row#spacer-2",
+			"slider-layout#home",
+			"flex-layout.row#spacer-2",
+			"tab-layout"
 		]
+	},
+	"flex-layout.row#spacer-1": {
+		"props": {
+			"width": "grow",
+			"paddingTop": 6,
+			"paddinBottom": 6
+		}
+	},
+	"flex-layout.row#spacer-2": {
+		"props": {
+			"width": "grow",
+			"paddingTop": 8,
+			"paddinBottom": 8
+		}
+	},
+	"flex-layout.row#spacer-3": {
+		"props": {
+			"width": "grow",
+			"paddingTop": 10,
+			"paddinBottom": 10
+		}
 	},
 	"responsive-layout.desktop#home-desktop": {
 		"children": [
@@ -120,6 +145,68 @@
 		"props": {
 			"src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/major_appliance_banner___bb10093866a127345ddfbcca3efa5022.png",
 			"maxWidth": "100%"
+		}
+	},
+	"tab-layout": {
+		"children": [
+			"tab-list",
+			"tab-content"
+		]
+	},
+	"tab-list": {
+		"children": [
+			"tab-list.item#1",
+			"tab-list.item#2"
+		]
+	},
+	"tab-list.item#1": {
+		"props": {
+			"tabId": "majorApplicances",
+			"label": "Major Appliances",
+			"deafaultActiveTab": true
+		}
+	},
+	"tab-list.item#2": {
+		"props": {
+			"tabId": "electronics",
+			"label": "Electronics"
+		}
+	},
+	"tab-content": {
+		"children": [
+			"tab-content.item#1",
+			"tab-content.item#2"
+
+		]
+	},
+	"tab-content.item#1": {
+		"props": {
+			"tabId": "majorApplicances"
+		},
+		"children": [
+			"rich-text#home-tab1"
+		]
+	},
+	"rich-text#home-tab1": {
+		"props": {
+			"text": "Texto para Major Appliances",
+			"textPosition": "CENTER",
+			"font": "t-heading-3"
+		}
+	},
+	"tab-content.item#2": {
+		"props": {
+			"tabId": "electronics"
+		},
+		"children": [
+			"rich-text#home-tab2"
+		]
+	},
+	"rich-text#home-tab2": {
+		"props": {
+			"text": "Texto para Electronics",
+			"textPosition": "CENTER",
+			"font": "t-heading-3"
 		}
 	}
 }
