@@ -12,7 +12,8 @@
 			"flex-layout.row#spacer-2",
 			"slider-layout#home",
 			"flex-layout.row#spacer-2",
-			"tab-layout"
+			"tab-layout",
+			"modal-trigger#home-first"
 		]
 	},
 	"flex-layout.row#spacer-1": {
@@ -207,6 +208,27 @@
 			"text": "Texto para Electronics",
 			"textPosition": "CENTER",
 			"font": "t-heading-3"
+		}
+	},
+	"modal-trigger#home-first": {
+		"children": [
+			"rich-text#home-trigger",
+			"modal-layout#home-first"
+		]
+	},
+	"rich-text#home-trigger": {
+		"props": {
+			"text": "CLICK ME"
+		}
+	},
+	"modal-layout#home-first": {
+		"children": [
+			"rich-text#modal-home-hello"
+		]
+	},
+	"rich-text#modal-home-hello": {
+		"props": {
+			"text": "Hello"
 		}
 	}
 }
