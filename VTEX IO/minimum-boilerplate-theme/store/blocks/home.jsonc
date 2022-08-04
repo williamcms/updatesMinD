@@ -5,7 +5,8 @@
 			"hello-world",
 			"info-card#button-right",
 			"info-card#button-left",
-			"flex-layout.row#infocard-delete"
+			"flex-layout.row#infocard-delete",
+			"slider-layout#home"
 		]
 	},
 	"rich-text": { 
