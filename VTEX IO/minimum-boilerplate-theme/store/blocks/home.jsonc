@@ -13,7 +13,8 @@
 			"slider-layout#home",
 			"flex-layout.row#spacer-2",
 			"tab-layout",
-			"modal-trigger#home-first"
+			"modal-trigger#home-first",
+			"list-context.product-list"
 		]
 	},
 	"flex-layout.row#spacer-1": {
@@ -265,5 +266,35 @@
 		"props": {
 			"text": "Hello"
 		}
+	},
+	"list-context.product-list": {
+		"blocks": [
+			"product-summary.shelf#home"
+		],
+		"children": [
+			"slider-layout"
+		]
+	},
+	"product-summary.shelf#home": {
+		"children": [
+			"modal-trigger#quickview",
+			"product-summary-name",
+			"product-summary-price"
+		]
+	},
+	"modal-trigger#quickview": {
+		"children": [
+			"product-summary-image",
+			"modal-layout#quickview"
+		]
+	},
+	"modal-layout#quickview": {
+		"children": [
+			"product-summary-name",
+			"product-images",
+			"product-summary-sku-selector",
+			"product-summary-quantity",
+			"add-to-cart-button"
+		]
 	}
 }
