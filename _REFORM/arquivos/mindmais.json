@@ -123,7 +123,7 @@
 			"collection": 902,
 			"pageLink" : "https://www.casamind.com.br/mindmais/alya",
 			"date" : "08/30/2021",
-			"active": 1
+			"active": 0
 		},
 		"amabile" : {
 			"name" : "Amabile",
@@ -138,7 +138,7 @@
 			"collection": 917,
 			"pageLink" : "https://www.casamind.com.br/mindmais/amabile",
 			"date" : "09/22/2021",
-			"active": 1
+			"active": 0
 		},
 		"berthahome" : {
 			"name" : "Bertha Home",
@@ -183,7 +183,7 @@
 			"collection": 812,
 			"pageLink" : "https://www.casamind.com.br/mindmais/branco",
 			"date" : "04/13/2021",
-			"active": 1
+			"active": 0
 		},
 		"casadobra" : {
 			"name" : "Casa Dobra",
@@ -303,7 +303,7 @@
 			"collection": 986,
 			"pageLink" : "https://www.casamind.com.br/mindmais/flordagua",
 			"date" : "10/19/2021",
-			"active": 1
+			"active": 0
 		},
 		"folklore" : {
 			"name" : "Folklore",
@@ -558,7 +558,7 @@
 			"collection": 1046,
 			"pageLink" : "https://www.casamind.com.br/mindmais/ohboxparty",
 			"date" : "12/15/2021",
-			"active": 1
+			"active": 0
 		},
 		"oleasaboaria" : {
 			"name" : "Olea",
@@ -603,7 +603,7 @@
 			"collection": 899,
 			"pageLink" : "https://www.casamind.com.br/mindmais/ouve",
 			"date" : "08/25/2021",
-			"active": 1
+			"active": 0
 		},
 		"paira" : {
 			"name" : "Paira",
@@ -618,7 +618,7 @@
 			"collection": 863,
 			"pageLink" : "https://www.casamind.com.br/mindmais/paira",
 			"date" : "09/29/2021",
-			"active": 1
+			"active": 0
 		},
 		"plugdesign" : {
 			"name" : "Plug Design",
