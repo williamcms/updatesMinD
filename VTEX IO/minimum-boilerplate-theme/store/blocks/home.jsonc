@@ -222,8 +222,43 @@
 		}
 	},
 	"modal-layout#home-first": {
+		"props": {
+			"scroll": "body",
+			"fullScreen": false
+		},
+		"children": [
+			"modal-header#home-first",
+			"modal-content#home-first"
+		]
+	},
+	"modal-header#home-first": {
+		"props": {
+			"showCloseButton": true,
+			"iconCloseSize": 28
+		}
+	},
+	"modal-content#home-first": {
+		"children": [
+			"flex-layout.row#modalData-home"
+		]
+	},
+	"flex-layout.row#modalData-home": {
+		"props": {
+			"colGap": 7
+		},
+		"children": [
+			"flex-layout.col#modalData-home_1",
+			"flex-layout.col#modalData-home_2"
+		]
+	},
+	"flex-layout.col#modalData-home_1": {
 		"children": [
 			"rich-text#modal-home-hello"
+		]
+	},
+	"flex-layout.col#modalData-home_2": {
+		"children": [
+			"info-card#rethink"
 		]
 	},
 	"rich-text#modal-home-hello": {
