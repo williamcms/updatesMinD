@@ -14,7 +14,8 @@
 			"flex-layout.row#spacer-2",
 			"tab-layout",
 			"modal-trigger#home-first",
-			"list-context.product-list"
+			"list-context.product-list",
+			"stack-layout#home-cta"
 		]
 	},
 	"flex-layout.row#spacer-1": {
@@ -296,5 +297,30 @@
 			"product-summary-quantity",
 			"add-to-cart-button"
 		]
+	},
+	"stack-layout#home-cta": {
+		"children": [
+			"image#home-cta",
+			"link#home-cta"
+		]
+	},
+	"image#home-cta": {
+		"props": {
+			"blockClass": "cover",
+			"wicth": "100%",
+			"height": 400,
+			"src": "https://appliancetheme.vtexassets.com/assets/app/src/appliancecat___1b7592b49667c6a89203a0997e06bc87.jpg"
+		}
+	},
+	"link#home-cta": {
+		"props": {
+			"displayMode": "button",
+			"buttonProps": {
+				"variant": "primary",
+				"size": "large"
+			},
+			"href": "#",
+			"label": "Check these awesome discounts"
+		}
 	}
 }
