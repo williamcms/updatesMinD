@@ -14,9 +14,11 @@
 	},
 	"condition.product#pendente-macrame": {
 		"props": {
-			"subject": "productId",
-			"verb": "is",
-			"object": "9001939"
+			"conditions": [{
+				"subject": "productId",
+				"verb": "is",
+				"object": "9002019"
+			}]
 		},
 		"children": [
 			"image#pendente-macrame-banner"
