@@ -3417,7 +3417,7 @@ footer .footer-wrapper .payment-wrapper .container .item svg{
 	height: 3.75rem;
 	max-width: 6.25rem;
 }
-footer .footer-wrapper .security-wrapper .container .item:nth-child(1) img{;
+footer .footer-wrapper .security-wrapper .container .item:nth-child(1) img{
 	width: 9.375rem;
 	height: 3.73563rem;
 }
@@ -4161,7 +4161,6 @@ footer .final-label__address{
 	footer .footer-wrapper .support-wrapper .support-guide svg,
 	footer .footer-wrapper .aboutUs-wrapper .aboutUs-guide svg{
 		float: right;
-		display: inline-block;
 		width: 1.5625rem;
 		height: 1.5625rem;
 	}
