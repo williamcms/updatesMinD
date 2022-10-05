@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+  xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+  <!-- Start Default -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="cleartype" content="on" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Icons -->
+  <link rel='shortcut icon' type='image/x-icon' href='https://imaginarium.vteximg.com.br/arquivos/mind-favicon.ico' />
+
+  <!-- Fonts -->
+  <link
+    href='https://fonts.googleapis.com/css?family=Quicksand:400,700|Lato:400,700,400italic,900|Quicksand:400,300,700'
+    rel='stylesheet' type='text/css' />
+  <!-- End Default -->
+
+  <!-- Remover -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Remover -->
+
+  <title>MinD | Direct Cart Link Generator</title>
+  <script>$(document).prop('title', 'MinD | <vtex:contentPlaceHolder id="pageTitle" />');</script>
+  <vtex:template id="MIND-reform-head" />
+  <vtex:contentPlaceHolder id="metaTagsAdicionais" />
+
+  <!-- Page specific (remover pontos "./") -->
+  <link rel="stylesheet" type="text/css" href="./arquivos/common-dev.css" media="all" />
+  <script type="text/javascript" src="./arquivos/common-dev.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <header class="csm-header" id="csm-header">
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li><a href="emailmkt">Email Marketing</a></li>
+        <li class="highlight"><a href="cartlink">Direct to Cart Link</a></li>
+        <li>...</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="dev">
+    <div class="pb-4">
+      <form>
+        <fieldset>
+          <div id="product">
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text">Produto-1 (Código de referência)</label>
+                    </div>
+                    <input type="text" name="produto-0" data-input="0" placeholder="MI4061Y" />
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <a href="javascript:undefined" class="d-block pr-2 getDetails change" data-input="0">
+                    <i class="fa-solid fa-cloud-arrow-down"></i></a>
+                </div>
+                <div class="col-auto">
+                  <a href="javascript:undefined" class="d-block pr-4 btn-remove" data-input="0" data-refer="product">
+                    <i class="fas fa-trash-alt"></i></a>
+                </div>
+              </div>
+
+              <div class="row newFields pt-2 pb-2" data-input="0">
+                <div class="col"><label class="text-muted italic">Nome:</label>
+                  <input type="text" name="product-name-0" readonly="" />
+                </div>
+                <div class="col"><label class="text-muted italic">Sku:</label>
+                  <input type="text" name="product-sku-0" />
+                </div>
+                <div class="col"><label class="text-muted italic">Qty:</label>
+                  <input type="text" name="product-qty-0" />
+                </div>
+                <div class="col"><label class="text-muted italic">Seller:</label>
+                  <input type="text" name="product-seller-0" />
+                </div>
+                <div class="col"><label class="text-muted italic">Disponível:</label>
+                  <input type="text" name="product-qty-instock-0" readonly="" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text">Produto-1 (Código de referência)</label>
+                    </div>
+                    <input type="text" name="produto-1" data-input="1" placeholder="MI4061Y" />
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <a href="javascript:undefined" class="d-block pr-2 getDetails change" data-input="1">
+                    <i class="fa-solid fa-cloud-arrow-down"></i></a>
+                </div>
+                <div class="col-auto">
+                  <a href="javascript:undefined" class="d-block pr-4 btn-remove" data-input="1" data-refer="product">
+                    <i class="fas fa-trash-alt"></i></a>
+                </div>
+              </div>
+
+              <div class="row newFields pt-2 pb-2" data-input="1">
+                <div class="col"><label class="text-muted italic">Nome:</label>
+                  <input type="text" name="product-name-1" readonly="" />
+                </div>
+                <div class="col"><label class="text-muted italic">Sku:</label>
+                  <input type="text" name="product-sku-1" />
+                </div>
+                <div class="col"><label class="text-muted italic">Qty:</label>
+                  <input type="text" name="product-qty-1" />
+                </div>
+                <div class="col"><label class="text-muted italic">Seller:</label>
+                  <input type="text" name="product-seller-1" />
+                </div>
+                <div class="col"><label class="text-muted italic">Disponível:</label>
+                  <input type="text" name="product-qty-instock-1" readonly="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="javascript:undefined" class="text-center d-block btn-add" data-refer="product"><i
+              class="fa-solid fa-circle-plus"></i></a>
+
+        </fieldset>
+
+        <a href="javascript:undefined" class="button2 btn-green" id="generateLINK"><span>GERAR LINK</span></a>
+      </form>
+    </div>
+
+    <div id="copytext">
+      <textarea id="viewHTMLCode" readonly=""></textarea>
+      <div class="copy">Copiar</div>
+    </div>
+  </main>
+
+</body>
+
+</html>
