@@ -201,6 +201,11 @@ $(document).ready(function () {
 					vitrinePricing = $(this).find("select[name=vitrine-pricing-" + i + "]").val(),
 					vitrineSeparator = "<img src=\"https://imagens.imgnet.com.br/puket/_2021/ECM/Header_Footer_2021/email-separador.png\" border=\"0\" width=\"20\" style=\"display: block;\">";
 
+				//Altera o tamanho máximo da imagem
+				vitrineImage = vitrineImage.replace(/-(\d+)-(\d+)\//g, "-230-0/");
+
+				//Altera o link de produto para o correto
+				vitrineLink = vitrineLink.replace("https://lojamindesigns.vtexcommercestable.com.br", "https://www.casamind.com.br");
 
 				if (vitrinePricing == 3) { //Nada
 					vitrinePriceP = vitrinePriceN = vitrineInstallments = vitrinePricing = vitrineSeparator = "";
