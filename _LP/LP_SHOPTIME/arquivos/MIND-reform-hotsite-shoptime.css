@@ -1,0 +1,122 @@
+.hotsite * {
+  font-family: Montserrat;
+}
+.hotsite .campaign-content {
+  max-width: 70vw;
+  padding: 3.25rem 0;
+  margin: 0 auto;
+}
+.hotsite .title h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.1875rem;
+  line-height: 2.6875rem;
+  color: #000;
+  text-transform: uppercase;
+}
+.hotsite .title p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.3125rem;
+  line-height: 1.625rem;
+  margin: 0;
+  color: #000;
+}
+.hotsite .presentation .col:nth-child(1) > h2 {
+  max-width: 32.75rem;
+  font-weight: 900;
+  font-size: 3.8125rem;
+  line-height: 4.625rem;
+  text-align: center;
+  color: var(--brand-color);
+}
+.hotsite .presentation .col:nth-child(1) > h2 > strong {
+  display: block;
+  color: #000;
+  font-weight: 900;
+}
+.hotsite .presentation .col:nth-child(1) > p {
+  font-weight: 400;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+  margin: 1.5625rem 0;
+  text-align: center;
+  color: #000;
+}
+.hotsite .presentation .col:nth-child(1) > button {
+  display: block;
+  margin: 0 auto;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1.25rem 2.3125rem;
+  border-radius: 0.5rem;
+  outline: 0;
+  border: none;
+}
+.hotsite .mosaic {
+  padding: 0 3rem;
+}
+.hotsite .mosaic > .row {
+  gap: 1.5rem;
+}
+.hotsite .mosaic > .row:nth-child(1) {
+  margin-bottom: 1.5rem;
+}
+.hotsite .mosaic > .row > .col {
+  line-height: 0;
+  padding: 0;
+}
+.hotsite .mosaic > .row > .col img {
+  width: 100%;
+}
+.hotsite .seo-text {
+  flex-direction: column;
+}
+.hotsite .seo-text > * {
+  display: block;
+  flex-basis: 100%;
+  width: 100%;
+}
+.hotsite .seo-text h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: center;
+  color: var(--brand-color);
+}
+.hotsite .seo-text h3 + p {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  margin: 1.2375rem 0 2rem 0;
+  line-height: 1.125rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 831px) and (orientation: portrait) {
+  .hotsite .campaign-content {
+    max-width: 92vw;
+  }
+  .hotsite .presentation {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .hotsite .presentation .col {
+    flex-basis: 100%;
+  }
+  .hotsite .presentation .col:nth-child(1) > h2 {
+    font-size: 32px;
+    line-height: 42px;
+    margin: 16px 0;
+  }
+  .hotsite .mosaic {
+    padding: 0;
+  }
+  .hotsite .mosaic > .row {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .hotsite .mosaic > .row > .col {
+    flex-basis: 100%;
+  }
+}
