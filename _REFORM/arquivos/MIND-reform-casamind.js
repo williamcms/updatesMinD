@@ -546,14 +546,11 @@ $(document).ready(function(){
 		}
 
 		let id = (pageType != 'category' ? 'H:' + ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-collectionid') : $('.has-shelf--default').eq(num).attr('data-collectionid')) : 'C:' + $('.resultItemsWrapper').attr('data-categoryid'));
-		let page = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-page') : $('.has-shelf--default').attr('data-page'));
+		let page = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-page') : $('.has-shelf--default').eq(num).attr('data-page'));
 		let shelfTemplate = $('.has-shelf--default').eq(num).find('ul > li[layout]').first().attr('layout');
 		let productQtd = ($('.resultItemsWrapper').length > 0 ? $('.resultItemsWrapper').attr('data-qty') : $('.has-shelf--default').attr('data-qty'));
 		let params = getParamsFromVtexSearch();
 		let selectFilter = (typeof orderBy != 'undefined' ? orderBy : (!!params['O'] ? `O=${params['O']}` : 'O='));
-		let pFrom = 0;
-		let pTo = 0;
-		let price = `P:[${pFrom}TO${pTo}]`;
 		let container = ($('.resultItemsWrapper > [id*=ResultItems_]').length > 0 ? $('.resultItemsWrapper > [id*=ResultItems_]') : $('.has-shelf--default').eq(num));
 
 		// Tratativa para Faixa de preço (ex: site/de-10-a-70)
@@ -564,8 +561,7 @@ $(document).ready(function(){
 			});
 
 		// Tempo de busca - Numero de itens possíveis na prateleira
-		let numBusca = $('.resultado-busca-numero > .value').eq(0),
-			numAtual = $('ul > li[layout]').length;
+		let numBusca = $('.resultado-busca-numero > .value').eq(0);
 
 		if(temp.length == 2){
 			id = `P:[${temp[0]}TO${temp[1]}]`;
