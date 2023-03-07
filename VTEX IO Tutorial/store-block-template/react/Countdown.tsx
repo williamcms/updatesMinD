@@ -4,15 +4,19 @@ import { defineMessages } from 'react-intl'
 interface CountdownProps {}
 
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
-  return <div />
+  return (
+    <div>
+      <h1>Countdown Test</h1>
+    </div>
+  )
 }
 
-const messages =  defineMessages({
+const messages = defineMessages({
   title: {
-    id: 'admin/editor.countdown.title'
+    id: 'admin/editor.countdown.title',
   },
   description: {
-    id: 'admin/editor.countdown.description'
+    id: 'admin/editor.countdown.description',
   },
 })
 
