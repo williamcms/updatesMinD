@@ -1,4 +1,5 @@
 import React from 'react'
+import { defineMessages } from 'react-intl'
 
 interface CountdownProps {}
 
@@ -6,9 +7,18 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
   return <div />
 }
 
+const messages =  defineMessages({
+  title: {
+    id: 'admin/editor.countdown.title'
+  },
+  description: {
+    id: 'admin/editor.countdown.description'
+  },
+})
+
 Countdown.schema = {
-  title: 'editor.countdown.title',
-  description: 'editor.countdown.description',
+  title: messages.title.id,
+  description: messages.description.id,
   type: 'object',
   properties: {},
 }
