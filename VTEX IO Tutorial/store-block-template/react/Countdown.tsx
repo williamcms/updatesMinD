@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { TimeSplit } from './typings/global'
+import { tick, getTwoDaysFromNow } from './utils/time'
 import { defineMessages } from 'react-intl'
 
-interface CountdownProps {}
+const DEFAULT_TARGET_DATE = getTwoDaysFromNow()
 
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
+interface CountdownProps {
+  targetDate: string
+}
+
+const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
+  targetDate = DEFAULT_TARGET_DATE,
+}) => {
+  const [timeRemaining, setTime] = useState<TimeSplit>({
+    hours: '00',
+    minutes: '00',
+    seconds: '00',
+  })
+
+  tick(targetDate, setTime)
+
   return (
     <div>
-      <h1>Countdown Test</h1>
+      <h1>{`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}</h1>
     </div>
   )
 }
@@ -24,7 +40,14 @@ Countdown.schema = {
   title: messages.title.id,
   description: messages.description.id,
   type: 'object',
-  properties: {},
+  properties: {
+    targetDate: {
+      title: 'Data Final',
+      description: 'Data final utilizada no contador',
+      type: 'string',
+      default: null,
+    },
+  },
 }
 
 export default Countdown
